@@ -1,0 +1,3 @@
+cards:
+  - <<: {id: merge-base, name: Base}
+    name: Child

@@ -1,0 +1,20 @@
+# Test fixture: values PyYAML silently converts (name: no -> False, 4,000 -> string).
+cards:
+  - id: pitfall-card
+    name: no
+    issuer: Chase
+    segment: personal
+    official_url: https://creditcards.chase.com/pitfall
+    last_verified: 2026-11-01
+    sources: [https://creditcards.chase.com/pitfall]
+    annual_fee: {amount: 95, first_year_waived: no}
+    foreign_tx_fee_pct: 0
+    bonus:
+      current:
+        parts: [{value: 75000, unit: points}]
+        min_spend: 4,000
+        spend_months: 3
+      usual:
+        parts: [{value: 60000, unit: points}]
+    earn: [{category_en: Travel, rate: 2, unit: points}]
+    benefits: []

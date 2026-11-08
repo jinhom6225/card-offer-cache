@@ -1,0 +1,3 @@
+cards:
+  - id: hex-card
+    foreign_tx_fee_pct: 0x1f

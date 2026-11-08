@@ -1,0 +1,4 @@
+cards:
+  - id: complex-key
+    ? [a, b]
+    : 1

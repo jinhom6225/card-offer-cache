@@ -1,0 +1,4 @@
+cards:
+  - id: octal-card
+    annual_fee:
+      amount: 0500

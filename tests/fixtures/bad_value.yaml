@@ -1,0 +1,3 @@
+cards:
+  - id: bad-float
+    foreign_tx_fee_pct: !!float abc

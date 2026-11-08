@@ -1,0 +1,5 @@
+cards:
+  - id: clock-card
+    bonus:
+      current:
+        spend_months: 1:30

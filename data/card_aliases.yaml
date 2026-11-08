@@ -1,0 +1,15 @@
+# 카드 이름 사전 — Phase 3(RSS 신호)에서 채웁니다. 지금은 빈 틀입니다.
+# 앱에는 나가지 않고, 진호님에게만 가는 텔레그램 신호를 카드와 맞추는 데만 씁니다.
+#
+# cards:              카드 id(cards.yaml의 id)별 별칭
+#   chase-example:
+#     en: [example card, ex card]
+#     ko: [예시카드]
+# issuers:            발급사 별칭 (예: amex: [american express, 아멕스])
+# signal_words:       보너스 글을 알아보는 단어 (예: bonus, offer, 보너스)
+# terminal_prefixes:  종료 신호 제목 머리말 (예: "[종료]", "[Expired]")
+
+cards: {}
+issuers: {}
+signal_words: []
+terminal_prefixes: []

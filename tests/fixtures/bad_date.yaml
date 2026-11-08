@@ -1,0 +1,5 @@
+cards:
+  - id: bad-date-card
+    name: Bad Date Card
+    issuer: Chase
+    last_verified: 2026-02-30

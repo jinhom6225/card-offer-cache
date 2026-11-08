@@ -1,0 +1,6 @@
+cards:
+  - id: dup-card
+    elevated:
+      start: 2026-10-01
+      end: 2026-12-31
+      start: 2026-11-01

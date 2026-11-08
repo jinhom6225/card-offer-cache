@@ -1,0 +1,4 @@
+# Python 3.11+ (GitHub Actions: 3.12). 버전은 고정합니다.
+PyYAML==6.0.3
+defusedxml==0.7.1
+coverage==7.17.2

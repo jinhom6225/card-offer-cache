@@ -1,0 +1,5 @@
+cards:
+  - id: dup-field
+    name: First Name
+    issuer: Chase
+    name: Second Name

@@ -1,0 +1,1 @@
+cards: !!python/object/apply:os.getcwd []

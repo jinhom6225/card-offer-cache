@@ -1,0 +1,86 @@
+# 카드 보너스 알림 — 카드 데이터 (진호님이 GitHub 웹에서 직접 고치는 파일)
+# 편집 방법·항목 설명은 README.md를 보세요. 저장(커밋)하면 검증기가 자동으로 확인합니다.
+#
+# !!! 아래 2장은 형식 확인용 SAMPLE(가짜) 데이터입니다 !!!
+# 카드 이름·보너스·연회비 등 모든 숫자는 지어낸 값이며 실제 오퍼가 아닙니다.
+# Phase 4에서 실제 30종 데이터로 교체합니다.
+
+cards:
+  # --- SAMPLE 1: 개인 카드, "평소보다 높음" 상태(elevated 있음), 보너스가 여러 부분 ---
+  - id: sample-travel-card
+    name: Sample Travel Rewards Card (SAMPLE)
+    issuer: Chase
+    segment: personal
+    official_url: https://creditcards.chase.com/
+    last_verified: 2026-11-08
+    sources:
+      - https://creditcards.chase.com/
+    annual_fee:
+      amount: 95
+      first_year_waived: false
+    foreign_tx_fee_pct: 0
+    bonus:
+      current:
+        parts:
+          - value: 80000
+            unit: points
+          - value: 1
+            unit: free_night
+        min_spend: 4000
+        spend_months: 3
+        note_en: "SAMPLE: fictional bonus for format testing only."
+        note_ko: "샘플: 형식 확인용 가짜 보너스입니다."
+      usual:
+        parts:
+          - value: 60000
+            unit: points
+        note_en: ""
+        note_ko: ""
+    elevated:
+      start: 2026-11-01
+      end: 2026-12-31
+    earn:
+      - category_en: Travel
+        category_ko: 여행
+        rate: 3
+        unit: points
+      - category_en: Everything else
+        category_ko: 기타 전부
+        rate: 1
+        unit: points
+    benefits:
+      - en: "SAMPLE: trip delay coverage"
+        ko: "샘플: 여행 지연 보상"
+
+  # --- SAMPLE 2: 비즈니스 카드, 평소 보너스(elevated 없음), 한국어 설명 일부 비움 ---
+  - id: sample-business-cash
+    name: Sample Business Cash Card (SAMPLE)
+    issuer: American Express
+    segment: business
+    official_url: https://www.americanexpress.com/
+    last_verified: 2026-11-08
+    sources:
+      - https://www.americanexpress.com/
+    annual_fee:
+      amount: 0
+      first_year_waived: false
+    foreign_tx_fee_pct: 2.7
+    bonus:
+      current:
+        parts:
+          - value: 250
+            unit: cash
+        min_spend: 3000
+        spend_months: 3
+        note_en: "SAMPLE: fictional statement credit."
+        note_ko: ""
+      usual:
+        parts:
+          - value: 250
+            unit: cash
+    earn:
+      - category_en: Everything else
+        category_ko: ""
+        rate: 1.5
+        unit: cash
+    benefits: []

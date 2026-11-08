@@ -1,0 +1,4 @@
+cards:
+  - &self
+    id: loop-card
+    memo: *self
