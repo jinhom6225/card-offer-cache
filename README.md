@@ -167,7 +167,7 @@
 
 | 실행 | 언제 | 하는 일 |
 |---|---|---|
-| 데이터 수정 | `data/`, `scripts/`, `requirements*.txt`, `.github/workflows/build-cards.yml`을 main에 커밋할 때마다 | 테스트 → 검증 → JSON 생성 → 바뀌었으면 커밋 → 빌드 경고가 있으면 텔레그램 |
+| 데이터 수정 | `data/`, `scripts/`, `requirements*.txt`, `.github/workflows/build-cards.yml`을 main에 커밋할 때마다 | 테스트 → 검증 → JSON 생성 → 보너스 관측 기록 추가 → 바뀌었으면 커밋 → 빌드 경고가 있으면 텔레그램 |
 | 매일 | 10:23 UTC (= 미국 서부 02:23 PST / 03:23 PDT, 한국 19:23) | 위와 같음 + 자동 종료 반영 + 확인 공백·높음 표시 누락 보고 + 성공 요약 |
 | 수동 | Actions → **Build cards JSON** → Run workflow | 매일 실행과 같음. `force_fail`을 켜면 일부러 실패(실패 알림 확인용) |
 
@@ -184,6 +184,7 @@ GitHub 예약 실행은 몇 분~몇십 분 늦게 시작할 수 있습니다. �
    - `ended`: "높음"이 끝남(`elevated`를 지웠거나 종료일이 지남)
    - `changed`: 그 밖에 `bonus.current.parts`가 바뀜
 5. 저장은 임시 파일에 쓴 뒤 한 번에 바꿔치기합니다(반쯤 쓴 파일이 배포되지 않음).
+6. 마지막으로 `history/bonus_log.csv`에 값이 바뀐 카드만 한 줄씩 덧붙입니다(아래 "보너스 관측 기록"). JSON이 그대로여도 이 단계는 돕니다.
 
 **바뀐 게 없으면 파일을 다시 쓰지 않습니다.** `generated_at`만 빼고 새로 만든 글자(바이트)가 기존 파일과 똑같으면 그대로 두므로 커밋도 생기지 않고 Pages ETag도 그대로입니다. 값이 같아도 표기가 다르면(예: `75000.0` → `75000`, 들여쓰기·줄바꿈 차이) 다시 씁니다. 그래서 `generated_at`은 "JSON 파일이 마지막으로 바뀐 빌드 시각"이고, 매일 바뀌지는 않습니다.
 
@@ -229,7 +230,7 @@ GitHub 예약 실행은 몇 분~몇십 분 늦게 시작할 수 있습니다. �
 | 메시지 | 언제 | 할 일 |
 |---|---|---|
 | `[실패] card-offer-cache 빌드 실패 (...)` + `[오류] ...` 목록 | 실패할 때마다(검증·테스트·저장·push 실패, 예기치 못한 오류, `force_fail`) | 오류 줄대로 `cards.yaml`을 고쳐 다시 커밋. 목록이 없으면 링크의 실행 로그 확인 |
-| `[성공] card-offer-cache 빌드` + `요약: 카드 N장 · 높음 N개 · 자동 종료 N개 · 경고 N개 · ...` | 매일 실행·수동 실행이 성공했을 때. `JSON 커밋: true`면 앱 데이터가 바뀜 | 없음 |
+| `[성공] card-offer-cache 빌드` + `요약: 카드 N장 · 높음 N개 · 자동 종료 N개 · 경고 N개 · ... · 기록 N줄 추가` | 매일 실행·수동 실행이 성공했을 때. `JSON 커밋: true`면 앱 데이터가 바뀜, `기록 커밋: true`면 보너스 관측 기록에 줄이 추가됨 | 없음 |
 | `[경고] ...` | 위 "빌드 경고"(데이터 수정 실행에서도 바로 옴) | 표의 할 일대로 |
 | `마지막 확인이 7일 넘은 카드 N장` | 매일·수동 실행. `last_verified`가 8일 이상 지난 카드(7일째까지는 괜찮음) | 공식 페이지 확인 후 `last_verified`를 오늘로 |
 | `종료일이 지나 자동 종료된 오퍼 N개` | 매일·수동 실행. 정리할 때까지 매일 다시 옴 | `elevated`를 지우고 `bonus.current`를 평소 값으로 |
@@ -245,7 +246,41 @@ GitHub 예약 실행은 몇 분~몇십 분 늦게 시작할 수 있습니다. �
 
 예약 실행은 공개 저장소에서 60일 동안 활동이 없으면 GitHub가 멈추는데, workflow의 `keepalive` job이 매번 다시 켜 둡니다.
 
-보안: workflow 전체 권한은 비워 두고(`permissions: {}`) 빌드 job만 `contents: write`, keepalive job만 `actions: write`를 받습니다. checkout은 토큰을 남기지 않고(`persist-credentials: false`), 커밋 단계의 pull/push에서만 토큰을 씁니다. 봇은 `docs/cards_v1.json` 한 파일만 커밋합니다. Actions는 커밋 SHA로 고정했고, CI 설치는 해시를 고정한 `requirements-ci.txt`(`pip install --require-hashes`)를 씁니다.
+보안: workflow 전체 권한은 비워 두고(`permissions: {}`) 빌드 job만 `contents: write`, keepalive job만 `actions: write`를 받습니다. checkout은 토큰을 남기지 않고(`persist-credentials: false`), 커밋 단계의 pull/push에서만 토큰을 씁니다. 봇은 `docs/cards_v1.json`과 `history/bonus_log.csv` 두 파일만(경로를 지정해) 커밋합니다. Actions는 커밋 SHA로 고정했고, CI 설치는 해시를 고정한 `requirements-ci.txt`(`pip install --require-hashes`)를 씁니다.
+
+## 보너스 관측 기록 (`history/bonus_log.csv`)
+
+**무엇인가:** 빌드할 때마다 카드별 보너스 값을 지켜보고, 바뀐 것을 한 줄씩 남기는 CSV 파일입니다. 나중에 "이 카드의 평소 보너스가 얼마였나", "지난번 상향 오퍼와 비교하면 어떤가"를 판단할 근거입니다. 앱 JSON의 `history`는 카드당 최근 20건, 그것도 `bonus.current.parts`가 바뀔 때만 남기 때문에 이 파일이 따로 있습니다. **앱 JSON에는 절대 나가지 않습니다**(GitHub 저장소에만 있음).
+
+**언제 줄이 생기나:**
+
+| 경우 | 줄 | `note` |
+|---|---|---|
+| 첫 빌드(파일이 없거나 비어 있음) | 모든 카드 한 줄씩(맨 위에 머리글 한 줄) | `added` |
+| 새 카드가 생김(또는 빠졌던 카드가 돌아옴) | 그 카드 한 줄 | `added` |
+| 아래 칸 중 하나라도 바뀜(`date`, `note` 제외) | 그 카드 한 줄 | (빈칸) |
+| 카드가 `cards.yaml`에서 빠짐 | 한 번만 한 줄(`issuer` 외 값은 빈칸) | `removed` |
+| 아무것도 안 바뀜 | 없음(날짜만 지난 것은 변화 아님) | — |
+
+- 개수 제한 없이 **뒤에 덧붙이기만** 합니다. 예전 줄은 고치거나 지우지 않습니다.
+- `parts`는 순서와 상관없이 정렬해 적으므로 `parts` 순서만 바꾸면 줄이 생기지 않습니다(`75000.0`과 `75000`도 같은 값).
+- 검증 오류로 빌드가 멈추면 이 파일도 건드리지 않습니다. 파일 모양이 깨졌으면(머리글이 다름, 칸 수가 다름, 마지막 줄바꿈 없음, 따옴표 오류 등) `[오류] history/bonus_log.csv: 보너스 관측 기록 파일의 모양이 맞지 않습니다(...)`로 빌드를 멈추고 JSON과 기록 둘 다 그대로 둡니다. git에서 이전 버전으로 되돌리면 됩니다.
+
+**칸 읽는 법** (UTF-8, 쉼표 구분, 첫 줄 머리글. 엑셀·구글 시트에서 그대로 열림):
+
+| 칸 | 뜻 | 예 |
+|---|---|---|
+| `date` | 기록한 빌드 날짜(미국 서부 기준) | `2026-11-10` |
+| `card_id`, `issuer` | 카드 id, 발급사 | `chase-sapphire-preferred`, `Chase` |
+| `current` | 지금 보너스(`bonus.current.parts`, 단위 이름순, 천 단위 쉼표 없음) | `1 free_night + 130000 points` |
+| `min_spend`, `spend_months` | 지출 조건(달러, 개월) | `4000`, `3` |
+| `usual` | 평소 보너스(`bonus.usual.parts`) | `60000 points` |
+| `elevated` | 그날 "높음"이었는지(오퍼가 `active`) | `yes` / `no` |
+| `offer_id`, `offer_end` | 오퍼 id와 종료일(오퍼가 없으면 빈칸, 끝난 오퍼는 id가 남고 `elevated`가 `no`) | `chase-sapphire-preferred@2026-11-01`, `2026-12-31` |
+| `last_verified` | 진호님이 마지막으로 확인한 날 | `2026-11-09` |
+| `note` | `added` / `removed` / 빈칸(값이 바뀜) | |
+
+한 카드의 흐름을 보려면 `card_id`로 걸러서 위에서 아래로 읽으면 됩니다. 각 줄은 "그날부터 값이 이렇게 바뀌었다"는 뜻입니다.
 
 ## 로컬 실행·테스트
 
@@ -253,7 +288,7 @@ GitHub 예약 실행은 몇 분~몇십 분 늦게 시작할 수 있습니다. �
 python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
 .venv/bin/python scripts/validate.py                       # data/cards.yaml 검증 (오류면 exit 1)
 .venv/bin/python scripts/validate.py path/to.yaml --today 2026-11-09
-.venv/bin/python scripts/build_cards.py --output /tmp/cards_v1.json --warnings-file /tmp/warn.txt   # 시험 빌드(docs/는 안 건드림)
+.venv/bin/python scripts/build_cards.py --output /tmp/cards_v1.json --bonus-log /tmp/bonus_log.csv --warnings-file /tmp/warn.txt   # 시험 빌드(docs/·history/는 안 건드림)
 .venv/bin/python scripts/staleness.py --cards /tmp/cards_v1.json --warnings-file /tmp/warn.txt --daily  # 텔레그램 보고 글 미리 보기
 .venv/bin/python -m unittest discover -s tests -v          # 네트워크 없이 단위 테스트
 .venv/bin/python -m coverage run -m unittest discover -s tests && .venv/bin/python -m coverage report   # 80% 미만이면 실패(.coveragerc)
@@ -273,9 +308,10 @@ scripts/cardlib/         # schema(검증 진입점), loader(YAML 읽기), fields
                          # phrases(금지 문구·커뮤니티·단축 주소 패턴), rules(모든 글자 검사), issues,
                          # offers(오퍼 id·자동 종료), parts(보너스 parts 비교·숫자 정리),
                          # history(변동 기록), offer_warnings(D3·재개·start 변경·카드 삭제 경고),
-                         # payload(JSON 모양·저장 형식)
+                         # payload(JSON 모양·저장 형식), bonus_log(보너스 관측 기록 CSV)
 tests/                   # unittest + fixtures
 docs/                    # GitHub Pages 배포 폴더(.nojekyll, cards_v1.json은 Actions가 커밋)
+history/bonus_log.csv    # 보너스 관측 기록(덧붙이기만, Actions가 커밋, 앱에는 안 나감)
 .github/workflows/build-cards.yml   # 검증·빌드·커밋·텔레그램·keepalive
 requirements.txt         # 로컬 개발용(coverage 포함)
 requirements-ci.txt      # CI 전용, 해시 고정

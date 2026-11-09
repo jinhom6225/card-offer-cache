@@ -1,7 +1,8 @@
 """Policy safety rules on the repo side (policy.md "안전 설계 규칙", plan Phase 9).
 
 Checks the committed files, not only the validator: data/*.yaml (raw text,
-comments included) and everything under docs/ (the public Pages output).
+comments included), everything under docs/ (the public Pages output) and
+history/*.csv (the bonus observation log).
 Runs in CI before the build step, so it needs no network.
 
 - rule 9: credit-decision phrases (EN + KO) are caught and absent.
@@ -41,12 +42,17 @@ def docs_files():
                   if p.is_file() and p.suffix.lower() in DOCS_TEXT_SUFFIXES)
 
 
+def history_files():
+    """history/*.csv (the bonus observation log); may not exist yet before the first build."""
+    return sorted((ROOT / "history").glob("*.csv"))
+
+
 def committed_text_files(test):
-    """data/*.yaml and the docs/ text files; fails if either set is empty."""
+    """data/*.yaml, the docs/ text files and history/*.csv; data and docs must be non-empty."""
     data, docs = data_files(), docs_files()
     test.assertTrue(data, "no data/*.yaml found")
     test.assertTrue(docs, "no text files under docs/")
-    return data + docs
+    return data + docs + history_files()
 
 
 def public_doc():

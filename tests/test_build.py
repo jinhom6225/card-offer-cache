@@ -1,6 +1,7 @@
 """scripts/build_cards.py end to end, with injected clock and git time (no network)."""
 
 import contextlib
+import csv
 import io
 import json
 import shutil
@@ -16,6 +17,7 @@ import yaml
 from helpers import FIXTURES, ROOT, make_card, with_value
 
 import build_cards
+from cardlib.bonus_log import COLUMNS
 from cardlib.schema import load_cards
 
 NOW = "2026-11-09T18:00:00Z"            # 10:00 PST
@@ -29,6 +31,7 @@ class BuildTestCase(unittest.TestCase):
         self.data = self.dir / "cards.yaml"
         self.out = self.dir / "docs" / "cards_v1.json"
         self.warnings = self.dir / "warnings.txt"
+        self.log = self.dir / "history" / "bonus_log.csv"
 
     def write_cards(self, cards):
         self.data.write_text(yaml.safe_dump({"cards": cards}, allow_unicode=True),
@@ -36,7 +39,8 @@ class BuildTestCase(unittest.TestCase):
 
     def run_build(self, now=NOW, git_time=GIT_TIME, extra=()):
         argv = ["--data", str(self.data), "--output", str(self.out),
-                "--warnings-file", str(self.warnings), "--now", now, *extra]
+                "--warnings-file", str(self.warnings), "--bonus-log", str(self.log),
+                "--now", now, *extra]
         if git_time is not None:
             argv += ["--data-updated-at", git_time]
         out = io.StringIO()
@@ -157,7 +161,7 @@ class SuccessfulBuildTest(BuildTestCase):
     def test_warnings_file_is_optional(self):
         self.write_cards([make_card()])
         argv = ["--data", str(self.data), "--output", str(self.out), "--now", NOW,
-                "--data-updated-at", GIT_TIME]
+                "--data-updated-at", GIT_TIME, "--bonus-log", str(self.log)]
         with contextlib.redirect_stdout(io.StringIO()):
             self.assertEqual(build_cards.main(argv), 0)
         self.assertFalse(self.warnings.exists())
@@ -302,6 +306,177 @@ class FailedBuildTest(BuildTestCase):
             self.assertEqual(ctx.exception.code, 2)
 
 
+class BonusLogBuildTest(BuildTestCase):
+    """history/bonus_log.csv: first snapshot, then only cards whose values changed."""
+
+    def log_rows(self):
+        with self.log.open(encoding="utf-8", newline="") as handle:
+            return list(csv.DictReader(handle))
+
+    def summary(self, output):
+        return output.strip().splitlines()[-1]
+
+    def test_first_build_writes_header_and_one_added_row_per_card(self):
+        self.write_cards([make_card("a"), make_card("b")])
+        code, output = self.run_build()
+        self.assertEqual(code, 0, output)
+        text = self.log.read_text(encoding="utf-8")
+        self.assertTrue(text.startswith(",".join(COLUMNS) + "\n"))
+        self.assertTrue(text.endswith("\n"))
+        rows = self.log_rows()
+        self.assertEqual([(r["card_id"], r["note"], r["date"]) for r in rows],
+                         [("a", "added", "2026-11-09"), ("b", "added", "2026-11-09")])
+        self.assertEqual((rows[0]["current"], rows[0]["usual"], rows[0]["elevated"],
+                          rows[0]["offer_id"], rows[0]["offer_end"]),
+                         ("75000 points", "60000 points", "yes", "a@2026-10-01", "2026-12-31"))
+        self.assertIn("기록 2줄 추가", self.summary(output))
+
+    def test_unchanged_rerun_appends_nothing_and_keeps_bytes(self):
+        self.write_cards([make_card("a"), make_card("b")])
+        self.run_build()
+        before = self.log.read_bytes()
+        code, output = self.run_build(now="2026-11-10T18:00:00Z")
+        self.assertEqual(code, 0, output)
+        self.assertEqual(self.log.read_bytes(), before)
+        self.assertIn("기록 0줄 추가", self.summary(output))
+
+    def test_changes_append_one_row_for_that_card_only(self):
+        changes = {
+            "current": ("bonus.current.parts[0].value", 90000),
+            "usual": ("bonus.usual.parts[0].value", 50000),
+            "min_spend": ("bonus.current.min_spend", 5000),
+            "last_verified": ("last_verified", "2026-11-08"),
+            "offer_end": ("elevated.end", "2027-01-31"),
+            "elevated": ("elevated", None),
+        }
+        for field, (path, value) in changes.items():
+            with self.subTest(field=field):
+                self.log.unlink(missing_ok=True)
+                self.out.unlink(missing_ok=True)
+                self.write_cards([make_card("a"), make_card("b")])
+                self.run_build()
+                before = self.log.read_bytes()
+                self.write_cards([with_value(make_card("a"), path, value), make_card("b")])
+                code, output = self.run_build(now="2026-11-10T18:00:00Z")
+                self.assertEqual(code, 0, output)
+                self.assertTrue(self.log.read_bytes().startswith(before))  # append-only
+                rows = self.log_rows()
+                self.assertEqual(len(rows), 3)
+                self.assertEqual((rows[-1]["card_id"], rows[-1]["note"], rows[-1]["date"]),
+                                 ("a", "", "2026-11-10"))
+                self.assertNotEqual(rows[-1][field], rows[0][field])
+                self.assertIn("기록 1줄 추가", self.summary(output))
+
+    def test_part_order_change_only_appends_nothing(self):
+        two = [{"value": 130000, "unit": "points"}, {"value": 1, "unit": "free_night"}]
+        card = with_value(with_value(make_card("a"), "bonus.current.parts", two),
+                          "bonus.usual.parts", two)
+        self.write_cards([card])
+        self.run_build()
+        self.assertEqual(self.log_rows()[0]["current"], "1 free_night + 130000 points")
+        swapped = list(reversed(two))
+        self.write_cards([with_value(with_value(card, "bonus.current.parts", swapped),
+                                     "bonus.usual.parts", swapped)])
+        code, output = self.run_build(now="2026-11-10T18:00:00Z")
+        self.assertEqual(code, 0, output)
+        self.assertEqual(len(self.log_rows()), 1)
+
+    def test_removed_and_new_cards(self):
+        self.write_cards([make_card("a"), make_card("b")])
+        self.run_build()
+        self.write_cards([make_card("a"), make_card("c")])
+        code, output = self.run_build(now="2026-11-10T18:00:00Z")
+        self.assertEqual(code, 0, output)
+        rows = self.log_rows()[2:]
+        self.assertEqual([(r["card_id"], r["note"]) for r in rows],
+                         [("c", "added"), ("b", "removed")])
+        self.assertEqual((rows[1]["issuer"], rows[1]["current"]), ("Chase", ""))
+        code, _ = self.run_build(now="2026-11-11T18:00:00Z")
+        self.assertEqual(len(self.log_rows()), 4)  # "removed" is written once
+
+    def test_date_is_the_pacific_build_date(self):
+        self.write_cards([with_value(make_card(), "elevated.end", "2026-11-09")])
+        self.run_build(now="2026-11-10T07:59:59Z")  # 23:59:59 PST on 2026-11-09
+        self.run_build(now="2026-11-10T08:00:00Z")  # 00:00 PST 2026-11-10: offer auto-ends
+        rows = self.log_rows()
+        self.assertEqual([(r["date"], r["elevated"]) for r in rows],
+                         [("2026-11-09", "yes"), ("2026-11-10", "no")])
+
+    def test_header_is_written_once(self):
+        self.write_cards([make_card("a")])
+        self.run_build()
+        self.write_cards([with_value(make_card("a"), "bonus.current.min_spend", 5000)])
+        self.run_build(now="2026-11-10T18:00:00Z")
+        text = self.log.read_text(encoding="utf-8")
+        self.assertEqual(text.count("date,card_id"), 1)
+
+    def test_log_is_started_even_when_the_json_is_unchanged(self):
+        self.write_cards([make_card("a")])
+        self.run_build()
+        json_before = self.out.read_bytes()
+        self.log.unlink()
+        code, output = self.run_build(now="2026-11-10T18:00:00Z")
+        self.assertEqual(code, 0, output)
+        self.assertEqual(self.out.read_bytes(), json_before)
+        self.assertEqual([r["note"] for r in self.log_rows()], ["added"])
+        self.assertIn("JSON 변경 없음", output)
+
+    def test_empty_log_file_gets_a_header(self):
+        self.log.parent.mkdir(parents=True)
+        self.log.write_bytes(b"")
+        self.write_cards([make_card("a")])
+        code, output = self.run_build()
+        self.assertEqual(code, 0, output)
+        self.assertEqual(len(self.log_rows()), 1)
+
+    def test_validation_failure_leaves_the_log_alone(self):
+        self.write_cards([make_card("a")])
+        self.run_build()
+        before = self.log.read_bytes()
+        self.write_cards([with_value(make_card("a"), "bonus.current.min_spend", "4,000")])
+        code, _ = self.run_build(now="2026-11-10T18:00:00Z")
+        self.assertEqual(code, 1)
+        self.assertEqual(self.log.read_bytes(), before)
+
+    def test_malformed_log_stops_the_build_and_nothing_is_written(self):
+        self.write_cards([make_card("a")])
+        self.run_build()
+        json_before = self.out.read_bytes()
+        broken = b"date,card\n2026-11-09,a\n"
+        self.log.write_bytes(broken)
+        self.write_cards([with_value(make_card("a"), "name", "Renamed Card")])
+        code, output = self.run_build(now="2026-11-10T18:00:00Z")
+        self.assertEqual(code, 1)
+        self.assertEqual(self.log.read_bytes(), broken)
+        self.assertEqual(self.out.read_bytes(), json_before)
+        self.assertIn("[오류] ", output)
+        self.assertIn("보너스 관측 기록", output)
+        self.assertIn("바꾸지 않았습니다", output)
+
+    def test_non_utf8_log_stops_the_build(self):
+        self.log.parent.mkdir(parents=True)
+        self.log.write_bytes(b"\xff\xfe")
+        self.write_cards([make_card("a")])
+        code, output = self.run_build()
+        self.assertEqual(code, 1)
+        self.assertEqual(self.log.read_bytes(), b"\xff\xfe")
+        self.assertFalse(self.out.exists())
+        self.assertIn("[오류] ", output)
+
+    def test_log_save_failure_after_json_saved_says_so(self):
+        blocker = self.dir / "blocker"
+        blocker.write_text("not a folder", encoding="utf-8")
+        self.log = blocker / "bonus_log.csv"
+        self.write_cards([make_card("a")])
+        code, output = self.run_build()
+        self.assertEqual(code, 1)
+        self.assertTrue(self.out.exists())
+        self.assertIn("[오류] ", output)
+        self.assertIn("저장 실패", output)
+        self.assertNotIn("바꾸지 않았습니다", output)
+        self.assertIn("갱신됐지만", output)
+
+
 class GitCommitTimeTest(unittest.TestCase):
     def fake_runner(self, stdout="", error=None):
         calls = []
@@ -353,6 +528,7 @@ class DisplayPathTest(unittest.TestCase):
     def test_defaults_point_into_the_repo(self):
         self.assertEqual(build_cards.DEFAULT_DATA, ROOT / "data" / "cards.yaml")
         self.assertEqual(build_cards.DEFAULT_OUTPUT, ROOT / "docs" / "cards_v1.json")
+        self.assertEqual(build_cards.DEFAULT_BONUS_LOG, ROOT / "history" / "bonus_log.csv")
 
 
 if __name__ == "__main__":
