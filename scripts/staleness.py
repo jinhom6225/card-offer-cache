@@ -7,7 +7,9 @@ Sections (empty sections are skipped; nothing to report prints nothing):
   1. warnings written by build_cards.py (always)
   2. with --daily: cards whose last_verified is more than 7 days old
   3. with --daily: offers that auto-ended (reminder to clean elevated in cards.yaml)
-  4. with --daily: cards with no elevated block whose bonus.current differs from usual
+  4. with --daily: cards with no elevated block whose bonus.current is higher than usual
+     (parts.is_raise: a higher total in any unit, or a unit usual does not have; equal or
+     lower, e.g. a dropped unit with the rest unchanged, is not reported)
 
 Reads the built docs/cards_v1.json (already validated), not cards.yaml.
 """
@@ -19,7 +21,7 @@ from datetime import date
 from pathlib import Path
 
 from cardlib.fields import parse_date
-from cardlib.parts import format_parts, parts_key
+from cardlib.parts import format_parts, is_raise
 from cardlib.schema import today_pt
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -47,11 +49,16 @@ def ended_offers(payload):
 
 
 def unmarked_bonus_cards(payload):
-    """Cards with no offer (no elevated) whose bonus.current parts differ from usual."""
+    """Cards with no offer (no elevated) whose bonus.current is higher than usual.
+
+    Uses the same rule as the build warnings (``is_raise(usual, current)``): any unit
+    with a higher total, or a unit that usual does not have at all (e.g. points now
+    vs a free_night usually), counts as higher. Equal or lower bonuses are skipped.
+    """
     result = []
     for card in payload["cards"]:
         current, usual = card["bonus"]["current"]["parts"], card["bonus"]["usual"]["parts"]
-        if card.get("offer") is None and parts_key(current) != parts_key(usual):
+        if card.get("offer") is None and is_raise(usual, current):
             result.append({"id": card["id"], "name": card["name"],
                            "current": format_parts(current), "usual": format_parts(usual)})
     return result

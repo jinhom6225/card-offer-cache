@@ -61,14 +61,53 @@ class EndedOffersTest(unittest.TestCase):
 
 
 class UnmarkedHigherBonusTest(unittest.TestCase):
-    def test_lists_cards_without_offer_whose_current_differs_from_usual(self):
-        data = payload(card("plain", TODAY),
-                       card("forgot", TODAY, current=((90000, "points"),)),
-                       card("marked", TODAY, active_offer("marked"), current=((90000, "points"),)),
-                       card("ended", TODAY, ended_offer("ended"), current=((90000, "points"),)),
-                       card("reordered", TODAY, current=((1, "free_night"), (5, "points")),
-                            usual=((5.0, "points"), (1, "free_night"))))
-        self.assertEqual([c["id"] for c in staleness.unmarked_bonus_cards(data)], ["forgot"])
+    def unmarked_ids(self, *cards):
+        return [c["id"] for c in staleness.unmarked_bonus_cards(payload(*cards))]
+
+    def test_lists_cards_without_offer_whose_current_is_higher_than_usual(self):
+        self.assertEqual(self.unmarked_ids(
+            card("plain", TODAY),
+            card("forgot", TODAY, current=((90000, "points"),)),
+            card("marked", TODAY, active_offer("marked"), current=((90000, "points"),)),
+            card("ended", TODAY, ended_offer("ended"), current=((90000, "points"),)),
+            card("reordered", TODAY, current=((1, "free_night"), (5, "points")),
+                 usual=((5.0, "points"), (1, "free_night"))),
+        ), ["forgot"])
+
+    def test_lower_than_usual_is_not_listed(self):
+        self.assertEqual(self.unmarked_ids(
+            card("lower", TODAY, current=((50000, "miles"),), usual=((60000, "miles"),)),
+        ), [])
+
+    def test_equal_in_any_order_is_not_listed(self):
+        self.assertEqual(self.unmarked_ids(
+            card("same", TODAY, current=((60000, "points"),), usual=((60000.0, "points"),)),
+            card("swapped", TODAY, current=((1, "free_night"), (5, "points")),
+                 usual=((5, "points"), (1, "free_night"))),
+        ), [])
+
+    def test_new_unit_counts_as_higher(self):
+        self.assertEqual(self.unmarked_ids(
+            card("extra", TODAY, current=((60000, "points"), (1, "free_night"))),
+            card("switched", TODAY, current=((80000, "points"),), usual=((1, "free_night"),)),
+        ), ["extra", "switched"])
+
+    def test_dropped_unit_with_others_equal_is_not_listed(self):
+        self.assertEqual(self.unmarked_ids(
+            card("dropped", TODAY, current=((60000, "points"),),
+                 usual=((60000, "points"), (1, "free_night"))),
+        ), [])
+
+    def test_one_unit_higher_and_another_lower_is_listed(self):
+        self.assertEqual(self.unmarked_ids(
+            card("mixed", TODAY, current=((90000, "points"), (100, "cash")),
+                 usual=((60000, "points"), (200, "cash"))),
+        ), ["mixed"])
+
+    def test_elevated_active_is_not_listed_even_when_higher(self):
+        self.assertEqual(self.unmarked_ids(
+            card("marked", TODAY, active_offer("marked"), current=((90000, "points"),)),
+        ), [])
 
     def test_daily_report_section(self):
         data = payload(card("forgot", TODAY, current=((90000, "points"),)))
