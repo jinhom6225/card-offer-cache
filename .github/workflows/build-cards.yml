@@ -1,0 +1,215 @@
+name: Build cards JSON
+
+# data/cards.yaml -> docs/cards_v1.json (served by GitHub Pages from /docs on main).
+# Plan Phase 2 (카드 보너스 알림, card-offer-cache):
+#   - runs on every edit of data/**, once a day (auto-end of offers, staleness
+#     check) and by hand (force_fail checks the failure notice)
+#   - validation failure: docs/cards_v1.json is left as is, the error list goes
+#     to Telegram and the run fails
+#   - the bot commits docs/ only; it never edits data/cards.yaml
+#   - Telegram: every failure; a success summary for the daily run and manual
+#     runs; and any run that has a report (build warnings: D3, reopened offer,
+#     new start without a raise, removed card, first build). Plain text (no
+#     parse_mode) because messages carry values typed into cards.yaml. Skipped
+#     if the secrets are unset.
+#   - Security: no token at the workflow level (permissions: {}); only the build
+#     job gets contents: write. checkout keeps no credentials; the token is used
+#     only by the commit step's pull/push. Actions are pinned to commit SHAs and
+#     CI installs hash-pinned packages (requirements-ci.txt).
+#   - keepalive job re-enables this workflow so GitHub's 60-day inactivity
+#     pause on public-repo schedules never kicks in (same as lh-notice-cache)
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "data/**"
+      - "scripts/**"
+      - "requirements*.txt"
+      - ".github/workflows/build-cards.yml"
+  schedule:
+    # 10:23 UTC = 02:23 PST / 03:23 PDT (after Pacific midnight, so offers whose
+    # end date was yesterday are shown as ended the same morning) = 19:23 KST.
+    # At :23 rather than on the hour (GitHub drops on-the-hour runs more often).
+    - cron: "23 10 * * *"
+  workflow_dispatch:
+    inputs:
+      force_fail:
+        description: "Fail before building (checks the failure notice)"
+        type: boolean
+        default: false
+
+permissions: {}
+
+concurrency:
+  group: build-cards
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: Forced failure
+        if: inputs.force_fail
+        run: |
+          echo "force_fail=true: failing on purpose to check the Telegram failure notice"
+          exit 1
+
+      # Full history: data_updated_at is the last commit time of data/cards.yaml.
+      # ref: main (not the pushed sha): when several web edits queue up, each
+      # run starts from the tip, including the JSON the previous run committed,
+      # so its docs/ commit cannot conflict on pull --rebase.
+      # persist-credentials: false: the token is not left in .git/config for
+      # later steps (tests, build); only the commit step uses it.
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: false
+
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
+        with:
+          python-version: "3.12"
+
+      # Runtime packages only (no coverage), every file hash pinned.
+      - name: Install dependencies
+        id: install
+        run: python -m pip install --require-hashes -r requirements-ci.txt
+
+      - name: Unit tests
+        run: python -m unittest discover -s tests -v
+
+      # Runs even if the unit tests failed (a test also checks the real
+      # cards.yaml), so a bad edit always puts its error list in the notice.
+      # Build and later steps still run only when everything before passed.
+      - name: Validate data/cards.yaml
+        if: ${{ !cancelled() && steps.install.outcome == 'success' }}
+        run: |
+          set -euo pipefail
+          python scripts/validate.py data/cards.yaml 2>&1 | tee "${RUNNER_TEMP}/validate.log"
+
+      - name: Build docs/cards_v1.json
+        id: build
+        run: |
+          set -euo pipefail
+          log="${RUNNER_TEMP}/build.log"
+          python scripts/build_cards.py --data data/cards.yaml --output docs/cards_v1.json \
+            --warnings-file "${RUNNER_TEMP}/build_warnings.txt" 2>&1 | tee "${log}"
+          summary="$(grep -E '^요약: ' "${log}" | tail -1 || true)"
+          echo "summary=${summary}" >> "${GITHUB_OUTPUT}"
+
+      # Only docs/cards_v1.json is checked and committed. The token goes into
+      # the remote URL of pull/push only (works while the repo is private too);
+      # the URL is never printed (no set -x, no echo) and Actions masks the token.
+      - name: Commit docs if changed
+        id: commit
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          if [ -z "$(git status --porcelain -- docs/cards_v1.json)" ]; then
+            echo "docs/cards_v1.json unchanged."
+            echo "changed=false" >> "${GITHUB_OUTPUT}"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/cards_v1.json
+          git commit -m "chore: update cards json $(TZ=America/Los_Angeles date +%Y-%m-%dT%H:%M%z)"
+          remote="https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git pull --rebase "${remote}" main
+          git push "${remote}" HEAD:main
+          echo "changed=true" >> "${GITHUB_OUTPUT}"
+
+      # Build warnings on every run (push runs too); stale cards (last_verified
+      # > 7 days), auto-ended offers and unmarked higher bonuses on the daily
+      # run and manual runs.
+      - name: Report
+        id: report
+        env:
+          DAILY: ${{ github.event_name == 'workflow_dispatch' || github.event.schedule == '23 10 * * *' }}
+        run: |
+          set -euo pipefail
+          report="${RUNNER_TEMP}/report.txt"
+          args=(--cards docs/cards_v1.json --warnings-file "${RUNNER_TEMP}/build_warnings.txt")
+          if [ "${DAILY}" = "true" ]; then
+            args+=(--daily)
+          fi
+          python scripts/staleness.py "${args[@]}" > "${report}"
+          cat "${report}"
+          if [ -s "${report}" ]; then
+            echo "has_report=true" >> "${GITHUB_OUTPUT}"
+          else
+            echo "has_report=false" >> "${GITHUB_OUTPUT}"
+          fi
+
+      - name: Telegram notice
+        if: >-
+          always() && (job.status != 'success'
+          || github.event_name == 'workflow_dispatch'
+          || github.event.schedule == '23 10 * * *'
+          || steps.report.outputs.has_report == 'true')
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          STATUS: ${{ job.status }}
+          SUMMARY: ${{ steps.build.outputs.summary }}
+          CHANGED: ${{ steps.commit.outputs.changed }}
+          TRIGGER: ${{ github.event_name }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          PYTHONIOENCODING: utf-8
+        run: |
+          if [ "${STATUS}" = "success" ]; then
+            text="$(printf '[성공] card-offer-cache 빌드\n%s\nJSON 커밋: %s\n실행: %s' \
+              "${SUMMARY:-요약 없음}" "${CHANGED:-false}" "${TRIGGER}")"
+            if [ -s "${RUNNER_TEMP}/report.txt" ]; then
+              text="$(printf '%s\n\n%s' "${text}" "$(cat "${RUNNER_TEMP}/report.txt")")"
+            fi
+          else
+            errors="$(cat "${RUNNER_TEMP}/validate.log" "${RUNNER_TEMP}/build.log" 2>/dev/null \
+              | grep -E '^\[오류\]' || true)"
+            kept=""
+            if [ "${CHANGED}" != "true" ]; then
+              kept="앱 데이터(docs/cards_v1.json)는 바뀌지 않았습니다."
+            fi
+            text="$(printf '[실패] card-offer-cache 빌드 실패 (%s, %s)\n%s\n%s\n%s' \
+              "${STATUS}" "${TRIGGER}" "${kept}" \
+              "${errors:-오류 목록 없음: 테스트·설치 단계일 수 있습니다. 실행 로그를 보세요.}" \
+              "${RUN_URL}")"
+          fi
+          # Telegram allows 4096 characters; cut by characters (not bytes) so
+          # Korean text never ends in half a UTF-8 sequence.
+          text="$(printf '%s' "${text}" | python3 -c 'import sys; t = sys.stdin.read(); print(t if len(t) <= 3900 else t[:3900] + "\n…(길어서 잘림, 실행 로그 참고)")')"
+          echo "${text}"
+          if [ -z "${TELEGRAM_BOT_TOKEN}" ] || [ -z "${TELEGRAM_CHAT_ID}" ]; then
+            echo "::warning::TELEGRAM_BOT_TOKEN or TELEGRAM_CHAT_ID is not set; Telegram notices are off"
+            exit 0
+          fi
+          curl --silent --show-error --fail --max-time 15 -o /dev/null \
+            -d "chat_id=${TELEGRAM_CHAT_ID}" --data-urlencode "text=${text}" \
+            "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+            || echo "::warning::Telegram send failed"
+
+  # Re-enabling an enabled workflow is a no-op that counts as activity, so
+  # the schedule is not paused after 60 quiet days. Independent of the build
+  # job so it runs even when building fails.
+  keepalive:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      actions: write
+    steps:
+      - name: Re-enable this workflow
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        run: |
+          gh api --method PUT "repos/${REPO}/actions/workflows/build-cards.yml/enable" --silent \
+            && echo "keepalive: workflow re-enabled" \
+            || echo "::warning::keepalive: could not re-enable the workflow"
