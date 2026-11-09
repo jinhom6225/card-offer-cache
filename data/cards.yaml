@@ -1,20 +1,20 @@
 # 카드 보너스 알림 — 카드 데이터 (진호님이 GitHub 웹에서 직접 고치는 파일)
 # 편집 방법·항목 설명은 README.md를 보세요. 저장(커밋)하면 검증기가 자동으로 확인합니다.
 #
-# !!! 아래 2장은 형식 확인용 SAMPLE(가짜) 데이터입니다 !!!
-# 카드 이름·보너스·연회비 등 모든 숫자는 지어낸 값이며 실제 오퍼가 아닙니다.
-# Phase 4에서 실제 30종 데이터로 교체합니다.
+# 카드 30종 (2026-11-10 진호님 승인, Phase 4). 숫자는 각 발급사 공식 페이지에서 옮긴 사실이고 설명은 직접 쓴 글입니다.
+# 평소 보너스(bonus.usual)는 오퍼 기록 출처 2곳 이상으로 확인한 값입니다. 기준: 종료일 없이 몇 달째 걸린 오퍼 = 평소(기준 A).
+# 검수 기록: Dr.Myung tasks/2026-11-09-credit-card-offers-app/phase4_*.md
 
 cards:
-  # --- SAMPLE 1: 개인 카드, "평소보다 높음" 상태(elevated 있음), 보너스가 여러 부분 ---
-  - id: sample-travel-card
-    name: Sample Travel Rewards Card (SAMPLE)
+  # ===================== Chase — 개인 =====================
+  - id: chase-sapphire-preferred
+    name: Chase Sapphire Preferred® Credit Card
     issuer: Chase
     segment: personal
-    official_url: https://creditcards.chase.com/
-    last_verified: 2026-11-08
+    official_url: https://creditcards.chase.com/rewards-credit-cards/sapphire/preferred
+    last_verified: 2026-11-09
     sources:
-      - https://creditcards.chase.com/
+      - https://creditcards.chase.com/rewards-credit-cards/sapphire/preferred
     annual_fee:
       amount: 95
       first_year_waived: false
@@ -22,48 +22,740 @@ cards:
     bonus:
       current:
         parts:
-          - value: 80000
+          - value: 75000
             unit: points
-          - value: 1
-            unit: free_night
-        min_spend: 4000
+        min_spend: 5000
         spend_months: 3
-        note_en: "SAMPLE: fictional bonus for format testing only."
-        note_ko: "샘플: 형식 확인용 가짜 보너스입니다."
       usual:
         parts:
-          - value: 60000
+          - value: 75000
             unit: points
-        note_en: ""
-        note_ko: ""
-    elevated:
-      start: 2026-11-01
-      end: 2026-12-31
     earn:
-      - category_en: Travel
-        category_ko: 여행
+      - category_en: Chase Travel bookings
+        category_ko: Chase Travel 예약
+        rate: 5
+        unit: points
+      - category_en: Dining
+        category_ko: 식당
         rate: 3
         unit: points
+      - category_en: Gas, EV charging, select vacation rentals
+        category_ko: 주유소·EV 충전·일부 휴가 숙소
+        rate: 3
+        unit: points
+      - category_en: Select streaming and online grocery
+        category_ko: 일부 스트리밍·온라인 식료품
+        rate: 3
+        unit: points
+      - category_en: Other travel
+        category_ko: 그 밖의 여행
+        rate: 2
+        unit: points
       - category_en: Everything else
-        category_ko: 기타 전부
+        category_ko: 그 외 전부
         rate: 1
         unit: points
     benefits:
-      - en: "SAMPLE: trip delay coverage"
-        ko: "샘플: 여행 지연 보상"
+      - en: Up to $100 a year in hotel credit via Chase Travel
+        ko: Chase Travel 호텔 예약 시 연 최대 $100 크레딧
+      - en: Transfer points to airline and hotel partners
+        ko: 항공·호텔 파트너로 포인트 이전
+      - en: Primary rental car coverage up to $60,000
+        ko: 렌터카 1차 보험(최대 $60,000)
+      - en: Trip delay, cancellation and baggage coverage
+        ko: 여행 지연·취소·수하물 보상
+      - en: Global Entry / TSA PreCheck / NEXUS fee credit up to $120
+        ko: Global Entry·TSA PreCheck·NEXUS 수수료 최대 $120 환급
 
-  # --- SAMPLE 2: 비즈니스 카드, 평소 보너스(elevated 없음), 한국어 설명 일부 비움 ---
-  - id: sample-business-cash
-    name: Sample Business Cash Card (SAMPLE)
-    issuer: American Express
-    segment: business
-    official_url: https://www.americanexpress.com/
-    last_verified: 2026-11-08
+  - id: chase-sapphire-reserve
+    name: Chase Sapphire Reserve® Credit Card
+    issuer: Chase
+    segment: personal
+    official_url: https://creditcards.chase.com/rewards-credit-cards/sapphire/reserve
+    last_verified: 2026-11-09
     sources:
-      - https://www.americanexpress.com/
+      - https://creditcards.chase.com/rewards-credit-cards/sapphire/reserve
+    annual_fee:
+      amount: 795
+      first_year_waived: false
+    foreign_tx_fee_pct: 0
+    bonus:
+      current:
+        parts:
+          - value: 100000
+            unit: points
+        min_spend: 6000
+        spend_months: 3
+      usual:
+        parts:
+          - value: 100000
+            unit: points
+    earn:
+      - category_en: Chase Travel bookings (incl. The Edit)
+        category_ko: Chase Travel 예약(The Edit 포함)
+        rate: 8
+        unit: points
+      - category_en: Flights booked directly
+        category_ko: 항공권 직접 예약
+        rate: 4
+        unit: points
+      - category_en: Hotels booked directly
+        category_ko: 호텔 직접 예약
+        rate: 4
+        unit: points
+      - category_en: Dining
+        category_ko: 식당
+        rate: 3
+        unit: points
+      - category_en: Everything else
+        category_ko: 그 외 전부
+        rate: 1
+        unit: points
+    benefits:
+      - en: $300 yearly travel credit
+        ko: 연 $300 여행 크레딧
+      - en: Up to $500 a year for stays booked with The Edit
+        ko: The Edit 호텔 숙박 연 최대 $500 크레딧
+      - en: Priority Pass and Sapphire Lounge access
+        ko: Priority Pass·Sapphire 라운지 이용
+      - en: Dining and StubHub credits, up to $300 a year each
+        ko: 다이닝·StubHub 크레딧 각각 연 최대 $300
+      - en: Primary rental car coverage up to $75,000
+        ko: 렌터카 1차 보험(최대 $75,000)
+      - en: Global Entry / TSA PreCheck / NEXUS fee credit up to $120
+        ko: Global Entry·TSA PreCheck·NEXUS 수수료 최대 $120 환급
+
+  - id: chase-freedom-unlimited
+    name: Chase Freedom Unlimited® Credit Card
+    issuer: Chase
+    segment: personal
+    official_url: https://creditcards.chase.com/cash-back-credit-cards/freedom/unlimited
+    last_verified: 2026-11-09
+    sources:
+      - https://creditcards.chase.com/cash-back-credit-cards/freedom/unlimited
     annual_fee:
       amount: 0
       first_year_waived: false
+    foreign_tx_fee_pct: 3
+    bonus:
+      current:
+        parts:
+          - value: 200
+            unit: cash
+        min_spend: 500
+        spend_months: 3
+      usual:
+        parts:
+          - value: 200
+            unit: cash
+    earn:
+      - category_en: Chase Travel bookings
+        category_ko: Chase Travel 예약
+        rate: 5
+        unit: cash
+      - category_en: Dining
+        category_ko: 식당
+        rate: 3
+        unit: cash
+      - category_en: Drugstores
+        category_ko: 약국
+        rate: 3
+        unit: cash
+      - category_en: Everything else
+        category_ko: 그 외 전부
+        rate: 1.5
+        unit: cash
+    benefits:
+      - en: Purchase protection, 120 days up to $500 per item
+        ko: 구매 보호(120일, 건당 최대 $500)
+      - en: Extended warranty, one extra year
+        ko: 제조사 보증 1년 연장
+      - en: Trip cancellation and interruption coverage
+        ko: 여행 취소·중단 보상
+      - en: 6 months of free DashPass
+        ko: DashPass 6개월 무료
+
+  - id: chase-freedom-flex
+    name: Chase Freedom Flex® Credit Card
+    issuer: Chase
+    segment: personal
+    official_url: https://creditcards.chase.com/cash-back-credit-cards/freedom/flex
+    last_verified: 2026-11-09
+    sources:
+      - https://creditcards.chase.com/cash-back-credit-cards/freedom/flex
+    annual_fee:
+      amount: 0
+      first_year_waived: false
+    foreign_tx_fee_pct: 0
+    bonus:
+      current:
+        parts:
+          - value: 200
+            unit: cash
+        min_spend: 500
+        spend_months: 3
+      usual:
+        parts:
+          - value: 200
+            unit: cash
+    earn:
+      - category_en: Rotating quarterly categories (activate; first $1,500 per quarter)
+        category_ko: 분기별 순환 카테고리(활성화 필요, 분기당 첫 $1,500)
+        rate: 5
+        unit: cash
+      - category_en: Chase Travel bookings
+        category_ko: Chase Travel 예약
+        rate: 5
+        unit: cash
+      - category_en: Dining
+        category_ko: 식당
+        rate: 3
+        unit: cash
+      - category_en: Drugstores
+        category_ko: 약국
+        rate: 3
+        unit: cash
+      - category_en: Everything else
+        category_ko: 그 외 전부
+        rate: 1
+        unit: cash
+    benefits:
+      - en: No foreign transaction fee
+        ko: 해외 결제 수수료 없음
+      - en: Purchase protection, 120 days up to $500 per item
+        ko: 구매 보호(120일, 건당 최대 $500)
+      - en: Extended warranty, one extra year
+        ko: 제조사 보증 1년 연장
+      - en: Trip cancellation and interruption coverage
+        ko: 여행 취소·중단 보상
+
+  - id: chase-united-explorer
+    name: United℠ Explorer Card
+    issuer: Chase
+    segment: personal
+    official_url: https://creditcards.chase.com/travel-credit-cards/united/united-explorer
+    last_verified: 2026-11-09
+    sources:
+      - https://creditcards.chase.com/travel-credit-cards/united/united-explorer
+    annual_fee:
+      amount: 150
+      first_year_waived: true
+    foreign_tx_fee_pct: 0
+    bonus:
+      current:
+        parts:
+          - value: 70000
+            unit: miles
+        min_spend: 3000
+        spend_months: 3
+        note_en: "Plus 10,000 miles for adding an authorized user in the first 3 months (up to 80,000 total)."
+        note_ko: "첫 3개월 안에 추가 카드 사용자를 넣으면 10,000마일 더(합계 최대 80,000)."
+      usual:
+        # 진호님 결정 2026-11-10: 평소는 지출 보너스만 50,000 (추가 사용자 10,000은 별도로 표기되는 것이 관례)
+        parts:
+          - value: 50000
+            unit: miles
+        note_en: "Usually quoted as 50,000 miles after spend; the authorized-user bonus is listed separately."
+        note_ko: "평소에는 지출 보너스 50,000마일, 추가 사용자 보너스는 따로 표기."
+    elevated:
+      start: 2026-11-09
+      end: null
+    earn:
+      - category_en: United purchases (flights earn more with MileagePlus base miles)
+        category_ko: United 구매(항공권은 MileagePlus 기본 적립이 더해짐)
+        rate: 3
+        unit: miles
+      - category_en: Hotels booked directly
+        category_ko: 호텔 직접 예약
+        rate: 2
+        unit: miles
+      - category_en: Dining
+        category_ko: 식당
+        rate: 2
+        unit: miles
+      - category_en: Everything else
+        category_ko: 그 외 전부
+        rate: 1
+        unit: miles
+    benefits:
+      - en: Free first checked bag for you and one companion
+        ko: 본인·동반자 1명 첫 위탁 수하물 무료
+      - en: Two United Club one-time passes each year
+        ko: 매년 United Club 1회 이용권 2장
+      - en: Group 2 priority boarding
+        ko: 2그룹 우선 탑승
+      - en: Primary rental car coverage up to $60,000
+        ko: 렌터카 1차 보험(최대 $60,000)
+      - en: Global Entry / TSA PreCheck / NEXUS fee credit up to $120
+        ko: Global Entry·TSA PreCheck·NEXUS 수수료 최대 $120 환급
+
+  - id: chase-southwest-rapid-rewards-plus
+    name: Southwest Rapid Rewards® Plus Credit Card
+    issuer: Chase
+    segment: personal
+    official_url: https://creditcards.chase.com/travel-credit-cards/southwest/plus
+    last_verified: 2026-11-09
+    sources:
+      - https://creditcards.chase.com/travel-credit-cards/southwest/plus
+    annual_fee:
+      amount: 99
+      first_year_waived: false
+    foreign_tx_fee_pct: 0
+    bonus:
+      current:
+        parts:
+          - value: 80000
+            unit: points
+        min_spend: 1000
+        spend_months: 3
+        note_en: "Limited-time offer, ends December 2, 2026."
+        note_ko: "기간 한정 오퍼, 2026-12-02 종료."
+      usual:
+        # 진호님 결정 2026-11-10 (오퍼 기록 2곳 이상 확인)
+        parts:
+          - value: 50000
+            unit: points
+    elevated:
+      start: 2026-11-09
+      end: 2026-12-02
+    earn:
+      - category_en: Southwest Airlines purchases
+        category_ko: Southwest Airlines 구매
+        rate: 2
+        unit: points
+      - category_en: Gas stations and grocery stores (first $5,000 a year combined)
+        category_ko: 주유소·식료품점(합산 연 첫 $5,000)
+        rate: 2
+        unit: points
+      - category_en: Everything else
+        category_ko: 그 외 전부
+        rate: 1
+        unit: points
+    benefits:
+      - en: 3,000 bonus points every card anniversary
+        ko: 카드 갱신일마다 3,000포인트
+      - en: First checked bag free for you and up to 8 companions
+        ko: 본인과 같은 예약 최대 8명 첫 위탁 수하물 무료
+      - en: 10% flight discount code each year
+        ko: 매년 항공권 10% 할인 코드
+      - en: Group 5 boarding
+        ko: 5그룹 탑승
+      - en: 25% back on inflight purchases
+        ko: 기내 구매 25% 환급
+
+  - id: chase-marriott-bonvoy-boundless
+    name: Marriott Bonvoy Boundless® Credit Card
+    issuer: Chase
+    segment: personal
+    official_url: https://creditcards.chase.com/travel-credit-cards/marriott-bonvoy/boundless
+    last_verified: 2026-11-09
+    sources:
+      - https://creditcards.chase.com/travel-credit-cards/marriott-bonvoy/boundless
+    annual_fee:
+      amount: 95
+      first_year_waived: false
+    foreign_tx_fee_pct: 0
+    bonus:
+      current:
+        parts:
+          - value: 200000
+            unit: points
+        min_spend: 3000
+        spend_months: 3
+        note_en: "Limited-time offer, ends November 11, 2026. The up-to-$100 airline credit is a separate cardmember offer, not part of the bonus."
+        note_ko: "기간 한정 오퍼, 2026-11-11 종료. 최대 $100 항공 크레딧은 보너스가 아닌 별도 회원 혜택."
+      usual:
+        # 진호님 결정 2026-11-10 (오퍼 기록 2곳 이상 확인)
+        parts:
+          - value: 3
+            unit: free_night
+        note_en: "Each free night award is good for a night costing up to 50,000 points."
+        note_ko: "무료 숙박권 1장당 50,000포인트 이하 숙박 1박."
+    elevated:
+      start: 2026-11-09
+      end: 2026-11-11
+    earn:
+      - category_en: Marriott Bonvoy hotels (more with member and status points)
+        category_ko: Marriott Bonvoy 호텔(회원·등급 적립이 더해짐)
+        rate: 6
+        unit: points
+      - category_en: Grocery, gas and dining (first $6,000 a year combined)
+        category_ko: 식료품·주유·식당(합산 연 첫 $6,000)
+        rate: 3
+        unit: points
+      - category_en: Everything else
+        category_ko: 그 외 전부
+        rate: 2
+        unit: points
+    benefits:
+      - en: Free night each year (up to 35,000 points)
+        ko: 매년 무료 숙박 1박(35,000포인트 이하 호텔)
+      - en: Automatic Silver Elite status
+        ko: Silver Elite 등급 자동 부여
+      - en: 15 Elite Night Credits each year
+        ko: 매년 Elite Night Credit 15박
+      - en: Up to $100 in airline credits through June 2027
+        ko: 2027년 6월까지 항공 크레딧 최대 $100
+
+  - id: chase-ihg-one-rewards-premier
+    name: IHG One Rewards Premier Credit Card
+    issuer: Chase
+    segment: personal
+    official_url: https://creditcards.chase.com/travel-credit-cards/ihg-rewards-club/premier
+    last_verified: 2026-11-09
+    sources:
+      - https://creditcards.chase.com/travel-credit-cards/ihg-rewards-club/premier
+    annual_fee:
+      amount: 150
+      first_year_waived: false
+    foreign_tx_fee_pct: 0
+    bonus:
+      current:
+        parts:
+          - value: 180000
+            unit: points
+        min_spend: 3000
+        spend_months: 3
+        note_en: "Plus 10,000 points for adding an authorized user in the first 3 months. Apply by November 18, 2026."
+        note_ko: "첫 3개월 안에 추가 카드 사용자를 넣으면 10,000포인트 더. 2026-11-18까지 신청."
+      usual:
+        # 진호님 결정 2026-11-10 (오퍼 기록 2곳 이상 확인)
+        parts:
+          - value: 140000
+            unit: points
+    elevated:
+      start: 2026-11-09
+      end: 2026-11-18
+    earn:
+      - category_en: IHG hotels (more with member and status points)
+        category_ko: IHG 호텔(회원·등급 적립이 더해짐)
+        rate: 10
+        unit: points
+      - category_en: Flights booked directly, car rentals, dining, grocery, gas
+        category_ko: 항공권 직접 예약·렌터카·식당·식료품·주유
+        rate: 5
+        unit: points
+      - category_en: Everything else
+        category_ko: 그 외 전부
+        rate: 3
+        unit: points
+    benefits:
+      - en: Free night each year (up to 50,000 points)
+        ko: 매년 무료 숙박 1박(50,000포인트 이하 호텔)
+      - en: Automatic Gold Elite status
+        ko: Gold Elite 등급 자동 부여
+      - en: $100 airline credit each year through 2027 (after $250 on flights)
+        ko: 2027년까지 매년 항공 크레딧 $100(항공권 $250 이상 결제 시)
+      - en: Up to $100 a year in IHG food and drink vouchers
+        ko: IHG 호텔 식음료 바우처 연 최대 $100
+      - en: Global Entry / TSA PreCheck / NEXUS fee credit up to $120
+        ko: Global Entry·TSA PreCheck·NEXUS 수수료 최대 $120 환급
+
+  - id: chase-world-of-hyatt
+    name: World of Hyatt Credit Card
+    issuer: Chase
+    segment: personal
+    official_url: https://creditcards.chase.com/travel-credit-cards/world-of-hyatt-credit-card
+    last_verified: 2026-11-09
+    sources:
+      - https://creditcards.chase.com/travel-credit-cards/world-of-hyatt-credit-card
+    annual_fee:
+      amount: 95
+      first_year_waived: false
+    foreign_tx_fee_pct: 0
+    bonus:
+      current:
+        parts:
+          - value: 4
+            unit: free_night
+        min_spend: 5000
+        spend_months: 3
+        note_en: "Free nights at Category 1-4 Hyatt hotels. Labeled a limited-time offer on the page."
+        note_ko: "Hyatt 1~4등급 호텔 무료 숙박. 페이지에 기간 한정 오퍼로 표시됨."
+      usual:
+        # 진호님 결정 2026-11-10 (오퍼 기록 2곳 이상 확인). 종료일은 카드사 페이지에 없어 비워 둠.
+        parts:
+          - value: 30000
+            unit: points
+        note_en: "Plus up to 30,000 more: 2 extra points per $1 on up to $15,000 of purchases that normally earn 1 point, in the first 6 months."
+        note_ko: "첫 6개월 동안 원래 1배 적립되는 구매 최대 $15,000에 1달러당 2포인트 추가(최대 30,000포인트 더)."
+    elevated:
+      start: 2026-11-09
+      end: null
+    earn:
+      - category_en: Hyatt hotels (more with member base points)
+        category_ko: Hyatt 호텔(회원 기본 적립이 더해짐)
+        rate: 4
+        unit: points
+      - category_en: Dining, airline tickets bought directly, local transit, gyms
+        category_ko: 식당·항공권 직접 구매·대중교통·헬스장
+        rate: 2
+        unit: points
+      - category_en: Everything else
+        category_ko: 그 외 전부
+        rate: 1
+        unit: points
+    benefits:
+      - en: Free night each year (Category 1-4)
+        ko: 매년 무료 숙박 1박(1~4등급 호텔)
+      - en: Extra free night after $15,000 spend in a year
+        ko: 연 $15,000 사용 시 무료 숙박 1박 추가
+      - en: Discoverist status while you hold the card
+        ko: 카드 보유 중 Discoverist 등급
+      - en: 5 tier-qualifying night credits each year
+        ko: 매년 등급 산정 숙박 5박 인정
+
+  # ===================== Chase — 비즈니스 =====================
+  - id: chase-ink-business-preferred
+    name: Ink Business Preferred® Credit Card
+    issuer: Chase
+    segment: business
+    official_url: https://creditcards.chase.com/business-credit-cards/ink/business-preferred
+    last_verified: 2026-11-09
+    sources:
+      - https://creditcards.chase.com/business-credit-cards/ink/business-preferred
+    annual_fee:
+      amount: 95
+      first_year_waived: false
+    foreign_tx_fee_pct: 0
+    bonus:
+      current:
+        parts:
+          - value: 100000
+            unit: points
+        min_spend: 8000
+        spend_months: 3
+      usual:
+        parts:
+          - value: 100000
+            unit: points
+    earn:
+      - category_en: Travel, shipping, internet/cable/phone, social and search ads (first $150,000 a year combined)
+        category_ko: 여행·배송·인터넷/케이블/전화·SNS/검색 광고(합산 연 첫 $150,000)
+        rate: 3
+        unit: points
+      - category_en: Everything else
+        category_ko: 그 외 전부
+        rate: 1
+        unit: points
+    benefits:
+      - en: Cell phone protection up to $1,000 per claim
+        ko: 휴대폰 보험(건당 최대 $1,000)
+      - en: Primary rental car coverage for business rentals
+        ko: 업무용 렌터카 1차 보험
+      - en: Transfer points to airline and hotel partners
+        ko: 항공·호텔 파트너로 포인트 이전
+      - en: Employee cards at no extra cost
+        ko: 직원 카드 추가 비용 없음
+
+  - id: chase-ink-business-cash
+    name: Ink Business Cash® Credit Card
+    issuer: Chase
+    segment: business
+    official_url: https://creditcards.chase.com/business-credit-cards/ink/cash
+    last_verified: 2026-11-09
+    sources:
+      - https://creditcards.chase.com/business-credit-cards/ink/cash
+    annual_fee:
+      amount: 0
+      first_year_waived: false
+    foreign_tx_fee_pct: 3
+    bonus:
+      current:
+        parts:
+          - value: 750
+            unit: cash
+        min_spend: 6000
+        spend_months: 3
+      usual:
+        parts:
+          - value: 750
+            unit: cash
+    earn:
+      - category_en: Office supply stores, internet/cable/phone (first $25,000 a year combined)
+        category_ko: 사무용품점·인터넷/케이블/전화(합산 연 첫 $25,000)
+        rate: 5
+        unit: cash
+      - category_en: Gas stations and restaurants (first $25,000 a year combined)
+        category_ko: 주유소·식당(합산 연 첫 $25,000)
+        rate: 2
+        unit: cash
+      - category_en: Everything else
+        category_ko: 그 외 전부
+        rate: 1
+        unit: cash
+    benefits:
+      - en: Primary rental car coverage for business rentals
+        ko: 업무용 렌터카 1차 보험
+      - en: Purchase protection and extended warranty
+        ko: 구매 보호·제조사 보증 연장
+      - en: 3 months of free Instacart+ with monthly credit
+        ko: Instacart+ 3개월 무료(월 크레딧 포함)
+
+  - id: chase-ink-business-unlimited
+    name: Ink Business Unlimited® Credit Card
+    issuer: Chase
+    segment: business
+    official_url: https://creditcards.chase.com/business-credit-cards/ink/unlimited
+    last_verified: 2026-11-09
+    sources:
+      - https://creditcards.chase.com/business-credit-cards/ink/unlimited
+    annual_fee:
+      amount: 0
+      first_year_waived: false
+    foreign_tx_fee_pct: 3
+    bonus:
+      current:
+        parts:
+          - value: 750
+            unit: cash
+        min_spend: 6000
+        spend_months: 3
+      usual:
+        parts:
+          - value: 750
+            unit: cash
+    earn:
+      - category_en: Every purchase
+        category_ko: 모든 구매
+        rate: 1.5
+        unit: cash
+    benefits:
+      - en: Primary rental car coverage for business rentals
+        ko: 업무용 렌터카 1차 보험
+      - en: Purchase protection and extended warranty
+        ko: 구매 보호·제조사 보증 연장
+      - en: 3 months of free Instacart+ with monthly credit
+        ko: Instacart+ 3개월 무료(월 크레딧 포함)
+
+  # ===================== American Express — 개인 =====================
+  - id: amex-platinum
+    name: The Platinum Card® from American Express
+    issuer: American Express
+    segment: personal
+    official_url: https://www.americanexpress.com/us/credit-cards/card/platinum/
+    last_verified: 2026-11-09
+    sources:
+      - https://www.americanexpress.com/us/credit-cards/card/platinum/
+    annual_fee:
+      amount: 895
+      first_year_waived: false
+    foreign_tx_fee_pct: 0
+    bonus:
+      current:
+        parts:
+          - value: 175000
+            unit: points
+        min_spend: 12000
+        spend_months: 6
+        note_en: "Top of the range shown on the public page. Amex tells you your exact amount after you apply, and it can be lower."
+        note_ko: "공식 페이지에 보이는 최대치. 정확한 금액은 신청 후 Amex가 알려 주며 더 낮을 수 있음."
+      usual:
+        # 진호님 승인 2026-11-10 (기준 A: 종료일 없이 오래 걸린 최대치 = 평소) — sources: upgradedpoints.com·awardwallet.com 오퍼 기록. 공개 페이지 '최대 175,000'이 2025-06부터 계속 표시(2026-02 최소 지출 $8,000→$12,000). 그 전 고정 80,000은 옛 기준이라 안 씀.
+        parts:
+          - value: 175000
+            unit: points
+    earn:
+      - category_en: Flights booked directly with airlines or via Amex Travel (first $500,000 a year)
+        category_ko: 항공사 직접·Amex Travel 항공권(연 첫 $500,000)
+        rate: 5
+        unit: points
+      - category_en: Prepaid hotels booked via Amex Travel
+        category_ko: Amex Travel 선결제 호텔
+        rate: 5
+        unit: points
+      - category_en: Everything else
+        category_ko: 그 외 전부
+        rate: 1
+        unit: points
+    benefits:
+      - en: Up to $600 a year for prepaid Fine Hotels + Resorts or The Hotel Collection stays ($300 per half-year)
+        ko: Fine Hotels + Resorts·The Hotel Collection 선결제 숙박 연 최대 $600(반기 $300)
+      - en: Centurion, Priority Pass and other lounges, plus 10 Delta Sky Club visits a year on Delta flights
+        ko: Centurion·Priority Pass 등 라운지, Delta 탑승 시 Sky Club 연 10회
+      - en: Up to $200 a year in Uber Cash for U.S. rides and orders
+        ko: 미국 Uber 이용 시 연 최대 $200 Uber Cash
+      - en: Up to $200 a year for incidental fees on one chosen airline
+        ko: 선택한 항공사 1곳 부대 비용 연 최대 $200
+      - en: Up to $400 a year at Resy restaurants ($100 per quarter, enrollment required)
+        ko: Resy 식당 연 최대 $400(분기 $100, 등록 필요)
+      - en: Up to $300 a year for digital entertainment ($25 a month, enrollment required)
+        ko: 디지털 엔터테인먼트 연 최대 $300(월 $25, 등록 필요)
+
+  - id: amex-gold
+    name: American Express® Gold Card
+    issuer: American Express
+    segment: personal
+    official_url: https://www.americanexpress.com/us/credit-cards/card/gold-card/
+    last_verified: 2026-11-09
+    sources:
+      - https://www.americanexpress.com/us/credit-cards/card/gold-card/
+    annual_fee:
+      amount: 325
+      first_year_waived: false
+    foreign_tx_fee_pct: 0
+    bonus:
+      current:
+        parts:
+          - value: 100000
+            unit: points
+        min_spend: 8000
+        spend_months: 6
+        note_en: "Top of the range shown on the public page. Amex tells you your exact amount after you apply, and it can be lower."
+        note_ko: "공식 페이지에 보이는 최대치. 정확한 금액은 신청 후 Amex가 알려 주며 더 낮을 수 있음."
+      usual:
+        # 진호님 승인 2026-11-10 (기준 A: 종료일 없이 오래 걸린 최대치 = 평소) — sources: upgradedpoints.com·awardwallet.com 오퍼 기록. 공개 페이지 '최대 100,000'이 2025-06부터 계속 표시(2026-04 최소 지출 $6,000→$8,000). 그 전 고정 60,000은 옛 기준이라 안 씀.
+        parts:
+          - value: 100000
+            unit: points
+    earn:
+      - category_en: Prepaid hotels booked via Amex Travel
+        category_ko: Amex Travel 선결제 호텔
+        rate: 5
+        unit: points
+      - category_en: Restaurants worldwide (first $50,000 a year)
+        category_ko: 전 세계 식당(연 첫 $50,000)
+        rate: 4
+        unit: points
+      - category_en: U.S. supermarkets (first $25,000 a year)
+        category_ko: 미국 슈퍼마켓(연 첫 $25,000)
+        rate: 4
+        unit: points
+      - category_en: Flights booked directly with airlines or via Amex Travel
+        category_ko: 항공사 직접·Amex Travel 항공권
+        rate: 3
+        unit: points
+      - category_en: Prepaid car rentals and cruises via Amex Travel
+        category_ko: Amex Travel 선결제 렌터카·크루즈
+        rate: 2
+        unit: points
+      - category_en: Everything else
+        category_ko: 그 외 전부
+        rate: 1
+        unit: points
+    benefits:
+      - en: Up to $120 a year in dining credits at select partners ($10 a month, enrollment required)
+        ko: 지정 식당·배달 파트너 연 최대 $120(월 $10, 등록 필요)
+      - en: Up to $120 a year in Uber Cash ($10 a month, U.S.)
+        ko: 미국 Uber 이용 시 연 최대 $120 Uber Cash(월 $10)
+      - en: Up to $100 a year at Resy restaurants ($50 per half-year, enrollment required)
+        ko: Resy 식당 연 최대 $100(반기 $50, 등록 필요)
+      - en: Up to $84 a year at U.S. Dunkin' ($7 a month, enrollment required)
+        ko: 미국 Dunkin' 연 최대 $84(월 $7, 등록 필요)
+      - en: $100 property credit on The Hotel Collection stays of 2+ nights
+        ko: The Hotel Collection 2박 이상 예약 시 호텔 내 사용 $100 크레딧
+
+  - id: amex-blue-cash-preferred
+    name: Blue Cash Preferred® Card from American Express
+    issuer: American Express
+    segment: personal
+    official_url: https://www.americanexpress.com/us/credit-cards/card/blue-cash-preferred/
+    last_verified: 2026-11-09
+    sources:
+      - https://www.americanexpress.com/us/credit-cards/card/blue-cash-preferred/
+    annual_fee:
+      amount: 95
+      first_year_waived: true
     foreign_tx_fee_pct: 2.7
     bonus:
       current:
@@ -71,16 +763,874 @@ cards:
           - value: 250
             unit: cash
         min_spend: 3000
-        spend_months: 3
-        note_en: "SAMPLE: fictional statement credit."
-        note_ko: ""
+        spend_months: 6
+        note_en: "Paid as Reward Dollars, which can be redeemed as a statement credit."
+        note_ko: "Reward Dollars로 지급되며 청구서 차감 등으로 사용."
       usual:
+        # 진호님 승인 2026-11-10 (기준 A: 종료일 없이 오래 걸린 최대치 = 평소) — sources: upgradedpoints.com·dailydrop.com 오퍼 기록. $250은 2022-10부터 이어진 기본 오퍼.
         parts:
           - value: 250
             unit: cash
     earn:
-      - category_en: Everything else
-        category_ko: ""
-        rate: 1.5
+      - category_en: U.S. supermarkets (first $6,000 a year)
+        category_ko: 미국 슈퍼마켓(연 첫 $6,000)
+        rate: 6
         unit: cash
-    benefits: []
+      - category_en: Select U.S. streaming subscriptions
+        category_ko: 일부 미국 스트리밍 구독
+        rate: 6
+        unit: cash
+      - category_en: Transit (rideshare, taxis, parking, tolls, trains, buses)
+        category_ko: 교통(차량 호출·택시·주차·통행료·기차·버스)
+        rate: 3
+        unit: cash
+      - category_en: U.S. gas stations
+        category_ko: 미국 주유소
+        rate: 3
+        unit: cash
+      - category_en: Everything else
+        category_ko: 그 외 전부
+        rate: 1
+        unit: cash
+    benefits:
+      - en: Up to $120 a year for Disney+, Hulu or ESPN subscriptions ($10 a month, enrollment required)
+        ko: Disney+·Hulu·ESPN 구독 연 최대 $120(월 $10, 등록 필요)
+      - en: Redeem cash back as a statement credit, a savings deposit or at Amazon checkout
+        ko: 캐시백을 청구서 차감·Amex 예금 입금·Amazon 결제에 사용
+      - en: Presale and reserved tickets for select events
+        ko: 일부 공연·경기 선예매·지정석 이용
+
+  - id: amex-delta-skymiles-gold
+    name: Delta SkyMiles® Gold American Express Card
+    issuer: American Express
+    segment: personal
+    official_url: https://www.americanexpress.com/us/credit-cards/card/delta-skymiles-gold-american-express-card/
+    last_verified: 2026-11-09
+    sources:
+      - https://www.americanexpress.com/us/credit-cards/card/delta-skymiles-gold-american-express-card/
+    annual_fee:
+      amount: 150
+      first_year_waived: true
+    foreign_tx_fee_pct: 0
+    bonus:
+      current:
+        parts:
+          - value: 80000
+            unit: miles
+        min_spend: 2000
+        spend_months: 6
+        note_en: "Top of the range shown on the public page. Amex tells you your exact amount after you apply, and it can be lower."
+        note_ko: "공식 페이지에 보이는 최대치. 정확한 금액은 신청 후 Amex가 알려 주며 더 낮을 수 있음."
+      usual:
+        # 진호님 승인 2026-11-10 (기준 A: 종료일 없이 오래 걸린 최대치 = 평소) — sources: awardwallet.com·upgradedpoints.com·dailydrop.com 오퍼 기록, delta.com 카드 페이지. 기간 한정 프로모션이 없을 때 '최대 80,000 / $2,000'이 2026-04부터 반복 표시.
+        parts:
+          - value: 80000
+            unit: miles
+    earn:
+      - category_en: Delta purchases made directly
+        category_ko: Delta 직접 구매
+        rate: 2
+        unit: miles
+      - category_en: U.S. restaurants, including takeout and delivery
+        category_ko: 미국 식당(포장·배달 포함)
+        rate: 2
+        unit: miles
+      - category_en: U.S. supermarkets
+        category_ko: 미국 슈퍼마켓
+        rate: 2
+        unit: miles
+      - category_en: Everything else
+        category_ko: 그 외 전부
+        rate: 1
+        unit: miles
+    benefits:
+      - en: First checked bag free on Delta flights (second bag free on U.S. domestic Delta flights)
+        ko: Delta 항공편 첫 위탁 수하물 무료(미국 국내선은 두 번째도 무료)
+      - en: $200 Delta flight credit after $10,000 spend in a calendar year
+        ko: 한 해 $10,000 사용 시 Delta 항공 크레딧 $200
+      - en: Up to $100 a year on prepaid Delta Stays bookings
+        ko: Delta Stays 선결제 숙소 연 최대 $100
+      - en: 15% off Delta award flights booked with miles
+        ko: 마일로 Delta 항공권 예약 시 15% 할인
+      - en: Up to $120 a year in rideshare credits after the first renewal ($10 a month, enrollment required)
+        ko: 첫 갱신 후 차량 호출 연 최대 $120(월 $10, 등록 필요)
+
+  - id: amex-hilton-honors-surpass
+    name: Hilton Honors American Express Surpass® Card
+    issuer: American Express
+    segment: personal
+    official_url: https://www.americanexpress.com/us/credit-cards/card/hilton-honors-surpass/
+    last_verified: 2026-11-09
+    sources:
+      - https://www.americanexpress.com/us/credit-cards/card/hilton-honors-surpass/
+    annual_fee:
+      amount: 150
+      first_year_waived: false
+    foreign_tx_fee_pct: 0
+    bonus:
+      current:
+        parts:
+          - value: 130000
+            unit: points
+          - value: 1
+            unit: free_night
+        min_spend: 3000
+        spend_months: 6
+        note_en: "Limited-time offer, ends January 13, 2027. The free night is one standard room night at most Hilton hotels."
+        note_ko: "기간 한정 오퍼, 2027-01-13 종료. 무료 숙박은 대부분의 Hilton 호텔 일반 객실 1박."
+      usual:
+        # 진호님 승인 2026-11-10 — sources: upgradedpoints.com·dailydrop.com 오퍼 기록. 평소는 포인트만 130,000(무료 숙박 없음). 종료일 2027-01-13은 Amex 오퍼 약관에 있음.
+        parts:
+          - value: 130000
+            unit: points
+        note_en: "Usually points only, without the free night."
+        note_ko: "평소에는 무료 숙박 없이 포인트만."
+    elevated:
+      start: 2026-11-09
+      end: 2027-01-13
+    earn:
+      - category_en: Hilton hotels and resorts
+        category_ko: Hilton 계열 호텔·리조트
+        rate: 12
+        unit: points
+      - category_en: U.S. restaurants, U.S. supermarkets, U.S. gas stations
+        category_ko: 미국 식당·슈퍼마켓·주유소
+        rate: 6
+        unit: points
+      - category_en: U.S. online retail
+        category_ko: 미국 온라인 쇼핑
+        rate: 4
+        unit: points
+      - category_en: Everything else
+        category_ko: 그 외 전부
+        rate: 3
+        unit: points
+    benefits:
+      - en: Hilton Honors Gold status while you hold the card
+        ko: 카드 보유 중 Hilton Honors Gold 등급
+      - en: Up to $200 a year at Hilton properties ($50 per quarter)
+        ko: Hilton 호텔 결제 연 최대 $200(분기 $50)
+      - en: Free night after $15,000 spend in a calendar year
+        ko: 한 해 $15,000 사용 시 무료 숙박 1박
+      - en: Diamond status upgrade after $40,000 spend in a calendar year
+        ko: 한 해 $40,000 사용 시 Diamond 등급으로 상향
+      - en: National Car Rental Emerald Club Executive status (enrollment required)
+        ko: National 렌터카 Emerald Club Executive 등급(등록 필요)
+
+  # ===================== American Express — 비즈니스 =====================
+  - id: amex-business-platinum
+    name: The Business Platinum Card® from American Express
+    issuer: American Express
+    segment: business
+    official_url: https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/american-express-business-platinum-credit-card-amex/65147/
+    last_verified: 2026-11-09
+    sources:
+      - https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/american-express-business-platinum-credit-card-amex/65147/
+    annual_fee:
+      amount: 895
+      first_year_waived: false
+    foreign_tx_fee_pct: 0
+    bonus:
+      current:
+        parts:
+          - value: 300000
+            unit: points
+        min_spend: 20000
+        spend_months: 3
+        note_en: "Top of the range shown on the public page. Amex tells you your exact amount after you apply, and it can be lower."
+        note_ko: "공식 페이지에 보이는 최대치. 정확한 금액은 신청 후 Amex가 알려 주며 더 낮을 수 있음."
+      usual:
+        # 진호님 승인 2026-11-10 (기준 A: 종료일 없이 오래 걸린 최대치 = 평소) — sources: upgradedpoints.com·thewaystowealth.com. 공개 페이지 '최대 300,000'이 2026-04부터 계속 표시(그 전 2025-09~2026-04 고정 200,000). 평소를 200,000으로 볼지 진호님 판단 필요.
+        parts:
+          - value: 300000
+            unit: points
+    earn:
+      - category_en: Flights and prepaid hotels booked via Amex Travel
+        category_ko: Amex Travel 항공권·선결제 호텔
+        rate: 5
+        unit: points
+      - category_en: U.S. construction and hardware suppliers, U.S. electronics and software/cloud, U.S. shipping, and single purchases of $5,000+ (first $2 million a year combined)
+        category_ko: 미국 건축자재·철물, 미국 전자제품·소프트웨어/클라우드, 미국 배송, 건당 $5,000 이상 구매(합산 연 첫 $200만)
+        rate: 2
+        unit: points
+      - category_en: Everything else
+        category_ko: 그 외 전부
+        rate: 1
+        unit: points
+    benefits:
+      - en: Up to $600 a year for prepaid Fine Hotels + Resorts or The Hotel Collection stays ($300 per half-year)
+        ko: Fine Hotels + Resorts·The Hotel Collection 선결제 숙박 연 최대 $600(반기 $300)
+      - en: Centurion, Priority Pass and other lounges, plus 10 Delta Sky Club visits a year on Delta flights
+        ko: Centurion·Priority Pass 등 라운지, Delta 탑승 시 Sky Club 연 10회
+      - en: Up to $1,150 a year at Dell Technologies ($150, plus $1,000 after $5,000 Dell spend; enrollment required)
+        ko: Dell 연 최대 $1,150($150 + Dell $5,000 사용 시 $1,000 추가, 등록 필요)
+      - en: Up to $200 a year for incidental fees on one chosen airline
+        ko: 선택한 항공사 1곳 부대 비용 연 최대 $200
+      - en: 35% of points back when you pay with points for flights on your chosen airline (up to 1,000,000 a year)
+        ko: 선택 항공사 항공권을 포인트로 결제하면 35% 환급(연 최대 1,000,000포인트)
+      - en: Up to $300 a year for ChatGPT Business (enrollment required)
+        ko: ChatGPT Business 연 최대 $300(등록 필요)
+
+  - id: amex-business-gold
+    name: American Express® Business Gold Card
+    issuer: American Express
+    segment: business
+    official_url: https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/american-express-business-gold-card-amex/
+    last_verified: 2026-11-09
+    sources:
+      - https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/american-express-business-gold-card-amex/
+    annual_fee:
+      amount: 375
+      first_year_waived: false
+    foreign_tx_fee_pct: 0
+    bonus:
+      current:
+        parts:
+          - value: 200000
+            unit: points
+        min_spend: 15000
+        spend_months: 3
+        note_en: "Top of the range shown on the public page. Amex tells you your exact amount after you apply, and it can be lower."
+        note_ko: "공식 페이지에 보이는 최대치. 정확한 금액은 신청 후 Amex가 알려 주며 더 낮을 수 있음."
+      usual:
+        # 진호님 승인 2026-11-10 (기준 A: 종료일 없이 오래 걸린 최대치 = 평소) — sources: upgradedpoints.com·thewaystowealth.com. 공개 페이지 '최대 200,000'이 2026-04부터 계속 표시(그 전 2024-07~2026-04 고정 100,000). 평소를 100,000으로 볼지 진호님 판단 필요.
+        parts:
+          - value: 200000
+            unit: points
+    earn:
+      - category_en: "Your top 2 each billing cycle of: U.S. advertising, U.S. electronics and software/cloud, U.S. restaurants, U.S. gas stations, transit, U.S. wireless phone service (first $150,000 a year combined)"
+        category_ko: "매 청구 기간 다음 6개 중 사용액 상위 2개: 미국 광고·미국 전자제품/소프트웨어/클라우드·미국 식당·미국 주유소·교통·미국 휴대폰 요금(합산 연 첫 $150,000)"
+        rate: 4
+        unit: points
+      - category_en: Flights and prepaid hotels booked via Amex Travel
+        category_ko: Amex Travel 항공권·선결제 호텔
+        rate: 3
+        unit: points
+      - category_en: Everything else
+        category_ko: 그 외 전부
+        rate: 1
+        unit: points
+    benefits:
+      - en: Up to $240 a year at Grubhub, office supply stores and UPS.com shipping ($20 a month, enrollment required)
+        ko: Grubhub·사무용품점·UPS.com 배송 연 최대 $240(월 $20, 등록 필요)
+      - en: Up to $300 a year for ChatGPT Business (enrollment required)
+        ko: ChatGPT Business 연 최대 $300(등록 필요)
+      - en: Up to $150 a year at Squarespace (enrollment required)
+        ko: Squarespace 연 최대 $150(등록 필요)
+      - en: Up to $155 a year for a monthly Walmart+ membership
+        ko: Walmart+ 월 회원비 연 최대 $155
+
+  # ===================== Citi — 개인 =====================
+  - id: citi-strata-premier
+    name: Citi Strata Premier® Card
+    issuer: Citi
+    segment: personal
+    official_url: https://www.citi.com/credit-cards/citi-strata-premier-credit-card
+    last_verified: 2026-11-09
+    sources:
+      - https://www.citi.com/credit-cards/citi-strata-premier-credit-card
+    annual_fee:
+      amount: 95
+      first_year_waived: false
+    foreign_tx_fee_pct: 0
+    bonus:
+      current:
+        parts:
+          - value: 60000
+            unit: points
+        min_spend: 4000
+        spend_months: 3
+      usual:
+        # 진호님 승인 2026-11-10, sources: awardwallet.com·travelsummary.com 오퍼 기록. 60,000이 2025-04-03부터 19개월째 기본 오퍼, 종료일 없음. 그 전 2024-05~2025-04는 75,000, 옛 Citi Premier 시절 최고 80,000.
+        parts:
+          - value: 60000
+            unit: points
+    earn:
+      - category_en: Hotels, car rentals and attractions booked via Citi Travel
+        category_ko: Citi Travel로 예약한 호텔·렌터카·관광지
+        rate: 10
+        unit: points
+      - category_en: Air travel and other hotel purchases
+        category_ko: 항공권·그 밖의 호텔 결제
+        rate: 3
+        unit: points
+      - category_en: Restaurants
+        category_ko: 식당
+        rate: 3
+        unit: points
+      - category_en: Supermarkets
+        category_ko: 슈퍼마켓
+        rate: 3
+        unit: points
+      - category_en: Gas stations and EV charging
+        category_ko: 주유소·EV 충전
+        rate: 3
+        unit: points
+      - category_en: Everything else
+        category_ko: 그 외 전부
+        rate: 1
+        unit: points
+    benefits:
+      - en: $100 off one hotel stay of $500 or more (before taxes and fees) booked via Citi Travel, once each calendar year
+        ko: Citi Travel로 예약한 $500 이상 호텔 1건 $100 할인(세금·수수료 제외, 매년 1회)
+      - en: Move points to airline and hotel partners such as American Airlines, JetBlue, Virgin Atlantic and Choice Hotels
+        ko: American Airlines·JetBlue·Virgin Atlantic·Choice Hotels 등 항공·호텔 파트너로 포인트 이전
+      - en: Travel coverage including trip delay, trip cancellation and interruption, and lost or damaged bags
+        ko: 여행 지연·여행 취소/중단·수하물 분실/파손 보장
+      - en: No fee for authorized users
+        ko: 가족 카드(추가 사용자) 수수료 없음
+
+  - id: citi-double-cash
+    name: Citi Double Cash® Card
+    issuer: Citi
+    segment: personal
+    official_url: https://www.citi.com/credit-cards/citi-double-cash-credit-card
+    last_verified: 2026-11-09
+    sources:
+      - https://www.citi.com/credit-cards/citi-double-cash-credit-card
+    annual_fee:
+      amount: 0
+      first_year_waived: false
+    foreign_tx_fee_pct: 3
+    bonus:
+      current:
+        parts:
+          - value: 200
+            unit: cash
+        min_spend: 1500
+        spend_months: 6
+        note_en: "Paid as ThankYou points that you can redeem for $200 cash back."
+        note_ko: "ThankYou 포인트로 지급되며 $200 캐시백으로 바꿀 수 있음."
+      usual:
+        # 진호님 승인 2026-11-10, sources: awardwallet.com 오퍼 기록·upgradedpoints.com. $200 / $1,500·6개월이 2023-11-14부터 3년째 이어진 기본 오퍼(역대 최고와 같음), 종료일 없음.
+        parts:
+          - value: 200
+            unit: cash
+    earn:
+      - category_en: Hotels, car rentals and attractions booked via Citi Travel
+        category_ko: Citi Travel로 예약한 호텔·렌터카·관광지
+        rate: 5
+        unit: cash
+      - category_en: Everything else (1% when you buy, 1% when you pay it off)
+        category_ko: 그 외 전부(구매 시 1% + 갚을 때 1%)
+        rate: 2
+        unit: cash
+    benefits:
+      - en: No bonus categories to sign up for and no cap on cash back
+        ko: 카테고리 등록 없음, 캐시백 한도 없음
+      - en: Cash back arrives as ThankYou points; take it as a deposit, statement credit or check
+        ko: 캐시백은 ThankYou 포인트로 쌓이며 계좌 입금·청구서 차감·수표로 받기
+      - en: Extended warranty coverage on eligible purchases
+        ko: 대상 구매품 보증 기간 연장
+      - en: Citi Entertainment access to ticket presales and events
+        ko: Citi Entertainment 공연·행사 선예매
+      - en: Mastercard ID Theft Protection monitoring
+        ko: Mastercard 신원 도용 감시 서비스
+
+  - id: citi-strata
+    name: Citi Strata® Card
+    issuer: Citi
+    segment: personal
+    official_url: https://www.citi.com/credit-cards/citi-strata-credit-card
+    last_verified: 2026-11-09
+    sources:
+      - https://www.citi.com/credit-cards/citi-strata-credit-card
+    annual_fee:
+      amount: 0
+      first_year_waived: false
+    foreign_tx_fee_pct: 3
+    bonus:
+      current:
+        parts:
+          - value: 20000
+            unit: points
+        min_spend: 1000
+        spend_months: 3
+      usual:
+        # 진호님 승인 2026-11-10, sources: awardwallet.com 오퍼 기록·uscreditcardguide.com. 20,000 / $1,000·3개월이 2026-01-15쯤부터 10개월째 기본 오퍼, 종료일 없음. 역대 최고는 출시 오퍼 30,000(2025-07-27~2026-01-14).
+        parts:
+          - value: 20000
+            unit: points
+    earn:
+      - category_en: Hotels, car rentals and attractions booked via Citi Travel
+        category_ko: Citi Travel로 예약한 호텔·렌터카·관광지
+        rate: 5
+        unit: points
+      - category_en: Supermarkets
+        category_ko: 슈퍼마켓
+        rate: 3
+        unit: points
+      - category_en: Gas stations, EV charging and select transit
+        category_ko: 주유소·EV 충전·일부 교통
+        rate: 3
+        unit: points
+      - category_en: One Self-Select category you choose
+        category_ko: 직접 고른 Self-Select 카테고리 1개
+        rate: 3
+        unit: points
+      - category_en: Restaurants
+        category_ko: 식당
+        rate: 2
+        unit: points
+      - category_en: Everything else
+        category_ko: 그 외 전부
+        rate: 1
+        unit: points
+    benefits:
+      - en: "Self-Select options: fitness clubs, select streaming, live entertainment, cosmetic stores/barbers/salons or pet supply stores; switch once a quarter"
+        ko: "Self-Select 선택지: 피트니스 클럽·일부 스트리밍·공연/경기 관람·화장품점/이발소/미용실·반려동물 용품점, 분기마다 1회 변경"
+      - en: Move points to airline and hotel partners such as American Airlines, JetBlue, Cathay and Choice Hotels
+        ko: American Airlines·JetBlue·Cathay·Choice Hotels 등 항공·호텔 파트너로 포인트 이전
+      - en: No fee for authorized users
+        ko: 가족 카드(추가 사용자) 수수료 없음
+      - en: Citi Entertainment access to ticket presales and events
+        ko: Citi Entertainment 공연·행사 선예매
+      - en: Mastercard ID Theft Protection monitoring
+        ko: Mastercard 신원 도용 감시 서비스
+
+  - id: citi-aadvantage-platinum-select
+    name: Citi® / AAdvantage® Platinum Select® World Elite Mastercard®
+    issuer: Citi
+    segment: personal
+    official_url: https://www.citi.com/credit-cards/citi-aadvantage-platinum-select-world-elite-mastercard
+    last_verified: 2026-11-09
+    sources:
+      - https://www.citi.com/credit-cards/citi-aadvantage-platinum-select-world-elite-mastercard
+    annual_fee:
+      amount: 99
+      first_year_waived: true
+    foreign_tx_fee_pct: 0
+    bonus:
+      current:
+        parts:
+          - value: 50000
+            unit: miles
+        min_spend: 2500
+        spend_months: 3
+      usual:
+        # 진호님 승인 2026-11-10 (plan A4): 가장 자주 보인 평소 오퍼 60,000
+        parts:
+          - value: 60000
+            unit: miles
+    earn:
+      - category_en: Eligible American Airlines purchases
+        category_ko: American Airlines 대상 구매
+        rate: 2
+        unit: miles
+      - category_en: Restaurants, including takeout
+        category_ko: 식당(포장 포함)
+        rate: 2
+        unit: miles
+      - category_en: Gas stations
+        category_ko: 주유소
+        rate: 2
+        unit: miles
+      - category_en: Everything else
+        category_ko: 그 외 전부
+        rate: 1
+        unit: miles
+    benefits:
+      - en: First checked bag free on domestic American Airlines trips for you and up to 4 companions on the same booking
+        ko: American Airlines 국내선 첫 위탁 수하물 무료(같은 예약 동반자 4명까지)
+      - en: Preferred boarding on American Airlines for you and up to 4 companions on the same booking
+        ko: American Airlines 우선 탑승(같은 예약 동반자 4명까지)
+      - en: 25% off food and drinks bought on board American Airlines flights
+        ko: American Airlines 기내 음식·음료 25% 할인
+      - en: $125 American Airlines flight discount after $20,000 in purchases in a cardmember year and renewing the card
+        ko: 카드 회원 연도에 $20,000 사용 후 갱신하면 American Airlines 항공권 $125 할인
+      - en: Up to $30 back per eligible Turo car rental trip paid with the card, up to $180 a year
+        ko: 카드로 결제한 대상 Turo 렌터카 1건당 최대 $30, 연 최대 $180 환급
+      - en: Purchases also earn Loyalty Points toward AAdvantage status (1 per eligible mile)
+        ko: 구매로 얻은 대상 마일 1마일당 AAdvantage 등급용 Loyalty Point 1점
+
+  # ===================== Capital One — 개인 =====================
+  - id: capital-one-venture-x
+    name: Capital One Venture X Rewards
+    issuer: Capital One
+    segment: personal
+    official_url: https://www.capitalone.com/credit-cards/venture-x/
+    last_verified: 2026-11-09
+    sources:
+      - https://www.capitalone.com/credit-cards/venture-x/
+    annual_fee:
+      amount: 395
+      first_year_waived: false
+    foreign_tx_fee_pct: 0
+    bonus:
+      current:
+        parts:
+          - value: 75000
+            unit: miles
+        min_spend: 4000
+        spend_months: 3
+      usual:
+        # 진호님 승인 2026-11-10, sources: awardwallet.com 오퍼 기록·capitalone.com 현재 오퍼(+ 커뮤니티 기록은 검수표). 75,000 / $4,000·3개월이 2026-01-06부터 10개월째(그 전 2022-03~2025-11도 같은 값), 종료일 없음. 역대 최고 100,000 / $10,000·6개월(2021-11~2022-03, 2025-11-12~2026-01-05).
+        parts:
+          - value: 75000
+            unit: miles
+    earn:
+      - category_en: Hotels and rental cars booked via Capital One Travel
+        category_ko: Capital One Travel로 예약한 호텔·렌터카
+        rate: 10
+        unit: miles
+      - category_en: Flights and vacation rentals booked via Capital One Travel
+        category_ko: Capital One Travel로 예약한 항공권·휴가용 숙소
+        rate: 5
+        unit: miles
+      - category_en: Capital One Entertainment ticket purchases
+        category_ko: Capital One Entertainment 티켓 구매
+        rate: 5
+        unit: miles
+      - category_en: Everything else
+        category_ko: 그 외 전부
+        rate: 2
+        unit: miles
+    benefits:
+      - en: $300 credit each year for bookings made through Capital One Travel
+        ko: 매년 Capital One Travel 예약에 쓰는 $300 크레딧
+      - en: 10,000 bonus miles every account anniversary, starting at the first
+        ko: 첫 카드 기념일부터 매년 10,000마일 추가
+      - en: Capital One Lounge and Priority Pass lounge access for the primary cardholder (Priority Pass needs enrollment)
+        ko: 본인 카드 소지자 Capital One 라운지·Priority Pass 라운지 이용(Priority Pass는 등록 필요)
+      - en: Global Entry or TSA PreCheck fee credit up to $120, once every 4 years
+        ko: Global Entry 또는 TSA PreCheck 수수료 최대 $120 환급(4년에 1번)
+      - en: Move miles to 15+ airline and hotel loyalty programs
+        ko: 15개 이상 항공·호텔 회원 프로그램으로 마일 이전
+      - en: Cell phone protection up to $800 when you pay your phone bill with the card
+        ko: 휴대폰 요금을 카드로 내면 휴대폰 도난·파손 최대 $800 보상
+
+  - id: capital-one-venture
+    name: Capital One Venture Rewards
+    issuer: Capital One
+    segment: personal
+    official_url: https://www.capitalone.com/credit-cards/venture/
+    last_verified: 2026-11-09
+    sources:
+      - https://www.capitalone.com/credit-cards/venture/
+    annual_fee:
+      amount: 95
+      first_year_waived: false
+    foreign_tx_fee_pct: 0
+    bonus:
+      current:
+        parts:
+          - value: 75000
+            unit: miles
+          - value: 300
+            unit: credit
+        min_spend: 4000
+        spend_months: 3
+        note_en: "Labeled a limited-time offer on the page. The $300 is a one-time Capital One Travel credit for hotel and vacation rental bookings, usable for one year after the account opens."
+        note_ko: "페이지에 기간 한정 오퍼로 표시됨. $300은 Capital One Travel 호텔·휴가용 숙소 예약에 쓰는 1회 크레딧이며 계좌 개설 후 1년 안에 써야 함."
+      usual:
+        # 진호님 승인 2026-11-10, sources: awardwallet.com 오퍼 기록·capitalone.com 기간 한정 표시. 크레딧 없는 75,000 / $4,000·3개월이 2022-05부터 기본 오퍼. $250·$300 여행 크레딧은 몇 달씩 붙었다 빠지는 프로모션(2024-07~09, 2025-02~05, 2026-01~04, 지금 $300은 2026-09-08부터). 역대 최고 100,000(지출 $20,000, 2020·2021).
+        parts:
+          - value: 75000
+            unit: miles
+    elevated:
+      # 진호님 결정 2026-11-10 (추천대로): 75,000 + $300 크레딧 = 기간 한정, 평소 75,000. 종료일 미공개.
+      start: 2026-11-09
+      end: null
+    earn:
+      - category_en: Hotels, vacation rentals and rental cars booked via Capital One Travel
+        category_ko: Capital One Travel로 예약한 호텔·휴가용 숙소·렌터카
+        rate: 5
+        unit: miles
+      - category_en: Capital One Entertainment ticket purchases
+        category_ko: Capital One Entertainment 티켓 구매
+        rate: 5
+        unit: miles
+      - category_en: Everything else
+        category_ko: 그 외 전부
+        rate: 2
+        unit: miles
+    benefits:
+      - en: Global Entry or TSA PreCheck fee credit up to $120
+        ko: Global Entry 또는 TSA PreCheck 수수료 최대 $120 환급
+      - en: $50 experience credit on each Lifestyle Collection stay booked via Capital One Travel
+        ko: Capital One Travel로 예약한 Lifestyle Collection 숙박마다 $50 체험 크레딧
+      - en: Hertz Five Star status at no cost
+        ko: Hertz Five Star 등급 무료
+      - en: Travel credit for the difference if you find a lower price within 24 hours of an eligible Capital One Travel booking
+        ko: Capital One Travel 대상 예약 후 24시간 안에 더 싼 가격을 찾으면 차액을 여행 크레딧으로
+      - en: Miles never expire while the account is open and can move to select travel loyalty programs
+        ko: 계좌가 열려 있는 동안 마일 소멸 없음, 일부 여행 회원 프로그램으로 이전 가능
+
+  - id: capital-one-savor
+    name: Capital One Savor Rewards
+    issuer: Capital One
+    segment: personal
+    official_url: https://www.capitalone.com/credit-cards/savor/
+    last_verified: 2026-11-09
+    sources:
+      - https://www.capitalone.com/credit-cards/savor/
+    annual_fee:
+      amount: 0
+      first_year_waived: false
+    foreign_tx_fee_pct: 0
+    bonus:
+      current:
+        parts:
+          - value: 200
+            unit: cash
+        min_spend: 500
+        spend_months: 3
+      usual:
+        # 진호님 승인 2026-11-10, sources: awardwallet.com 오퍼 기록·cnbc.com. $200 / $500·3개월이 2020-10부터 기본 오퍼(2026-08-11부터 다시 $200), 종료일 없음. $250은 짧은 프로모션(2024-10-22~12-09, 2026-06-09~08-10). 2024-10-22 연회비 없는 SavorOne이 Savor로 이름이 바뀜(연회비 있던 옛 Savor는 2024-07 신규 중단). 지금 capitalone.com의 'SavorOne Rewards'는 연회비 $39인 다른 카드(fair credit용).
+        parts:
+          - value: 200
+            unit: cash
+    earn:
+      - category_en: Capital One Entertainment ticket purchases
+        category_ko: Capital One Entertainment 티켓 구매
+        rate: 8
+        unit: cash
+      - category_en: Hotels, vacation rentals and rental cars booked via Capital One Travel
+        category_ko: Capital One Travel로 예약한 호텔·휴가용 숙소·렌터카
+        rate: 5
+        unit: cash
+      - category_en: Dining
+        category_ko: 식당
+        rate: 3
+        unit: cash
+      - category_en: Grocery stores (not superstores such as Walmart and Target)
+        category_ko: 식료품점(Walmart·Target 같은 대형 할인점 제외)
+        rate: 3
+        unit: cash
+      - category_en: Entertainment and popular streaming services
+        category_ko: 엔터테인먼트·주요 스트리밍 서비스
+        rate: 3
+        unit: cash
+      - category_en: Everything else
+        category_ko: 그 외 전부
+        rate: 1
+        unit: cash
+    benefits:
+      - en: Travel credit for the difference if you find a lower price within 24 hours of an eligible Capital One Travel booking
+        ko: Capital One Travel 대상 예약 후 24시간 안에 더 싼 가격을 찾으면 차액을 여행 크레딧으로
+      - en: Hertz Five Star status at no cost
+        ko: Hertz Five Star 등급 무료
+      - en: Use cash back at checkout with PayPal or on Amazon.com
+        ko: PayPal 결제나 Amazon.com에서 캐시백으로 결제 가능
+      - en: Cardholder-only presales and VIP packages through Capital One Entertainment
+        ko: Capital One Entertainment 카드 회원 전용 선예매·VIP 패키지
+
+  # ===================== Discover — 개인 =====================
+  - id: discover-it-cash-back
+    name: Discover it Cash Back Credit Card
+    issuer: Discover
+    segment: personal
+    official_url: https://www.discover.com/credit-cards/cash-back/it-card/
+    last_verified: 2026-11-09
+    sources:
+      - https://www.discover.com/credit-cards/cash-back/it-card/
+    annual_fee:
+      amount: 0
+      first_year_waived: false
+    foreign_tx_fee_pct: 0
+    bonus:
+      current:
+        parts:
+          - value: 100
+            unit: percent_match
+          - value: 200
+            unit: cash
+        min_spend: 500
+        spend_months: 3
+        note_en: "Two parts. First-year match (Discover calls it Cashback Match): all cash back earned in your first 365 days is matched dollar for dollar, with no cap and no spending requirement. Separately, a $200 statement credit after $500 in purchases in the first 3 months; that $200 itself is not matched."
+        note_ko: "두 부분. ① 첫해 매칭: 첫 365일 동안 쌓은 캐시백 전부를 같은 금액만큼 한 번 더 줌(한도·지출 조건 없음). ② 첫 3개월 $500 사용 시 $200 청구서 크레딧(이 $200은 매칭 대상 아님)."
+      usual:
+        # 진호님 승인 2026-11-10, sources: nerdwallet.com·cnbc.com. 첫해 매칭만 있는 것이 오래된 기본 오퍼(NerdWallet 2025-01 목록도 매칭만). $200 / $500·3개월 청구서 크레딧은 2026-10-20쯤 새로 붙음(NerdWallet·CNBC 같은 날 보도), 종료일 없음. dailydrop.com 페이지(2026-02 갱신 표시)에도 $200이 보여 그 전에 나온 적이 있는지는 불확실.
+        parts:
+          - value: 100
+            unit: percent_match
+    elevated:
+      # 진호님 결정 2026-11-10 (추천대로): 첫해 매칭 + $200 = 높음, 평소는 첫해 매칭만. 종료일 미공개.
+      start: 2026-11-09
+      end: null
+    earn:
+      - category_en: Rotating quarterly categories, up to the quarterly maximum (activation required)
+        category_ko: 분기마다 바뀌는 카테고리(분기 한도까지, 활성화 필요)
+        rate: 5
+        unit: cash
+      - category_en: Capital One Travel bookings (hotels, vacation rentals, rental cars, activities)
+        category_ko: Capital One Travel 예약(호텔·휴가용 숙소·렌터카·액티비티)
+        rate: 5
+        unit: cash
+      - category_en: Capital One Entertainment ticket purchases
+        category_ko: Capital One Entertainment 티켓 구매
+        rate: 5
+        unit: cash
+      - category_en: Everything else
+        category_ko: 그 외 전부
+        rate: 1
+        unit: cash
+    benefits:
+      - en: No late fee the first time you pay late
+        ko: 첫 연체 1회는 연체료 없음
+      - en: Lock the card in the mobile app if it goes missing
+        ko: 분실 시 모바일 앱에서 카드 잠금
+      - en: Alerts if your Social Security number is found on the dark web (CreditWise sign-up)
+        ko: 다크웹에서 내 사회보장번호가 발견되면 알림(CreditWise 가입)
+      - en: Cash back does not expire while the account is open
+        ko: 계좌가 열려 있는 동안 캐시백 소멸 없음
+
+  # ===================== Wells Fargo — 개인 =====================
+  - id: wells-fargo-active-cash
+    name: Wells Fargo Active Cash® Card
+    issuer: Wells Fargo
+    segment: personal
+    official_url: https://creditcards.wellsfargo.com/active-cash-credit-card/
+    last_verified: 2026-11-09
+    sources:
+      - https://creditcards.wellsfargo.com/active-cash-credit-card/
+      - https://www.wellsfargo.com/credit-cards/active-cash/terms/
+    annual_fee:
+      amount: 0
+      first_year_waived: false
+    foreign_tx_fee_pct: 3
+    bonus:
+      current:
+        parts:
+          - value: 100
+            unit: cash
+        min_spend: 500
+        spend_months: 3
+        note_en: "Paid as cash rewards."
+        note_ko: "캐시 리워드로 지급."
+      usual:
+        # 진호님 승인 2026-11-10(plan A4: 지금 값이 더 낮아 매일 경고 없음), sources: cnbc.com(2021 출시 $200)·awardwallet.com·nerdwallet.com(지금 $100). 가장 자주 보인 평소 오퍼는 $200 / $500·3개월(출시 때는 $1,000 지출, 2023-04부터 $500). $100은 2026-09쯤부터로 보이나 정확한 날짜 불명, 종료일 없음.
+        parts:
+          - value: 200
+            unit: cash
+    earn:
+      - category_en: All purchases
+        category_ko: 모든 구매
+        rate: 2
+        unit: cash
+    benefits:
+      - en: Cell phone protection up to $600 per claim ($25 deductible, 2 claims a year) when you pay your phone bill with the card
+        ko: 휴대폰 요금을 카드로 내면 건당 최대 $600 휴대폰 보상(자기부담 $25, 연 2건)
+      - en: Secondary auto rental collision damage coverage
+        ko: 렌터카 충돌·파손 2차 보장
+      - en: Roadside Dispatch and travel and emergency assistance
+        ko: 긴급 출동 연결·여행 중 긴급 지원 서비스
+      - en: Visa Signature Concierge and Luxury Hotel Collection
+        ko: Visa Signature 컨시어지·Luxury Hotel Collection
+      - en: No categories to track and rewards do not expire while the account is open
+        ko: 카테고리 신경 쓸 필요 없음, 계좌가 열려 있는 동안 리워드 소멸 없음
+
+  - id: wells-fargo-autograph
+    name: Wells Fargo Autograph® Card
+    issuer: Wells Fargo
+    segment: personal
+    official_url: https://creditcards.wellsfargo.com/autograph-visa-credit-card/
+    last_verified: 2026-11-09
+    sources:
+      - https://creditcards.wellsfargo.com/autograph-visa-credit-card/
+      - https://www.wellsfargo.com/credit-cards/autograph-visa/terms/
+    annual_fee:
+      amount: 0
+      first_year_waived: false
+    foreign_tx_fee_pct: 0
+    bonus:
+      current:
+        parts:
+          - value: 20000
+            unit: points
+        min_spend: 1000
+        spend_months: 3
+      usual:
+        # 진호님 승인 2026-11-10, sources: uscreditcardguide.com(2024-01 갱신 '20k 오퍼', 최근 최고 30k)·wellsfargo.com. 20,000 / $1,000·3개월이 2024-01쯤부터 기본 오퍼, 종료일 없음. 역대 최고 30,000(2022-08~2023-07, 2023-11~2024-01).
+        parts:
+          - value: 20000
+            unit: points
+    earn:
+      - category_en: Restaurants
+        category_ko: 식당
+        rate: 3
+        unit: points
+      - category_en: Travel
+        category_ko: 여행
+        rate: 3
+        unit: points
+      - category_en: Gas stations and transit
+        category_ko: 주유소·교통
+        rate: 3
+        unit: points
+      - category_en: Popular streaming services
+        category_ko: 주요 스트리밍 서비스
+        rate: 3
+        unit: points
+      - category_en: Phone plans
+        category_ko: 휴대폰 요금제
+        rate: 3
+        unit: points
+      - category_en: Everything else
+        category_ko: 그 외 전부
+        rate: 1
+        unit: points
+    benefits:
+      - en: Move points to select travel loyalty programs, in any amount
+        ko: 일부 여행 회원 프로그램으로 원하는 만큼 포인트 이전
+      - en: Cell phone protection up to $600 per claim ($25 deductible, 2 claims a year) when you pay your phone bill with the card
+        ko: 휴대폰 요금을 카드로 내면 건당 최대 $600 휴대폰 보상(자기부담 $25, 연 2건)
+      - en: Secondary auto rental collision damage coverage
+        ko: 렌터카 충돌·파손 2차 보장
+      - en: Travel and emergency assistance services
+        ko: 여행 중 긴급 지원 서비스
+      - en: Visa Signature Concierge and Luxury Hotel Collection
+        ko: Visa Signature 컨시어지·Luxury Hotel Collection
+
+  # ===================== Bank of America — 개인 =====================
+  - id: bank-of-america-premium-rewards
+    name: Bank of America® Premium Rewards® Credit Card
+    issuer: Bank of America
+    segment: personal
+    official_url: https://www.bankofamerica.com/credit-cards/products/premium-rewards-credit-card/
+    last_verified: 2026-11-09
+    sources:
+      - https://www.bankofamerica.com/credit-cards/products/premium-rewards-credit-card/
+      - https://www.bankofamerica.com/credit-cards/terms-and-conditions/?campaignid=4079485&productoffercode=UN&locale=en_US
+    annual_fee:
+      amount: 95
+      first_year_waived: false
+    foreign_tx_fee_pct: 0
+    bonus:
+      current:
+        parts:
+          - value: 60000
+            unit: points
+        min_spend: 4000
+        spend_months: 3
+        note_en: "Spend window is 90 days from account opening. The page values the points at $600."
+        note_ko: "지출 기간은 계좌 개설 후 90일. 페이지는 포인트 가치를 $600으로 안내."
+      usual:
+        # 진호님 승인 2026-11-10, sources: uscreditcardguide.com·bankrate.com. 60,000 / $4,000·90일이 2023-06부터 기본 오퍼(그 전 50,000 / $3,000), 종료일 없음. 50,000으로 다시 내려간 기록은 못 찾음. Preferred Rewards(BofA Rewards) 회원 가산은 반영하지 않은 공개 기본값.
+        parts:
+          - value: 60000
+            unit: points
+    earn:
+      - category_en: Travel
+        category_ko: 여행
+        rate: 2
+        unit: points
+      - category_en: Dining
+        category_ko: 식당
+        rate: 2
+        unit: points
+      - category_en: Everything else
+        category_ko: 그 외 전부
+        rate: 1.5
+        unit: points
+    benefits:
+      - en: Up to $100 a year in airline incidental credits (seat upgrades, bag fees, in-flight services, lounge fees)
+        ko: 연 최대 $100 항공 부대비용 크레딧(좌석 업그레이드·수하물·기내 서비스·라운지 요금)
+      - en: TSA PreCheck or Global Entry fee credit up to $100, once every 4 years
+        ko: TSA PreCheck 또는 Global Entry 수수료 최대 $100 환급(4년에 1번)
+      - en: Trip delay, cancellation and interruption, baggage delay, lost luggage and emergency evacuation coverage
+        ko: 여행 지연·취소/중단·수하물 지연·분실·긴급 후송 보장
+      - en: Purchase protections such as return protection and extended warranty help
+        ko: 반품 보호·보증 연장 지원 등 구매 보호
+      - en: Redeem points as cash into eligible Bank of America or Merrill accounts, or as a statement credit; points do not expire
+        ko: 포인트를 Bank of America·Merrill 계좌 입금이나 청구서 차감으로 사용, 소멸 없음
