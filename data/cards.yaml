@@ -17,6 +17,11 @@
 # 직접 읽고 숫자만 옮겼습니다. 카드명은 Citi 페이지에 쓰인 정식 상품명. last_verified·bonus.usual은
 # 위와 같이 진호님 확인 필요. elevated 없음(제안은 검수표 phase4_batch3_citi.md에만).
 # A3 추가(2026-11-09 미국 서부): Custom Cash 대신 Citi Strata® Card — 같은 방식으로 읽음, elevated 없음.
+#
+# 4묶음: Capital One 3장, Discover 1장, Wells Fargo 2장, Bank of America 1장(모두 개인). 명박사가 2026-11-09
+# (미국 서부 날짜) 각 발급사 공식 상품 페이지와 같은 페이지·링크의 요율·약관(FTF 줄)을 직접 읽고 숫자만
+# 옮겼습니다. 카드명은 각 발급사 페이지 표기(®/℠ 포함). last_verified·bonus.usual은 위와 같이 진호님 확인 필요.
+# elevated 없음(제안은 검수표 phase4_batch4_rest.md에만, 진호님만 넣음).
 
 cards:
   # ===================== Chase — 개인 =====================
@@ -1255,3 +1260,387 @@ cards:
         ko: 카드로 결제한 대상 Turo 렌터카 1건당 최대 $30, 연 최대 $180 환급
       - en: Purchases also earn Loyalty Points toward AAdvantage status (1 per eligible mile)
         ko: 구매로 얻은 대상 마일 1마일당 AAdvantage 등급용 Loyalty Point 1점
+
+  # ===================== Capital One — 개인 =====================
+  - id: capital-one-venture-x
+    name: Capital One Venture X Rewards
+    issuer: Capital One
+    segment: personal
+    official_url: https://www.capitalone.com/credit-cards/venture-x/
+    last_verified: 2026-11-09  # 진호님 재확인 필요(병합 전)
+    sources:
+      - https://www.capitalone.com/credit-cards/venture-x/
+    annual_fee:
+      amount: 395
+      first_year_waived: false
+    foreign_tx_fee_pct: 0
+    bonus:
+      current:
+        parts:
+          - value: 75000
+            unit: miles
+        min_spend: 4000
+        spend_months: 3
+      usual:
+        # 명박사 제안 — 진호님 승인 필요, sources: awardwallet.com 오퍼 기록·capitalone.com 현재 오퍼(+ 커뮤니티 기록은 검수표). 75,000 / $4,000·3개월이 2026-01-06부터 10개월째(그 전 2022-03~2025-11도 같은 값), 종료일 없음. 역대 최고 100,000 / $10,000·6개월(2021-11~2022-03, 2025-11-12~2026-01-05).
+        parts:
+          - value: 75000
+            unit: miles
+    earn:
+      - category_en: Hotels and rental cars booked via Capital One Travel
+        category_ko: Capital One Travel로 예약한 호텔·렌터카
+        rate: 10
+        unit: miles
+      - category_en: Flights and vacation rentals booked via Capital One Travel
+        category_ko: Capital One Travel로 예약한 항공권·휴가용 숙소
+        rate: 5
+        unit: miles
+      - category_en: Capital One Entertainment ticket purchases
+        category_ko: Capital One Entertainment 티켓 구매
+        rate: 5
+        unit: miles
+      - category_en: Everything else
+        category_ko: 그 외 전부
+        rate: 2
+        unit: miles
+    benefits:
+      - en: $300 credit each year for bookings made through Capital One Travel
+        ko: 매년 Capital One Travel 예약에 쓰는 $300 크레딧
+      - en: 10,000 bonus miles every account anniversary, starting at the first
+        ko: 첫 카드 기념일부터 매년 10,000마일 추가
+      - en: Capital One Lounge and Priority Pass lounge access for the primary cardholder (Priority Pass needs enrollment)
+        ko: 본인 카드 소지자 Capital One 라운지·Priority Pass 라운지 이용(Priority Pass는 등록 필요)
+      - en: Global Entry or TSA PreCheck fee credit up to $120, once every 4 years
+        ko: Global Entry 또는 TSA PreCheck 수수료 최대 $120 환급(4년에 1번)
+      - en: Move miles to 15+ airline and hotel loyalty programs
+        ko: 15개 이상 항공·호텔 회원 프로그램으로 마일 이전
+      - en: Cell phone protection up to $800 when you pay your phone bill with the card
+        ko: 휴대폰 요금을 카드로 내면 휴대폰 도난·파손 최대 $800 보상
+
+  - id: capital-one-venture
+    name: Capital One Venture Rewards
+    issuer: Capital One
+    segment: personal
+    official_url: https://www.capitalone.com/credit-cards/venture/
+    last_verified: 2026-11-09  # 진호님 재확인 필요(병합 전)
+    sources:
+      - https://www.capitalone.com/credit-cards/venture/
+    annual_fee:
+      amount: 95
+      first_year_waived: false
+    foreign_tx_fee_pct: 0
+    bonus:
+      current:
+        parts:
+          - value: 75000
+            unit: miles
+          - value: 300
+            unit: credit
+        min_spend: 4000
+        spend_months: 3
+        note_en: "Labeled a limited-time offer on the page. The $300 is a one-time Capital One Travel credit for hotel and vacation rental bookings, usable for one year after the account opens."
+        note_ko: "페이지에 기간 한정 오퍼로 표시됨. $300은 Capital One Travel 호텔·휴가용 숙소 예약에 쓰는 1회 크레딧이며 계좌 개설 후 1년 안에 써야 함."
+      usual:
+        # 명박사 제안 — 진호님 승인 필요, sources: awardwallet.com 오퍼 기록·capitalone.com 기간 한정 표시. 크레딧 없는 75,000 / $4,000·3개월이 2022-05부터 기본 오퍼. $250·$300 여행 크레딧은 몇 달씩 붙었다 빠지는 프로모션(2024-07~09, 2025-02~05, 2026-01~04, 지금 $300은 2026-09-08부터). 역대 최고 100,000(지출 $20,000, 2020·2021).
+        parts:
+          - value: 75000
+            unit: miles
+    earn:
+      - category_en: Hotels, vacation rentals and rental cars booked via Capital One Travel
+        category_ko: Capital One Travel로 예약한 호텔·휴가용 숙소·렌터카
+        rate: 5
+        unit: miles
+      - category_en: Capital One Entertainment ticket purchases
+        category_ko: Capital One Entertainment 티켓 구매
+        rate: 5
+        unit: miles
+      - category_en: Everything else
+        category_ko: 그 외 전부
+        rate: 2
+        unit: miles
+    benefits:
+      - en: Global Entry or TSA PreCheck fee credit up to $120
+        ko: Global Entry 또는 TSA PreCheck 수수료 최대 $120 환급
+      - en: $50 experience credit on each Lifestyle Collection stay booked via Capital One Travel
+        ko: Capital One Travel로 예약한 Lifestyle Collection 숙박마다 $50 체험 크레딧
+      - en: Hertz Five Star status at no cost
+        ko: Hertz Five Star 등급 무료
+      - en: Travel credit for the difference if you find a lower price within 24 hours of an eligible Capital One Travel booking
+        ko: Capital One Travel 대상 예약 후 24시간 안에 더 싼 가격을 찾으면 차액을 여행 크레딧으로
+      - en: Miles never expire while the account is open and can move to select travel loyalty programs
+        ko: 계좌가 열려 있는 동안 마일 소멸 없음, 일부 여행 회원 프로그램으로 이전 가능
+
+  - id: capital-one-savor
+    name: Capital One Savor Rewards
+    issuer: Capital One
+    segment: personal
+    official_url: https://www.capitalone.com/credit-cards/savor/
+    last_verified: 2026-11-09  # 진호님 재확인 필요(병합 전)
+    sources:
+      - https://www.capitalone.com/credit-cards/savor/
+    annual_fee:
+      amount: 0
+      first_year_waived: false
+    foreign_tx_fee_pct: 0
+    bonus:
+      current:
+        parts:
+          - value: 200
+            unit: cash
+        min_spend: 500
+        spend_months: 3
+      usual:
+        # 명박사 제안 — 진호님 승인 필요, sources: awardwallet.com 오퍼 기록·cnbc.com. $200 / $500·3개월이 2020-10부터 기본 오퍼(2026-08-11부터 다시 $200), 종료일 없음. $250은 짧은 프로모션(2024-10-22~12-09, 2026-06-09~08-10). 2024-10-22 연회비 없는 SavorOne이 Savor로 이름이 바뀜(연회비 있던 옛 Savor는 2024-07 신규 중단). 지금 capitalone.com의 'SavorOne Rewards'는 연회비 $39인 다른 카드(fair credit용).
+        parts:
+          - value: 200
+            unit: cash
+    earn:
+      - category_en: Capital One Entertainment ticket purchases
+        category_ko: Capital One Entertainment 티켓 구매
+        rate: 8
+        unit: cash
+      - category_en: Hotels, vacation rentals and rental cars booked via Capital One Travel
+        category_ko: Capital One Travel로 예약한 호텔·휴가용 숙소·렌터카
+        rate: 5
+        unit: cash
+      - category_en: Dining
+        category_ko: 식당
+        rate: 3
+        unit: cash
+      - category_en: Grocery stores (not superstores such as Walmart and Target)
+        category_ko: 식료품점(Walmart·Target 같은 대형 할인점 제외)
+        rate: 3
+        unit: cash
+      - category_en: Entertainment and popular streaming services
+        category_ko: 엔터테인먼트·주요 스트리밍 서비스
+        rate: 3
+        unit: cash
+      - category_en: Everything else
+        category_ko: 그 외 전부
+        rate: 1
+        unit: cash
+    benefits:
+      - en: Travel credit for the difference if you find a lower price within 24 hours of an eligible Capital One Travel booking
+        ko: Capital One Travel 대상 예약 후 24시간 안에 더 싼 가격을 찾으면 차액을 여행 크레딧으로
+      - en: Hertz Five Star status at no cost
+        ko: Hertz Five Star 등급 무료
+      - en: Use cash back at checkout with PayPal or on Amazon.com
+        ko: PayPal 결제나 Amazon.com에서 캐시백으로 결제 가능
+      - en: Cardholder-only presales and VIP packages through Capital One Entertainment
+        ko: Capital One Entertainment 카드 회원 전용 선예매·VIP 패키지
+
+  # ===================== Discover — 개인 =====================
+  - id: discover-it-cash-back
+    name: Discover it Cash Back Credit Card
+    issuer: Discover
+    segment: personal
+    official_url: https://www.discover.com/credit-cards/cash-back/it-card/
+    last_verified: 2026-11-09  # 진호님 재확인 필요(병합 전)
+    sources:
+      - https://www.discover.com/credit-cards/cash-back/it-card/
+    annual_fee:
+      amount: 0
+      first_year_waived: false
+    foreign_tx_fee_pct: 0
+    bonus:
+      current:
+        parts:
+          - value: 100
+            unit: percent_match
+          - value: 200
+            unit: cash
+        min_spend: 500
+        spend_months: 3
+        note_en: "Two parts. First-year match (Discover calls it Cashback Match): all cash back earned in your first 365 days is matched dollar for dollar, with no cap and no spending requirement. Separately, a $200 statement credit after $500 in purchases in the first 3 months; that $200 itself is not matched."
+        note_ko: "두 부분. ① 첫해 매칭: 첫 365일 동안 쌓은 캐시백 전부를 같은 금액만큼 한 번 더 줌(한도·지출 조건 없음). ② 첫 3개월 $500 사용 시 $200 청구서 크레딧(이 $200은 매칭 대상 아님)."
+      usual:
+        # 명박사 제안 — 진호님 승인 필요, sources: nerdwallet.com·cnbc.com. 첫해 매칭만 있는 것이 오래된 기본 오퍼(NerdWallet 2025-01 목록도 매칭만). $200 / $500·3개월 청구서 크레딧은 2026-10-20쯤 새로 붙음(NerdWallet·CNBC 같은 날 보도), 종료일 없음. dailydrop.com 페이지(2026-02 갱신 표시)에도 $200이 보여 그 전에 나온 적이 있는지는 불확실.
+        parts:
+          - value: 100
+            unit: percent_match
+    earn:
+      - category_en: Rotating quarterly categories, up to the quarterly maximum (activation required)
+        category_ko: 분기마다 바뀌는 카테고리(분기 한도까지, 활성화 필요)
+        rate: 5
+        unit: cash
+      - category_en: Capital One Travel bookings (hotels, vacation rentals, rental cars, activities)
+        category_ko: Capital One Travel 예약(호텔·휴가용 숙소·렌터카·액티비티)
+        rate: 5
+        unit: cash
+      - category_en: Capital One Entertainment ticket purchases
+        category_ko: Capital One Entertainment 티켓 구매
+        rate: 5
+        unit: cash
+      - category_en: Everything else
+        category_ko: 그 외 전부
+        rate: 1
+        unit: cash
+    benefits:
+      - en: No late fee the first time you pay late
+        ko: 첫 연체 1회는 연체료 없음
+      - en: Lock the card in the mobile app if it goes missing
+        ko: 분실 시 모바일 앱에서 카드 잠금
+      - en: Alerts if your Social Security number is found on the dark web (CreditWise sign-up)
+        ko: 다크웹에서 내 사회보장번호가 발견되면 알림(CreditWise 가입)
+      - en: Cash back does not expire while the account is open
+        ko: 계좌가 열려 있는 동안 캐시백 소멸 없음
+
+  # ===================== Wells Fargo — 개인 =====================
+  - id: wells-fargo-active-cash
+    name: Wells Fargo Active Cash® Card
+    issuer: Wells Fargo
+    segment: personal
+    official_url: https://creditcards.wellsfargo.com/active-cash-credit-card/
+    last_verified: 2026-11-09  # 진호님 재확인 필요(병합 전)
+    sources:
+      - https://creditcards.wellsfargo.com/active-cash-credit-card/
+      - https://www.wellsfargo.com/credit-cards/active-cash/terms/
+    annual_fee:
+      amount: 0
+      first_year_waived: false
+    foreign_tx_fee_pct: 3
+    bonus:
+      current:
+        parts:
+          - value: 100
+            unit: cash
+        min_spend: 500
+        spend_months: 3
+        note_en: "Paid as cash rewards."
+        note_ko: "캐시 리워드로 지급."
+      usual:
+        # 명박사 제안 — 진호님 승인 필요(plan A4: 지금 값이 더 낮아 매일 경고 없음), sources: cnbc.com(2021 출시 $200)·awardwallet.com·nerdwallet.com(지금 $100). 가장 자주 보인 평소 오퍼는 $200 / $500·3개월(출시 때는 $1,000 지출, 2023-04부터 $500). $100은 2026-09쯤부터로 보이나 정확한 날짜 불명, 종료일 없음.
+        parts:
+          - value: 200
+            unit: cash
+    earn:
+      - category_en: All purchases
+        category_ko: 모든 구매
+        rate: 2
+        unit: cash
+    benefits:
+      - en: Cell phone protection up to $600 per claim ($25 deductible, 2 claims a year) when you pay your phone bill with the card
+        ko: 휴대폰 요금을 카드로 내면 건당 최대 $600 휴대폰 보상(자기부담 $25, 연 2건)
+      - en: Secondary auto rental collision damage coverage
+        ko: 렌터카 충돌·파손 2차 보장
+      - en: Roadside Dispatch and travel and emergency assistance
+        ko: 긴급 출동 연결·여행 중 긴급 지원 서비스
+      - en: Visa Signature Concierge and Luxury Hotel Collection
+        ko: Visa Signature 컨시어지·Luxury Hotel Collection
+      - en: No categories to track and rewards do not expire while the account is open
+        ko: 카테고리 신경 쓸 필요 없음, 계좌가 열려 있는 동안 리워드 소멸 없음
+
+  - id: wells-fargo-autograph
+    name: Wells Fargo Autograph® Card
+    issuer: Wells Fargo
+    segment: personal
+    official_url: https://creditcards.wellsfargo.com/autograph-visa-credit-card/
+    last_verified: 2026-11-09  # 진호님 재확인 필요(병합 전)
+    sources:
+      - https://creditcards.wellsfargo.com/autograph-visa-credit-card/
+      - https://www.wellsfargo.com/credit-cards/autograph-visa/terms/
+    annual_fee:
+      amount: 0
+      first_year_waived: false
+    foreign_tx_fee_pct: 0
+    bonus:
+      current:
+        parts:
+          - value: 20000
+            unit: points
+        min_spend: 1000
+        spend_months: 3
+      usual:
+        # 명박사 제안 — 진호님 승인 필요, sources: uscreditcardguide.com(2024-01 갱신 '20k 오퍼', 최근 최고 30k)·wellsfargo.com. 20,000 / $1,000·3개월이 2024-01쯤부터 기본 오퍼, 종료일 없음. 역대 최고 30,000(2022-08~2023-07, 2023-11~2024-01).
+        parts:
+          - value: 20000
+            unit: points
+    earn:
+      - category_en: Restaurants
+        category_ko: 식당
+        rate: 3
+        unit: points
+      - category_en: Travel
+        category_ko: 여행
+        rate: 3
+        unit: points
+      - category_en: Gas stations and transit
+        category_ko: 주유소·교통
+        rate: 3
+        unit: points
+      - category_en: Popular streaming services
+        category_ko: 주요 스트리밍 서비스
+        rate: 3
+        unit: points
+      - category_en: Phone plans
+        category_ko: 휴대폰 요금제
+        rate: 3
+        unit: points
+      - category_en: Everything else
+        category_ko: 그 외 전부
+        rate: 1
+        unit: points
+    benefits:
+      - en: Move points to select travel loyalty programs, in any amount
+        ko: 일부 여행 회원 프로그램으로 원하는 만큼 포인트 이전
+      - en: Cell phone protection up to $600 per claim ($25 deductible, 2 claims a year) when you pay your phone bill with the card
+        ko: 휴대폰 요금을 카드로 내면 건당 최대 $600 휴대폰 보상(자기부담 $25, 연 2건)
+      - en: Secondary auto rental collision damage coverage
+        ko: 렌터카 충돌·파손 2차 보장
+      - en: Travel and emergency assistance services
+        ko: 여행 중 긴급 지원 서비스
+      - en: Visa Signature Concierge and Luxury Hotel Collection
+        ko: Visa Signature 컨시어지·Luxury Hotel Collection
+
+  # ===================== Bank of America — 개인 =====================
+  - id: bank-of-america-premium-rewards
+    name: Bank of America® Premium Rewards® Credit Card
+    issuer: Bank of America
+    segment: personal
+    official_url: https://www.bankofamerica.com/credit-cards/products/premium-rewards-credit-card/
+    last_verified: 2026-11-09  # 진호님 재확인 필요(병합 전)
+    sources:
+      - https://www.bankofamerica.com/credit-cards/products/premium-rewards-credit-card/
+      - https://www.bankofamerica.com/credit-cards/terms-and-conditions/?campaignid=4079485&productoffercode=UN&locale=en_US
+    annual_fee:
+      amount: 95
+      first_year_waived: false
+    foreign_tx_fee_pct: 0
+    bonus:
+      current:
+        parts:
+          - value: 60000
+            unit: points
+        min_spend: 4000
+        spend_months: 3
+        note_en: "Spend window is 90 days from account opening. The page values the points at $600."
+        note_ko: "지출 기간은 계좌 개설 후 90일. 페이지는 포인트 가치를 $600으로 안내."
+      usual:
+        # 명박사 제안 — 진호님 승인 필요, sources: uscreditcardguide.com·bankrate.com. 60,000 / $4,000·90일이 2023-06부터 기본 오퍼(그 전 50,000 / $3,000), 종료일 없음. 50,000으로 다시 내려간 기록은 못 찾음. Preferred Rewards(BofA Rewards) 회원 가산은 반영하지 않은 공개 기본값.
+        parts:
+          - value: 60000
+            unit: points
+    earn:
+      - category_en: Travel
+        category_ko: 여행
+        rate: 2
+        unit: points
+      - category_en: Dining
+        category_ko: 식당
+        rate: 2
+        unit: points
+      - category_en: Everything else
+        category_ko: 그 외 전부
+        rate: 1.5
+        unit: points
+    benefits:
+      - en: Up to $100 a year in airline incidental credits (seat upgrades, bag fees, in-flight services, lounge fees)
+        ko: 연 최대 $100 항공 부대비용 크레딧(좌석 업그레이드·수하물·기내 서비스·라운지 요금)
+      - en: TSA PreCheck or Global Entry fee credit up to $100, once every 4 years
+        ko: TSA PreCheck 또는 Global Entry 수수료 최대 $100 환급(4년에 1번)
+      - en: Trip delay, cancellation and interruption, baggage delay, lost luggage and emergency evacuation coverage
+        ko: 여행 지연·취소/중단·수하물 지연·분실·긴급 후송 보장
+      - en: Purchase protections such as return protection and extended warranty help
+        ko: 반품 보호·보증 연장 지원 등 구매 보호
+      - en: Redeem points as cash into eligible Bank of America or Merrill accounts, or as a statement credit; points do not expire
+        ko: 포인트를 Bank of America·Merrill 계좌 입금이나 청구서 차감으로 사용, 소멸 없음
