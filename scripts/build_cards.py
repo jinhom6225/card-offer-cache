@@ -8,7 +8,8 @@
 
 The file is rewritten only when its bytes would change other than ``generated_at``,
 so an unchanged build makes no commit and keeps the Pages ETag. Warnings (D3,
-reopened offer, new start without a raise, removed card, first build) go to
+reopened offer, new start without a raise, removed card, first build, bonus log
+missing while a previous JSON exists) go to
 stdout and ``--warnings-file``; the build continues. Any unexpected exception is
 printed as one ``[오류]`` line (the workflow sends those to Telegram) and exits 1.
 
@@ -202,6 +203,11 @@ def _read_bonus_log(path):
         raise BuildError(f"{display_path(path)}: {exc}") from exc
 
 
+def _log_restart_warning(path):
+    return (f"[경고] {display_path(path)} 없음(또는 빈 파일): 보너스 관측 기록을 처음부터 다시 "
+            "시작합니다. 첫 배포가 아니라면 git에서 되돌리세요.")
+
+
 def _append_bonus_log(path, existing, rows, json_saved):
     """Old bytes + new rows (header first when the file is new or empty), written atomically."""
     if not rows:
@@ -231,13 +237,15 @@ def build(args, now):
     payload, card_warnings = build_payload(cards, previous, today, iso_utc(now), data_updated_at)
     log_text, last_rows = _read_bonus_log(args.bonus_log)
     log_rows = diff_rows(last_rows, [row_for(card, today) for card in payload["cards"]], today)
-    warnings = ([FIRST_BUILD_WARNING] if previous is None else []) + card_warnings
+    log_restart = [_log_restart_warning(args.bonus_log)] if previous is not None and not log_text else []
+    warnings = ([FIRST_BUILD_WARNING] if previous is None else []) + log_restart + card_warnings
     for warning in warnings:
         print(warning)
     changed = not same_content(payload, previous, previous_text)
+    # Warnings before the JSON: if they cannot be written, nothing has changed yet.
+    _write_warnings(args.warnings_file, warnings)
     if changed:
         _save(args.output, _serialize(payload))
-    _write_warnings(args.warnings_file, warnings)
     _append_bonus_log(args.bonus_log, log_text, log_rows, json_saved=changed)
     print(_summary(payload, warnings, changed, args.output, previous is None, len(log_rows)))
 
@@ -261,8 +269,8 @@ def main(argv=None):
 def _failure_line(args, json_saved):
     output = display_path(args.output)
     if json_saved:
-        return (f"빌드 실패: {output}는 갱신됐지만 {display_path(args.bonus_log)}에 "
-                "기록하지 못했습니다.")
+        return (f"빌드 실패: {output}는 이 실행 환경에서만 갱신됐지만 "
+                f"{display_path(args.bonus_log)}에 기록하지 못했습니다(커밋되지 않음).")
     return f"빌드 실패: {output}는 바꾸지 않았습니다."
 
 

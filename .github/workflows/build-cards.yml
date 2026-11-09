@@ -11,7 +11,8 @@ name: Build cards JSON
 #     never edits data/cards.yaml
 #   - Telegram: every failure; a success summary for the daily run and manual
 #     runs; and any run that has a report (build warnings: D3, reopened offer,
-#     new start without a raise, removed card, first build). Plain text (no
+#     new start without a raise, removed card, first build, bonus log
+#     missing). Plain text (no
 #     parse_mode) because messages carry values typed into cards.yaml. Skipped
 #     if the secrets are unset.
 #   - Security: no token at the workflow level (permissions: {}); only the build
@@ -26,6 +27,7 @@ on:
     branches: [main]
     paths:
       - "data/**"
+      - "history/**"
       - "scripts/**"
       - "requirements*.txt"
       - ".github/workflows/build-cards.yml"
@@ -135,7 +137,14 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -- docs/cards_v1.json history/bonus_log.csv
-          git commit -m "chore: update cards json $(TZ=America/Los_Angeles date +%Y-%m-%dT%H:%M%z)"
+          if [ "${json_changed}" = "true" ] && [ "${log_changed}" = "true" ]; then
+            what="cards json and bonus log"
+          elif [ "${json_changed}" = "true" ]; then
+            what="cards json"
+          else
+            what="bonus log"
+          fi
+          git commit -m "chore: update ${what} $(TZ=America/Los_Angeles date +%Y-%m-%dT%H:%M%z)"
           remote="https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
           git pull --rebase "${remote}" main
           git push "${remote}" HEAD:main

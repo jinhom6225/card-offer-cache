@@ -1,0 +1,2 @@
+# The bonus observation log is append-only; keep LF so old rows stay byte-identical.
+history/*.csv text eol=lf

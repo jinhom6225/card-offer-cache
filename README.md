@@ -167,7 +167,7 @@
 
 | 실행 | 언제 | 하는 일 |
 |---|---|---|
-| 데이터 수정 | `data/`, `scripts/`, `requirements*.txt`, `.github/workflows/build-cards.yml`을 main에 커밋할 때마다 | 테스트 → 검증 → JSON 생성 → 보너스 관측 기록 추가 → 바뀌었으면 커밋 → 빌드 경고가 있으면 텔레그램 |
+| 데이터 수정 | `data/`, `history/`, `scripts/`, `requirements*.txt`, `.github/workflows/build-cards.yml`을 main에 커밋할 때마다 | 테스트 → 검증 → JSON 생성 → 보너스 관측 기록 추가 → 바뀌었으면 커밋 → 빌드 경고가 있으면 텔레그램 |
 | 매일 | 10:23 UTC (= 미국 서부 02:23 PST / 03:23 PDT, 한국 19:23) | 위와 같음 + 자동 종료 반영 + 확인 공백·높음 표시 누락 보고 + 성공 요약 |
 | 수동 | Actions → **Build cards JSON** → Run workflow | 매일 실행과 같음. `force_fail`을 켜면 일부러 실패(실패 알림 확인용) |
 
@@ -222,6 +222,7 @@ GitHub 예약 실행은 몇 분~몇십 분 늦게 시작할 수 있습니다. �
 | `[경고] <id>: start가 바뀌어 사용자에게 다시 알림이 갑니다` | "높음" 중에 `start`가 바뀌었는데 보너스가 오르지 않음(단위별로 모두 같거나 낮고 새 단위 없음) | 오르지 않았다면 `start`를 되돌리기 |
 | `[경고] <id>: 카드가 cards.yaml에서 빠져 앱에서 사라지고 변동 기록(N건)도 지워졌습니다` | 이전 JSON에 있던 카드가 없어짐(**`id`를 바꾼 경우도 포함**) | 실수면 `cards.yaml`을 되돌리기 |
 | `[경고] 이전 JSON 없음(첫 빌드): ...` | `docs/cards_v1.json`이 없을 때(첫 빌드). 요약 줄에도 `이전 JSON 없음(첫 빌드)` | 첫 빌드가 아니면 git에서 파일 되돌리기 |
+| `[경고] history/bonus_log.csv 없음(또는 빈 파일): 보너스 관측 기록을 처음부터 다시 시작합니다...` | 이전 JSON은 있는데 보너스 관측 기록이 없거나 비었을 때. A2를 처음 배포한 첫 실행에서는 한 번 나오는 게 정상 | 첫 배포가 아니면 git에서 파일 되돌리기 |
 
 ### 텔레그램 메시지 뜻
 
@@ -246,7 +247,7 @@ GitHub 예약 실행은 몇 분~몇십 분 늦게 시작할 수 있습니다. �
 
 예약 실행은 공개 저장소에서 60일 동안 활동이 없으면 GitHub가 멈추는데, workflow의 `keepalive` job이 매번 다시 켜 둡니다.
 
-보안: workflow 전체 권한은 비워 두고(`permissions: {}`) 빌드 job만 `contents: write`, keepalive job만 `actions: write`를 받습니다. checkout은 토큰을 남기지 않고(`persist-credentials: false`), 커밋 단계의 pull/push에서만 토큰을 씁니다. 봇은 `docs/cards_v1.json`과 `history/bonus_log.csv` 두 파일만(경로를 지정해) 커밋합니다. Actions는 커밋 SHA로 고정했고, CI 설치는 해시를 고정한 `requirements-ci.txt`(`pip install --require-hashes`)를 씁니다.
+보안: workflow 전체 권한은 비워 두고(`permissions: {}`) 빌드 job만 `contents: write`, keepalive job만 `actions: write`를 받습니다. checkout은 토큰을 남기지 않고(`persist-credentials: false`), 커밋 단계의 pull/push에서만 토큰을 씁니다. 봇은 `docs/cards_v1.json`과 `history/bonus_log.csv` 두 파일만(경로를 지정해) 커밋합니다(메시지는 바뀐 파일에 따라 `chore: update cards json` / `chore: update bonus log` / `chore: update cards json and bonus log` + 시각). Actions는 커밋 SHA로 고정했고, CI 설치는 해시를 고정한 `requirements-ci.txt`(`pip install --require-hashes`)를 씁니다.
 
 ## 보너스 관측 기록 (`history/bonus_log.csv`)
 
@@ -264,6 +265,7 @@ GitHub 예약 실행은 몇 분~몇십 분 늦게 시작할 수 있습니다. �
 
 - 개수 제한 없이 **뒤에 덧붙이기만** 합니다. 예전 줄은 고치거나 지우지 않습니다.
 - `parts`는 순서와 상관없이 정렬해 적으므로 `parts` 순서만 바꾸면 줄이 생기지 않습니다(`75000.0`과 `75000`도 같은 값).
+- 이전 JSON이 있는데 이 파일이 없거나 비었으면 빌드 경고(`[경고] ... 보너스 관측 기록을 처음부터 다시 시작합니다`)가 텔레그램으로 옵니다. 첫 배포가 아니라면 지워진 것이니 git에서 되돌리세요.
 - 검증 오류로 빌드가 멈추면 이 파일도 건드리지 않습니다. 파일 모양이 깨졌으면(머리글이 다름, 칸 수가 다름, 마지막 줄바꿈 없음, 따옴표 오류 등) `[오류] history/bonus_log.csv: 보너스 관측 기록 파일의 모양이 맞지 않습니다(...)`로 빌드를 멈추고 JSON과 기록 둘 다 그대로 둡니다. git에서 이전 버전으로 되돌리면 됩니다.
 
 **칸 읽는 법** (UTF-8, 쉼표 구분, 첫 줄 머리글. 엑셀·구글 시트에서 그대로 열림):
@@ -312,6 +314,7 @@ scripts/cardlib/         # schema(검증 진입점), loader(YAML 읽기), fields
 tests/                   # unittest + fixtures
 docs/                    # GitHub Pages 배포 폴더(.nojekyll, cards_v1.json은 Actions가 커밋)
 history/bonus_log.csv    # 보너스 관측 기록(덧붙이기만, Actions가 커밋, 앱에는 안 나감)
+.gitattributes           # history/*.csv는 항상 LF 줄바꿈
 .github/workflows/build-cards.yml   # 검증·빌드·커밋·텔레그램·keepalive
 requirements.txt         # 로컬 개발용(coverage 포함)
 requirements-ci.txt      # CI 전용, 해시 고정

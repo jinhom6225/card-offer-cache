@@ -297,6 +297,23 @@ class FailedBuildTest(BuildTestCase):
         self.assertEqual(code, 1)
         self.assertIn("[오류] ", output)
         self.assertIn("저장 실패", output)
+        self.assertFalse(self.out.exists())  # warnings are written before the JSON
+        self.assertFalse(self.log.exists())
+        self.assertIn("바꾸지 않았습니다", output)
+
+    def test_warnings_file_failure_on_a_change_keeps_the_old_json(self):
+        self.write_cards([make_card()])
+        self.run_build()
+        before, log_before = self.out.read_bytes(), self.log.read_bytes()
+        self.write_cards([with_value(make_card(), "name", "Renamed Card")])
+        self.warnings.unlink()
+        self.warnings.mkdir()
+        code, output = self.run_build(now="2026-11-10T18:00:00Z")
+        self.assertEqual(code, 1)
+        self.assertEqual(self.out.read_bytes(), before)
+        self.assertEqual(self.log.read_bytes(), log_before)
+        self.assertIn("바꾸지 않았습니다", output)
+        self.assertNotIn("갱신됐지만", output)
 
     def test_bad_now_is_a_usage_error(self):
         self.write_cards([make_card()])
@@ -474,7 +491,38 @@ class BonusLogBuildTest(BuildTestCase):
         self.assertIn("[오류] ", output)
         self.assertIn("저장 실패", output)
         self.assertNotIn("바꾸지 않았습니다", output)
-        self.assertIn("갱신됐지만", output)
+        self.assertIn("이 실행 환경에서만 갱신됐지만", output)
+
+    def test_missing_log_with_previous_json_is_warned(self):
+        self.write_cards([make_card("a")])
+        self.run_build()
+        self.log.unlink()
+        code, output = self.run_build(now="2026-11-10T18:00:00Z")
+        self.assertEqual(code, 0, output)
+        lines = self.warnings.read_text(encoding="utf-8").splitlines()
+        self.assertEqual(len(lines), 1)
+        self.assertTrue(lines[0].startswith("[경고] "), lines[0])
+        self.assertIn("bonus_log.csv", lines[0])
+        self.assertIn("보너스 관측 기록을 처음부터 다시 시작합니다", lines[0])
+        self.assertIn("git에서 되돌리세요", lines[0])
+        self.assertIn("경고 1개", self.summary(output))
+        self.assertEqual([r["note"] for r in self.log_rows()], ["added"])
+
+    def test_empty_log_with_previous_json_is_warned_too(self):
+        self.write_cards([make_card("a")])
+        self.run_build()
+        self.log.write_bytes(b"")
+        code, output = self.run_build(now="2026-11-10T18:00:00Z")
+        self.assertEqual(code, 0, output)
+        self.assertIn("처음부터 다시 시작합니다", self.warnings.read_text(encoding="utf-8"))
+
+    def test_first_build_without_json_does_not_warn_about_the_log(self):
+        self.write_cards([make_card("a")])
+        self.run_build()
+        text = self.warnings.read_text(encoding="utf-8")
+        self.assertNotIn("보너스 관측 기록", text)
+        code, output = self.run_build(now="2026-11-10T18:00:00Z")
+        self.assertEqual(self.warnings.read_text(encoding="utf-8"), "")
 
 
 class GitCommitTimeTest(unittest.TestCase):
