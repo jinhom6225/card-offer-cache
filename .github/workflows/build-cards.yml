@@ -6,7 +6,9 @@ name: Build cards JSON
 #     check) and by hand (force_fail checks the failure notice)
 #   - validation failure: docs/cards_v1.json is left as is, the error list goes
 #     to Telegram and the run fails
-#   - the bot commits docs/ only; it never edits data/cards.yaml
+#   - the bot commits docs/cards_v1.json and history/bonus_log.csv only (the
+#     append-only bonus observation log, plan A2; never in the app JSON); it
+#     never edits data/cards.yaml
 #   - Telegram: every failure; a success summary for the daily run and manual
 #     runs; and any run that has a report (build warnings: D3, reopened offer,
 #     new start without a raise, removed card, first build). Plain text (no
@@ -100,32 +102,45 @@ jobs:
           set -euo pipefail
           log="${RUNNER_TEMP}/build.log"
           python scripts/build_cards.py --data data/cards.yaml --output docs/cards_v1.json \
+            --bonus-log history/bonus_log.csv \
             --warnings-file "${RUNNER_TEMP}/build_warnings.txt" 2>&1 | tee "${log}"
           summary="$(grep -E '^요약: ' "${log}" | tail -1 || true)"
           echo "summary=${summary}" >> "${GITHUB_OUTPUT}"
 
-      # Only docs/cards_v1.json is checked and committed. The token goes into
-      # the remote URL of pull/push only (works while the repo is private too);
-      # the URL is never printed (no set -x, no echo) and Actions masks the token.
-      - name: Commit docs if changed
+      # Only docs/cards_v1.json and history/bonus_log.csv are checked and
+      # committed (explicit paths). changed=true means the commit was pushed;
+      # json_changed / log_changed say which of the two files it carried (for
+      # the Telegram summary). The token goes into the remote URL of pull/push
+      # only (works while the repo is private too); the URL is never printed
+      # (no set -x, no echo) and Actions masks it.
+      - name: Commit docs and bonus log if changed
         id: commit
         env:
           GITHUB_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
-          if [ -z "$(git status --porcelain -- docs/cards_v1.json)" ]; then
-            echo "docs/cards_v1.json unchanged."
-            echo "changed=false" >> "${GITHUB_OUTPUT}"
+          if [ -z "$(git status --porcelain -- docs/cards_v1.json history/bonus_log.csv)" ]; then
+            echo "docs/cards_v1.json and history/bonus_log.csv unchanged."
+            printf 'changed=false\njson_changed=false\nlog_changed=false\n' >> "${GITHUB_OUTPUT}"
             exit 0
+          fi
+          json_changed=false
+          log_changed=false
+          if [ -n "$(git status --porcelain -- docs/cards_v1.json)" ]; then
+            json_changed=true
+          fi
+          if [ -n "$(git status --porcelain -- history/bonus_log.csv)" ]; then
+            log_changed=true
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs/cards_v1.json
+          git add -- docs/cards_v1.json history/bonus_log.csv
           git commit -m "chore: update cards json $(TZ=America/Los_Angeles date +%Y-%m-%dT%H:%M%z)"
           remote="https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
           git pull --rebase "${remote}" main
           git push "${remote}" HEAD:main
-          echo "changed=true" >> "${GITHUB_OUTPUT}"
+          printf 'changed=true\njson_changed=%s\nlog_changed=%s\n' \
+            "${json_changed}" "${log_changed}" >> "${GITHUB_OUTPUT}"
 
       # Build warnings on every run (push runs too); stale cards (last_verified
       # > 7 days), auto-ended offers and unmarked higher bonuses on the daily
@@ -161,13 +176,15 @@ jobs:
           STATUS: ${{ job.status }}
           SUMMARY: ${{ steps.build.outputs.summary }}
           CHANGED: ${{ steps.commit.outputs.changed }}
+          JSON_CHANGED: ${{ steps.commit.outputs.json_changed }}
+          LOG_CHANGED: ${{ steps.commit.outputs.log_changed }}
           TRIGGER: ${{ github.event_name }}
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
           PYTHONIOENCODING: utf-8
         run: |
           if [ "${STATUS}" = "success" ]; then
-            text="$(printf '[성공] card-offer-cache 빌드\n%s\nJSON 커밋: %s\n실행: %s' \
-              "${SUMMARY:-요약 없음}" "${CHANGED:-false}" "${TRIGGER}")"
+            text="$(printf '[성공] card-offer-cache 빌드\n%s\nJSON 커밋: %s · 기록 커밋: %s\n실행: %s' \
+              "${SUMMARY:-요약 없음}" "${JSON_CHANGED:-false}" "${LOG_CHANGED:-false}" "${TRIGGER}")"
             if [ -s "${RUNNER_TEMP}/report.txt" ]; then
               text="$(printf '%s\n\n%s' "${text}" "$(cat "${RUNNER_TEMP}/report.txt")")"
             fi
