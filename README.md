@@ -280,3 +280,4 @@ docs/                    # GitHub Pages 배포 폴더(.nojekyll, cards_v1.json�
 requirements.txt         # 로컬 개발용(coverage 포함)
 requirements-ci.txt      # CI 전용, 해시 고정
 ```
+# card-offer-cache
