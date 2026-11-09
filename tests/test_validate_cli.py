@@ -7,8 +7,6 @@ import sys
 import unittest
 from unittest import mock
 
-import yaml
-
 from helpers import FIXTURES, ROOT, errors_of
 
 import validate
@@ -80,11 +78,6 @@ class DataFilesTest(unittest.TestCase):
         cards = schema.load_cards(DATA / "cards.yaml")
         issues = schema.validate(cards, today=schema.today_pt())
         self.assertEqual(errors_of(issues), [])
-
-    def test_card_aliases_placeholder_structure(self):
-        with open(DATA / "card_aliases.yaml", encoding="utf-8") as handle:
-            aliases = yaml.safe_load(handle)
-        self.assertEqual(set(aliases), {"cards", "issuers", "signal_words", "terminal_prefixes"})
 
     def test_pages_folder_has_nojekyll(self):
         self.assertTrue((ROOT / "docs" / ".nojekyll").is_file())

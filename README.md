@@ -302,7 +302,6 @@ Python 3.11 이상(Actions는 3.12). 의존성은 `requirements.txt`(로컬 개�
 
 ```
 data/cards.yaml          # 진호님이 고치는 카드 데이터
-data/card_aliases.yaml   # RSS 신호용 카드 별칭 사전(다음 단계에서 채움, 앱에는 안 나감)
 scripts/validate.py      # 검증 CLI
 scripts/build_cards.py   # cards.yaml → docs/cards_v1.json 빌더
 scripts/staleness.py     # 텔레그램 확인 보고(빌드 경고, 7일 확인 공백, 자동 종료, 높음 표시 누락)
