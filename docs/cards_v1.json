@@ -1,0 +1,133 @@
+{
+  "schema": 1,
+  "generated_at": "2026-11-09T03:55:53Z",
+  "data_updated_at": "2026-11-08T23:13:43Z",
+  "cards": [
+    {
+      "id": "sample-travel-card",
+      "name": "Sample Travel Rewards Card (SAMPLE)",
+      "issuer": "Chase",
+      "segment": "personal",
+      "official_url": "https://creditcards.chase.com/",
+      "last_verified": "2026-11-08",
+      "annual_fee": {
+        "amount": 95,
+        "first_year_waived": false
+      },
+      "foreign_tx_fee_pct": 0,
+      "bonus": {
+        "current": {
+          "parts": [
+            {
+              "value": 80000,
+              "unit": "points"
+            },
+            {
+              "value": 1,
+              "unit": "free_night"
+            }
+          ],
+          "min_spend": 4000,
+          "spend_months": 3,
+          "note_en": "SAMPLE: fictional bonus for format testing only.",
+          "note_ko": "샘플: 형식 확인용 가짜 보너스입니다."
+        },
+        "usual": {
+          "parts": [
+            {
+              "value": 60000,
+              "unit": "points"
+            }
+          ]
+        }
+      },
+      "offer": {
+        "id": "sample-travel-card@2026-11-01",
+        "status": "active",
+        "start": "2026-11-01",
+        "end": "2026-12-31",
+        "ended_auto": false
+      },
+      "earn": [
+        {
+          "category_en": "Travel",
+          "category_ko": "여행",
+          "rate": 3,
+          "unit": "points"
+        },
+        {
+          "category_en": "Everything else",
+          "category_ko": "기타 전부",
+          "rate": 1,
+          "unit": "points"
+        }
+      ],
+      "benefits": [
+        {
+          "en": "SAMPLE: trip delay coverage",
+          "ko": "샘플: 여행 지연 보상"
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-11-08",
+          "type": "elevated",
+          "current_parts": [
+            {
+              "value": 80000,
+              "unit": "points"
+            },
+            {
+              "value": 1,
+              "unit": "free_night"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sample-business-cash",
+      "name": "Sample Business Cash Card (SAMPLE)",
+      "issuer": "American Express",
+      "segment": "business",
+      "official_url": "https://www.americanexpress.com/",
+      "last_verified": "2026-11-08",
+      "annual_fee": {
+        "amount": 0,
+        "first_year_waived": false
+      },
+      "foreign_tx_fee_pct": 2.7,
+      "bonus": {
+        "current": {
+          "parts": [
+            {
+              "value": 250,
+              "unit": "cash"
+            }
+          ],
+          "min_spend": 3000,
+          "spend_months": 3,
+          "note_en": "SAMPLE: fictional statement credit."
+        },
+        "usual": {
+          "parts": [
+            {
+              "value": 250,
+              "unit": "cash"
+            }
+          ]
+        }
+      },
+      "offer": null,
+      "earn": [
+        {
+          "category_en": "Everything else",
+          "rate": 1.5,
+          "unit": "cash"
+        }
+      ],
+      "benefits": [],
+      "history": []
+    }
+  ]
+}
