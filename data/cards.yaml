@@ -16,6 +16,7 @@
 # 명박사가 2026-11-09(미국 서부 날짜) Citi 공식 상품 페이지와 같은 페이지의 가격 안내(Pricing Details)를
 # 직접 읽고 숫자만 옮겼습니다. 카드명은 Citi 페이지에 쓰인 정식 상품명. last_verified·bonus.usual은
 # 위와 같이 진호님 확인 필요. elevated 없음(제안은 검수표 phase4_batch3_citi.md에만).
+# A3 추가(2026-11-09 미국 서부): Custom Cash 대신 Citi Strata® Card — 같은 방식으로 읽음, elevated 없음.
 
 cards:
   # ===================== Chase — 개인 =====================
@@ -1139,6 +1140,67 @@ cards:
       - en: Mastercard ID Theft Protection monitoring
         ko: Mastercard 신원 도용 감시 서비스
 
+  - id: citi-strata
+    name: Citi Strata® Card
+    issuer: Citi
+    segment: personal
+    official_url: https://www.citi.com/credit-cards/citi-strata-credit-card
+    last_verified: 2026-11-09  # 진호님 재확인 필요(병합 전)
+    sources:
+      - https://www.citi.com/credit-cards/citi-strata-credit-card
+    annual_fee:
+      amount: 0
+      first_year_waived: false
+    foreign_tx_fee_pct: 3
+    bonus:
+      current:
+        parts:
+          - value: 20000
+            unit: points
+        min_spend: 1000
+        spend_months: 3
+      usual:
+        # 명박사 제안 — 진호님 승인 필요, sources: awardwallet.com 오퍼 기록·uscreditcardguide.com. 20,000 / $1,000·3개월이 2026-01-15쯤부터 10개월째 기본 오퍼, 종료일 없음. 역대 최고는 출시 오퍼 30,000(2025-07-27~2026-01-14).
+        parts:
+          - value: 20000
+            unit: points
+    earn:
+      - category_en: Hotels, car rentals and attractions booked via Citi Travel
+        category_ko: Citi Travel로 예약한 호텔·렌터카·관광지
+        rate: 5
+        unit: points
+      - category_en: Supermarkets
+        category_ko: 슈퍼마켓
+        rate: 3
+        unit: points
+      - category_en: Gas stations, EV charging and select transit
+        category_ko: 주유소·EV 충전·일부 교통
+        rate: 3
+        unit: points
+      - category_en: One Self-Select category you choose
+        category_ko: 직접 고른 Self-Select 카테고리 1개
+        rate: 3
+        unit: points
+      - category_en: Restaurants
+        category_ko: 식당
+        rate: 2
+        unit: points
+      - category_en: Everything else
+        category_ko: 그 외 전부
+        rate: 1
+        unit: points
+    benefits:
+      - en: "Self-Select options: fitness clubs, select streaming, live entertainment, cosmetic stores/barbers/salons or pet supply stores; switch once a quarter"
+        ko: "Self-Select 선택지: 피트니스 클럽·일부 스트리밍·공연/경기 관람·화장품점/이발소/미용실·반려동물 용품점, 분기마다 1회 변경"
+      - en: Move points to airline and hotel partners such as American Airlines, JetBlue, Cathay and Choice Hotels
+        ko: American Airlines·JetBlue·Cathay·Choice Hotels 등 항공·호텔 파트너로 포인트 이전
+      - en: No fee for authorized users
+        ko: 가족 카드(추가 사용자) 수수료 없음
+      - en: Citi Entertainment access to ticket presales and events
+        ko: Citi Entertainment 공연·행사 선예매
+      - en: Mastercard ID Theft Protection monitoring
+        ko: Mastercard 신원 도용 감시 서비스
+
   - id: citi-aadvantage-platinum-select
     name: Citi® / AAdvantage® Platinum Select® World Elite Mastercard®
     issuer: Citi
@@ -1159,9 +1221,9 @@ cards:
         min_spend: 2500
         spend_months: 3
       usual:
-        # 명박사 제안 — 진호님 승인 필요, sources: awardwallet.com 오퍼 기록·aa.com 카드 목록(지금 50,000). 2024-10 이후 60,000/$3,000이 가장 자주 보인 값, 75,000~80,000 프로모션이 반복(최근 2026-10-09~11-05). 50,000은 그중 가장 낮은 단계. 평소를 60,000으로 두면 current와 달라 매일 '높음 표시 누락' 경고가 나므로 current와 같게 둠 — 진호님 판단 필요.
+        # 진호님 승인 2026-11-10 (plan A4): 가장 자주 보인 평소 오퍼 60,000
         parts:
-          - value: 50000
+          - value: 60000
             unit: miles
     earn:
       - category_en: Eligible American Airlines purchases
