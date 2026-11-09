@@ -1,20 +1,23 @@
 # 카드 보너스 알림 — 카드 데이터 (진호님이 GitHub 웹에서 직접 고치는 파일)
 # 편집 방법·항목 설명은 README.md를 보세요. 저장(커밋)하면 검증기가 자동으로 확인합니다.
 #
-# !!! 아래 2장은 형식 확인용 SAMPLE(가짜) 데이터입니다 !!!
-# 카드 이름·보너스·연회비 등 모든 숫자는 지어낸 값이며 실제 오퍼가 아닙니다.
-# Phase 4에서 실제 30종 데이터로 교체합니다.
+# Phase 4 초안 (branch phase4-data) — 발급사별 7묶음 중 1묶음: Chase 12장.
+# 명박사가 2026-11-09 Chase 공식 상품 페이지를 직접 읽고 숫자만 옮겼습니다. 설명은 직접 쓴 글입니다.
+# !!! 모든 카드의 last_verified(2026-11-09)는 명박사 확인일입니다. main 병합 전 진호님이 공식 페이지를
+# !!! 다시 확인하고 그날 날짜로 바꿔 주세요(진호님 확인일이 기준).
+# !!! bonus.usual은 명박사 제안값입니다. elevated는 진호님만 넣습니다(이 초안에는 없음).
+# 카드명은 Chase 페이지 제목 표기 그대로(®/℠ 포함).
 
 cards:
-  # --- SAMPLE 1: 개인 카드, "평소보다 높음" 상태(elevated 있음), 보너스가 여러 부분 ---
-  - id: sample-travel-card
-    name: Sample Travel Rewards Card (SAMPLE)
+  # ===================== Chase — 개인 =====================
+  - id: chase-sapphire-preferred
+    name: Chase Sapphire Preferred® Credit Card
     issuer: Chase
     segment: personal
-    official_url: https://creditcards.chase.com/
-    last_verified: 2026-11-08
+    official_url: https://creditcards.chase.com/rewards-credit-cards/sapphire/preferred
+    last_verified: 2026-11-09  # 진호님 재확인 필요(병합 전)
     sources:
-      - https://creditcards.chase.com/
+      - https://creditcards.chase.com/rewards-credit-cards/sapphire/preferred
     annual_fee:
       amount: 95
       first_year_waived: false
@@ -22,65 +25,590 @@ cards:
     bonus:
       current:
         parts:
-          - value: 80000
+          - value: 75000
             unit: points
-          - value: 1
-            unit: free_night
-        min_spend: 4000
+        min_spend: 5000
         spend_months: 3
-        note_en: "SAMPLE: fictional bonus for format testing only."
-        note_ko: "샘플: 형식 확인용 가짜 보너스입니다."
       usual:
         parts:
-          - value: 60000
+          - value: 75000
             unit: points
-        note_en: ""
-        note_ko: ""
-    elevated:
-      start: 2026-11-01
-      end: 2026-12-31
     earn:
-      - category_en: Travel
-        category_ko: 여행
+      - category_en: Chase Travel bookings
+        category_ko: Chase Travel 예약
+        rate: 5
+        unit: points
+      - category_en: Dining
+        category_ko: 식당
         rate: 3
         unit: points
+      - category_en: Gas, EV charging, select vacation rentals
+        category_ko: 주유소·EV 충전·일부 휴가 숙소
+        rate: 3
+        unit: points
+      - category_en: Select streaming and online grocery
+        category_ko: 일부 스트리밍·온라인 식료품
+        rate: 3
+        unit: points
+      - category_en: Other travel
+        category_ko: 그 밖의 여행
+        rate: 2
+        unit: points
       - category_en: Everything else
-        category_ko: 기타 전부
+        category_ko: 그 외 전부
         rate: 1
         unit: points
     benefits:
-      - en: "SAMPLE: trip delay coverage"
-        ko: "샘플: 여행 지연 보상"
+      - en: Up to $100 a year in hotel credit via Chase Travel
+        ko: Chase Travel 호텔 예약 시 연 최대 $100 크레딧
+      - en: Transfer points to airline and hotel partners
+        ko: 항공·호텔 파트너로 포인트 이전
+      - en: Primary rental car coverage up to $60,000
+        ko: 렌터카 1차 보험(최대 $60,000)
+      - en: Trip delay, cancellation and baggage coverage
+        ko: 여행 지연·취소·수하물 보상
+      - en: Global Entry / TSA PreCheck / NEXUS fee credit up to $120
+        ko: Global Entry·TSA PreCheck·NEXUS 수수료 최대 $120 환급
 
-  # --- SAMPLE 2: 비즈니스 카드, 평소 보너스(elevated 없음), 한국어 설명 일부 비움 ---
-  - id: sample-business-cash
-    name: Sample Business Cash Card (SAMPLE)
-    issuer: American Express
-    segment: business
-    official_url: https://www.americanexpress.com/
-    last_verified: 2026-11-08
+  - id: chase-sapphire-reserve
+    name: Chase Sapphire Reserve® Credit Card
+    issuer: Chase
+    segment: personal
+    official_url: https://creditcards.chase.com/rewards-credit-cards/sapphire/reserve
+    last_verified: 2026-11-09  # 진호님 재확인 필요(병합 전)
     sources:
-      - https://www.americanexpress.com/
+      - https://creditcards.chase.com/rewards-credit-cards/sapphire/reserve
     annual_fee:
-      amount: 0
+      amount: 795
       first_year_waived: false
-    foreign_tx_fee_pct: 2.7
+    foreign_tx_fee_pct: 0
     bonus:
       current:
         parts:
-          - value: 250
-            unit: cash
-        min_spend: 3000
+          - value: 100000
+            unit: points
+        min_spend: 6000
         spend_months: 3
-        note_en: "SAMPLE: fictional statement credit."
-        note_ko: ""
       usual:
         parts:
-          - value: 250
+          - value: 100000
+            unit: points
+    earn:
+      - category_en: Chase Travel bookings (incl. The Edit)
+        category_ko: Chase Travel 예약(The Edit 포함)
+        rate: 8
+        unit: points
+      - category_en: Flights booked directly
+        category_ko: 항공권 직접 예약
+        rate: 4
+        unit: points
+      - category_en: Hotels booked directly
+        category_ko: 호텔 직접 예약
+        rate: 4
+        unit: points
+      - category_en: Dining
+        category_ko: 식당
+        rate: 3
+        unit: points
+      - category_en: Everything else
+        category_ko: 그 외 전부
+        rate: 1
+        unit: points
+    benefits:
+      - en: $300 yearly travel credit
+        ko: 연 $300 여행 크레딧
+      - en: Up to $500 a year for stays booked with The Edit
+        ko: The Edit 호텔 숙박 연 최대 $500 크레딧
+      - en: Priority Pass and Sapphire Lounge access
+        ko: Priority Pass·Sapphire 라운지 이용
+      - en: Dining and StubHub credits, up to $300 a year each
+        ko: 다이닝·StubHub 크레딧 각각 연 최대 $300
+      - en: Primary rental car coverage up to $75,000
+        ko: 렌터카 1차 보험(최대 $75,000)
+      - en: Global Entry / TSA PreCheck / NEXUS fee credit up to $120
+        ko: Global Entry·TSA PreCheck·NEXUS 수수료 최대 $120 환급
+
+  - id: chase-freedom-unlimited
+    name: Chase Freedom Unlimited® Credit Card
+    issuer: Chase
+    segment: personal
+    official_url: https://creditcards.chase.com/cash-back-credit-cards/freedom/unlimited
+    last_verified: 2026-11-09  # 진호님 재확인 필요(병합 전)
+    sources:
+      - https://creditcards.chase.com/cash-back-credit-cards/freedom/unlimited
+    annual_fee:
+      amount: 0
+      first_year_waived: false
+    foreign_tx_fee_pct: 3
+    bonus:
+      current:
+        parts:
+          - value: 200
+            unit: cash
+        min_spend: 500
+        spend_months: 3
+      usual:
+        parts:
+          - value: 200
             unit: cash
     earn:
+      - category_en: Chase Travel bookings
+        category_ko: Chase Travel 예약
+        rate: 5
+        unit: cash
+      - category_en: Dining
+        category_ko: 식당
+        rate: 3
+        unit: cash
+      - category_en: Drugstores
+        category_ko: 약국
+        rate: 3
+        unit: cash
       - category_en: Everything else
-        category_ko: ""
+        category_ko: 그 외 전부
         rate: 1.5
         unit: cash
-    benefits: []
+    benefits:
+      - en: Purchase protection, 120 days up to $500 per item
+        ko: 구매 보호(120일, 건당 최대 $500)
+      - en: Extended warranty, one extra year
+        ko: 제조사 보증 1년 연장
+      - en: Trip cancellation and interruption coverage
+        ko: 여행 취소·중단 보상
+      - en: 6 months of free DashPass
+        ko: DashPass 6개월 무료
+
+  - id: chase-freedom-flex
+    name: Chase Freedom Flex® Credit Card
+    issuer: Chase
+    segment: personal
+    official_url: https://creditcards.chase.com/cash-back-credit-cards/freedom/flex
+    last_verified: 2026-11-09  # 진호님 재확인 필요(병합 전)
+    sources:
+      - https://creditcards.chase.com/cash-back-credit-cards/freedom/flex
+    annual_fee:
+      amount: 0
+      first_year_waived: false
+    foreign_tx_fee_pct: 0
+    bonus:
+      current:
+        parts:
+          - value: 200
+            unit: cash
+        min_spend: 500
+        spend_months: 3
+      usual:
+        parts:
+          - value: 200
+            unit: cash
+    earn:
+      - category_en: Rotating quarterly categories (activate; first $1,500 per quarter)
+        category_ko: 분기별 순환 카테고리(활성화 필요, 분기당 첫 $1,500)
+        rate: 5
+        unit: cash
+      - category_en: Chase Travel bookings
+        category_ko: Chase Travel 예약
+        rate: 5
+        unit: cash
+      - category_en: Dining
+        category_ko: 식당
+        rate: 3
+        unit: cash
+      - category_en: Drugstores
+        category_ko: 약국
+        rate: 3
+        unit: cash
+      - category_en: Everything else
+        category_ko: 그 외 전부
+        rate: 1
+        unit: cash
+    benefits:
+      - en: No foreign transaction fee
+        ko: 해외 결제 수수료 없음
+      - en: Purchase protection, 120 days up to $500 per item
+        ko: 구매 보호(120일, 건당 최대 $500)
+      - en: Extended warranty, one extra year
+        ko: 제조사 보증 1년 연장
+      - en: Trip cancellation and interruption coverage
+        ko: 여행 취소·중단 보상
+
+  - id: chase-united-explorer
+    name: United℠ Explorer Card
+    issuer: Chase
+    segment: personal
+    official_url: https://creditcards.chase.com/travel-credit-cards/united/united-explorer
+    last_verified: 2026-11-09  # 진호님 재확인 필요(병합 전)
+    sources:
+      - https://creditcards.chase.com/travel-credit-cards/united/united-explorer
+    annual_fee:
+      amount: 150
+      first_year_waived: true
+    foreign_tx_fee_pct: 0
+    bonus:
+      current:
+        parts:
+          - value: 70000
+            unit: miles
+        min_spend: 3000
+        spend_months: 3
+        note_en: "Plus 10,000 miles for adding an authorized user in the first 3 months (up to 80,000 total)."
+        note_ko: "첫 3개월 안에 추가 카드 사용자를 넣으면 10,000마일 더(합계 최대 80,000)."
+      usual:
+        # 제안: 페이지에 취소선으로 보인 이전 '최대' 금액(추가 사용자 보너스 포함으로 보임). 진호님 판단 필요.
+        # 주의: usual이 current와 달라서 elevated 없이 병합하면 매일 '높음 표시 누락' 텔레그램 경고가 옵니다.
+        parts:
+          - value: 60000
+            unit: miles
+        note_en: "Previous offer was up to 60,000 miles, including the authorized-user bonus."
+        note_ko: "이전 오퍼는 추가 사용자 보너스 포함 최대 60,000마일."
+    earn:
+      - category_en: United purchases (flights earn more with MileagePlus base miles)
+        category_ko: United 구매(항공권은 MileagePlus 기본 적립이 더해짐)
+        rate: 3
+        unit: miles
+      - category_en: Hotels booked directly
+        category_ko: 호텔 직접 예약
+        rate: 2
+        unit: miles
+      - category_en: Dining
+        category_ko: 식당
+        rate: 2
+        unit: miles
+      - category_en: Everything else
+        category_ko: 그 외 전부
+        rate: 1
+        unit: miles
+    benefits:
+      - en: Free first checked bag for you and one companion
+        ko: 본인·동반자 1명 첫 위탁 수하물 무료
+      - en: Two United Club one-time passes each year
+        ko: 매년 United Club 1회 이용권 2장
+      - en: Group 2 priority boarding
+        ko: 2그룹 우선 탑승
+      - en: Primary rental car coverage up to $60,000
+        ko: 렌터카 1차 보험(최대 $60,000)
+      - en: Global Entry / TSA PreCheck / NEXUS fee credit up to $120
+        ko: Global Entry·TSA PreCheck·NEXUS 수수료 최대 $120 환급
+
+  - id: chase-southwest-rapid-rewards-plus
+    name: Southwest Rapid Rewards® Plus Credit Card
+    issuer: Chase
+    segment: personal
+    official_url: https://creditcards.chase.com/travel-credit-cards/southwest/plus
+    last_verified: 2026-11-09  # 진호님 재확인 필요(병합 전)
+    sources:
+      - https://creditcards.chase.com/travel-credit-cards/southwest/plus
+    annual_fee:
+      amount: 99
+      first_year_waived: false
+    foreign_tx_fee_pct: 0
+    bonus:
+      current:
+        parts:
+          - value: 80000
+            unit: points
+        min_spend: 1000
+        spend_months: 3
+        note_en: "Labeled a limited-time offer on the page."
+        note_ko: "페이지에 기간 한정 오퍼로 표시됨."
+      usual:
+        # 제안 보류: 페이지에 '기간 한정'이라 적혀 있지만 평소 금액은 안 보임 → 우선 current와 같게. 진호님 판단 필요.
+        parts:
+          - value: 80000
+            unit: points
+    earn:
+      - category_en: Southwest Airlines purchases
+        category_ko: Southwest Airlines 구매
+        rate: 2
+        unit: points
+      - category_en: Gas stations and grocery stores (first $5,000 a year combined)
+        category_ko: 주유소·식료품점(합산 연 첫 $5,000)
+        rate: 2
+        unit: points
+      - category_en: Everything else
+        category_ko: 그 외 전부
+        rate: 1
+        unit: points
+    benefits:
+      - en: 3,000 bonus points every card anniversary
+        ko: 카드 갱신일마다 3,000포인트
+      - en: First checked bag free for you and up to 8 companions
+        ko: 본인과 같은 예약 최대 8명 첫 위탁 수하물 무료
+      - en: 10% flight discount code each year
+        ko: 매년 항공권 10% 할인 코드
+      - en: Group 5 boarding
+        ko: 5그룹 탑승
+      - en: 25% back on inflight purchases
+        ko: 기내 구매 25% 환급
+
+  - id: chase-marriott-bonvoy-boundless
+    name: Marriott Bonvoy Boundless® Credit Card
+    issuer: Chase
+    segment: personal
+    official_url: https://creditcards.chase.com/travel-credit-cards/marriott-bonvoy/boundless
+    last_verified: 2026-11-09  # 진호님 재확인 필요(병합 전)
+    sources:
+      - https://creditcards.chase.com/travel-credit-cards/marriott-bonvoy/boundless
+    annual_fee:
+      amount: 95
+      first_year_waived: false
+    foreign_tx_fee_pct: 0
+    bonus:
+      current:
+        parts:
+          - value: 200000
+            unit: points
+        min_spend: 3000
+        spend_months: 3
+        note_en: "Page says this offer is for this week only. The up-to-$100 airline credit is a separate cardmember offer, not part of the bonus."
+        note_ko: "페이지에 '이번 주만'이라고 표시됨. 최대 $100 항공 크레딧은 보너스가 아닌 별도 회원 혜택."
+      usual:
+        # 제안 보류: '이번 주만' 오퍼인데 평소 금액이 페이지에 없음 → 우선 current와 같게. 진호님 판단 필요.
+        parts:
+          - value: 200000
+            unit: points
+    earn:
+      - category_en: Marriott Bonvoy hotels (more with member and status points)
+        category_ko: Marriott Bonvoy 호텔(회원·등급 적립이 더해짐)
+        rate: 6
+        unit: points
+      - category_en: Grocery, gas and dining (first $6,000 a year combined)
+        category_ko: 식료품·주유·식당(합산 연 첫 $6,000)
+        rate: 3
+        unit: points
+      - category_en: Everything else
+        category_ko: 그 외 전부
+        rate: 2
+        unit: points
+    benefits:
+      - en: Free night each year (up to 35,000 points)
+        ko: 매년 무료 숙박 1박(35,000포인트 이하 호텔)
+      - en: Automatic Silver Elite status
+        ko: Silver Elite 등급 자동 부여
+      - en: 15 Elite Night Credits each year
+        ko: 매년 Elite Night Credit 15박
+      - en: Up to $100 in airline credits through June 2027
+        ko: 2027년 6월까지 항공 크레딧 최대 $100
+
+  - id: chase-ihg-one-rewards-premier
+    name: IHG One Rewards Premier Credit Card
+    issuer: Chase
+    segment: personal
+    official_url: https://creditcards.chase.com/travel-credit-cards/ihg-rewards-club/premier
+    last_verified: 2026-11-09  # 진호님 재확인 필요(병합 전)
+    sources:
+      - https://creditcards.chase.com/travel-credit-cards/ihg-rewards-club/premier
+    annual_fee:
+      amount: 150
+      first_year_waived: false
+    foreign_tx_fee_pct: 0
+    bonus:
+      current:
+        parts:
+          - value: 180000
+            unit: points
+        min_spend: 3000
+        spend_months: 3
+        note_en: "Plus 10,000 points for adding an authorized user in the first 3 months. Page says the offer ends soon (no date shown)."
+        note_ko: "첫 3개월 안에 추가 카드 사용자를 넣으면 10,000포인트 더. 페이지에 '곧 종료' 표시(날짜 없음)."
+      usual:
+        # 제안 보류: '곧 종료' 표시인데 평소 금액이 페이지에 없음 → 우선 current와 같게. 진호님 판단 필요.
+        parts:
+          - value: 180000
+            unit: points
+    earn:
+      - category_en: IHG hotels (more with member and status points)
+        category_ko: IHG 호텔(회원·등급 적립이 더해짐)
+        rate: 10
+        unit: points
+      - category_en: Flights booked directly, car rentals, dining, grocery, gas
+        category_ko: 항공권 직접 예약·렌터카·식당·식료품·주유
+        rate: 5
+        unit: points
+      - category_en: Everything else
+        category_ko: 그 외 전부
+        rate: 3
+        unit: points
+    benefits:
+      - en: Free night each year (up to 50,000 points)
+        ko: 매년 무료 숙박 1박(50,000포인트 이하 호텔)
+      - en: Automatic Gold Elite status
+        ko: Gold Elite 등급 자동 부여
+      - en: $100 airline credit each year through 2027 (after $250 on flights)
+        ko: 2027년까지 매년 항공 크레딧 $100(항공권 $250 이상 결제 시)
+      - en: Up to $100 a year in IHG food and drink vouchers
+        ko: IHG 호텔 식음료 바우처 연 최대 $100
+      - en: Global Entry / TSA PreCheck / NEXUS fee credit up to $120
+        ko: Global Entry·TSA PreCheck·NEXUS 수수료 최대 $120 환급
+
+  - id: chase-world-of-hyatt
+    name: World of Hyatt Credit Card
+    issuer: Chase
+    segment: personal
+    official_url: https://creditcards.chase.com/travel-credit-cards/world-of-hyatt-credit-card
+    last_verified: 2026-11-09  # 진호님 재확인 필요(병합 전)
+    sources:
+      - https://creditcards.chase.com/travel-credit-cards/world-of-hyatt-credit-card
+    annual_fee:
+      amount: 95
+      first_year_waived: false
+    foreign_tx_fee_pct: 0
+    bonus:
+      current:
+        parts:
+          - value: 4
+            unit: free_night
+        min_spend: 5000
+        spend_months: 3
+        note_en: "Free nights at Category 1-4 Hyatt hotels. Labeled a limited-time offer on the page."
+        note_ko: "Hyatt 1~4등급 호텔 무료 숙박. 페이지에 기간 한정 오퍼로 표시됨."
+      usual:
+        # 제안 보류: 페이지에 '기간 한정'이라 적혀 있지만 평소 금액은 안 보임 → 우선 current와 같게. 진호님 판단 필요.
+        parts:
+          - value: 4
+            unit: free_night
+    earn:
+      - category_en: Hyatt hotels (more with member base points)
+        category_ko: Hyatt 호텔(회원 기본 적립이 더해짐)
+        rate: 4
+        unit: points
+      - category_en: Dining, airline tickets bought directly, local transit, gyms
+        category_ko: 식당·항공권 직접 구매·대중교통·헬스장
+        rate: 2
+        unit: points
+      - category_en: Everything else
+        category_ko: 그 외 전부
+        rate: 1
+        unit: points
+    benefits:
+      - en: Free night each year (Category 1-4)
+        ko: 매년 무료 숙박 1박(1~4등급 호텔)
+      - en: Extra free night after $15,000 spend in a year
+        ko: 연 $15,000 사용 시 무료 숙박 1박 추가
+      - en: Discoverist status while you hold the card
+        ko: 카드 보유 중 Discoverist 등급
+      - en: 5 tier-qualifying night credits each year
+        ko: 매년 등급 산정 숙박 5박 인정
+
+  # ===================== Chase — 비즈니스 =====================
+  - id: chase-ink-business-preferred
+    name: Ink Business Preferred® Credit Card
+    issuer: Chase
+    segment: business
+    official_url: https://creditcards.chase.com/business-credit-cards/ink/business-preferred
+    last_verified: 2026-11-09  # 진호님 재확인 필요(병합 전)
+    sources:
+      - https://creditcards.chase.com/business-credit-cards/ink/business-preferred
+    annual_fee:
+      amount: 95
+      first_year_waived: false
+    foreign_tx_fee_pct: 0
+    bonus:
+      current:
+        parts:
+          - value: 100000
+            unit: points
+        min_spend: 8000
+        spend_months: 3
+      usual:
+        parts:
+          - value: 100000
+            unit: points
+    earn:
+      - category_en: Travel, shipping, internet/cable/phone, social and search ads (first $150,000 a year combined)
+        category_ko: 여행·배송·인터넷/케이블/전화·SNS/검색 광고(합산 연 첫 $150,000)
+        rate: 3
+        unit: points
+      - category_en: Everything else
+        category_ko: 그 외 전부
+        rate: 1
+        unit: points
+    benefits:
+      - en: Cell phone protection up to $1,000 per claim
+        ko: 휴대폰 보험(건당 최대 $1,000)
+      - en: Primary rental car coverage for business rentals
+        ko: 업무용 렌터카 1차 보험
+      - en: Transfer points to airline and hotel partners
+        ko: 항공·호텔 파트너로 포인트 이전
+      - en: Employee cards at no extra cost
+        ko: 직원 카드 추가 비용 없음
+
+  - id: chase-ink-business-cash
+    name: Ink Business Cash® Credit Card
+    issuer: Chase
+    segment: business
+    official_url: https://creditcards.chase.com/business-credit-cards/ink/cash
+    last_verified: 2026-11-09  # 진호님 재확인 필요(병합 전)
+    sources:
+      - https://creditcards.chase.com/business-credit-cards/ink/cash
+    annual_fee:
+      amount: 0
+      first_year_waived: false
+    foreign_tx_fee_pct: 3
+    bonus:
+      current:
+        parts:
+          - value: 750
+            unit: cash
+        min_spend: 6000
+        spend_months: 3
+      usual:
+        parts:
+          - value: 750
+            unit: cash
+    earn:
+      - category_en: Office supply stores, internet/cable/phone (first $25,000 a year combined)
+        category_ko: 사무용품점·인터넷/케이블/전화(합산 연 첫 $25,000)
+        rate: 5
+        unit: cash
+      - category_en: Gas stations and restaurants (first $25,000 a year combined)
+        category_ko: 주유소·식당(합산 연 첫 $25,000)
+        rate: 2
+        unit: cash
+      - category_en: Everything else
+        category_ko: 그 외 전부
+        rate: 1
+        unit: cash
+    benefits:
+      - en: Primary rental car coverage for business rentals
+        ko: 업무용 렌터카 1차 보험
+      - en: Purchase protection and extended warranty
+        ko: 구매 보호·제조사 보증 연장
+      - en: 3 months of free Instacart+ with monthly credit
+        ko: Instacart+ 3개월 무료(월 크레딧 포함)
+
+  - id: chase-ink-business-unlimited
+    name: Ink Business Unlimited® Credit Card
+    issuer: Chase
+    segment: business
+    official_url: https://creditcards.chase.com/business-credit-cards/ink/unlimited
+    last_verified: 2026-11-09  # 진호님 재확인 필요(병합 전)
+    sources:
+      - https://creditcards.chase.com/business-credit-cards/ink/unlimited
+    annual_fee:
+      amount: 0
+      first_year_waived: false
+    foreign_tx_fee_pct: 3
+    bonus:
+      current:
+        parts:
+          - value: 750
+            unit: cash
+        min_spend: 6000
+        spend_months: 3
+      usual:
+        parts:
+          - value: 750
+            unit: cash
+    earn:
+      - category_en: Every purchase
+        category_ko: 모든 구매
+        rate: 1.5
+        unit: cash
+    benefits:
+      - en: Primary rental car coverage for business rentals
+        ko: 업무용 렌터카 1차 보험
+      - en: Purchase protection and extended warranty
+        ko: 구매 보호·제조사 보증 연장
+      - en: 3 months of free Instacart+ with monthly credit
+        ko: Instacart+ 3개월 무료(월 크레딧 포함)
