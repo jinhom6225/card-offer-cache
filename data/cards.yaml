@@ -658,7 +658,7 @@ cards:
         note_en: "Top of the range shown on the public page. Amex tells you your exact amount after you apply, and it can be lower."
         note_ko: "공식 페이지에 보이는 최대치. 정확한 금액은 신청 후 Amex가 알려 주며 더 낮을 수 있음."
       usual:
-        # 명박사 제안 — 진호님 승인 필요, sources: upgradedpoints.com·awardwallet.com 오퍼 기록. 공개 페이지 '최대 175,000'이 2025-06부터 계속 표시(2026-02 최소 지출 $8,000→$12,000). 그 전 고정 80,000은 옛 기준이라 안 씀.
+        # 진호님 승인 2026-11-10 (기준 A: 종료일 없이 오래 걸린 최대치 = 평소) — sources: upgradedpoints.com·awardwallet.com 오퍼 기록. 공개 페이지 '최대 175,000'이 2025-06부터 계속 표시(2026-02 최소 지출 $8,000→$12,000). 그 전 고정 80,000은 옛 기준이라 안 씀.
         parts:
           - value: 175000
             unit: points
@@ -711,7 +711,7 @@ cards:
         note_en: "Top of the range shown on the public page. Amex tells you your exact amount after you apply, and it can be lower."
         note_ko: "공식 페이지에 보이는 최대치. 정확한 금액은 신청 후 Amex가 알려 주며 더 낮을 수 있음."
       usual:
-        # 명박사 제안 — 진호님 승인 필요, sources: upgradedpoints.com·awardwallet.com 오퍼 기록. 공개 페이지 '최대 100,000'이 2025-06부터 계속 표시(2026-04 최소 지출 $6,000→$8,000). 그 전 고정 60,000은 옛 기준이라 안 씀.
+        # 진호님 승인 2026-11-10 (기준 A: 종료일 없이 오래 걸린 최대치 = 평소) — sources: upgradedpoints.com·awardwallet.com 오퍼 기록. 공개 페이지 '최대 100,000'이 2025-06부터 계속 표시(2026-04 최소 지출 $6,000→$8,000). 그 전 고정 60,000은 옛 기준이라 안 씀.
         parts:
           - value: 100000
             unit: points
@@ -774,7 +774,7 @@ cards:
         note_en: "Paid as Reward Dollars, which can be redeemed as a statement credit."
         note_ko: "Reward Dollars로 지급되며 청구서 차감 등으로 사용."
       usual:
-        # 명박사 제안 — 진호님 승인 필요, sources: upgradedpoints.com·dailydrop.com 오퍼 기록. $250은 2022-10부터 이어진 기본 오퍼.
+        # 진호님 승인 2026-11-10 (기준 A: 종료일 없이 오래 걸린 최대치 = 평소) — sources: upgradedpoints.com·dailydrop.com 오퍼 기록. $250은 2022-10부터 이어진 기본 오퍼.
         parts:
           - value: 250
             unit: cash
@@ -829,7 +829,7 @@ cards:
         note_en: "Top of the range shown on the public page. Amex tells you your exact amount after you apply, and it can be lower."
         note_ko: "공식 페이지에 보이는 최대치. 정확한 금액은 신청 후 Amex가 알려 주며 더 낮을 수 있음."
       usual:
-        # 명박사 제안 — 진호님 승인 필요, sources: awardwallet.com·upgradedpoints.com·dailydrop.com 오퍼 기록, delta.com 카드 페이지. 기간 한정 프로모션이 없을 때 '최대 80,000 / $2,000'이 2026-04부터 반복 표시.
+        # 진호님 승인 2026-11-10 (기준 A: 종료일 없이 오래 걸린 최대치 = 평소) — sources: awardwallet.com·upgradedpoints.com·dailydrop.com 오퍼 기록, delta.com 카드 페이지. 기간 한정 프로모션이 없을 때 '최대 80,000 / $2,000'이 2026-04부터 반복 표시.
         parts:
           - value: 80000
             unit: miles
@@ -886,12 +886,15 @@ cards:
         note_en: "Limited-time offer, ends January 13, 2027. The free night is one standard room night at most Hilton hotels."
         note_ko: "기간 한정 오퍼, 2027-01-13 종료. 무료 숙박은 대부분의 Hilton 호텔 일반 객실 1박."
       usual:
-        # 명박사 제안 — 진호님 승인 필요, sources: upgradedpoints.com·dailydrop.com 오퍼 기록. 평소는 포인트만 130,000(무료 숙박 없음). 종료일 2027-01-13은 Amex 오퍼 약관에 있음.
+        # 진호님 승인 2026-11-10 — sources: upgradedpoints.com·dailydrop.com 오퍼 기록. 평소는 포인트만 130,000(무료 숙박 없음). 종료일 2027-01-13은 Amex 오퍼 약관에 있음.
         parts:
           - value: 130000
             unit: points
         note_en: "Usually points only, without the free night."
         note_ko: "평소에는 무료 숙박 없이 포인트만."
+    elevated:
+      start: 2026-11-09
+      end: 2027-01-13
     earn:
       - category_en: Hilton hotels and resorts
         category_ko: Hilton 계열 호텔·리조트
@@ -944,7 +947,7 @@ cards:
         note_en: "Top of the range shown on the public page. Amex tells you your exact amount after you apply, and it can be lower."
         note_ko: "공식 페이지에 보이는 최대치. 정확한 금액은 신청 후 Amex가 알려 주며 더 낮을 수 있음."
       usual:
-        # 명박사 제안 — 진호님 승인 필요, sources: upgradedpoints.com·thewaystowealth.com. 공개 페이지 '최대 300,000'이 2026-04부터 계속 표시(그 전 2025-09~2026-04 고정 200,000). 평소를 200,000으로 볼지 진호님 판단 필요.
+        # 진호님 승인 2026-11-10 (기준 A: 종료일 없이 오래 걸린 최대치 = 평소) — sources: upgradedpoints.com·thewaystowealth.com. 공개 페이지 '최대 300,000'이 2026-04부터 계속 표시(그 전 2025-09~2026-04 고정 200,000). 평소를 200,000으로 볼지 진호님 판단 필요.
         parts:
           - value: 300000
             unit: points
@@ -997,7 +1000,7 @@ cards:
         note_en: "Top of the range shown on the public page. Amex tells you your exact amount after you apply, and it can be lower."
         note_ko: "공식 페이지에 보이는 최대치. 정확한 금액은 신청 후 Amex가 알려 주며 더 낮을 수 있음."
       usual:
-        # 명박사 제안 — 진호님 승인 필요, sources: upgradedpoints.com·thewaystowealth.com. 공개 페이지 '최대 200,000'이 2026-04부터 계속 표시(그 전 2024-07~2026-04 고정 100,000). 평소를 100,000으로 볼지 진호님 판단 필요.
+        # 진호님 승인 2026-11-10 (기준 A: 종료일 없이 오래 걸린 최대치 = 평소) — sources: upgradedpoints.com·thewaystowealth.com. 공개 페이지 '최대 200,000'이 2026-04부터 계속 표시(그 전 2024-07~2026-04 고정 100,000). 평소를 100,000으로 볼지 진호님 판단 필요.
         parts:
           - value: 200000
             unit: points
