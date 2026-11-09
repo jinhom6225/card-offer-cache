@@ -1,3 +1,35 @@
 date,card_id,issuer,current,min_spend,spend_months,usual,elevated,offer_id,offer_end,last_verified,note
 2026-11-09,sample-travel-card,Chase,1 free_night + 80000 points,4000,3,60000 points,yes,sample-travel-card@2026-11-01,2026-12-31,2026-11-08,added
 2026-11-09,sample-business-cash,American Express,250 cash,3000,3,250 cash,no,,,2026-11-08,added
+2026-11-09,chase-sapphire-preferred,Chase,75000 points,5000,3,75000 points,no,,,2026-11-09,added
+2026-11-09,chase-sapphire-reserve,Chase,100000 points,6000,3,100000 points,no,,,2026-11-09,added
+2026-11-09,chase-freedom-unlimited,Chase,200 cash,500,3,200 cash,no,,,2026-11-09,added
+2026-11-09,chase-freedom-flex,Chase,200 cash,500,3,200 cash,no,,,2026-11-09,added
+2026-11-09,chase-united-explorer,Chase,70000 miles,3000,3,50000 miles,yes,chase-united-explorer@2026-11-09,,2026-11-09,added
+2026-11-09,chase-southwest-rapid-rewards-plus,Chase,80000 points,1000,3,50000 points,yes,chase-southwest-rapid-rewards-plus@2026-11-09,2026-12-02,2026-11-09,added
+2026-11-09,chase-marriott-bonvoy-boundless,Chase,200000 points,3000,3,3 free_night,yes,chase-marriott-bonvoy-boundless@2026-11-09,2026-11-11,2026-11-09,added
+2026-11-09,chase-ihg-one-rewards-premier,Chase,180000 points,3000,3,140000 points,yes,chase-ihg-one-rewards-premier@2026-11-09,2026-11-18,2026-11-09,added
+2026-11-09,chase-world-of-hyatt,Chase,4 free_night,5000,3,30000 points,yes,chase-world-of-hyatt@2026-11-09,,2026-11-09,added
+2026-11-09,chase-ink-business-preferred,Chase,100000 points,8000,3,100000 points,no,,,2026-11-09,added
+2026-11-09,chase-ink-business-cash,Chase,750 cash,6000,3,750 cash,no,,,2026-11-09,added
+2026-11-09,chase-ink-business-unlimited,Chase,750 cash,6000,3,750 cash,no,,,2026-11-09,added
+2026-11-09,amex-platinum,American Express,175000 points,12000,6,175000 points,no,,,2026-11-09,added
+2026-11-09,amex-gold,American Express,100000 points,8000,6,100000 points,no,,,2026-11-09,added
+2026-11-09,amex-blue-cash-preferred,American Express,250 cash,3000,6,250 cash,no,,,2026-11-09,added
+2026-11-09,amex-delta-skymiles-gold,American Express,80000 miles,2000,6,80000 miles,no,,,2026-11-09,added
+2026-11-09,amex-hilton-honors-surpass,American Express,1 free_night + 130000 points,3000,6,130000 points,yes,amex-hilton-honors-surpass@2026-11-09,2027-01-13,2026-11-09,added
+2026-11-09,amex-business-platinum,American Express,300000 points,20000,3,300000 points,no,,,2026-11-09,added
+2026-11-09,amex-business-gold,American Express,200000 points,15000,3,200000 points,no,,,2026-11-09,added
+2026-11-09,citi-strata-premier,Citi,60000 points,4000,3,60000 points,no,,,2026-11-09,added
+2026-11-09,citi-double-cash,Citi,200 cash,1500,6,200 cash,no,,,2026-11-09,added
+2026-11-09,citi-strata,Citi,20000 points,1000,3,20000 points,no,,,2026-11-09,added
+2026-11-09,citi-aadvantage-platinum-select,Citi,50000 miles,2500,3,60000 miles,no,,,2026-11-09,added
+2026-11-09,capital-one-venture-x,Capital One,75000 miles,4000,3,75000 miles,no,,,2026-11-09,added
+2026-11-09,capital-one-venture,Capital One,300 credit + 75000 miles,4000,3,75000 miles,yes,capital-one-venture@2026-11-09,,2026-11-09,added
+2026-11-09,capital-one-savor,Capital One,200 cash,500,3,200 cash,no,,,2026-11-09,added
+2026-11-09,discover-it-cash-back,Discover,200 cash + 100 percent_match,500,3,100 percent_match,yes,discover-it-cash-back@2026-11-09,,2026-11-09,added
+2026-11-09,wells-fargo-active-cash,Wells Fargo,100 cash,500,3,200 cash,no,,,2026-11-09,added
+2026-11-09,wells-fargo-autograph,Wells Fargo,20000 points,1000,3,20000 points,no,,,2026-11-09,added
+2026-11-09,bank-of-america-premium-rewards,Bank of America,60000 points,4000,3,60000 points,no,,,2026-11-09,added
+2026-11-09,sample-travel-card,Chase,,,,,,,,,removed
+2026-11-09,sample-business-cash,American Express,,,,,,,,,removed
