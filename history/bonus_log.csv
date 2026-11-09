@@ -1,0 +1,3 @@
+date,card_id,issuer,current,min_spend,spend_months,usual,elevated,offer_id,offer_end,last_verified,note
+2026-11-09,sample-travel-card,Chase,1 free_night + 80000 points,4000,3,60000 points,yes,sample-travel-card@2026-11-01,2026-12-31,2026-11-08,added
+2026-11-09,sample-business-cash,American Express,250 cash,3000,3,250 cash,no,,,2026-11-08,added
