@@ -254,13 +254,15 @@ cards:
         note_en: "Plus 10,000 miles for adding an authorized user in the first 3 months (up to 80,000 total)."
         note_ko: "첫 3개월 안에 추가 카드 사용자를 넣으면 10,000마일 더(합계 최대 80,000)."
       usual:
-        # 제안: 페이지에 취소선으로 보인 이전 '최대' 금액(추가 사용자 보너스 포함으로 보임). 진호님 판단 필요.
-        # 주의: usual이 current와 달라서 elevated 없이 병합하면 매일 '높음 표시 누락' 텔레그램 경고가 옵니다.
+        # 진호님 결정 2026-11-10: 평소는 지출 보너스만 50,000 (추가 사용자 10,000은 별도로 표기되는 것이 관례)
         parts:
-          - value: 60000
+          - value: 50000
             unit: miles
-        note_en: "Previous offer was up to 60,000 miles, including the authorized-user bonus."
-        note_ko: "이전 오퍼는 추가 사용자 보너스 포함 최대 60,000마일."
+        note_en: "Usually quoted as 50,000 miles after spend; the authorized-user bonus is listed separately."
+        note_ko: "평소에는 지출 보너스 50,000마일, 추가 사용자 보너스는 따로 표기."
+    elevated:
+      start: 2026-11-09
+      end: null
     earn:
       - category_en: United purchases (flights earn more with MileagePlus base miles)
         category_ko: United 구매(항공권은 MileagePlus 기본 적립이 더해짐)
@@ -309,13 +311,16 @@ cards:
             unit: points
         min_spend: 1000
         spend_months: 3
-        note_en: "Labeled a limited-time offer on the page."
-        note_ko: "페이지에 기간 한정 오퍼로 표시됨."
+        note_en: "Limited-time offer, ends December 2, 2026."
+        note_ko: "기간 한정 오퍼, 2026-12-02 종료."
       usual:
-        # 제안 보류: 페이지에 '기간 한정'이라 적혀 있지만 평소 금액은 안 보임 → 우선 current와 같게. 진호님 판단 필요.
+        # 진호님 결정 2026-11-10 (오퍼 기록 2곳 이상 확인)
         parts:
-          - value: 80000
+          - value: 50000
             unit: points
+    elevated:
+      start: 2026-11-09
+      end: 2026-12-02
     earn:
       - category_en: Southwest Airlines purchases
         category_ko: Southwest Airlines 구매
@@ -360,13 +365,18 @@ cards:
             unit: points
         min_spend: 3000
         spend_months: 3
-        note_en: "Page says this offer is for this week only. The up-to-$100 airline credit is a separate cardmember offer, not part of the bonus."
-        note_ko: "페이지에 '이번 주만'이라고 표시됨. 최대 $100 항공 크레딧은 보너스가 아닌 별도 회원 혜택."
+        note_en: "Limited-time offer, ends November 11, 2026. The up-to-$100 airline credit is a separate cardmember offer, not part of the bonus."
+        note_ko: "기간 한정 오퍼, 2026-11-11 종료. 최대 $100 항공 크레딧은 보너스가 아닌 별도 회원 혜택."
       usual:
-        # 제안 보류: '이번 주만' 오퍼인데 평소 금액이 페이지에 없음 → 우선 current와 같게. 진호님 판단 필요.
+        # 진호님 결정 2026-11-10 (오퍼 기록 2곳 이상 확인)
         parts:
-          - value: 200000
-            unit: points
+          - value: 3
+            unit: free_night
+        note_en: "Each free night award is good for a night costing up to 50,000 points."
+        note_ko: "무료 숙박권 1장당 50,000포인트 이하 숙박 1박."
+    elevated:
+      start: 2026-11-09
+      end: 2026-11-11
     earn:
       - category_en: Marriott Bonvoy hotels (more with member and status points)
         category_ko: Marriott Bonvoy 호텔(회원·등급 적립이 더해짐)
@@ -409,13 +419,16 @@ cards:
             unit: points
         min_spend: 3000
         spend_months: 3
-        note_en: "Plus 10,000 points for adding an authorized user in the first 3 months. Page says the offer ends soon (no date shown)."
-        note_ko: "첫 3개월 안에 추가 카드 사용자를 넣으면 10,000포인트 더. 페이지에 '곧 종료' 표시(날짜 없음)."
+        note_en: "Plus 10,000 points for adding an authorized user in the first 3 months. Apply by November 18, 2026."
+        note_ko: "첫 3개월 안에 추가 카드 사용자를 넣으면 10,000포인트 더. 2026-11-18까지 신청."
       usual:
-        # 제안 보류: '곧 종료' 표시인데 평소 금액이 페이지에 없음 → 우선 current와 같게. 진호님 판단 필요.
+        # 진호님 결정 2026-11-10 (오퍼 기록 2곳 이상 확인)
         parts:
-          - value: 180000
+          - value: 140000
             unit: points
+    elevated:
+      start: 2026-11-09
+      end: 2026-11-18
     earn:
       - category_en: IHG hotels (more with member and status points)
         category_ko: IHG 호텔(회원·등급 적립이 더해짐)
@@ -463,10 +476,15 @@ cards:
         note_en: "Free nights at Category 1-4 Hyatt hotels. Labeled a limited-time offer on the page."
         note_ko: "Hyatt 1~4등급 호텔 무료 숙박. 페이지에 기간 한정 오퍼로 표시됨."
       usual:
-        # 제안 보류: 페이지에 '기간 한정'이라 적혀 있지만 평소 금액은 안 보임 → 우선 current와 같게. 진호님 판단 필요.
+        # 진호님 결정 2026-11-10 (오퍼 기록 2곳 이상 확인). 종료일은 카드사 페이지에 없어 비워 둠.
         parts:
-          - value: 4
-            unit: free_night
+          - value: 30000
+            unit: points
+        note_en: "Plus up to 30,000 more: 2 extra points per $1 on up to $15,000 of purchases that normally earn 1 point, in the first 6 months."
+        note_ko: "첫 6개월 동안 원래 1배 적립되는 구매 최대 $15,000에 1달러당 2포인트 추가(최대 30,000포인트 더)."
+    elevated:
+      start: 2026-11-09
+      end: null
     earn:
       - category_en: Hyatt hotels (more with member base points)
         category_ko: Hyatt 호텔(회원 기본 적립이 더해짐)
