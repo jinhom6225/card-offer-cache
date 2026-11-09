@@ -11,6 +11,11 @@
 # 2묶음: American Express 7장. 명박사가 2026-11-09(미국 서부 날짜) Amex 공식 상품 페이지와
 # Rates & Fees를 직접 읽고 숫자만 옮겼습니다. last_verified·bonus.usual은 위와 같이 진호님 확인 필요.
 # Amex 7장에는 elevated가 없습니다(제안은 검수표 phase4_batch2_amex.md에만, 진호님만 넣음).
+#
+# 3묶음: Citi 3장(4장 중 Custom Cash는 2026-05-28 신규 발급 중단이라 넣지 않음 — 검수표 참고).
+# 명박사가 2026-11-09(미국 서부 날짜) Citi 공식 상품 페이지와 같은 페이지의 가격 안내(Pricing Details)를
+# 직접 읽고 숫자만 옮겼습니다. 카드명은 Citi 페이지에 쓰인 정식 상품명. last_verified·bonus.usual은
+# 위와 같이 진호님 확인 필요. elevated 없음(제안은 검수표 phase4_batch3_citi.md에만).
 
 cards:
   # ===================== Chase — 개인 =====================
@@ -1026,3 +1031,165 @@ cards:
         ko: Squarespace 연 최대 $150(등록 필요)
       - en: Up to $155 a year for a monthly Walmart+ membership
         ko: Walmart+ 월 회원비 연 최대 $155
+
+  # ===================== Citi — 개인 =====================
+  - id: citi-strata-premier
+    name: Citi Strata Premier® Card
+    issuer: Citi
+    segment: personal
+    official_url: https://www.citi.com/credit-cards/citi-strata-premier-credit-card
+    last_verified: 2026-11-09  # 진호님 재확인 필요(병합 전)
+    sources:
+      - https://www.citi.com/credit-cards/citi-strata-premier-credit-card
+    annual_fee:
+      amount: 95
+      first_year_waived: false
+    foreign_tx_fee_pct: 0
+    bonus:
+      current:
+        parts:
+          - value: 60000
+            unit: points
+        min_spend: 4000
+        spend_months: 3
+      usual:
+        # 명박사 제안 — 진호님 승인 필요, sources: awardwallet.com·travelsummary.com 오퍼 기록. 60,000이 2025-04-03부터 19개월째 기본 오퍼, 종료일 없음. 그 전 2024-05~2025-04는 75,000, 옛 Citi Premier 시절 최고 80,000.
+        parts:
+          - value: 60000
+            unit: points
+    earn:
+      - category_en: Hotels, car rentals and attractions booked via Citi Travel
+        category_ko: Citi Travel로 예약한 호텔·렌터카·관광지
+        rate: 10
+        unit: points
+      - category_en: Air travel and other hotel purchases
+        category_ko: 항공권·그 밖의 호텔 결제
+        rate: 3
+        unit: points
+      - category_en: Restaurants
+        category_ko: 식당
+        rate: 3
+        unit: points
+      - category_en: Supermarkets
+        category_ko: 슈퍼마켓
+        rate: 3
+        unit: points
+      - category_en: Gas stations and EV charging
+        category_ko: 주유소·EV 충전
+        rate: 3
+        unit: points
+      - category_en: Everything else
+        category_ko: 그 외 전부
+        rate: 1
+        unit: points
+    benefits:
+      - en: $100 off one hotel stay of $500 or more (before taxes and fees) booked via Citi Travel, once each calendar year
+        ko: Citi Travel로 예약한 $500 이상 호텔 1건 $100 할인(세금·수수료 제외, 매년 1회)
+      - en: Move points to airline and hotel partners such as American Airlines, JetBlue, Virgin Atlantic and Choice Hotels
+        ko: American Airlines·JetBlue·Virgin Atlantic·Choice Hotels 등 항공·호텔 파트너로 포인트 이전
+      - en: Travel coverage including trip delay, trip cancellation and interruption, and lost or damaged bags
+        ko: 여행 지연·여행 취소/중단·수하물 분실/파손 보장
+      - en: No fee for authorized users
+        ko: 가족 카드(추가 사용자) 수수료 없음
+
+  - id: citi-double-cash
+    name: Citi Double Cash® Card
+    issuer: Citi
+    segment: personal
+    official_url: https://www.citi.com/credit-cards/citi-double-cash-credit-card
+    last_verified: 2026-11-09  # 진호님 재확인 필요(병합 전)
+    sources:
+      - https://www.citi.com/credit-cards/citi-double-cash-credit-card
+    annual_fee:
+      amount: 0
+      first_year_waived: false
+    foreign_tx_fee_pct: 3
+    bonus:
+      current:
+        parts:
+          - value: 200
+            unit: cash
+        min_spend: 1500
+        spend_months: 6
+        note_en: "Paid as ThankYou points that you can redeem for $200 cash back."
+        note_ko: "ThankYou 포인트로 지급되며 $200 캐시백으로 바꿀 수 있음."
+      usual:
+        # 명박사 제안 — 진호님 승인 필요, sources: awardwallet.com 오퍼 기록·upgradedpoints.com. $200 / $1,500·6개월이 2023-11-14부터 3년째 이어진 기본 오퍼(역대 최고와 같음), 종료일 없음.
+        parts:
+          - value: 200
+            unit: cash
+    earn:
+      - category_en: Hotels, car rentals and attractions booked via Citi Travel
+        category_ko: Citi Travel로 예약한 호텔·렌터카·관광지
+        rate: 5
+        unit: cash
+      - category_en: Everything else (1% when you buy, 1% when you pay it off)
+        category_ko: 그 외 전부(구매 시 1% + 갚을 때 1%)
+        rate: 2
+        unit: cash
+    benefits:
+      - en: No bonus categories to sign up for and no cap on cash back
+        ko: 카테고리 등록 없음, 캐시백 한도 없음
+      - en: Cash back arrives as ThankYou points; take it as a deposit, statement credit or check
+        ko: 캐시백은 ThankYou 포인트로 쌓이며 계좌 입금·청구서 차감·수표로 받기
+      - en: Extended warranty coverage on eligible purchases
+        ko: 대상 구매품 보증 기간 연장
+      - en: Citi Entertainment access to ticket presales and events
+        ko: Citi Entertainment 공연·행사 선예매
+      - en: Mastercard ID Theft Protection monitoring
+        ko: Mastercard 신원 도용 감시 서비스
+
+  - id: citi-aadvantage-platinum-select
+    name: Citi® / AAdvantage® Platinum Select® World Elite Mastercard®
+    issuer: Citi
+    segment: personal
+    official_url: https://www.citi.com/credit-cards/citi-aadvantage-platinum-select-world-elite-mastercard
+    last_verified: 2026-11-09  # 진호님 재확인 필요(병합 전)
+    sources:
+      - https://www.citi.com/credit-cards/citi-aadvantage-platinum-select-world-elite-mastercard
+    annual_fee:
+      amount: 99
+      first_year_waived: true
+    foreign_tx_fee_pct: 0
+    bonus:
+      current:
+        parts:
+          - value: 50000
+            unit: miles
+        min_spend: 2500
+        spend_months: 3
+      usual:
+        # 명박사 제안 — 진호님 승인 필요, sources: awardwallet.com 오퍼 기록·aa.com 카드 목록(지금 50,000). 2024-10 이후 60,000/$3,000이 가장 자주 보인 값, 75,000~80,000 프로모션이 반복(최근 2026-10-09~11-05). 50,000은 그중 가장 낮은 단계. 평소를 60,000으로 두면 current와 달라 매일 '높음 표시 누락' 경고가 나므로 current와 같게 둠 — 진호님 판단 필요.
+        parts:
+          - value: 50000
+            unit: miles
+    earn:
+      - category_en: Eligible American Airlines purchases
+        category_ko: American Airlines 대상 구매
+        rate: 2
+        unit: miles
+      - category_en: Restaurants, including takeout
+        category_ko: 식당(포장 포함)
+        rate: 2
+        unit: miles
+      - category_en: Gas stations
+        category_ko: 주유소
+        rate: 2
+        unit: miles
+      - category_en: Everything else
+        category_ko: 그 외 전부
+        rate: 1
+        unit: miles
+    benefits:
+      - en: First checked bag free on domestic American Airlines trips for you and up to 4 companions on the same booking
+        ko: American Airlines 국내선 첫 위탁 수하물 무료(같은 예약 동반자 4명까지)
+      - en: Preferred boarding on American Airlines for you and up to 4 companions on the same booking
+        ko: American Airlines 우선 탑승(같은 예약 동반자 4명까지)
+      - en: 25% off food and drinks bought on board American Airlines flights
+        ko: American Airlines 기내 음식·음료 25% 할인
+      - en: $125 American Airlines flight discount after $20,000 in purchases in a cardmember year and renewing the card
+        ko: 카드 회원 연도에 $20,000 사용 후 갱신하면 American Airlines 항공권 $125 할인
+      - en: Up to $30 back per eligible Turo car rental trip paid with the card, up to $180 a year
+        ko: 카드로 결제한 대상 Turo 렌터카 1건당 최대 $30, 연 최대 $180 환급
+      - en: Purchases also earn Loyalty Points toward AAdvantage status (1 per eligible mile)
+        ko: 구매로 얻은 대상 마일 1마일당 AAdvantage 등급용 Loyalty Point 1점
