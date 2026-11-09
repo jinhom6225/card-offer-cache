@@ -21,7 +21,7 @@
 # 4묶음: Capital One 3장, Discover 1장, Wells Fargo 2장, Bank of America 1장(모두 개인). 명박사가 2026-11-09
 # (미국 서부 날짜) 각 발급사 공식 상품 페이지와 같은 페이지·링크의 요율·약관(FTF 줄)을 직접 읽고 숫자만
 # 옮겼습니다. 카드명은 각 발급사 페이지 표기(®/℠ 포함). last_verified·bonus.usual은 위와 같이 진호님 확인 필요.
-# elevated 없음(제안은 검수표 phase4_batch4_rest.md에만, 진호님만 넣음).
+# elevated: Venture Rewards·Discover it 2장(진호님 결정 2026-11-10 "추천대로", start 2026-11-09 미국 서부).
 
 cards:
   # ===================== Chase — 개인 =====================
@@ -1345,6 +1345,10 @@ cards:
         parts:
           - value: 75000
             unit: miles
+    elevated:
+      # 진호님 결정 2026-11-10 (추천대로): 75,000 + $300 크레딧 = 기간 한정, 평소 75,000. 종료일 미공개.
+      start: 2026-11-09
+      end: null
     earn:
       - category_en: Hotels, vacation rentals and rental cars booked via Capital One Travel
         category_ko: Capital One Travel로 예약한 호텔·휴가용 숙소·렌터카
@@ -1458,6 +1462,10 @@ cards:
         parts:
           - value: 100
             unit: percent_match
+    elevated:
+      # 진호님 결정 2026-11-10 (추천대로): 첫해 매칭 + $200 = 높음, 평소는 첫해 매칭만. 종료일 미공개.
+      start: 2026-11-09
+      end: null
     earn:
       - category_en: Rotating quarterly categories, up to the quarterly maximum (activation required)
         category_ko: 분기마다 바뀌는 카테고리(분기 한도까지, 활성화 필요)
