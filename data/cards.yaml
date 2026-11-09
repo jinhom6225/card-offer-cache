@@ -1,27 +1,9 @@
 # 카드 보너스 알림 — 카드 데이터 (진호님이 GitHub 웹에서 직접 고치는 파일)
 # 편집 방법·항목 설명은 README.md를 보세요. 저장(커밋)하면 검증기가 자동으로 확인합니다.
 #
-# Phase 4 초안 (branch phase4-data) — 발급사별 7묶음 중 1묶음: Chase 12장.
-# 명박사가 2026-11-09 Chase 공식 상품 페이지를 직접 읽고 숫자만 옮겼습니다. 설명은 직접 쓴 글입니다.
-# !!! 모든 카드의 last_verified(2026-11-09)는 명박사 확인일입니다. main 병합 전 진호님이 공식 페이지를
-# !!! 다시 확인하고 그날 날짜로 바꿔 주세요(진호님 확인일이 기준).
-# !!! bonus.usual은 명박사 제안값입니다. elevated는 진호님만 넣습니다(이 초안에는 없음).
-# 카드명은 Chase 페이지 제목 표기 그대로(®/℠ 포함).
-#
-# 2묶음: American Express 7장. 명박사가 2026-11-09(미국 서부 날짜) Amex 공식 상품 페이지와
-# Rates & Fees를 직접 읽고 숫자만 옮겼습니다. last_verified·bonus.usual은 위와 같이 진호님 확인 필요.
-# Amex 7장에는 elevated가 없습니다(제안은 검수표 phase4_batch2_amex.md에만, 진호님만 넣음).
-#
-# 3묶음: Citi 3장(4장 중 Custom Cash는 2026-05-28 신규 발급 중단이라 넣지 않음 — 검수표 참고).
-# 명박사가 2026-11-09(미국 서부 날짜) Citi 공식 상품 페이지와 같은 페이지의 가격 안내(Pricing Details)를
-# 직접 읽고 숫자만 옮겼습니다. 카드명은 Citi 페이지에 쓰인 정식 상품명. last_verified·bonus.usual은
-# 위와 같이 진호님 확인 필요. elevated 없음(제안은 검수표 phase4_batch3_citi.md에만).
-# A3 추가(2026-11-09 미국 서부): Custom Cash 대신 Citi Strata® Card — 같은 방식으로 읽음, elevated 없음.
-#
-# 4묶음: Capital One 3장, Discover 1장, Wells Fargo 2장, Bank of America 1장(모두 개인). 명박사가 2026-11-09
-# (미국 서부 날짜) 각 발급사 공식 상품 페이지와 같은 페이지·링크의 요율·약관(FTF 줄)을 직접 읽고 숫자만
-# 옮겼습니다. 카드명은 각 발급사 페이지 표기(®/℠ 포함). last_verified·bonus.usual은 위와 같이 진호님 확인 필요.
-# elevated: Venture Rewards·Discover it 2장(진호님 결정 2026-11-10 "추천대로", start 2026-11-09 미국 서부).
+# 카드 30종 (2026-11-10 진호님 승인, Phase 4). 숫자는 각 발급사 공식 페이지에서 옮긴 사실이고 설명은 직접 쓴 글입니다.
+# 평소 보너스(bonus.usual)는 오퍼 기록 출처 2곳 이상으로 확인한 값입니다. 기준: 종료일 없이 몇 달째 걸린 오퍼 = 평소(기준 A).
+# 검수 기록: Dr.Myung tasks/2026-11-09-credit-card-offers-app/phase4_*.md
 
 cards:
   # ===================== Chase — 개인 =====================
@@ -30,7 +12,7 @@ cards:
     issuer: Chase
     segment: personal
     official_url: https://creditcards.chase.com/rewards-credit-cards/sapphire/preferred
-    last_verified: 2026-11-09  # 진호님 재확인 필요(병합 전)
+    last_verified: 2026-11-09
     sources:
       - https://creditcards.chase.com/rewards-credit-cards/sapphire/preferred
     annual_fee:
@@ -90,7 +72,7 @@ cards:
     issuer: Chase
     segment: personal
     official_url: https://creditcards.chase.com/rewards-credit-cards/sapphire/reserve
-    last_verified: 2026-11-09  # 진호님 재확인 필요(병합 전)
+    last_verified: 2026-11-09
     sources:
       - https://creditcards.chase.com/rewards-credit-cards/sapphire/reserve
     annual_fee:
@@ -148,7 +130,7 @@ cards:
     issuer: Chase
     segment: personal
     official_url: https://creditcards.chase.com/cash-back-credit-cards/freedom/unlimited
-    last_verified: 2026-11-09  # 진호님 재확인 필요(병합 전)
+    last_verified: 2026-11-09
     sources:
       - https://creditcards.chase.com/cash-back-credit-cards/freedom/unlimited
     annual_fee:
@@ -198,7 +180,7 @@ cards:
     issuer: Chase
     segment: personal
     official_url: https://creditcards.chase.com/cash-back-credit-cards/freedom/flex
-    last_verified: 2026-11-09  # 진호님 재확인 필요(병합 전)
+    last_verified: 2026-11-09
     sources:
       - https://creditcards.chase.com/cash-back-credit-cards/freedom/flex
     annual_fee:
@@ -252,7 +234,7 @@ cards:
     issuer: Chase
     segment: personal
     official_url: https://creditcards.chase.com/travel-credit-cards/united/united-explorer
-    last_verified: 2026-11-09  # 진호님 재확인 필요(병합 전)
+    last_verified: 2026-11-09
     sources:
       - https://creditcards.chase.com/travel-credit-cards/united/united-explorer
     annual_fee:
@@ -312,7 +294,7 @@ cards:
     issuer: Chase
     segment: personal
     official_url: https://creditcards.chase.com/travel-credit-cards/southwest/plus
-    last_verified: 2026-11-09  # 진호님 재확인 필요(병합 전)
+    last_verified: 2026-11-09
     sources:
       - https://creditcards.chase.com/travel-credit-cards/southwest/plus
     annual_fee:
@@ -366,7 +348,7 @@ cards:
     issuer: Chase
     segment: personal
     official_url: https://creditcards.chase.com/travel-credit-cards/marriott-bonvoy/boundless
-    last_verified: 2026-11-09  # 진호님 재확인 필요(병합 전)
+    last_verified: 2026-11-09
     sources:
       - https://creditcards.chase.com/travel-credit-cards/marriott-bonvoy/boundless
     annual_fee:
@@ -420,7 +402,7 @@ cards:
     issuer: Chase
     segment: personal
     official_url: https://creditcards.chase.com/travel-credit-cards/ihg-rewards-club/premier
-    last_verified: 2026-11-09  # 진호님 재확인 필요(병합 전)
+    last_verified: 2026-11-09
     sources:
       - https://creditcards.chase.com/travel-credit-cards/ihg-rewards-club/premier
     annual_fee:
@@ -474,7 +456,7 @@ cards:
     issuer: Chase
     segment: personal
     official_url: https://creditcards.chase.com/travel-credit-cards/world-of-hyatt-credit-card
-    last_verified: 2026-11-09  # 진호님 재확인 필요(병합 전)
+    last_verified: 2026-11-09
     sources:
       - https://creditcards.chase.com/travel-credit-cards/world-of-hyatt-credit-card
     annual_fee:
@@ -529,7 +511,7 @@ cards:
     issuer: Chase
     segment: business
     official_url: https://creditcards.chase.com/business-credit-cards/ink/business-preferred
-    last_verified: 2026-11-09  # 진호님 재확인 필요(병합 전)
+    last_verified: 2026-11-09
     sources:
       - https://creditcards.chase.com/business-credit-cards/ink/business-preferred
     annual_fee:
@@ -571,7 +553,7 @@ cards:
     issuer: Chase
     segment: business
     official_url: https://creditcards.chase.com/business-credit-cards/ink/cash
-    last_verified: 2026-11-09  # 진호님 재확인 필요(병합 전)
+    last_verified: 2026-11-09
     sources:
       - https://creditcards.chase.com/business-credit-cards/ink/cash
     annual_fee:
@@ -615,7 +597,7 @@ cards:
     issuer: Chase
     segment: business
     official_url: https://creditcards.chase.com/business-credit-cards/ink/unlimited
-    last_verified: 2026-11-09  # 진호님 재확인 필요(병합 전)
+    last_verified: 2026-11-09
     sources:
       - https://creditcards.chase.com/business-credit-cards/ink/unlimited
     annual_fee:
@@ -652,7 +634,7 @@ cards:
     issuer: American Express
     segment: personal
     official_url: https://www.americanexpress.com/us/credit-cards/card/platinum/
-    last_verified: 2026-11-09  # 진호님 재확인 필요(병합 전)
+    last_verified: 2026-11-09
     sources:
       - https://www.americanexpress.com/us/credit-cards/card/platinum/
     annual_fee:
@@ -705,7 +687,7 @@ cards:
     issuer: American Express
     segment: personal
     official_url: https://www.americanexpress.com/us/credit-cards/card/gold-card/
-    last_verified: 2026-11-09  # 진호님 재확인 필요(병합 전)
+    last_verified: 2026-11-09
     sources:
       - https://www.americanexpress.com/us/credit-cards/card/gold-card/
     annual_fee:
@@ -768,7 +750,7 @@ cards:
     issuer: American Express
     segment: personal
     official_url: https://www.americanexpress.com/us/credit-cards/card/blue-cash-preferred/
-    last_verified: 2026-11-09  # 진호님 재확인 필요(병합 전)
+    last_verified: 2026-11-09
     sources:
       - https://www.americanexpress.com/us/credit-cards/card/blue-cash-preferred/
     annual_fee:
@@ -823,7 +805,7 @@ cards:
     issuer: American Express
     segment: personal
     official_url: https://www.americanexpress.com/us/credit-cards/card/delta-skymiles-gold-american-express-card/
-    last_verified: 2026-11-09  # 진호님 재확인 필요(병합 전)
+    last_verified: 2026-11-09
     sources:
       - https://www.americanexpress.com/us/credit-cards/card/delta-skymiles-gold-american-express-card/
     annual_fee:
@@ -878,7 +860,7 @@ cards:
     issuer: American Express
     segment: personal
     official_url: https://www.americanexpress.com/us/credit-cards/card/hilton-honors-surpass/
-    last_verified: 2026-11-09  # 진호님 재확인 필요(병합 전)
+    last_verified: 2026-11-09
     sources:
       - https://www.americanexpress.com/us/credit-cards/card/hilton-honors-surpass/
     annual_fee:
@@ -941,7 +923,7 @@ cards:
     issuer: American Express
     segment: business
     official_url: https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/american-express-business-platinum-credit-card-amex/65147/
-    last_verified: 2026-11-09  # 진호님 재확인 필요(병합 전)
+    last_verified: 2026-11-09
     sources:
       - https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/american-express-business-platinum-credit-card-amex/65147/
     annual_fee:
@@ -994,7 +976,7 @@ cards:
     issuer: American Express
     segment: business
     official_url: https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/american-express-business-gold-card-amex/
-    last_verified: 2026-11-09  # 진호님 재확인 필요(병합 전)
+    last_verified: 2026-11-09
     sources:
       - https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/american-express-business-gold-card-amex/
     annual_fee:
@@ -1044,7 +1026,7 @@ cards:
     issuer: Citi
     segment: personal
     official_url: https://www.citi.com/credit-cards/citi-strata-premier-credit-card
-    last_verified: 2026-11-09  # 진호님 재확인 필요(병합 전)
+    last_verified: 2026-11-09
     sources:
       - https://www.citi.com/credit-cards/citi-strata-premier-credit-card
     annual_fee:
@@ -1059,7 +1041,7 @@ cards:
         min_spend: 4000
         spend_months: 3
       usual:
-        # 명박사 제안 — 진호님 승인 필요, sources: awardwallet.com·travelsummary.com 오퍼 기록. 60,000이 2025-04-03부터 19개월째 기본 오퍼, 종료일 없음. 그 전 2024-05~2025-04는 75,000, 옛 Citi Premier 시절 최고 80,000.
+        # 진호님 승인 2026-11-10, sources: awardwallet.com·travelsummary.com 오퍼 기록. 60,000이 2025-04-03부터 19개월째 기본 오퍼, 종료일 없음. 그 전 2024-05~2025-04는 75,000, 옛 Citi Premier 시절 최고 80,000.
         parts:
           - value: 60000
             unit: points
@@ -1103,7 +1085,7 @@ cards:
     issuer: Citi
     segment: personal
     official_url: https://www.citi.com/credit-cards/citi-double-cash-credit-card
-    last_verified: 2026-11-09  # 진호님 재확인 필요(병합 전)
+    last_verified: 2026-11-09
     sources:
       - https://www.citi.com/credit-cards/citi-double-cash-credit-card
     annual_fee:
@@ -1120,7 +1102,7 @@ cards:
         note_en: "Paid as ThankYou points that you can redeem for $200 cash back."
         note_ko: "ThankYou 포인트로 지급되며 $200 캐시백으로 바꿀 수 있음."
       usual:
-        # 명박사 제안 — 진호님 승인 필요, sources: awardwallet.com 오퍼 기록·upgradedpoints.com. $200 / $1,500·6개월이 2023-11-14부터 3년째 이어진 기본 오퍼(역대 최고와 같음), 종료일 없음.
+        # 진호님 승인 2026-11-10, sources: awardwallet.com 오퍼 기록·upgradedpoints.com. $200 / $1,500·6개월이 2023-11-14부터 3년째 이어진 기본 오퍼(역대 최고와 같음), 종료일 없음.
         parts:
           - value: 200
             unit: cash
@@ -1150,7 +1132,7 @@ cards:
     issuer: Citi
     segment: personal
     official_url: https://www.citi.com/credit-cards/citi-strata-credit-card
-    last_verified: 2026-11-09  # 진호님 재확인 필요(병합 전)
+    last_verified: 2026-11-09
     sources:
       - https://www.citi.com/credit-cards/citi-strata-credit-card
     annual_fee:
@@ -1165,7 +1147,7 @@ cards:
         min_spend: 1000
         spend_months: 3
       usual:
-        # 명박사 제안 — 진호님 승인 필요, sources: awardwallet.com 오퍼 기록·uscreditcardguide.com. 20,000 / $1,000·3개월이 2026-01-15쯤부터 10개월째 기본 오퍼, 종료일 없음. 역대 최고는 출시 오퍼 30,000(2025-07-27~2026-01-14).
+        # 진호님 승인 2026-11-10, sources: awardwallet.com 오퍼 기록·uscreditcardguide.com. 20,000 / $1,000·3개월이 2026-01-15쯤부터 10개월째 기본 오퍼, 종료일 없음. 역대 최고는 출시 오퍼 30,000(2025-07-27~2026-01-14).
         parts:
           - value: 20000
             unit: points
@@ -1211,7 +1193,7 @@ cards:
     issuer: Citi
     segment: personal
     official_url: https://www.citi.com/credit-cards/citi-aadvantage-platinum-select-world-elite-mastercard
-    last_verified: 2026-11-09  # 진호님 재확인 필요(병합 전)
+    last_verified: 2026-11-09
     sources:
       - https://www.citi.com/credit-cards/citi-aadvantage-platinum-select-world-elite-mastercard
     annual_fee:
@@ -1267,7 +1249,7 @@ cards:
     issuer: Capital One
     segment: personal
     official_url: https://www.capitalone.com/credit-cards/venture-x/
-    last_verified: 2026-11-09  # 진호님 재확인 필요(병합 전)
+    last_verified: 2026-11-09
     sources:
       - https://www.capitalone.com/credit-cards/venture-x/
     annual_fee:
@@ -1282,7 +1264,7 @@ cards:
         min_spend: 4000
         spend_months: 3
       usual:
-        # 명박사 제안 — 진호님 승인 필요, sources: awardwallet.com 오퍼 기록·capitalone.com 현재 오퍼(+ 커뮤니티 기록은 검수표). 75,000 / $4,000·3개월이 2026-01-06부터 10개월째(그 전 2022-03~2025-11도 같은 값), 종료일 없음. 역대 최고 100,000 / $10,000·6개월(2021-11~2022-03, 2025-11-12~2026-01-05).
+        # 진호님 승인 2026-11-10, sources: awardwallet.com 오퍼 기록·capitalone.com 현재 오퍼(+ 커뮤니티 기록은 검수표). 75,000 / $4,000·3개월이 2026-01-06부터 10개월째(그 전 2022-03~2025-11도 같은 값), 종료일 없음. 역대 최고 100,000 / $10,000·6개월(2021-11~2022-03, 2025-11-12~2026-01-05).
         parts:
           - value: 75000
             unit: miles
@@ -1322,7 +1304,7 @@ cards:
     issuer: Capital One
     segment: personal
     official_url: https://www.capitalone.com/credit-cards/venture/
-    last_verified: 2026-11-09  # 진호님 재확인 필요(병합 전)
+    last_verified: 2026-11-09
     sources:
       - https://www.capitalone.com/credit-cards/venture/
     annual_fee:
@@ -1341,7 +1323,7 @@ cards:
         note_en: "Labeled a limited-time offer on the page. The $300 is a one-time Capital One Travel credit for hotel and vacation rental bookings, usable for one year after the account opens."
         note_ko: "페이지에 기간 한정 오퍼로 표시됨. $300은 Capital One Travel 호텔·휴가용 숙소 예약에 쓰는 1회 크레딧이며 계좌 개설 후 1년 안에 써야 함."
       usual:
-        # 명박사 제안 — 진호님 승인 필요, sources: awardwallet.com 오퍼 기록·capitalone.com 기간 한정 표시. 크레딧 없는 75,000 / $4,000·3개월이 2022-05부터 기본 오퍼. $250·$300 여행 크레딧은 몇 달씩 붙었다 빠지는 프로모션(2024-07~09, 2025-02~05, 2026-01~04, 지금 $300은 2026-09-08부터). 역대 최고 100,000(지출 $20,000, 2020·2021).
+        # 진호님 승인 2026-11-10, sources: awardwallet.com 오퍼 기록·capitalone.com 기간 한정 표시. 크레딧 없는 75,000 / $4,000·3개월이 2022-05부터 기본 오퍼. $250·$300 여행 크레딧은 몇 달씩 붙었다 빠지는 프로모션(2024-07~09, 2025-02~05, 2026-01~04, 지금 $300은 2026-09-08부터). 역대 최고 100,000(지출 $20,000, 2020·2021).
         parts:
           - value: 75000
             unit: miles
@@ -1379,7 +1361,7 @@ cards:
     issuer: Capital One
     segment: personal
     official_url: https://www.capitalone.com/credit-cards/savor/
-    last_verified: 2026-11-09  # 진호님 재확인 필요(병합 전)
+    last_verified: 2026-11-09
     sources:
       - https://www.capitalone.com/credit-cards/savor/
     annual_fee:
@@ -1394,7 +1376,7 @@ cards:
         min_spend: 500
         spend_months: 3
       usual:
-        # 명박사 제안 — 진호님 승인 필요, sources: awardwallet.com 오퍼 기록·cnbc.com. $200 / $500·3개월이 2020-10부터 기본 오퍼(2026-08-11부터 다시 $200), 종료일 없음. $250은 짧은 프로모션(2024-10-22~12-09, 2026-06-09~08-10). 2024-10-22 연회비 없는 SavorOne이 Savor로 이름이 바뀜(연회비 있던 옛 Savor는 2024-07 신규 중단). 지금 capitalone.com의 'SavorOne Rewards'는 연회비 $39인 다른 카드(fair credit용).
+        # 진호님 승인 2026-11-10, sources: awardwallet.com 오퍼 기록·cnbc.com. $200 / $500·3개월이 2020-10부터 기본 오퍼(2026-08-11부터 다시 $200), 종료일 없음. $250은 짧은 프로모션(2024-10-22~12-09, 2026-06-09~08-10). 2024-10-22 연회비 없는 SavorOne이 Savor로 이름이 바뀜(연회비 있던 옛 Savor는 2024-07 신규 중단). 지금 capitalone.com의 'SavorOne Rewards'는 연회비 $39인 다른 카드(fair credit용).
         parts:
           - value: 200
             unit: cash
@@ -1439,7 +1421,7 @@ cards:
     issuer: Discover
     segment: personal
     official_url: https://www.discover.com/credit-cards/cash-back/it-card/
-    last_verified: 2026-11-09  # 진호님 재확인 필요(병합 전)
+    last_verified: 2026-11-09
     sources:
       - https://www.discover.com/credit-cards/cash-back/it-card/
     annual_fee:
@@ -1458,7 +1440,7 @@ cards:
         note_en: "Two parts. First-year match (Discover calls it Cashback Match): all cash back earned in your first 365 days is matched dollar for dollar, with no cap and no spending requirement. Separately, a $200 statement credit after $500 in purchases in the first 3 months; that $200 itself is not matched."
         note_ko: "두 부분. ① 첫해 매칭: 첫 365일 동안 쌓은 캐시백 전부를 같은 금액만큼 한 번 더 줌(한도·지출 조건 없음). ② 첫 3개월 $500 사용 시 $200 청구서 크레딧(이 $200은 매칭 대상 아님)."
       usual:
-        # 명박사 제안 — 진호님 승인 필요, sources: nerdwallet.com·cnbc.com. 첫해 매칭만 있는 것이 오래된 기본 오퍼(NerdWallet 2025-01 목록도 매칭만). $200 / $500·3개월 청구서 크레딧은 2026-10-20쯤 새로 붙음(NerdWallet·CNBC 같은 날 보도), 종료일 없음. dailydrop.com 페이지(2026-02 갱신 표시)에도 $200이 보여 그 전에 나온 적이 있는지는 불확실.
+        # 진호님 승인 2026-11-10, sources: nerdwallet.com·cnbc.com. 첫해 매칭만 있는 것이 오래된 기본 오퍼(NerdWallet 2025-01 목록도 매칭만). $200 / $500·3개월 청구서 크레딧은 2026-10-20쯤 새로 붙음(NerdWallet·CNBC 같은 날 보도), 종료일 없음. dailydrop.com 페이지(2026-02 갱신 표시)에도 $200이 보여 그 전에 나온 적이 있는지는 불확실.
         parts:
           - value: 100
             unit: percent_match
@@ -1499,7 +1481,7 @@ cards:
     issuer: Wells Fargo
     segment: personal
     official_url: https://creditcards.wellsfargo.com/active-cash-credit-card/
-    last_verified: 2026-11-09  # 진호님 재확인 필요(병합 전)
+    last_verified: 2026-11-09
     sources:
       - https://creditcards.wellsfargo.com/active-cash-credit-card/
       - https://www.wellsfargo.com/credit-cards/active-cash/terms/
@@ -1517,7 +1499,7 @@ cards:
         note_en: "Paid as cash rewards."
         note_ko: "캐시 리워드로 지급."
       usual:
-        # 명박사 제안 — 진호님 승인 필요(plan A4: 지금 값이 더 낮아 매일 경고 없음), sources: cnbc.com(2021 출시 $200)·awardwallet.com·nerdwallet.com(지금 $100). 가장 자주 보인 평소 오퍼는 $200 / $500·3개월(출시 때는 $1,000 지출, 2023-04부터 $500). $100은 2026-09쯤부터로 보이나 정확한 날짜 불명, 종료일 없음.
+        # 진호님 승인 2026-11-10(plan A4: 지금 값이 더 낮아 매일 경고 없음), sources: cnbc.com(2021 출시 $200)·awardwallet.com·nerdwallet.com(지금 $100). 가장 자주 보인 평소 오퍼는 $200 / $500·3개월(출시 때는 $1,000 지출, 2023-04부터 $500). $100은 2026-09쯤부터로 보이나 정확한 날짜 불명, 종료일 없음.
         parts:
           - value: 200
             unit: cash
@@ -1543,7 +1525,7 @@ cards:
     issuer: Wells Fargo
     segment: personal
     official_url: https://creditcards.wellsfargo.com/autograph-visa-credit-card/
-    last_verified: 2026-11-09  # 진호님 재확인 필요(병합 전)
+    last_verified: 2026-11-09
     sources:
       - https://creditcards.wellsfargo.com/autograph-visa-credit-card/
       - https://www.wellsfargo.com/credit-cards/autograph-visa/terms/
@@ -1559,7 +1541,7 @@ cards:
         min_spend: 1000
         spend_months: 3
       usual:
-        # 명박사 제안 — 진호님 승인 필요, sources: uscreditcardguide.com(2024-01 갱신 '20k 오퍼', 최근 최고 30k)·wellsfargo.com. 20,000 / $1,000·3개월이 2024-01쯤부터 기본 오퍼, 종료일 없음. 역대 최고 30,000(2022-08~2023-07, 2023-11~2024-01).
+        # 진호님 승인 2026-11-10, sources: uscreditcardguide.com(2024-01 갱신 '20k 오퍼', 최근 최고 30k)·wellsfargo.com. 20,000 / $1,000·3개월이 2024-01쯤부터 기본 오퍼, 종료일 없음. 역대 최고 30,000(2022-08~2023-07, 2023-11~2024-01).
         parts:
           - value: 20000
             unit: points
@@ -1606,7 +1588,7 @@ cards:
     issuer: Bank of America
     segment: personal
     official_url: https://www.bankofamerica.com/credit-cards/products/premium-rewards-credit-card/
-    last_verified: 2026-11-09  # 진호님 재확인 필요(병합 전)
+    last_verified: 2026-11-09
     sources:
       - https://www.bankofamerica.com/credit-cards/products/premium-rewards-credit-card/
       - https://www.bankofamerica.com/credit-cards/terms-and-conditions/?campaignid=4079485&productoffercode=UN&locale=en_US
@@ -1624,7 +1606,7 @@ cards:
         note_en: "Spend window is 90 days from account opening. The page values the points at $600."
         note_ko: "지출 기간은 계좌 개설 후 90일. 페이지는 포인트 가치를 $600으로 안내."
       usual:
-        # 명박사 제안 — 진호님 승인 필요, sources: uscreditcardguide.com·bankrate.com. 60,000 / $4,000·90일이 2023-06부터 기본 오퍼(그 전 50,000 / $3,000), 종료일 없음. 50,000으로 다시 내려간 기록은 못 찾음. Preferred Rewards(BofA Rewards) 회원 가산은 반영하지 않은 공개 기본값.
+        # 진호님 승인 2026-11-10, sources: uscreditcardguide.com·bankrate.com. 60,000 / $4,000·90일이 2023-06부터 기본 오퍼(그 전 50,000 / $3,000), 종료일 없음. 50,000으로 다시 내려간 기록은 못 찾음. Preferred Rewards(BofA Rewards) 회원 가산은 반영하지 않은 공개 기본값.
         parts:
           - value: 60000
             unit: points
