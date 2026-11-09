@@ -7,6 +7,10 @@
 # !!! 다시 확인하고 그날 날짜로 바꿔 주세요(진호님 확인일이 기준).
 # !!! bonus.usual은 명박사 제안값입니다. elevated는 진호님만 넣습니다(이 초안에는 없음).
 # 카드명은 Chase 페이지 제목 표기 그대로(®/℠ 포함).
+#
+# 2묶음: American Express 7장. 명박사가 2026-11-09(미국 서부 날짜) Amex 공식 상품 페이지와
+# Rates & Fees를 직접 읽고 숫자만 옮겼습니다. last_verified·bonus.usual은 위와 같이 진호님 확인 필요.
+# Amex 7장에는 elevated가 없습니다(제안은 검수표 phase4_batch2_amex.md에만, 진호님만 넣음).
 
 cards:
   # ===================== Chase — 개인 =====================
@@ -630,3 +634,392 @@ cards:
         ko: 구매 보호·제조사 보증 연장
       - en: 3 months of free Instacart+ with monthly credit
         ko: Instacart+ 3개월 무료(월 크레딧 포함)
+
+  # ===================== American Express — 개인 =====================
+  - id: amex-platinum
+    name: The Platinum Card® from American Express
+    issuer: American Express
+    segment: personal
+    official_url: https://www.americanexpress.com/us/credit-cards/card/platinum/
+    last_verified: 2026-11-09  # 진호님 재확인 필요(병합 전)
+    sources:
+      - https://www.americanexpress.com/us/credit-cards/card/platinum/
+    annual_fee:
+      amount: 895
+      first_year_waived: false
+    foreign_tx_fee_pct: 0
+    bonus:
+      current:
+        parts:
+          - value: 175000
+            unit: points
+        min_spend: 12000
+        spend_months: 6
+        note_en: "Top of the range shown on the public page. Amex tells you your exact amount after you apply, and it can be lower."
+        note_ko: "공식 페이지에 보이는 최대치. 정확한 금액은 신청 후 Amex가 알려 주며 더 낮을 수 있음."
+      usual:
+        # 명박사 제안 — 진호님 승인 필요, sources: upgradedpoints.com·awardwallet.com 오퍼 기록. 공개 페이지 '최대 175,000'이 2025-06부터 계속 표시(2026-02 최소 지출 $8,000→$12,000). 그 전 고정 80,000은 옛 기준이라 안 씀.
+        parts:
+          - value: 175000
+            unit: points
+    earn:
+      - category_en: Flights booked directly with airlines or via Amex Travel (first $500,000 a year)
+        category_ko: 항공사 직접·Amex Travel 항공권(연 첫 $500,000)
+        rate: 5
+        unit: points
+      - category_en: Prepaid hotels booked via Amex Travel
+        category_ko: Amex Travel 선결제 호텔
+        rate: 5
+        unit: points
+      - category_en: Everything else
+        category_ko: 그 외 전부
+        rate: 1
+        unit: points
+    benefits:
+      - en: Up to $600 a year for prepaid Fine Hotels + Resorts or The Hotel Collection stays ($300 per half-year)
+        ko: Fine Hotels + Resorts·The Hotel Collection 선결제 숙박 연 최대 $600(반기 $300)
+      - en: Centurion, Priority Pass and other lounges, plus 10 Delta Sky Club visits a year on Delta flights
+        ko: Centurion·Priority Pass 등 라운지, Delta 탑승 시 Sky Club 연 10회
+      - en: Up to $200 a year in Uber Cash for U.S. rides and orders
+        ko: 미국 Uber 이용 시 연 최대 $200 Uber Cash
+      - en: Up to $200 a year for incidental fees on one chosen airline
+        ko: 선택한 항공사 1곳 부대 비용 연 최대 $200
+      - en: Up to $400 a year at Resy restaurants ($100 per quarter, enrollment required)
+        ko: Resy 식당 연 최대 $400(분기 $100, 등록 필요)
+      - en: Up to $300 a year for digital entertainment ($25 a month, enrollment required)
+        ko: 디지털 엔터테인먼트 연 최대 $300(월 $25, 등록 필요)
+
+  - id: amex-gold
+    name: American Express® Gold Card
+    issuer: American Express
+    segment: personal
+    official_url: https://www.americanexpress.com/us/credit-cards/card/gold-card/
+    last_verified: 2026-11-09  # 진호님 재확인 필요(병합 전)
+    sources:
+      - https://www.americanexpress.com/us/credit-cards/card/gold-card/
+    annual_fee:
+      amount: 325
+      first_year_waived: false
+    foreign_tx_fee_pct: 0
+    bonus:
+      current:
+        parts:
+          - value: 100000
+            unit: points
+        min_spend: 8000
+        spend_months: 6
+        note_en: "Top of the range shown on the public page. Amex tells you your exact amount after you apply, and it can be lower."
+        note_ko: "공식 페이지에 보이는 최대치. 정확한 금액은 신청 후 Amex가 알려 주며 더 낮을 수 있음."
+      usual:
+        # 명박사 제안 — 진호님 승인 필요, sources: upgradedpoints.com·awardwallet.com 오퍼 기록. 공개 페이지 '최대 100,000'이 2025-06부터 계속 표시(2026-04 최소 지출 $6,000→$8,000). 그 전 고정 60,000은 옛 기준이라 안 씀.
+        parts:
+          - value: 100000
+            unit: points
+    earn:
+      - category_en: Prepaid hotels booked via Amex Travel
+        category_ko: Amex Travel 선결제 호텔
+        rate: 5
+        unit: points
+      - category_en: Restaurants worldwide (first $50,000 a year)
+        category_ko: 전 세계 식당(연 첫 $50,000)
+        rate: 4
+        unit: points
+      - category_en: U.S. supermarkets (first $25,000 a year)
+        category_ko: 미국 슈퍼마켓(연 첫 $25,000)
+        rate: 4
+        unit: points
+      - category_en: Flights booked directly with airlines or via Amex Travel
+        category_ko: 항공사 직접·Amex Travel 항공권
+        rate: 3
+        unit: points
+      - category_en: Prepaid car rentals and cruises via Amex Travel
+        category_ko: Amex Travel 선결제 렌터카·크루즈
+        rate: 2
+        unit: points
+      - category_en: Everything else
+        category_ko: 그 외 전부
+        rate: 1
+        unit: points
+    benefits:
+      - en: Up to $120 a year in dining credits at select partners ($10 a month, enrollment required)
+        ko: 지정 식당·배달 파트너 연 최대 $120(월 $10, 등록 필요)
+      - en: Up to $120 a year in Uber Cash ($10 a month, U.S.)
+        ko: 미국 Uber 이용 시 연 최대 $120 Uber Cash(월 $10)
+      - en: Up to $100 a year at Resy restaurants ($50 per half-year, enrollment required)
+        ko: Resy 식당 연 최대 $100(반기 $50, 등록 필요)
+      - en: Up to $84 a year at U.S. Dunkin' ($7 a month, enrollment required)
+        ko: 미국 Dunkin' 연 최대 $84(월 $7, 등록 필요)
+      - en: $100 property credit on The Hotel Collection stays of 2+ nights
+        ko: The Hotel Collection 2박 이상 예약 시 호텔 내 사용 $100 크레딧
+
+  - id: amex-blue-cash-preferred
+    name: Blue Cash Preferred® Card from American Express
+    issuer: American Express
+    segment: personal
+    official_url: https://www.americanexpress.com/us/credit-cards/card/blue-cash-preferred/
+    last_verified: 2026-11-09  # 진호님 재확인 필요(병합 전)
+    sources:
+      - https://www.americanexpress.com/us/credit-cards/card/blue-cash-preferred/
+    annual_fee:
+      amount: 95
+      first_year_waived: true
+    foreign_tx_fee_pct: 2.7
+    bonus:
+      current:
+        parts:
+          - value: 250
+            unit: cash
+        min_spend: 3000
+        spend_months: 6
+        note_en: "Paid as Reward Dollars, which can be redeemed as a statement credit."
+        note_ko: "Reward Dollars로 지급되며 청구서 차감 등으로 사용."
+      usual:
+        # 명박사 제안 — 진호님 승인 필요, sources: upgradedpoints.com·dailydrop.com 오퍼 기록. $250은 2022-10부터 이어진 기본 오퍼.
+        parts:
+          - value: 250
+            unit: cash
+    earn:
+      - category_en: U.S. supermarkets (first $6,000 a year)
+        category_ko: 미국 슈퍼마켓(연 첫 $6,000)
+        rate: 6
+        unit: cash
+      - category_en: Select U.S. streaming subscriptions
+        category_ko: 일부 미국 스트리밍 구독
+        rate: 6
+        unit: cash
+      - category_en: Transit (rideshare, taxis, parking, tolls, trains, buses)
+        category_ko: 교통(차량 호출·택시·주차·통행료·기차·버스)
+        rate: 3
+        unit: cash
+      - category_en: U.S. gas stations
+        category_ko: 미국 주유소
+        rate: 3
+        unit: cash
+      - category_en: Everything else
+        category_ko: 그 외 전부
+        rate: 1
+        unit: cash
+    benefits:
+      - en: Up to $120 a year for Disney+, Hulu or ESPN subscriptions ($10 a month, enrollment required)
+        ko: Disney+·Hulu·ESPN 구독 연 최대 $120(월 $10, 등록 필요)
+      - en: Redeem cash back as a statement credit, a savings deposit or at Amazon checkout
+        ko: 캐시백을 청구서 차감·Amex 예금 입금·Amazon 결제에 사용
+      - en: Presale and reserved tickets for select events
+        ko: 일부 공연·경기 선예매·지정석 이용
+
+  - id: amex-delta-skymiles-gold
+    name: Delta SkyMiles® Gold American Express Card
+    issuer: American Express
+    segment: personal
+    official_url: https://www.americanexpress.com/us/credit-cards/card/delta-skymiles-gold-american-express-card/
+    last_verified: 2026-11-09  # 진호님 재확인 필요(병합 전)
+    sources:
+      - https://www.americanexpress.com/us/credit-cards/card/delta-skymiles-gold-american-express-card/
+    annual_fee:
+      amount: 150
+      first_year_waived: true
+    foreign_tx_fee_pct: 0
+    bonus:
+      current:
+        parts:
+          - value: 80000
+            unit: miles
+        min_spend: 2000
+        spend_months: 6
+        note_en: "Top of the range shown on the public page. Amex tells you your exact amount after you apply, and it can be lower."
+        note_ko: "공식 페이지에 보이는 최대치. 정확한 금액은 신청 후 Amex가 알려 주며 더 낮을 수 있음."
+      usual:
+        # 명박사 제안 — 진호님 승인 필요, sources: awardwallet.com·upgradedpoints.com·dailydrop.com 오퍼 기록, delta.com 카드 페이지. 기간 한정 프로모션이 없을 때 '최대 80,000 / $2,000'이 2026-04부터 반복 표시.
+        parts:
+          - value: 80000
+            unit: miles
+    earn:
+      - category_en: Delta purchases made directly
+        category_ko: Delta 직접 구매
+        rate: 2
+        unit: miles
+      - category_en: U.S. restaurants, including takeout and delivery
+        category_ko: 미국 식당(포장·배달 포함)
+        rate: 2
+        unit: miles
+      - category_en: U.S. supermarkets
+        category_ko: 미국 슈퍼마켓
+        rate: 2
+        unit: miles
+      - category_en: Everything else
+        category_ko: 그 외 전부
+        rate: 1
+        unit: miles
+    benefits:
+      - en: First checked bag free on Delta flights (second bag free on U.S. domestic Delta flights)
+        ko: Delta 항공편 첫 위탁 수하물 무료(미국 국내선은 두 번째도 무료)
+      - en: $200 Delta flight credit after $10,000 spend in a calendar year
+        ko: 한 해 $10,000 사용 시 Delta 항공 크레딧 $200
+      - en: Up to $100 a year on prepaid Delta Stays bookings
+        ko: Delta Stays 선결제 숙소 연 최대 $100
+      - en: 15% off Delta award flights booked with miles
+        ko: 마일로 Delta 항공권 예약 시 15% 할인
+      - en: Up to $120 a year in rideshare credits after the first renewal ($10 a month, enrollment required)
+        ko: 첫 갱신 후 차량 호출 연 최대 $120(월 $10, 등록 필요)
+
+  - id: amex-hilton-honors-surpass
+    name: Hilton Honors American Express Surpass® Card
+    issuer: American Express
+    segment: personal
+    official_url: https://www.americanexpress.com/us/credit-cards/card/hilton-honors-surpass/
+    last_verified: 2026-11-09  # 진호님 재확인 필요(병합 전)
+    sources:
+      - https://www.americanexpress.com/us/credit-cards/card/hilton-honors-surpass/
+    annual_fee:
+      amount: 150
+      first_year_waived: false
+    foreign_tx_fee_pct: 0
+    bonus:
+      current:
+        parts:
+          - value: 130000
+            unit: points
+          - value: 1
+            unit: free_night
+        min_spend: 3000
+        spend_months: 6
+        note_en: "Limited-time offer, ends January 13, 2027. The free night is one standard room night at most Hilton hotels."
+        note_ko: "기간 한정 오퍼, 2027-01-13 종료. 무료 숙박은 대부분의 Hilton 호텔 일반 객실 1박."
+      usual:
+        # 명박사 제안 — 진호님 승인 필요, sources: upgradedpoints.com·dailydrop.com 오퍼 기록. 평소는 포인트만 130,000(무료 숙박 없음). 종료일 2027-01-13은 Amex 오퍼 약관에 있음.
+        parts:
+          - value: 130000
+            unit: points
+        note_en: "Usually points only, without the free night."
+        note_ko: "평소에는 무료 숙박 없이 포인트만."
+    earn:
+      - category_en: Hilton hotels and resorts
+        category_ko: Hilton 계열 호텔·리조트
+        rate: 12
+        unit: points
+      - category_en: U.S. restaurants, U.S. supermarkets, U.S. gas stations
+        category_ko: 미국 식당·슈퍼마켓·주유소
+        rate: 6
+        unit: points
+      - category_en: U.S. online retail
+        category_ko: 미국 온라인 쇼핑
+        rate: 4
+        unit: points
+      - category_en: Everything else
+        category_ko: 그 외 전부
+        rate: 3
+        unit: points
+    benefits:
+      - en: Hilton Honors Gold status while you hold the card
+        ko: 카드 보유 중 Hilton Honors Gold 등급
+      - en: Up to $200 a year at Hilton properties ($50 per quarter)
+        ko: Hilton 호텔 결제 연 최대 $200(분기 $50)
+      - en: Free night after $15,000 spend in a calendar year
+        ko: 한 해 $15,000 사용 시 무료 숙박 1박
+      - en: Diamond status upgrade after $40,000 spend in a calendar year
+        ko: 한 해 $40,000 사용 시 Diamond 등급으로 상향
+      - en: National Car Rental Emerald Club Executive status (enrollment required)
+        ko: National 렌터카 Emerald Club Executive 등급(등록 필요)
+
+  # ===================== American Express — 비즈니스 =====================
+  - id: amex-business-platinum
+    name: The Business Platinum Card® from American Express
+    issuer: American Express
+    segment: business
+    official_url: https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/american-express-business-platinum-credit-card-amex/65147/
+    last_verified: 2026-11-09  # 진호님 재확인 필요(병합 전)
+    sources:
+      - https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/american-express-business-platinum-credit-card-amex/65147/
+    annual_fee:
+      amount: 895
+      first_year_waived: false
+    foreign_tx_fee_pct: 0
+    bonus:
+      current:
+        parts:
+          - value: 300000
+            unit: points
+        min_spend: 20000
+        spend_months: 3
+        note_en: "Top of the range shown on the public page. Amex tells you your exact amount after you apply, and it can be lower."
+        note_ko: "공식 페이지에 보이는 최대치. 정확한 금액은 신청 후 Amex가 알려 주며 더 낮을 수 있음."
+      usual:
+        # 명박사 제안 — 진호님 승인 필요, sources: upgradedpoints.com·thewaystowealth.com. 공개 페이지 '최대 300,000'이 2026-04부터 계속 표시(그 전 2025-09~2026-04 고정 200,000). 평소를 200,000으로 볼지 진호님 판단 필요.
+        parts:
+          - value: 300000
+            unit: points
+    earn:
+      - category_en: Flights and prepaid hotels booked via Amex Travel
+        category_ko: Amex Travel 항공권·선결제 호텔
+        rate: 5
+        unit: points
+      - category_en: U.S. construction and hardware suppliers, U.S. electronics and software/cloud, U.S. shipping, and single purchases of $5,000+ (first $2 million a year combined)
+        category_ko: 미국 건축자재·철물, 미국 전자제품·소프트웨어/클라우드, 미국 배송, 건당 $5,000 이상 구매(합산 연 첫 $200만)
+        rate: 2
+        unit: points
+      - category_en: Everything else
+        category_ko: 그 외 전부
+        rate: 1
+        unit: points
+    benefits:
+      - en: Up to $600 a year for prepaid Fine Hotels + Resorts or The Hotel Collection stays ($300 per half-year)
+        ko: Fine Hotels + Resorts·The Hotel Collection 선결제 숙박 연 최대 $600(반기 $300)
+      - en: Centurion, Priority Pass and other lounges, plus 10 Delta Sky Club visits a year on Delta flights
+        ko: Centurion·Priority Pass 등 라운지, Delta 탑승 시 Sky Club 연 10회
+      - en: Up to $1,150 a year at Dell Technologies ($150, plus $1,000 after $5,000 Dell spend; enrollment required)
+        ko: Dell 연 최대 $1,150($150 + Dell $5,000 사용 시 $1,000 추가, 등록 필요)
+      - en: Up to $200 a year for incidental fees on one chosen airline
+        ko: 선택한 항공사 1곳 부대 비용 연 최대 $200
+      - en: 35% of points back when you pay with points for flights on your chosen airline (up to 1,000,000 a year)
+        ko: 선택 항공사 항공권을 포인트로 결제하면 35% 환급(연 최대 1,000,000포인트)
+      - en: Up to $300 a year for ChatGPT Business (enrollment required)
+        ko: ChatGPT Business 연 최대 $300(등록 필요)
+
+  - id: amex-business-gold
+    name: American Express® Business Gold Card
+    issuer: American Express
+    segment: business
+    official_url: https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/american-express-business-gold-card-amex/
+    last_verified: 2026-11-09  # 진호님 재확인 필요(병합 전)
+    sources:
+      - https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/american-express-business-gold-card-amex/
+    annual_fee:
+      amount: 375
+      first_year_waived: false
+    foreign_tx_fee_pct: 0
+    bonus:
+      current:
+        parts:
+          - value: 200000
+            unit: points
+        min_spend: 15000
+        spend_months: 3
+        note_en: "Top of the range shown on the public page. Amex tells you your exact amount after you apply, and it can be lower."
+        note_ko: "공식 페이지에 보이는 최대치. 정확한 금액은 신청 후 Amex가 알려 주며 더 낮을 수 있음."
+      usual:
+        # 명박사 제안 — 진호님 승인 필요, sources: upgradedpoints.com·thewaystowealth.com. 공개 페이지 '최대 200,000'이 2026-04부터 계속 표시(그 전 2024-07~2026-04 고정 100,000). 평소를 100,000으로 볼지 진호님 판단 필요.
+        parts:
+          - value: 200000
+            unit: points
+    earn:
+      - category_en: "Your top 2 each billing cycle of: U.S. advertising, U.S. electronics and software/cloud, U.S. restaurants, U.S. gas stations, transit, U.S. wireless phone service (first $150,000 a year combined)"
+        category_ko: "매 청구 기간 다음 6개 중 사용액 상위 2개: 미국 광고·미국 전자제품/소프트웨어/클라우드·미국 식당·미국 주유소·교통·미국 휴대폰 요금(합산 연 첫 $150,000)"
+        rate: 4
+        unit: points
+      - category_en: Flights and prepaid hotels booked via Amex Travel
+        category_ko: Amex Travel 항공권·선결제 호텔
+        rate: 3
+        unit: points
+      - category_en: Everything else
+        category_ko: 그 외 전부
+        rate: 1
+        unit: points
+    benefits:
+      - en: Up to $240 a year at Grubhub, office supply stores and UPS.com shipping ($20 a month, enrollment required)
+        ko: Grubhub·사무용품점·UPS.com 배송 연 최대 $240(월 $20, 등록 필요)
+      - en: Up to $300 a year for ChatGPT Business (enrollment required)
+        ko: ChatGPT Business 연 최대 $300(등록 필요)
+      - en: Up to $150 a year at Squarespace (enrollment required)
+        ko: Squarespace 연 최대 $150(등록 필요)
+      - en: Up to $155 a year for a monthly Walmart+ membership
+        ko: Walmart+ 월 회원비 연 최대 $155
