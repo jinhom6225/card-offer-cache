@@ -113,7 +113,7 @@ class Rule9ForbiddenPhraseTest(unittest.TestCase):
 
 
 class CommunitySourceTest(unittest.TestCase):
-    """Community posts are internal signals only; they never reach data or the app."""
+    """Community sources must never appear in app data (cards.yaml or the public JSON)."""
 
     MARKERS = ("https://www.milemoa.com/bbs/1", "마일모아", "https://www.doctorofcredit.com/x",
                "Doctor of Credit", "닥터오브크레딧", "https://frequentmiler.com/x",

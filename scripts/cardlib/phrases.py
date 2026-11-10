@@ -36,7 +36,7 @@ FORBIDDEN_PATTERNS = _compile((
     ("승인 가능성", rf"승인(?:{_KS}(?:될|이{_KS}될|받을))?{_KS}(?:가능성|확률)"),
 ))
 
-# Community sites are internal signals only; they must never reach app data.
+# Community sources must never appear in app data.
 COMMUNITY_PATTERNS = _compile((
     ("milemoa", rf"mile{_SEP}moa"),
     ("마일모아", rf"마일{_KS}모아"),
