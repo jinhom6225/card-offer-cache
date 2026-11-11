@@ -1,7 +1,7 @@
 {
   "schema": 1,
-  "generated_at": "2026-11-09T21:34:35Z",
-  "data_updated_at": "2026-11-09T21:31:37Z",
+  "generated_at": "2026-11-11T05:56:41Z",
+  "data_updated_at": "2026-11-11T04:08:53Z",
   "cards": [
     {
       "id": "chase-sapphire-preferred",
@@ -40,36 +40,48 @@
         {
           "category_en": "Chase Travel bookings",
           "category_ko": "Chase Travel 예약",
+          "category_ja": "Chase Travelでの予約",
+          "category_es": "Reservas en Chase Travel",
           "rate": 5,
           "unit": "points"
         },
         {
           "category_en": "Dining",
           "category_ko": "식당",
+          "category_ja": "飲食店",
+          "category_es": "Restaurantes",
           "rate": 3,
           "unit": "points"
         },
         {
           "category_en": "Gas, EV charging, select vacation rentals",
           "category_ko": "주유소·EV 충전·일부 휴가 숙소",
+          "category_ja": "ガソリンスタンド・EV充電・一部のバケーションレンタル",
+          "category_es": "Gasolineras, carga de vehículos eléctricos y algunos alquileres vacacionales",
           "rate": 3,
           "unit": "points"
         },
         {
           "category_en": "Select streaming and online grocery",
           "category_ko": "일부 스트리밍·온라인 식료품",
+          "category_ja": "一部のストリーミング・オンライン食料品",
+          "category_es": "Algunos servicios de streaming y comestibles en línea",
           "rate": 3,
           "unit": "points"
         },
         {
           "category_en": "Other travel",
           "category_ko": "그 밖의 여행",
+          "category_ja": "その他の旅行",
+          "category_es": "Otros viajes",
           "rate": 2,
           "unit": "points"
         },
         {
           "category_en": "Everything else",
           "category_ko": "그 외 전부",
+          "category_ja": "その他すべて",
+          "category_es": "Todo lo demás",
           "rate": 1,
           "unit": "points"
         }
@@ -77,23 +89,33 @@
       "benefits": [
         {
           "en": "Up to $100 a year in hotel credit via Chase Travel",
-          "ko": "Chase Travel 호텔 예약 시 연 최대 $100 크레딧"
+          "ko": "Chase Travel 호텔 예약 시 연 최대 $100 크레딧",
+          "ja": "Chase Travelのホテル予約に年間最大$100のクレジット",
+          "es": "Hasta $100 al año en crédito para hoteles en Chase Travel"
         },
         {
           "en": "Transfer points to airline and hotel partners",
-          "ko": "항공·호텔 파트너로 포인트 이전"
+          "ko": "항공·호텔 파트너로 포인트 이전",
+          "ja": "航空会社・ホテルのパートナーへポイントを移行",
+          "es": "Transferencia de puntos a socios de aerolíneas y hoteles"
         },
         {
           "en": "Primary rental car coverage up to $60,000",
-          "ko": "렌터카 1차 보험(최대 $60,000)"
+          "ko": "렌터카 1차 보험(최대 $60,000)",
+          "ja": "レンタカーの一次補償（最大$60,000）",
+          "es": "Cobertura primaria para alquiler de autos de hasta $60,000"
         },
         {
           "en": "Trip delay, cancellation and baggage coverage",
-          "ko": "여행 지연·취소·수하물 보상"
+          "ko": "여행 지연·취소·수하물 보상",
+          "ja": "旅行の遅延・キャンセル・手荷物の補償",
+          "es": "Cobertura por retraso y cancelación de viaje, y por equipaje"
         },
         {
           "en": "Global Entry / TSA PreCheck / NEXUS fee credit up to $120",
-          "ko": "Global Entry·TSA PreCheck·NEXUS 수수료 최대 $120 환급"
+          "ko": "Global Entry·TSA PreCheck·NEXUS 수수료 최대 $120 환급",
+          "ja": "Global Entry・TSA PreCheck・NEXUSの申請料を最大$120還付",
+          "es": "Crédito de hasta $120 para la tarifa de Global Entry, TSA PreCheck o NEXUS"
         }
       ],
       "history": []
@@ -135,30 +157,40 @@
         {
           "category_en": "Chase Travel bookings (incl. The Edit)",
           "category_ko": "Chase Travel 예약(The Edit 포함)",
+          "category_ja": "Chase Travelでの予約（The Edit含む）",
+          "category_es": "Reservas en Chase Travel (incluye The Edit)",
           "rate": 8,
           "unit": "points"
         },
         {
           "category_en": "Flights booked directly",
           "category_ko": "항공권 직접 예약",
+          "category_ja": "直接予約した航空券",
+          "category_es": "Vuelos reservados directamente",
           "rate": 4,
           "unit": "points"
         },
         {
           "category_en": "Hotels booked directly",
           "category_ko": "호텔 직접 예약",
+          "category_ja": "直接予約したホテル",
+          "category_es": "Hoteles reservados directamente",
           "rate": 4,
           "unit": "points"
         },
         {
           "category_en": "Dining",
           "category_ko": "식당",
+          "category_ja": "飲食店",
+          "category_es": "Restaurantes",
           "rate": 3,
           "unit": "points"
         },
         {
           "category_en": "Everything else",
           "category_ko": "그 외 전부",
+          "category_ja": "その他すべて",
+          "category_es": "Todo lo demás",
           "rate": 1,
           "unit": "points"
         }
@@ -166,27 +198,39 @@
       "benefits": [
         {
           "en": "$300 yearly travel credit",
-          "ko": "연 $300 여행 크레딧"
+          "ko": "연 $300 여행 크레딧",
+          "ja": "年間$300の旅行クレジット",
+          "es": "Crédito de viaje de $300 al año"
         },
         {
           "en": "Up to $500 a year for stays booked with The Edit",
-          "ko": "The Edit 호텔 숙박 연 최대 $500 크레딧"
+          "ko": "The Edit 호텔 숙박 연 최대 $500 크레딧",
+          "ja": "The Editで予約した宿泊に年間最大$500",
+          "es": "Hasta $500 al año en estadías reservadas con The Edit"
         },
         {
           "en": "Priority Pass and Sapphire Lounge access",
-          "ko": "Priority Pass·Sapphire 라운지 이용"
+          "ko": "Priority Pass·Sapphire 라운지 이용",
+          "ja": "Priority Pass・Sapphire Loungeのラウンジ利用",
+          "es": "Acceso a salas VIP de Priority Pass y Sapphire Lounge"
         },
         {
           "en": "Dining and StubHub credits, up to $300 a year each",
-          "ko": "다이닝·StubHub 크레딧 각각 연 최대 $300"
+          "ko": "다이닝·StubHub 크레딧 각각 연 최대 $300",
+          "ja": "飲食店・StubHubのクレジット（それぞれ年間最大$300）",
+          "es": "Créditos para restaurantes y StubHub, de hasta $300 al año cada uno"
         },
         {
           "en": "Primary rental car coverage up to $75,000",
-          "ko": "렌터카 1차 보험(최대 $75,000)"
+          "ko": "렌터카 1차 보험(최대 $75,000)",
+          "ja": "レンタカーの一次補償（最大$75,000）",
+          "es": "Cobertura primaria para alquiler de autos de hasta $75,000"
         },
         {
           "en": "Global Entry / TSA PreCheck / NEXUS fee credit up to $120",
-          "ko": "Global Entry·TSA PreCheck·NEXUS 수수료 최대 $120 환급"
+          "ko": "Global Entry·TSA PreCheck·NEXUS 수수료 최대 $120 환급",
+          "ja": "Global Entry・TSA PreCheck・NEXUSの申請料を最大$120還付",
+          "es": "Crédito de hasta $120 para la tarifa de Global Entry, TSA PreCheck o NEXUS"
         }
       ],
       "history": []
@@ -228,24 +272,32 @@
         {
           "category_en": "Chase Travel bookings",
           "category_ko": "Chase Travel 예약",
+          "category_ja": "Chase Travelでの予約",
+          "category_es": "Reservas en Chase Travel",
           "rate": 5,
           "unit": "cash"
         },
         {
           "category_en": "Dining",
           "category_ko": "식당",
+          "category_ja": "飲食店",
+          "category_es": "Restaurantes",
           "rate": 3,
           "unit": "cash"
         },
         {
           "category_en": "Drugstores",
           "category_ko": "약국",
+          "category_ja": "ドラッグストア",
+          "category_es": "Farmacias",
           "rate": 3,
           "unit": "cash"
         },
         {
           "category_en": "Everything else",
           "category_ko": "그 외 전부",
+          "category_ja": "その他すべて",
+          "category_es": "Todo lo demás",
           "rate": 1.5,
           "unit": "cash"
         }
@@ -253,19 +305,27 @@
       "benefits": [
         {
           "en": "Purchase protection, 120 days up to $500 per item",
-          "ko": "구매 보호(120일, 건당 최대 $500)"
+          "ko": "구매 보호(120일, 건당 최대 $500)",
+          "ja": "購入品保護（120日間、1品あたり最大$500）",
+          "es": "Protección de compras por 120 días, hasta $500 por artículo"
         },
         {
           "en": "Extended warranty, one extra year",
-          "ko": "제조사 보증 1년 연장"
+          "ko": "제조사 보증 1년 연장",
+          "ja": "延長保証（メーカー保証に1年追加）",
+          "es": "Garantía extendida por un año adicional"
         },
         {
           "en": "Trip cancellation and interruption coverage",
-          "ko": "여행 취소·중단 보상"
+          "ko": "여행 취소·중단 보상",
+          "ja": "旅行のキャンセル・中断の補償",
+          "es": "Cobertura por cancelación e interrupción de viaje"
         },
         {
           "en": "6 months of free DashPass",
-          "ko": "DashPass 6개월 무료"
+          "ko": "DashPass 6개월 무료",
+          "ja": "DashPassが6か月無料",
+          "es": "6 meses gratis de DashPass"
         }
       ],
       "history": []
@@ -307,30 +367,40 @@
         {
           "category_en": "Rotating quarterly categories (activate; first $1,500 per quarter)",
           "category_ko": "분기별 순환 카테고리(활성화 필요, 분기당 첫 $1,500)",
+          "category_ja": "四半期ごとに替わるカテゴリー（要有効化、四半期ごとに最初の$1,500）",
+          "category_es": "Categorías trimestrales rotativas (requiere activación; primeros $1,500 por trimestre)",
           "rate": 5,
           "unit": "cash"
         },
         {
           "category_en": "Chase Travel bookings",
           "category_ko": "Chase Travel 예약",
+          "category_ja": "Chase Travelでの予約",
+          "category_es": "Reservas en Chase Travel",
           "rate": 5,
           "unit": "cash"
         },
         {
           "category_en": "Dining",
           "category_ko": "식당",
+          "category_ja": "飲食店",
+          "category_es": "Restaurantes",
           "rate": 3,
           "unit": "cash"
         },
         {
           "category_en": "Drugstores",
           "category_ko": "약국",
+          "category_ja": "ドラッグストア",
+          "category_es": "Farmacias",
           "rate": 3,
           "unit": "cash"
         },
         {
           "category_en": "Everything else",
           "category_ko": "그 외 전부",
+          "category_ja": "その他すべて",
+          "category_es": "Todo lo demás",
           "rate": 1,
           "unit": "cash"
         }
@@ -338,19 +408,27 @@
       "benefits": [
         {
           "en": "No foreign transaction fee",
-          "ko": "해외 결제 수수료 없음"
+          "ko": "해외 결제 수수료 없음",
+          "ja": "海外利用手数料なし",
+          "es": "Sin cargos por transacciones en el extranjero"
         },
         {
           "en": "Purchase protection, 120 days up to $500 per item",
-          "ko": "구매 보호(120일, 건당 최대 $500)"
+          "ko": "구매 보호(120일, 건당 최대 $500)",
+          "ja": "購入品保護（120日間、1品あたり最大$500）",
+          "es": "Protección de compras por 120 días, hasta $500 por artículo"
         },
         {
           "en": "Extended warranty, one extra year",
-          "ko": "제조사 보증 1년 연장"
+          "ko": "제조사 보증 1년 연장",
+          "ja": "延長保証（メーカー保証に1年追加）",
+          "es": "Garantía extendida por un año adicional"
         },
         {
           "en": "Trip cancellation and interruption coverage",
-          "ko": "여행 취소·중단 보상"
+          "ko": "여행 취소·중단 보상",
+          "ja": "旅行のキャンセル・中断の補償",
+          "es": "Cobertura por cancelación e interrupción de viaje"
         }
       ],
       "history": []
@@ -378,7 +456,9 @@
           "min_spend": 3000,
           "spend_months": 3,
           "note_en": "Plus 10,000 miles for adding an authorized user in the first 3 months (up to 80,000 total).",
-          "note_ko": "첫 3개월 안에 추가 카드 사용자를 넣으면 10,000마일 더(합계 최대 80,000)."
+          "note_ko": "첫 3개월 안에 추가 카드 사용자를 넣으면 10,000마일 더(합계 최대 80,000).",
+          "note_ja": "最初の3か月以内に追加カード会員を加えると、さらに10,000マイルが加算されます（合計最大80,000マイル）。",
+          "note_es": "Más 10,000 millas por agregar un usuario autorizado en los primeros 3 meses (hasta 80,000 en total)."
         },
         "usual": {
           "parts": [
@@ -388,7 +468,9 @@
             }
           ],
           "note_en": "Usually quoted as 50,000 miles after spend; the authorized-user bonus is listed separately.",
-          "note_ko": "평소에는 지출 보너스 50,000마일, 추가 사용자 보너스는 따로 표기."
+          "note_ko": "평소에는 지출 보너스 50,000마일, 추가 사용자 보너스는 따로 표기.",
+          "note_ja": "通常は利用条件達成で50,000マイルと表示され、追加カード会員のボーナスは別に記載されます。",
+          "note_es": "Normalmente se anuncia como 50,000 millas tras el gasto requerido; el bono por usuario autorizado se indica aparte."
         }
       },
       "offer": {
@@ -402,24 +484,32 @@
         {
           "category_en": "United purchases (flights earn more with MileagePlus base miles)",
           "category_ko": "United 구매(항공권은 MileagePlus 기본 적립이 더해짐)",
+          "category_ja": "Unitedでの購入（航空券はMileagePlusの基本マイルも加算）",
+          "category_es": "Compras con United (los vuelos suman además millas base de MileagePlus)",
           "rate": 3,
           "unit": "miles"
         },
         {
           "category_en": "Hotels booked directly",
           "category_ko": "호텔 직접 예약",
+          "category_ja": "直接予約したホテル",
+          "category_es": "Hoteles reservados directamente",
           "rate": 2,
           "unit": "miles"
         },
         {
           "category_en": "Dining",
           "category_ko": "식당",
+          "category_ja": "飲食店",
+          "category_es": "Restaurantes",
           "rate": 2,
           "unit": "miles"
         },
         {
           "category_en": "Everything else",
           "category_ko": "그 외 전부",
+          "category_ja": "その他すべて",
+          "category_es": "Todo lo demás",
           "rate": 1,
           "unit": "miles"
         }
@@ -427,23 +517,33 @@
       "benefits": [
         {
           "en": "Free first checked bag for you and one companion",
-          "ko": "본인·동반자 1명 첫 위탁 수하물 무료"
+          "ko": "본인·동반자 1명 첫 위탁 수하물 무료",
+          "ja": "本人と同行者1名の受託手荷物1個目が無料",
+          "es": "Primera maleta documentada gratis para el titular y un acompañante"
         },
         {
           "en": "Two United Club one-time passes each year",
-          "ko": "매년 United Club 1회 이용권 2장"
+          "ko": "매년 United Club 1회 이용권 2장",
+          "ja": "毎年United Clubの1回利用券2枚",
+          "es": "Dos pases de un solo uso para United Club cada año"
         },
         {
           "en": "Group 2 priority boarding",
-          "ko": "2그룹 우선 탑승"
+          "ko": "2그룹 우선 탑승",
+          "ja": "グループ2の優先搭乗",
+          "es": "Abordaje prioritario en el Grupo 2"
         },
         {
           "en": "Primary rental car coverage up to $60,000",
-          "ko": "렌터카 1차 보험(최대 $60,000)"
+          "ko": "렌터카 1차 보험(최대 $60,000)",
+          "ja": "レンタカーの一次補償（最大$60,000）",
+          "es": "Cobertura primaria para alquiler de autos de hasta $60,000"
         },
         {
           "en": "Global Entry / TSA PreCheck / NEXUS fee credit up to $120",
-          "ko": "Global Entry·TSA PreCheck·NEXUS 수수료 최대 $120 환급"
+          "ko": "Global Entry·TSA PreCheck·NEXUS 수수료 최대 $120 환급",
+          "ja": "Global Entry・TSA PreCheck・NEXUSの申請料を最大$120還付",
+          "es": "Crédito de hasta $120 para la tarifa de Global Entry, TSA PreCheck o NEXUS"
         }
       ],
       "history": [
@@ -482,7 +582,9 @@
           "min_spend": 1000,
           "spend_months": 3,
           "note_en": "Limited-time offer, ends December 2, 2026.",
-          "note_ko": "기간 한정 오퍼, 2026-12-02 종료."
+          "note_ko": "기간 한정 오퍼, 2026-12-02 종료.",
+          "note_ja": "期間限定オファーで、2026年12月2日に終了します。",
+          "note_es": "Oferta por tiempo limitado; termina el 2 de diciembre de 2026."
         },
         "usual": {
           "parts": [
@@ -504,18 +606,24 @@
         {
           "category_en": "Southwest Airlines purchases",
           "category_ko": "Southwest Airlines 구매",
+          "category_ja": "Southwest Airlinesでの購入",
+          "category_es": "Compras con Southwest Airlines",
           "rate": 2,
           "unit": "points"
         },
         {
           "category_en": "Gas stations and grocery stores (first $5,000 a year combined)",
           "category_ko": "주유소·식료품점(합산 연 첫 $5,000)",
+          "category_ja": "ガソリンスタンド・食料品店（合算で年間最初の$5,000）",
+          "category_es": "Gasolineras y tiendas de comestibles (primeros $5,000 al año combinados)",
           "rate": 2,
           "unit": "points"
         },
         {
           "category_en": "Everything else",
           "category_ko": "그 외 전부",
+          "category_ja": "その他すべて",
+          "category_es": "Todo lo demás",
           "rate": 1,
           "unit": "points"
         }
@@ -523,23 +631,33 @@
       "benefits": [
         {
           "en": "3,000 bonus points every card anniversary",
-          "ko": "카드 갱신일마다 3,000포인트"
+          "ko": "카드 갱신일마다 3,000포인트",
+          "ja": "カード更新ごとに3,000ボーナスポイント",
+          "es": "3,000 puntos de bono en cada aniversario de la tarjeta"
         },
         {
           "en": "First checked bag free for you and up to 8 companions",
-          "ko": "본인과 같은 예약 최대 8명 첫 위탁 수하물 무료"
+          "ko": "본인과 같은 예약 최대 8명 첫 위탁 수하물 무료",
+          "ja": "本人と同行者最大8名の受託手荷物1個目が無料",
+          "es": "Primera maleta documentada gratis para el titular y hasta 8 acompañantes"
         },
         {
           "en": "10% flight discount code each year",
-          "ko": "매년 항공권 10% 할인 코드"
+          "ko": "매년 항공권 10% 할인 코드",
+          "ja": "毎年航空券の10%割引コード",
+          "es": "Código de descuento del 10% en vuelos cada año"
         },
         {
           "en": "Group 5 boarding",
-          "ko": "5그룹 탑승"
+          "ko": "5그룹 탑승",
+          "ja": "グループ5での搭乗",
+          "es": "Abordaje en el Grupo 5"
         },
         {
           "en": "25% back on inflight purchases",
-          "ko": "기내 구매 25% 환급"
+          "ko": "기내 구매 25% 환급",
+          "ja": "機内での購入に25%還元",
+          "es": "25% de reembolso en compras a bordo"
         }
       ],
       "history": [
@@ -578,7 +696,9 @@
           "min_spend": 3000,
           "spend_months": 3,
           "note_en": "Limited-time offer, ends November 11, 2026. The up-to-$100 airline credit is a separate cardmember offer, not part of the bonus.",
-          "note_ko": "기간 한정 오퍼, 2026-11-11 종료. 최대 $100 항공 크레딧은 보너스가 아닌 별도 회원 혜택."
+          "note_ko": "기간 한정 오퍼, 2026-11-11 종료. 최대 $100 항공 크레딧은 보너스가 아닌 별도 회원 혜택.",
+          "note_ja": "期間限定オファーで、2026年11月11日に終了します。最大$100の航空クレジットはボーナスではなく、別のカード会員向け特典です。",
+          "note_es": "Oferta por tiempo limitado; termina el 11 de noviembre de 2026. El crédito aéreo de hasta $100 es una oferta aparte para tarjetahabientes y no forma parte del bono."
         },
         "usual": {
           "parts": [
@@ -588,7 +708,9 @@
             }
           ],
           "note_en": "Each free night award is good for a night costing up to 50,000 points.",
-          "note_ko": "무료 숙박권 1장당 50,000포인트 이하 숙박 1박."
+          "note_ko": "무료 숙박권 1장당 50,000포인트 이하 숙박 1박.",
+          "note_ja": "無料宿泊特典は1回につき、50,000ポイント以下の宿泊1泊に使えます。",
+          "note_es": "Cada certificado de noche gratis vale para una noche de hasta 50,000 puntos."
         }
       },
       "offer": {
@@ -602,18 +724,24 @@
         {
           "category_en": "Marriott Bonvoy hotels (more with member and status points)",
           "category_ko": "Marriott Bonvoy 호텔(회원·등급 적립이 더해짐)",
+          "category_ja": "Marriott Bonvoyホテル（会員・ステータスのポイントも加算）",
+          "category_es": "Hoteles Marriott Bonvoy (más puntos de miembro y de estatus)",
           "rate": 6,
           "unit": "points"
         },
         {
           "category_en": "Grocery, gas and dining (first $6,000 a year combined)",
           "category_ko": "식료품·주유·식당(합산 연 첫 $6,000)",
+          "category_ja": "食料品・ガソリン・飲食店（合算で年間最初の$6,000）",
+          "category_es": "Comestibles, gasolina y restaurantes (primeros $6,000 al año combinados)",
           "rate": 3,
           "unit": "points"
         },
         {
           "category_en": "Everything else",
           "category_ko": "그 외 전부",
+          "category_ja": "その他すべて",
+          "category_es": "Todo lo demás",
           "rate": 2,
           "unit": "points"
         }
@@ -621,19 +749,27 @@
       "benefits": [
         {
           "en": "Free night each year (up to 35,000 points)",
-          "ko": "매년 무료 숙박 1박(35,000포인트 이하 호텔)"
+          "ko": "매년 무료 숙박 1박(35,000포인트 이하 호텔)",
+          "ja": "毎年無料宿泊1泊（35,000ポイント以下）",
+          "es": "Una noche gratis cada año (hasta 35,000 puntos)"
         },
         {
           "en": "Automatic Silver Elite status",
-          "ko": "Silver Elite 등급 자동 부여"
+          "ko": "Silver Elite 등급 자동 부여",
+          "ja": "Silver Eliteステータスを自動付与",
+          "es": "Estatus Silver Elite automático"
         },
         {
           "en": "15 Elite Night Credits each year",
-          "ko": "매년 Elite Night Credit 15박"
+          "ko": "매년 Elite Night Credit 15박",
+          "ja": "毎年Elite Night Creditsを15泊分",
+          "es": "15 Elite Night Credits cada año"
         },
         {
           "en": "Up to $100 in airline credits through June 2027",
-          "ko": "2027년 6월까지 항공 크레딧 최대 $100"
+          "ko": "2027년 6월까지 항공 크레딧 최대 $100",
+          "ja": "2027年6月まで航空クレジット最大$100",
+          "es": "Hasta $100 en créditos aéreos hasta junio de 2027"
         }
       ],
       "history": [
@@ -672,7 +808,9 @@
           "min_spend": 3000,
           "spend_months": 3,
           "note_en": "Plus 10,000 points for adding an authorized user in the first 3 months. Apply by November 18, 2026.",
-          "note_ko": "첫 3개월 안에 추가 카드 사용자를 넣으면 10,000포인트 더. 2026-11-18까지 신청."
+          "note_ko": "첫 3개월 안에 추가 카드 사용자를 넣으면 10,000포인트 더. 2026-11-18까지 신청.",
+          "note_ja": "最初の3か月以内に追加カード会員を加えると、さらに10,000ポイントが加算されます。申し込みは2026年11月18日までです。",
+          "note_es": "Más 10,000 puntos por agregar un usuario autorizado en los primeros 3 meses. Solicitud hasta el 18 de noviembre de 2026."
         },
         "usual": {
           "parts": [
@@ -694,18 +832,24 @@
         {
           "category_en": "IHG hotels (more with member and status points)",
           "category_ko": "IHG 호텔(회원·등급 적립이 더해짐)",
+          "category_ja": "IHGホテル（会員・ステータスのポイントも加算）",
+          "category_es": "Hoteles IHG (más puntos de miembro y de estatus)",
           "rate": 10,
           "unit": "points"
         },
         {
           "category_en": "Flights booked directly, car rentals, dining, grocery, gas",
           "category_ko": "항공권 직접 예약·렌터카·식당·식료품·주유",
+          "category_ja": "直接予約した航空券・レンタカー・飲食店・食料品・ガソリン",
+          "category_es": "Vuelos reservados directamente, alquiler de autos, restaurantes, comestibles y gasolina",
           "rate": 5,
           "unit": "points"
         },
         {
           "category_en": "Everything else",
           "category_ko": "그 외 전부",
+          "category_ja": "その他すべて",
+          "category_es": "Todo lo demás",
           "rate": 3,
           "unit": "points"
         }
@@ -713,23 +857,33 @@
       "benefits": [
         {
           "en": "Free night each year (up to 50,000 points)",
-          "ko": "매년 무료 숙박 1박(50,000포인트 이하 호텔)"
+          "ko": "매년 무료 숙박 1박(50,000포인트 이하 호텔)",
+          "ja": "毎年無料宿泊1泊（50,000ポイント以下）",
+          "es": "Una noche gratis cada año (hasta 50,000 puntos)"
         },
         {
           "en": "Automatic Gold Elite status",
-          "ko": "Gold Elite 등급 자동 부여"
+          "ko": "Gold Elite 등급 자동 부여",
+          "ja": "Gold Eliteステータスを自動付与",
+          "es": "Estatus Gold Elite automático"
         },
         {
           "en": "$100 airline credit each year through 2027 (after $250 on flights)",
-          "ko": "2027년까지 매년 항공 크레딧 $100(항공권 $250 이상 결제 시)"
+          "ko": "2027년까지 매년 항공 크레딧 $100(항공권 $250 이상 결제 시)",
+          "ja": "2027年まで毎年$100の航空クレジット（航空券$250以上の利用後）",
+          "es": "Crédito aéreo de $100 cada año hasta 2027 (tras $250 en vuelos)"
         },
         {
           "en": "Up to $100 a year in IHG food and drink vouchers",
-          "ko": "IHG 호텔 식음료 바우처 연 최대 $100"
+          "ko": "IHG 호텔 식음료 바우처 연 최대 $100",
+          "ja": "IHGの飲食バウチャー年間最大$100",
+          "es": "Hasta $100 al año en cupones de comida y bebida de IHG"
         },
         {
           "en": "Global Entry / TSA PreCheck / NEXUS fee credit up to $120",
-          "ko": "Global Entry·TSA PreCheck·NEXUS 수수료 최대 $120 환급"
+          "ko": "Global Entry·TSA PreCheck·NEXUS 수수료 최대 $120 환급",
+          "ja": "Global Entry・TSA PreCheck・NEXUSの申請料を最大$120還付",
+          "es": "Crédito de hasta $120 para la tarifa de Global Entry, TSA PreCheck o NEXUS"
         }
       ],
       "history": [
@@ -768,7 +922,9 @@
           "min_spend": 5000,
           "spend_months": 3,
           "note_en": "Free nights at Category 1-4 Hyatt hotels. Labeled a limited-time offer on the page.",
-          "note_ko": "Hyatt 1~4등급 호텔 무료 숙박. 페이지에 기간 한정 오퍼로 표시됨."
+          "note_ko": "Hyatt 1~4등급 호텔 무료 숙박. 페이지에 기간 한정 오퍼로 표시됨.",
+          "note_ja": "カテゴリー1〜4のHyattホテルでの無料宿泊です。ページでは期間限定オファーと表示されています。",
+          "note_es": "Noches gratis en hoteles Hyatt de categoría 1 a 4. La página la presenta como oferta por tiempo limitado."
         },
         "usual": {
           "parts": [
@@ -778,7 +934,9 @@
             }
           ],
           "note_en": "Plus up to 30,000 more: 2 extra points per $1 on up to $15,000 of purchases that normally earn 1 point, in the first 6 months.",
-          "note_ko": "첫 6개월 동안 원래 1배 적립되는 구매 최대 $15,000에 1달러당 2포인트 추가(최대 30,000포인트 더)."
+          "note_ko": "첫 6개월 동안 원래 1배 적립되는 구매 최대 $15,000에 1달러당 2포인트 추가(최대 30,000포인트 더).",
+          "note_ja": "最初の6か月間、通常1ポイントの購入（最大$15,000）に$1あたり2ポイントが追加されます（最大30,000ポイント追加）。",
+          "note_es": "Hasta 30,000 puntos más: 2 puntos extra por cada $1 en hasta $15,000 de compras que normalmente acumulan 1 punto, durante los primeros 6 meses."
         }
       },
       "offer": {
@@ -792,18 +950,24 @@
         {
           "category_en": "Hyatt hotels (more with member base points)",
           "category_ko": "Hyatt 호텔(회원 기본 적립이 더해짐)",
+          "category_ja": "Hyattホテル（会員の基本ポイントも加算）",
+          "category_es": "Hoteles Hyatt (más puntos base de miembro)",
           "rate": 4,
           "unit": "points"
         },
         {
           "category_en": "Dining, airline tickets bought directly, local transit, gyms",
           "category_ko": "식당·항공권 직접 구매·대중교통·헬스장",
+          "category_ja": "飲食店・直接購入した航空券・地域の交通機関・ジム",
+          "category_es": "Restaurantes, boletos de avión comprados directamente, transporte local y gimnasios",
           "rate": 2,
           "unit": "points"
         },
         {
           "category_en": "Everything else",
           "category_ko": "그 외 전부",
+          "category_ja": "その他すべて",
+          "category_es": "Todo lo demás",
           "rate": 1,
           "unit": "points"
         }
@@ -811,19 +975,27 @@
       "benefits": [
         {
           "en": "Free night each year (Category 1-4)",
-          "ko": "매년 무료 숙박 1박(1~4등급 호텔)"
+          "ko": "매년 무료 숙박 1박(1~4등급 호텔)",
+          "ja": "毎年無料宿泊1泊（カテゴリー1〜4）",
+          "es": "Una noche gratis cada año (categoría 1 a 4)"
         },
         {
           "en": "Extra free night after $15,000 spend in a year",
-          "ko": "연 $15,000 사용 시 무료 숙박 1박 추가"
+          "ko": "연 $15,000 사용 시 무료 숙박 1박 추가",
+          "ja": "年間$15,000の利用で無料宿泊1泊を追加",
+          "es": "Una noche gratis adicional al gastar $15,000 en un año"
         },
         {
           "en": "Discoverist status while you hold the card",
-          "ko": "카드 보유 중 Discoverist 등급"
+          "ko": "카드 보유 중 Discoverist 등급",
+          "ja": "カード保有中はDiscoveristステータス",
+          "es": "Estatus Discoverist mientras se tenga la tarjeta"
         },
         {
           "en": "5 tier-qualifying night credits each year",
-          "ko": "매년 등급 산정 숙박 5박 인정"
+          "ko": "매년 등급 산정 숙박 5박 인정",
+          "ja": "毎年ステータス判定用の宿泊実績5泊分",
+          "es": "5 créditos de noche para calificar a niveles de estatus cada año"
         }
       ],
       "history": [
@@ -876,12 +1048,16 @@
         {
           "category_en": "Travel, shipping, internet/cable/phone, social and search ads (first $150,000 a year combined)",
           "category_ko": "여행·배송·인터넷/케이블/전화·SNS/검색 광고(합산 연 첫 $150,000)",
+          "category_ja": "旅行・配送・インターネット/ケーブル/電話・SNS/検索広告（合算で年間最初の$150,000）",
+          "category_es": "Viajes, envíos, internet/cable/teléfono y anuncios en redes sociales y buscadores (primeros $150,000 al año combinados)",
           "rate": 3,
           "unit": "points"
         },
         {
           "category_en": "Everything else",
           "category_ko": "그 외 전부",
+          "category_ja": "その他すべて",
+          "category_es": "Todo lo demás",
           "rate": 1,
           "unit": "points"
         }
@@ -889,19 +1065,27 @@
       "benefits": [
         {
           "en": "Cell phone protection up to $1,000 per claim",
-          "ko": "휴대폰 보험(건당 최대 $1,000)"
+          "ko": "휴대폰 보험(건당 최대 $1,000)",
+          "ja": "携帯電話の補償（1件あたり最大$1,000）",
+          "es": "Protección de teléfono celular de hasta $1,000 por reclamo"
         },
         {
           "en": "Primary rental car coverage for business rentals",
-          "ko": "업무용 렌터카 1차 보험"
+          "ko": "업무용 렌터카 1차 보험",
+          "ja": "業務用レンタカーの一次補償",
+          "es": "Cobertura primaria para alquiler de autos de negocios"
         },
         {
           "en": "Transfer points to airline and hotel partners",
-          "ko": "항공·호텔 파트너로 포인트 이전"
+          "ko": "항공·호텔 파트너로 포인트 이전",
+          "ja": "航空会社・ホテルのパートナーへポイントを移行",
+          "es": "Transferencia de puntos a socios de aerolíneas y hoteles"
         },
         {
           "en": "Employee cards at no extra cost",
-          "ko": "직원 카드 추가 비용 없음"
+          "ko": "직원 카드 추가 비용 없음",
+          "ja": "従業員カードは追加費用なし",
+          "es": "Tarjetas para empleados sin costo adicional"
         }
       ],
       "history": []
@@ -943,18 +1127,24 @@
         {
           "category_en": "Office supply stores, internet/cable/phone (first $25,000 a year combined)",
           "category_ko": "사무용품점·인터넷/케이블/전화(합산 연 첫 $25,000)",
+          "category_ja": "事務用品店・インターネット/ケーブル/電話（合算で年間最初の$25,000）",
+          "category_es": "Tiendas de artículos de oficina e internet/cable/teléfono (primeros $25,000 al año combinados)",
           "rate": 5,
           "unit": "cash"
         },
         {
           "category_en": "Gas stations and restaurants (first $25,000 a year combined)",
           "category_ko": "주유소·식당(합산 연 첫 $25,000)",
+          "category_ja": "ガソリンスタンド・レストラン（合算で年間最初の$25,000）",
+          "category_es": "Gasolineras y restaurantes (primeros $25,000 al año combinados)",
           "rate": 2,
           "unit": "cash"
         },
         {
           "category_en": "Everything else",
           "category_ko": "그 외 전부",
+          "category_ja": "その他すべて",
+          "category_es": "Todo lo demás",
           "rate": 1,
           "unit": "cash"
         }
@@ -962,15 +1152,21 @@
       "benefits": [
         {
           "en": "Primary rental car coverage for business rentals",
-          "ko": "업무용 렌터카 1차 보험"
+          "ko": "업무용 렌터카 1차 보험",
+          "ja": "業務用レンタカーの一次補償",
+          "es": "Cobertura primaria para alquiler de autos de negocios"
         },
         {
           "en": "Purchase protection and extended warranty",
-          "ko": "구매 보호·제조사 보증 연장"
+          "ko": "구매 보호·제조사 보증 연장",
+          "ja": "購入品保護・延長保証",
+          "es": "Protección de compras y garantía extendida"
         },
         {
           "en": "3 months of free Instacart+ with monthly credit",
-          "ko": "Instacart+ 3개월 무료(월 크레딧 포함)"
+          "ko": "Instacart+ 3개월 무료(월 크레딧 포함)",
+          "ja": "Instacart+が3か月無料（毎月のクレジット付き）",
+          "es": "3 meses gratis de Instacart+ con crédito mensual"
         }
       ],
       "history": []
@@ -1012,6 +1208,8 @@
         {
           "category_en": "Every purchase",
           "category_ko": "모든 구매",
+          "category_ja": "すべての購入",
+          "category_es": "Todas las compras",
           "rate": 1.5,
           "unit": "cash"
         }
@@ -1019,15 +1217,21 @@
       "benefits": [
         {
           "en": "Primary rental car coverage for business rentals",
-          "ko": "업무용 렌터카 1차 보험"
+          "ko": "업무용 렌터카 1차 보험",
+          "ja": "業務用レンタカーの一次補償",
+          "es": "Cobertura primaria para alquiler de autos de negocios"
         },
         {
           "en": "Purchase protection and extended warranty",
-          "ko": "구매 보호·제조사 보증 연장"
+          "ko": "구매 보호·제조사 보증 연장",
+          "ja": "購入品保護・延長保証",
+          "es": "Protección de compras y garantía extendida"
         },
         {
           "en": "3 months of free Instacart+ with monthly credit",
-          "ko": "Instacart+ 3개월 무료(월 크레딧 포함)"
+          "ko": "Instacart+ 3개월 무료(월 크레딧 포함)",
+          "ja": "Instacart+が3か月無料（毎月のクレジット付き）",
+          "es": "3 meses gratis de Instacart+ con crédito mensual"
         }
       ],
       "history": []
@@ -1055,7 +1259,9 @@
           "min_spend": 12000,
           "spend_months": 6,
           "note_en": "Top of the range shown on the public page. Amex tells you your exact amount after you apply, and it can be lower.",
-          "note_ko": "공식 페이지에 보이는 최대치. 정확한 금액은 신청 후 Amex가 알려 주며 더 낮을 수 있음."
+          "note_ko": "공식 페이지에 보이는 최대치. 정확한 금액은 신청 후 Amex가 알려 주며 더 낮을 수 있음.",
+          "note_ja": "公式ページに表示されている範囲の上限です。ボーナスの正確な数は申し込み後にAmexから案内され、これより少ない場合があります。",
+          "note_es": "Es el máximo del rango que muestra la página pública. Amex informa la cantidad exacta después de la solicitud, y puede ser menor."
         },
         "usual": {
           "parts": [
@@ -1071,18 +1277,24 @@
         {
           "category_en": "Flights booked directly with airlines or via Amex Travel (first $500,000 a year)",
           "category_ko": "항공사 직접·Amex Travel 항공권(연 첫 $500,000)",
+          "category_ja": "航空会社に直接またはAmex Travelで予約した航空券（年間最初の$500,000）",
+          "category_es": "Vuelos reservados directamente con aerolíneas o en Amex Travel (primeros $500,000 al año)",
           "rate": 5,
           "unit": "points"
         },
         {
           "category_en": "Prepaid hotels booked via Amex Travel",
           "category_ko": "Amex Travel 선결제 호텔",
+          "category_ja": "Amex Travelで予約した前払いホテル",
+          "category_es": "Hoteles prepagados reservados en Amex Travel",
           "rate": 5,
           "unit": "points"
         },
         {
           "category_en": "Everything else",
           "category_ko": "그 외 전부",
+          "category_ja": "その他すべて",
+          "category_es": "Todo lo demás",
           "rate": 1,
           "unit": "points"
         }
@@ -1090,27 +1302,39 @@
       "benefits": [
         {
           "en": "Up to $600 a year for prepaid Fine Hotels + Resorts or The Hotel Collection stays ($300 per half-year)",
-          "ko": "Fine Hotels + Resorts·The Hotel Collection 선결제 숙박 연 최대 $600(반기 $300)"
+          "ko": "Fine Hotels + Resorts·The Hotel Collection 선결제 숙박 연 최대 $600(반기 $300)",
+          "ja": "Fine Hotels + Resorts・The Hotel Collectionの前払い宿泊に年間最大$600（半期ごとに$300）",
+          "es": "Hasta $600 al año en estadías prepagadas de Fine Hotels + Resorts o The Hotel Collection ($300 por semestre)"
         },
         {
           "en": "Centurion, Priority Pass and other lounges, plus 10 Delta Sky Club visits a year on Delta flights",
-          "ko": "Centurion·Priority Pass 등 라운지, Delta 탑승 시 Sky Club 연 10회"
+          "ko": "Centurion·Priority Pass 등 라운지, Delta 탑승 시 Sky Club 연 10회",
+          "ja": "Centurion・Priority Passなどのラウンジに加え、Delta便の利用時にDelta Sky Clubを年10回",
+          "es": "Salas VIP Centurion, Priority Pass y otras, más 10 visitas al año a Delta Sky Club en vuelos de Delta"
         },
         {
           "en": "Up to $200 a year in Uber Cash for U.S. rides and orders",
-          "ko": "미국 Uber 이용 시 연 최대 $200 Uber Cash"
+          "ko": "미국 Uber 이용 시 연 최대 $200 Uber Cash",
+          "ja": "米国でのUberの乗車・注文に年間最大$200のUber Cash",
+          "es": "Hasta $200 al año en Uber Cash para viajes y pedidos en EE. UU."
         },
         {
           "en": "Up to $200 a year for incidental fees on one chosen airline",
-          "ko": "선택한 항공사 1곳 부대 비용 연 최대 $200"
+          "ko": "선택한 항공사 1곳 부대 비용 연 최대 $200",
+          "ja": "選んだ航空会社1社の付帯料金に年間最大$200",
+          "es": "Hasta $200 al año en cargos incidentales de una aerolínea elegida"
         },
         {
           "en": "Up to $400 a year at Resy restaurants ($100 per quarter, enrollment required)",
-          "ko": "Resy 식당 연 최대 $400(분기 $100, 등록 필요)"
+          "ko": "Resy 식당 연 최대 $400(분기 $100, 등록 필요)",
+          "ja": "Resy加盟レストランで年間最大$400（四半期ごとに$100、要登録）",
+          "es": "Hasta $400 al año en restaurantes de Resy ($100 por trimestre, requiere inscripción)"
         },
         {
           "en": "Up to $300 a year for digital entertainment ($25 a month, enrollment required)",
-          "ko": "디지털 엔터테인먼트 연 최대 $300(월 $25, 등록 필요)"
+          "ko": "디지털 엔터테인먼트 연 최대 $300(월 $25, 등록 필요)",
+          "ja": "デジタルエンターテインメントに年間最大$300（月$25、要登録）",
+          "es": "Hasta $300 al año en entretenimiento digital ($25 al mes, requiere inscripción)"
         }
       ],
       "history": []
@@ -1138,7 +1362,9 @@
           "min_spend": 8000,
           "spend_months": 6,
           "note_en": "Top of the range shown on the public page. Amex tells you your exact amount after you apply, and it can be lower.",
-          "note_ko": "공식 페이지에 보이는 최대치. 정확한 금액은 신청 후 Amex가 알려 주며 더 낮을 수 있음."
+          "note_ko": "공식 페이지에 보이는 최대치. 정확한 금액은 신청 후 Amex가 알려 주며 더 낮을 수 있음.",
+          "note_ja": "公式ページに表示されている範囲の上限です。ボーナスの正確な数は申し込み後にAmexから案内され、これより少ない場合があります。",
+          "note_es": "Es el máximo del rango que muestra la página pública. Amex informa la cantidad exacta después de la solicitud, y puede ser menor."
         },
         "usual": {
           "parts": [
@@ -1154,36 +1380,48 @@
         {
           "category_en": "Prepaid hotels booked via Amex Travel",
           "category_ko": "Amex Travel 선결제 호텔",
+          "category_ja": "Amex Travelで予約した前払いホテル",
+          "category_es": "Hoteles prepagados reservados en Amex Travel",
           "rate": 5,
           "unit": "points"
         },
         {
           "category_en": "Restaurants worldwide (first $50,000 a year)",
           "category_ko": "전 세계 식당(연 첫 $50,000)",
+          "category_ja": "世界中のレストラン（年間最初の$50,000）",
+          "category_es": "Restaurantes en todo el mundo (primeros $50,000 al año)",
           "rate": 4,
           "unit": "points"
         },
         {
           "category_en": "U.S. supermarkets (first $25,000 a year)",
           "category_ko": "미국 슈퍼마켓(연 첫 $25,000)",
+          "category_ja": "米国のスーパーマーケット（年間最初の$25,000）",
+          "category_es": "Supermercados en EE. UU. (primeros $25,000 al año)",
           "rate": 4,
           "unit": "points"
         },
         {
           "category_en": "Flights booked directly with airlines or via Amex Travel",
           "category_ko": "항공사 직접·Amex Travel 항공권",
+          "category_ja": "航空会社に直接またはAmex Travelで予約した航空券",
+          "category_es": "Vuelos reservados directamente con aerolíneas o en Amex Travel",
           "rate": 3,
           "unit": "points"
         },
         {
           "category_en": "Prepaid car rentals and cruises via Amex Travel",
           "category_ko": "Amex Travel 선결제 렌터카·크루즈",
+          "category_ja": "Amex Travelでの前払いレンタカー・クルーズ",
+          "category_es": "Alquiler de autos y cruceros prepagados en Amex Travel",
           "rate": 2,
           "unit": "points"
         },
         {
           "category_en": "Everything else",
           "category_ko": "그 외 전부",
+          "category_ja": "その他すべて",
+          "category_es": "Todo lo demás",
           "rate": 1,
           "unit": "points"
         }
@@ -1191,23 +1429,33 @@
       "benefits": [
         {
           "en": "Up to $120 a year in dining credits at select partners ($10 a month, enrollment required)",
-          "ko": "지정 식당·배달 파트너 연 최대 $120(월 $10, 등록 필요)"
+          "ko": "지정 식당·배달 파트너 연 최대 $120(월 $10, 등록 필요)",
+          "ja": "一部の提携先で使える飲食クレジット年間最大$120（月$10、要登録）",
+          "es": "Hasta $120 al año en créditos para comidas con algunos socios ($10 al mes, requiere inscripción)"
         },
         {
           "en": "Up to $120 a year in Uber Cash ($10 a month, U.S.)",
-          "ko": "미국 Uber 이용 시 연 최대 $120 Uber Cash(월 $10)"
+          "ko": "미국 Uber 이용 시 연 최대 $120 Uber Cash(월 $10)",
+          "ja": "年間最大$120のUber Cash（月$10、米国）",
+          "es": "Hasta $120 al año en Uber Cash ($10 al mes, en EE. UU.)"
         },
         {
           "en": "Up to $100 a year at Resy restaurants ($50 per half-year, enrollment required)",
-          "ko": "Resy 식당 연 최대 $100(반기 $50, 등록 필요)"
+          "ko": "Resy 식당 연 최대 $100(반기 $50, 등록 필요)",
+          "ja": "Resy加盟レストランで年間最大$100（半期ごとに$50、要登録）",
+          "es": "Hasta $100 al año en restaurantes de Resy ($50 por semestre, requiere inscripción)"
         },
         {
           "en": "Up to $84 a year at U.S. Dunkin' ($7 a month, enrollment required)",
-          "ko": "미국 Dunkin' 연 최대 $84(월 $7, 등록 필요)"
+          "ko": "미국 Dunkin' 연 최대 $84(월 $7, 등록 필요)",
+          "ja": "米国のDunkin'で年間最大$84（月$7、要登録）",
+          "es": "Hasta $84 al año en Dunkin' en EE. UU. ($7 al mes, requiere inscripción)"
         },
         {
           "en": "$100 property credit on The Hotel Collection stays of 2+ nights",
-          "ko": "The Hotel Collection 2박 이상 예약 시 호텔 내 사용 $100 크레딧"
+          "ko": "The Hotel Collection 2박 이상 예약 시 호텔 내 사용 $100 크레딧",
+          "ja": "The Hotel Collectionの2泊以上の宿泊でホテル内で使える$100のクレジット",
+          "es": "Crédito de $100 para usar en el hotel en estadías de 2 noches o más de The Hotel Collection"
         }
       ],
       "history": []
@@ -1235,7 +1483,9 @@
           "min_spend": 3000,
           "spend_months": 6,
           "note_en": "Paid as Reward Dollars, which can be redeemed as a statement credit.",
-          "note_ko": "Reward Dollars로 지급되며 청구서 차감 등으로 사용."
+          "note_ko": "Reward Dollars로 지급되며 청구서 차감 등으로 사용.",
+          "note_ja": "Reward Dollarsとして付与され、請求額からの差し引きに使えます。",
+          "note_es": "Se paga en Reward Dollars, que se pueden canjear como crédito en el estado de cuenta."
         },
         "usual": {
           "parts": [
@@ -1251,30 +1501,40 @@
         {
           "category_en": "U.S. supermarkets (first $6,000 a year)",
           "category_ko": "미국 슈퍼마켓(연 첫 $6,000)",
+          "category_ja": "米国のスーパーマーケット（年間最初の$6,000）",
+          "category_es": "Supermercados en EE. UU. (primeros $6,000 al año)",
           "rate": 6,
           "unit": "cash"
         },
         {
           "category_en": "Select U.S. streaming subscriptions",
           "category_ko": "일부 미국 스트리밍 구독",
+          "category_ja": "一部の米国ストリーミングのサブスクリプション",
+          "category_es": "Algunas suscripciones de streaming en EE. UU.",
           "rate": 6,
           "unit": "cash"
         },
         {
           "category_en": "Transit (rideshare, taxis, parking, tolls, trains, buses)",
           "category_ko": "교통(차량 호출·택시·주차·통행료·기차·버스)",
+          "category_ja": "交通機関（配車サービス・タクシー・駐車場・通行料・電車・バス）",
+          "category_es": "Transporte (viajes compartidos, taxis, estacionamiento, peajes, trenes y autobuses)",
           "rate": 3,
           "unit": "cash"
         },
         {
           "category_en": "U.S. gas stations",
           "category_ko": "미국 주유소",
+          "category_ja": "米国のガソリンスタンド",
+          "category_es": "Gasolineras en EE. UU.",
           "rate": 3,
           "unit": "cash"
         },
         {
           "category_en": "Everything else",
           "category_ko": "그 외 전부",
+          "category_ja": "その他すべて",
+          "category_es": "Todo lo demás",
           "rate": 1,
           "unit": "cash"
         }
@@ -1282,15 +1542,21 @@
       "benefits": [
         {
           "en": "Up to $120 a year for Disney+, Hulu or ESPN subscriptions ($10 a month, enrollment required)",
-          "ko": "Disney+·Hulu·ESPN 구독 연 최대 $120(월 $10, 등록 필요)"
+          "ko": "Disney+·Hulu·ESPN 구독 연 최대 $120(월 $10, 등록 필요)",
+          "ja": "Disney+・Hulu・ESPNのサブスクリプションに年間最大$120（月$10、要登録）",
+          "es": "Hasta $120 al año en suscripciones a Disney+, Hulu o ESPN ($10 al mes, requiere inscripción)"
         },
         {
           "en": "Redeem cash back as a statement credit, a savings deposit or at Amazon checkout",
-          "ko": "캐시백을 청구서 차감·Amex 예금 입금·Amazon 결제에 사용"
+          "ko": "캐시백을 청구서 차감·Amex 예금 입금·Amazon 결제에 사용",
+          "ja": "キャッシュバックは請求額からの差し引き・預金口座への入金・Amazonでの支払いに利用可能",
+          "es": "Reembolso en efectivo canjeable como crédito en el estado de cuenta, depósito en una cuenta de ahorros o en el pago en Amazon"
         },
         {
           "en": "Presale and reserved tickets for select events",
-          "ko": "일부 공연·경기 선예매·지정석 이용"
+          "ko": "일부 공연·경기 선예매·지정석 이용",
+          "ja": "一部のイベントのチケット先行販売・指定席",
+          "es": "Preventas y boletos reservados para algunos eventos"
         }
       ],
       "history": []
@@ -1318,7 +1584,9 @@
           "min_spend": 2000,
           "spend_months": 6,
           "note_en": "Top of the range shown on the public page. Amex tells you your exact amount after you apply, and it can be lower.",
-          "note_ko": "공식 페이지에 보이는 최대치. 정확한 금액은 신청 후 Amex가 알려 주며 더 낮을 수 있음."
+          "note_ko": "공식 페이지에 보이는 최대치. 정확한 금액은 신청 후 Amex가 알려 주며 더 낮을 수 있음.",
+          "note_ja": "公式ページに表示されている範囲の上限です。ボーナスの正確な数は申し込み後にAmexから案内され、これより少ない場合があります。",
+          "note_es": "Es el máximo del rango que muestra la página pública. Amex informa la cantidad exacta después de la solicitud, y puede ser menor."
         },
         "usual": {
           "parts": [
@@ -1334,24 +1602,32 @@
         {
           "category_en": "Delta purchases made directly",
           "category_ko": "Delta 직접 구매",
+          "category_ja": "Deltaでの直接購入",
+          "category_es": "Compras directas con Delta",
           "rate": 2,
           "unit": "miles"
         },
         {
           "category_en": "U.S. restaurants, including takeout and delivery",
           "category_ko": "미국 식당(포장·배달 포함)",
+          "category_ja": "米国のレストラン（テイクアウト・デリバリー含む）",
+          "category_es": "Restaurantes en EE. UU., incluidos pedidos para llevar y a domicilio",
           "rate": 2,
           "unit": "miles"
         },
         {
           "category_en": "U.S. supermarkets",
           "category_ko": "미국 슈퍼마켓",
+          "category_ja": "米国のスーパーマーケット",
+          "category_es": "Supermercados en EE. UU.",
           "rate": 2,
           "unit": "miles"
         },
         {
           "category_en": "Everything else",
           "category_ko": "그 외 전부",
+          "category_ja": "その他すべて",
+          "category_es": "Todo lo demás",
           "rate": 1,
           "unit": "miles"
         }
@@ -1359,23 +1635,33 @@
       "benefits": [
         {
           "en": "First checked bag free on Delta flights (second bag free on U.S. domestic Delta flights)",
-          "ko": "Delta 항공편 첫 위탁 수하물 무료(미국 국내선은 두 번째도 무료)"
+          "ko": "Delta 항공편 첫 위탁 수하물 무료(미국 국내선은 두 번째도 무료)",
+          "ja": "Delta便の受託手荷物1個目が無料（米国内線は2個目も無料）",
+          "es": "Primera maleta documentada gratis en vuelos de Delta (la segunda también, en vuelos nacionales de Delta en EE. UU.)"
         },
         {
           "en": "$200 Delta flight credit after $10,000 spend in a calendar year",
-          "ko": "한 해 $10,000 사용 시 Delta 항공 크레딧 $200"
+          "ko": "한 해 $10,000 사용 시 Delta 항공 크레딧 $200",
+          "ja": "暦年で$10,000利用するとDelta航空券クレジット$200",
+          "es": "Crédito de $200 para vuelos de Delta al gastar $10,000 en un año calendario"
         },
         {
           "en": "Up to $100 a year on prepaid Delta Stays bookings",
-          "ko": "Delta Stays 선결제 숙소 연 최대 $100"
+          "ko": "Delta Stays 선결제 숙소 연 최대 $100",
+          "ja": "Delta Staysの前払い予約に年間最大$100",
+          "es": "Hasta $100 al año en reservas prepagadas de Delta Stays"
         },
         {
           "en": "15% off Delta award flights booked with miles",
-          "ko": "마일로 Delta 항공권 예약 시 15% 할인"
+          "ko": "마일로 Delta 항공권 예약 시 15% 할인",
+          "ja": "マイルで予約するDelta特典航空券が15%割引",
+          "es": "15% de descuento en vuelos de premio de Delta reservados con millas"
         },
         {
           "en": "Up to $120 a year in rideshare credits after the first renewal ($10 a month, enrollment required)",
-          "ko": "첫 갱신 후 차량 호출 연 최대 $120(월 $10, 등록 필요)"
+          "ko": "첫 갱신 후 차량 호출 연 최대 $120(월 $10, 등록 필요)",
+          "ja": "初回更新後、配車サービスのクレジット年間最大$120（月$10、要登録）",
+          "es": "Hasta $120 al año en créditos para viajes compartidos tras la primera renovación ($10 al mes, requiere inscripción)"
         }
       ],
       "history": []
@@ -1407,7 +1693,9 @@
           "min_spend": 3000,
           "spend_months": 6,
           "note_en": "Limited-time offer, ends January 13, 2027. The free night is one standard room night at most Hilton hotels.",
-          "note_ko": "기간 한정 오퍼, 2027-01-13 종료. 무료 숙박은 대부분의 Hilton 호텔 일반 객실 1박."
+          "note_ko": "기간 한정 오퍼, 2027-01-13 종료. 무료 숙박은 대부분의 Hilton 호텔 일반 객실 1박.",
+          "note_ja": "期間限定オファーで、2027年1月13日に終了します。無料宿泊は、ほとんどのHiltonホテルのスタンダードルーム1泊です。",
+          "note_es": "Oferta por tiempo limitado; termina el 13 de enero de 2027. La noche gratis es una noche en habitación estándar en la mayoría de los hoteles Hilton."
         },
         "usual": {
           "parts": [
@@ -1417,7 +1705,9 @@
             }
           ],
           "note_en": "Usually points only, without the free night.",
-          "note_ko": "평소에는 무료 숙박 없이 포인트만."
+          "note_ko": "평소에는 무료 숙박 없이 포인트만.",
+          "note_ja": "通常は無料宿泊なしで、ポイントのみです。",
+          "note_es": "Normalmente solo puntos, sin la noche gratis."
         }
       },
       "offer": {
@@ -1431,24 +1721,32 @@
         {
           "category_en": "Hilton hotels and resorts",
           "category_ko": "Hilton 계열 호텔·리조트",
+          "category_ja": "Hiltonのホテル・リゾート",
+          "category_es": "Hoteles y resorts Hilton",
           "rate": 12,
           "unit": "points"
         },
         {
           "category_en": "U.S. restaurants, U.S. supermarkets, U.S. gas stations",
           "category_ko": "미국 식당·슈퍼마켓·주유소",
+          "category_ja": "米国のレストラン・スーパーマーケット・ガソリンスタンド",
+          "category_es": "Restaurantes, supermercados y gasolineras en EE. UU.",
           "rate": 6,
           "unit": "points"
         },
         {
           "category_en": "U.S. online retail",
           "category_ko": "미국 온라인 쇼핑",
+          "category_ja": "米国のオンラインショッピング",
+          "category_es": "Compras en línea en EE. UU.",
           "rate": 4,
           "unit": "points"
         },
         {
           "category_en": "Everything else",
           "category_ko": "그 외 전부",
+          "category_ja": "その他すべて",
+          "category_es": "Todo lo demás",
           "rate": 3,
           "unit": "points"
         }
@@ -1456,23 +1754,33 @@
       "benefits": [
         {
           "en": "Hilton Honors Gold status while you hold the card",
-          "ko": "카드 보유 중 Hilton Honors Gold 등급"
+          "ko": "카드 보유 중 Hilton Honors Gold 등급",
+          "ja": "カード保有中はHilton Honors Goldステータス",
+          "es": "Estatus Hilton Honors Gold mientras se tenga la tarjeta"
         },
         {
           "en": "Up to $200 a year at Hilton properties ($50 per quarter)",
-          "ko": "Hilton 호텔 결제 연 최대 $200(분기 $50)"
+          "ko": "Hilton 호텔 결제 연 최대 $200(분기 $50)",
+          "ja": "Hiltonのホテルで年間最大$200（四半期ごとに$50）",
+          "es": "Hasta $200 al año en propiedades Hilton ($50 por trimestre)"
         },
         {
           "en": "Free night after $15,000 spend in a calendar year",
-          "ko": "한 해 $15,000 사용 시 무료 숙박 1박"
+          "ko": "한 해 $15,000 사용 시 무료 숙박 1박",
+          "ja": "暦年で$15,000利用すると無料宿泊1泊",
+          "es": "Una noche gratis al gastar $15,000 en un año calendario"
         },
         {
           "en": "Diamond status upgrade after $40,000 spend in a calendar year",
-          "ko": "한 해 $40,000 사용 시 Diamond 등급으로 상향"
+          "ko": "한 해 $40,000 사용 시 Diamond 등급으로 상향",
+          "ja": "暦年で$40,000利用するとDiamondステータスに昇格",
+          "es": "Ascenso al estatus Diamond al gastar $40,000 en un año calendario"
         },
         {
           "en": "National Car Rental Emerald Club Executive status (enrollment required)",
-          "ko": "National 렌터카 Emerald Club Executive 등급(등록 필요)"
+          "ko": "National 렌터카 Emerald Club Executive 등급(등록 필요)",
+          "ja": "National Car RentalのEmerald Club Executiveステータス（要登録）",
+          "es": "Estatus Emerald Club Executive de National Car Rental (requiere inscripción)"
         }
       ],
       "history": [
@@ -1515,7 +1823,9 @@
           "min_spend": 20000,
           "spend_months": 3,
           "note_en": "Top of the range shown on the public page. Amex tells you your exact amount after you apply, and it can be lower.",
-          "note_ko": "공식 페이지에 보이는 최대치. 정확한 금액은 신청 후 Amex가 알려 주며 더 낮을 수 있음."
+          "note_ko": "공식 페이지에 보이는 최대치. 정확한 금액은 신청 후 Amex가 알려 주며 더 낮을 수 있음.",
+          "note_ja": "公式ページに表示されている範囲の上限です。ボーナスの正確な数は申し込み後にAmexから案内され、これより少ない場合があります。",
+          "note_es": "Es el máximo del rango que muestra la página pública. Amex informa la cantidad exacta después de la solicitud, y puede ser menor."
         },
         "usual": {
           "parts": [
@@ -1531,18 +1841,24 @@
         {
           "category_en": "Flights and prepaid hotels booked via Amex Travel",
           "category_ko": "Amex Travel 항공권·선결제 호텔",
+          "category_ja": "Amex Travelで予約した航空券・前払いホテル",
+          "category_es": "Vuelos y hoteles prepagados reservados en Amex Travel",
           "rate": 5,
           "unit": "points"
         },
         {
           "category_en": "U.S. construction and hardware suppliers, U.S. electronics and software/cloud, U.S. shipping, and single purchases of $5,000+ (first $2 million a year combined)",
           "category_ko": "미국 건축자재·철물, 미국 전자제품·소프트웨어/클라우드, 미국 배송, 건당 $5,000 이상 구매(합산 연 첫 $200만)",
+          "category_ja": "米国の建築資材・金物店、米国の電子機器・ソフトウェア/クラウド、米国の配送、1回$5,000以上の購入（合算で年間最初の$200万）",
+          "category_es": "Proveedores de construcción y ferretería, electrónica y software/nube, y envíos en EE. UU., más compras individuales de $5,000 o más (primeros $2 millones al año combinados)",
           "rate": 2,
           "unit": "points"
         },
         {
           "category_en": "Everything else",
           "category_ko": "그 외 전부",
+          "category_ja": "その他すべて",
+          "category_es": "Todo lo demás",
           "rate": 1,
           "unit": "points"
         }
@@ -1550,27 +1866,39 @@
       "benefits": [
         {
           "en": "Up to $600 a year for prepaid Fine Hotels + Resorts or The Hotel Collection stays ($300 per half-year)",
-          "ko": "Fine Hotels + Resorts·The Hotel Collection 선결제 숙박 연 최대 $600(반기 $300)"
+          "ko": "Fine Hotels + Resorts·The Hotel Collection 선결제 숙박 연 최대 $600(반기 $300)",
+          "ja": "Fine Hotels + Resorts・The Hotel Collectionの前払い宿泊に年間最大$600（半期ごとに$300）",
+          "es": "Hasta $600 al año en estadías prepagadas de Fine Hotels + Resorts o The Hotel Collection ($300 por semestre)"
         },
         {
           "en": "Centurion, Priority Pass and other lounges, plus 10 Delta Sky Club visits a year on Delta flights",
-          "ko": "Centurion·Priority Pass 등 라운지, Delta 탑승 시 Sky Club 연 10회"
+          "ko": "Centurion·Priority Pass 등 라운지, Delta 탑승 시 Sky Club 연 10회",
+          "ja": "Centurion・Priority Passなどのラウンジに加え、Delta便の利用時にDelta Sky Clubを年10回",
+          "es": "Salas VIP Centurion, Priority Pass y otras, más 10 visitas al año a Delta Sky Club en vuelos de Delta"
         },
         {
           "en": "Up to $1,150 a year at Dell Technologies ($150, plus $1,000 after $5,000 Dell spend; enrollment required)",
-          "ko": "Dell 연 최대 $1,150($150 + Dell $5,000 사용 시 $1,000 추가, 등록 필요)"
+          "ko": "Dell 연 최대 $1,150($150 + Dell $5,000 사용 시 $1,000 추가, 등록 필요)",
+          "ja": "Dell Technologiesで年間最大$1,150（$150に加え、Dellで$5,000利用すると$1,000、要登録）",
+          "es": "Hasta $1,150 al año en Dell Technologies ($150, más $1,000 al gastar $5,000 en Dell; requiere inscripción)"
         },
         {
           "en": "Up to $200 a year for incidental fees on one chosen airline",
-          "ko": "선택한 항공사 1곳 부대 비용 연 최대 $200"
+          "ko": "선택한 항공사 1곳 부대 비용 연 최대 $200",
+          "ja": "選んだ航空会社1社の付帯料金に年間最大$200",
+          "es": "Hasta $200 al año en cargos incidentales de una aerolínea elegida"
         },
         {
           "en": "35% of points back when you pay with points for flights on your chosen airline (up to 1,000,000 a year)",
-          "ko": "선택 항공사 항공권을 포인트로 결제하면 35% 환급(연 최대 1,000,000포인트)"
+          "ko": "선택 항공사 항공권을 포인트로 결제하면 35% 환급(연 최대 1,000,000포인트)",
+          "ja": "選んだ航空会社の航空券をポイントで支払うと35%のポイントを還元（年間最大1,000,000ポイント）",
+          "es": "Reembolso del 35% de los puntos al pagar con puntos vuelos de la aerolínea elegida (hasta 1,000,000 al año)"
         },
         {
           "en": "Up to $300 a year for ChatGPT Business (enrollment required)",
-          "ko": "ChatGPT Business 연 최대 $300(등록 필요)"
+          "ko": "ChatGPT Business 연 최대 $300(등록 필요)",
+          "ja": "ChatGPT Businessに年間最大$300（要登録）",
+          "es": "Hasta $300 al año en ChatGPT Business (requiere inscripción)"
         }
       ],
       "history": []
@@ -1598,7 +1926,9 @@
           "min_spend": 15000,
           "spend_months": 3,
           "note_en": "Top of the range shown on the public page. Amex tells you your exact amount after you apply, and it can be lower.",
-          "note_ko": "공식 페이지에 보이는 최대치. 정확한 금액은 신청 후 Amex가 알려 주며 더 낮을 수 있음."
+          "note_ko": "공식 페이지에 보이는 최대치. 정확한 금액은 신청 후 Amex가 알려 주며 더 낮을 수 있음.",
+          "note_ja": "公式ページに表示されている範囲の上限です。ボーナスの正確な数は申し込み後にAmexから案内され、これより少ない場合があります。",
+          "note_es": "Es el máximo del rango que muestra la página pública. Amex informa la cantidad exacta después de la solicitud, y puede ser menor."
         },
         "usual": {
           "parts": [
@@ -1614,18 +1944,24 @@
         {
           "category_en": "Your top 2 each billing cycle of: U.S. advertising, U.S. electronics and software/cloud, U.S. restaurants, U.S. gas stations, transit, U.S. wireless phone service (first $150,000 a year combined)",
           "category_ko": "매 청구 기간 다음 6개 중 사용액 상위 2개: 미국 광고·미국 전자제품/소프트웨어/클라우드·미국 식당·미국 주유소·교통·미국 휴대폰 요금(합산 연 첫 $150,000)",
+          "category_ja": "請求期間ごとに次の6つのうち利用額の多い2つ：米国の広告・米国の電子機器/ソフトウェア/クラウド・米国のレストラン・米国のガソリンスタンド・交通機関・米国の携帯電話料金（合算で年間最初の$150,000）",
+          "category_es": "Las 2 categorías con más gasto en cada ciclo de facturación entre publicidad, electrónica y software/nube, restaurantes, gasolineras y telefonía móvil en EE. UU., y transporte (primeros $150,000 al año combinados)",
           "rate": 4,
           "unit": "points"
         },
         {
           "category_en": "Flights and prepaid hotels booked via Amex Travel",
           "category_ko": "Amex Travel 항공권·선결제 호텔",
+          "category_ja": "Amex Travelで予約した航空券・前払いホテル",
+          "category_es": "Vuelos y hoteles prepagados reservados en Amex Travel",
           "rate": 3,
           "unit": "points"
         },
         {
           "category_en": "Everything else",
           "category_ko": "그 외 전부",
+          "category_ja": "その他すべて",
+          "category_es": "Todo lo demás",
           "rate": 1,
           "unit": "points"
         }
@@ -1633,19 +1969,27 @@
       "benefits": [
         {
           "en": "Up to $240 a year at Grubhub, office supply stores and UPS.com shipping ($20 a month, enrollment required)",
-          "ko": "Grubhub·사무용품점·UPS.com 배송 연 최대 $240(월 $20, 등록 필요)"
+          "ko": "Grubhub·사무용품점·UPS.com 배송 연 최대 $240(월 $20, 등록 필요)",
+          "ja": "Grubhub・事務用品店・UPS.comでの配送に年間最大$240（月$20、要登録）",
+          "es": "Hasta $240 al año en Grubhub, tiendas de artículos de oficina y envíos en UPS.com ($20 al mes, requiere inscripción)"
         },
         {
           "en": "Up to $300 a year for ChatGPT Business (enrollment required)",
-          "ko": "ChatGPT Business 연 최대 $300(등록 필요)"
+          "ko": "ChatGPT Business 연 최대 $300(등록 필요)",
+          "ja": "ChatGPT Businessに年間最大$300（要登録）",
+          "es": "Hasta $300 al año en ChatGPT Business (requiere inscripción)"
         },
         {
           "en": "Up to $150 a year at Squarespace (enrollment required)",
-          "ko": "Squarespace 연 최대 $150(등록 필요)"
+          "ko": "Squarespace 연 최대 $150(등록 필요)",
+          "ja": "Squarespaceで年間最大$150（要登録）",
+          "es": "Hasta $150 al año en Squarespace (requiere inscripción)"
         },
         {
           "en": "Up to $155 a year for a monthly Walmart+ membership",
-          "ko": "Walmart+ 월 회원비 연 최대 $155"
+          "ko": "Walmart+ 월 회원비 연 최대 $155",
+          "ja": "Walmart+の月額会費に年間最大$155",
+          "es": "Hasta $155 al año para la membresía mensual de Walmart+"
         }
       ],
       "history": []
@@ -1687,36 +2031,48 @@
         {
           "category_en": "Hotels, car rentals and attractions booked via Citi Travel",
           "category_ko": "Citi Travel로 예약한 호텔·렌터카·관광지",
+          "category_ja": "Citi Travelで予約したホテル・レンタカー・観光施設",
+          "category_es": "Hoteles, alquiler de autos y atracciones reservados en Citi Travel",
           "rate": 10,
           "unit": "points"
         },
         {
           "category_en": "Air travel and other hotel purchases",
           "category_ko": "항공권·그 밖의 호텔 결제",
+          "category_ja": "航空券・その他のホテルでの支払い",
+          "category_es": "Viajes aéreos y otras compras de hotel",
           "rate": 3,
           "unit": "points"
         },
         {
           "category_en": "Restaurants",
           "category_ko": "식당",
+          "category_ja": "レストラン",
+          "category_es": "Restaurantes",
           "rate": 3,
           "unit": "points"
         },
         {
           "category_en": "Supermarkets",
           "category_ko": "슈퍼마켓",
+          "category_ja": "スーパーマーケット",
+          "category_es": "Supermercados",
           "rate": 3,
           "unit": "points"
         },
         {
           "category_en": "Gas stations and EV charging",
           "category_ko": "주유소·EV 충전",
+          "category_ja": "ガソリンスタンド・EV充電",
+          "category_es": "Gasolineras y carga de vehículos eléctricos",
           "rate": 3,
           "unit": "points"
         },
         {
           "category_en": "Everything else",
           "category_ko": "그 외 전부",
+          "category_ja": "その他すべて",
+          "category_es": "Todo lo demás",
           "rate": 1,
           "unit": "points"
         }
@@ -1724,19 +2080,27 @@
       "benefits": [
         {
           "en": "$100 off one hotel stay of $500 or more (before taxes and fees) booked via Citi Travel, once each calendar year",
-          "ko": "Citi Travel로 예약한 $500 이상 호텔 1건 $100 할인(세금·수수료 제외, 매년 1회)"
+          "ko": "Citi Travel로 예약한 $500 이상 호텔 1건 $100 할인(세금·수수료 제외, 매년 1회)",
+          "ja": "Citi Travelで予約した$500以上（税・手数料抜き）のホテル1件が$100引き（暦年ごとに1回）",
+          "es": "$100 de descuento en una estadía de hotel de $500 o más (antes de impuestos y cargos) reservada en Citi Travel, una vez por año calendario"
         },
         {
           "en": "Move points to airline and hotel partners such as American Airlines, JetBlue, Virgin Atlantic and Choice Hotels",
-          "ko": "American Airlines·JetBlue·Virgin Atlantic·Choice Hotels 등 항공·호텔 파트너로 포인트 이전"
+          "ko": "American Airlines·JetBlue·Virgin Atlantic·Choice Hotels 등 항공·호텔 파트너로 포인트 이전",
+          "ja": "American Airlines・JetBlue・Virgin Atlantic・Choice Hotelsなど、航空会社・ホテルのパートナーへポイントを移行",
+          "es": "Transferencia de puntos a socios de aerolíneas y hoteles como American Airlines, JetBlue, Virgin Atlantic y Choice Hotels"
         },
         {
           "en": "Travel coverage including trip delay, trip cancellation and interruption, and lost or damaged bags",
-          "ko": "여행 지연·여행 취소/중단·수하물 분실/파손 보장"
+          "ko": "여행 지연·여행 취소/중단·수하물 분실/파손 보장",
+          "ja": "旅行の遅延・キャンセル/中断、手荷物の紛失/破損などの旅行補償",
+          "es": "Coberturas de viaje que incluyen retraso, cancelación e interrupción de viaje, y equipaje perdido o dañado"
         },
         {
           "en": "No fee for authorized users",
-          "ko": "가족 카드(추가 사용자) 수수료 없음"
+          "ko": "가족 카드(추가 사용자) 수수료 없음",
+          "ja": "追加カード会員の手数料なし",
+          "es": "Sin cargo por usuarios autorizados"
         }
       ],
       "history": []
@@ -1764,7 +2128,9 @@
           "min_spend": 1500,
           "spend_months": 6,
           "note_en": "Paid as ThankYou points that you can redeem for $200 cash back.",
-          "note_ko": "ThankYou 포인트로 지급되며 $200 캐시백으로 바꿀 수 있음."
+          "note_ko": "ThankYou 포인트로 지급되며 $200 캐시백으로 바꿀 수 있음.",
+          "note_ja": "ThankYouポイントとして付与され、$200のキャッシュバックに交換できます。",
+          "note_es": "Se paga en puntos ThankYou, canjeables por $200 de reembolso en efectivo."
         },
         "usual": {
           "parts": [
@@ -1780,12 +2146,16 @@
         {
           "category_en": "Hotels, car rentals and attractions booked via Citi Travel",
           "category_ko": "Citi Travel로 예약한 호텔·렌터카·관광지",
+          "category_ja": "Citi Travelで予約したホテル・レンタカー・観光施設",
+          "category_es": "Hoteles, alquiler de autos y atracciones reservados en Citi Travel",
           "rate": 5,
           "unit": "cash"
         },
         {
           "category_en": "Everything else (1% when you buy, 1% when you pay it off)",
           "category_ko": "그 외 전부(구매 시 1% + 갚을 때 1%)",
+          "category_ja": "その他すべて（購入時1%+支払い時1%）",
+          "category_es": "Todo lo demás (1% al comprar y 1% al pagar)",
           "rate": 2,
           "unit": "cash"
         }
@@ -1793,23 +2163,33 @@
       "benefits": [
         {
           "en": "No bonus categories to sign up for and no cap on cash back",
-          "ko": "카테고리 등록 없음, 캐시백 한도 없음"
+          "ko": "카테고리 등록 없음, 캐시백 한도 없음",
+          "ja": "ボーナスカテゴリーの登録不要、キャッシュバックの上限なし",
+          "es": "Sin categorías de bono que inscribir y sin límite de reembolso en efectivo"
         },
         {
           "en": "Cash back arrives as ThankYou points; take it as a deposit, statement credit or check",
-          "ko": "캐시백은 ThankYou 포인트로 쌓이며 계좌 입금·청구서 차감·수표로 받기"
+          "ko": "캐시백은 ThankYou 포인트로 쌓이며 계좌 입금·청구서 차감·수표로 받기",
+          "ja": "キャッシュバックはThankYouポイントで貯まり、口座入金・請求額からの差し引き・小切手で受け取り可能",
+          "es": "El reembolso en efectivo llega como puntos ThankYou; se puede recibir como depósito, crédito en el estado de cuenta o cheque"
         },
         {
           "en": "Extended warranty coverage on eligible purchases",
-          "ko": "대상 구매품 보증 기간 연장"
+          "ko": "대상 구매품 보증 기간 연장",
+          "ja": "対象購入品の延長保証",
+          "es": "Garantía extendida en compras elegibles"
         },
         {
           "en": "Citi Entertainment access to ticket presales and events",
-          "ko": "Citi Entertainment 공연·행사 선예매"
+          "ko": "Citi Entertainment 공연·행사 선예매",
+          "ja": "Citi Entertainmentでチケット先行販売・イベントを利用",
+          "es": "Acceso a preventas de boletos y eventos con Citi Entertainment"
         },
         {
           "en": "Mastercard ID Theft Protection monitoring",
-          "ko": "Mastercard 신원 도용 감시 서비스"
+          "ko": "Mastercard 신원 도용 감시 서비스",
+          "ja": "Mastercard ID Theft Protectionによる監視",
+          "es": "Monitoreo de Mastercard ID Theft Protection"
         }
       ],
       "history": []
@@ -1851,36 +2231,48 @@
         {
           "category_en": "Hotels, car rentals and attractions booked via Citi Travel",
           "category_ko": "Citi Travel로 예약한 호텔·렌터카·관광지",
+          "category_ja": "Citi Travelで予約したホテル・レンタカー・観光施設",
+          "category_es": "Hoteles, alquiler de autos y atracciones reservados en Citi Travel",
           "rate": 5,
           "unit": "points"
         },
         {
           "category_en": "Supermarkets",
           "category_ko": "슈퍼마켓",
+          "category_ja": "スーパーマーケット",
+          "category_es": "Supermercados",
           "rate": 3,
           "unit": "points"
         },
         {
           "category_en": "Gas stations, EV charging and select transit",
           "category_ko": "주유소·EV 충전·일부 교통",
+          "category_ja": "ガソリンスタンド・EV充電・一部の交通機関",
+          "category_es": "Gasolineras, carga de vehículos eléctricos y algunos medios de transporte",
           "rate": 3,
           "unit": "points"
         },
         {
           "category_en": "One Self-Select category you choose",
           "category_ko": "직접 고른 Self-Select 카테고리 1개",
+          "category_ja": "自分で選ぶSelf-Selectカテゴリー1つ",
+          "category_es": "Una categoría Self-Select a elección",
           "rate": 3,
           "unit": "points"
         },
         {
           "category_en": "Restaurants",
           "category_ko": "식당",
+          "category_ja": "レストラン",
+          "category_es": "Restaurantes",
           "rate": 2,
           "unit": "points"
         },
         {
           "category_en": "Everything else",
           "category_ko": "그 외 전부",
+          "category_ja": "その他すべて",
+          "category_es": "Todo lo demás",
           "rate": 1,
           "unit": "points"
         }
@@ -1888,23 +2280,33 @@
       "benefits": [
         {
           "en": "Self-Select options: fitness clubs, select streaming, live entertainment, cosmetic stores/barbers/salons or pet supply stores; switch once a quarter",
-          "ko": "Self-Select 선택지: 피트니스 클럽·일부 스트리밍·공연/경기 관람·화장품점/이발소/미용실·반려동물 용품점, 분기마다 1회 변경"
+          "ko": "Self-Select 선택지: 피트니스 클럽·일부 스트리밍·공연/경기 관람·화장품점/이발소/미용실·반려동물 용품점, 분기마다 1회 변경",
+          "ja": "Self-Selectの選択肢：フィットネスクラブ・一部のストリーミング・ライブエンターテインメント・化粧品店/理容室/美容室・ペット用品店、四半期ごとに1回変更可能",
+          "es": "Opciones de Self-Select: gimnasios, algunos servicios de streaming, entretenimiento en vivo, tiendas de cosméticos/barberías/salones o tiendas de mascotas; se puede cambiar una vez por trimestre"
         },
         {
           "en": "Move points to airline and hotel partners such as American Airlines, JetBlue, Cathay and Choice Hotels",
-          "ko": "American Airlines·JetBlue·Cathay·Choice Hotels 등 항공·호텔 파트너로 포인트 이전"
+          "ko": "American Airlines·JetBlue·Cathay·Choice Hotels 등 항공·호텔 파트너로 포인트 이전",
+          "ja": "American Airlines・JetBlue・Cathay・Choice Hotelsなど、航空会社・ホテルのパートナーへポイントを移行",
+          "es": "Transferencia de puntos a socios de aerolíneas y hoteles como American Airlines, JetBlue, Cathay y Choice Hotels"
         },
         {
           "en": "No fee for authorized users",
-          "ko": "가족 카드(추가 사용자) 수수료 없음"
+          "ko": "가족 카드(추가 사용자) 수수료 없음",
+          "ja": "追加カード会員の手数料なし",
+          "es": "Sin cargo por usuarios autorizados"
         },
         {
           "en": "Citi Entertainment access to ticket presales and events",
-          "ko": "Citi Entertainment 공연·행사 선예매"
+          "ko": "Citi Entertainment 공연·행사 선예매",
+          "ja": "Citi Entertainmentでチケット先行販売・イベントを利用",
+          "es": "Acceso a preventas de boletos y eventos con Citi Entertainment"
         },
         {
           "en": "Mastercard ID Theft Protection monitoring",
-          "ko": "Mastercard 신원 도용 감시 서비스"
+          "ko": "Mastercard 신원 도용 감시 서비스",
+          "ja": "Mastercard ID Theft Protectionによる監視",
+          "es": "Monitoreo de Mastercard ID Theft Protection"
         }
       ],
       "history": []
@@ -1946,24 +2348,32 @@
         {
           "category_en": "Eligible American Airlines purchases",
           "category_ko": "American Airlines 대상 구매",
+          "category_ja": "American Airlinesの対象購入",
+          "category_es": "Compras elegibles con American Airlines",
           "rate": 2,
           "unit": "miles"
         },
         {
           "category_en": "Restaurants, including takeout",
           "category_ko": "식당(포장 포함)",
+          "category_ja": "レストラン（テイクアウト含む）",
+          "category_es": "Restaurantes, incluidos pedidos para llevar",
           "rate": 2,
           "unit": "miles"
         },
         {
           "category_en": "Gas stations",
           "category_ko": "주유소",
+          "category_ja": "ガソリンスタンド",
+          "category_es": "Gasolineras",
           "rate": 2,
           "unit": "miles"
         },
         {
           "category_en": "Everything else",
           "category_ko": "그 외 전부",
+          "category_ja": "その他すべて",
+          "category_es": "Todo lo demás",
           "rate": 1,
           "unit": "miles"
         }
@@ -1971,27 +2381,39 @@
       "benefits": [
         {
           "en": "First checked bag free on domestic American Airlines trips for you and up to 4 companions on the same booking",
-          "ko": "American Airlines 국내선 첫 위탁 수하물 무료(같은 예약 동반자 4명까지)"
+          "ko": "American Airlines 국내선 첫 위탁 수하물 무료(같은 예약 동반자 4명까지)",
+          "ja": "American Airlines国内線で、本人と同じ予約の同行者最大4名の受託手荷物1個目が無料",
+          "es": "Primera maleta documentada gratis en viajes nacionales de American Airlines para el titular y hasta 4 acompañantes de la misma reserva"
         },
         {
           "en": "Preferred boarding on American Airlines for you and up to 4 companions on the same booking",
-          "ko": "American Airlines 우선 탑승(같은 예약 동반자 4명까지)"
+          "ko": "American Airlines 우선 탑승(같은 예약 동반자 4명까지)",
+          "ja": "American Airlinesで、本人と同じ予約の同行者最大4名が優先搭乗",
+          "es": "Abordaje preferente en American Airlines para el titular y hasta 4 acompañantes de la misma reserva"
         },
         {
           "en": "25% off food and drinks bought on board American Airlines flights",
-          "ko": "American Airlines 기내 음식·음료 25% 할인"
+          "ko": "American Airlines 기내 음식·음료 25% 할인",
+          "ja": "American Airlinesの機内での飲食物が25%割引",
+          "es": "25% de descuento en comida y bebidas a bordo de vuelos de American Airlines"
         },
         {
           "en": "$125 American Airlines flight discount after $20,000 in purchases in a cardmember year and renewing the card",
-          "ko": "카드 회원 연도에 $20,000 사용 후 갱신하면 American Airlines 항공권 $125 할인"
+          "ko": "카드 회원 연도에 $20,000 사용 후 갱신하면 American Airlines 항공권 $125 할인",
+          "ja": "カード会員年度に$20,000利用してカードを更新すると、American Airlines航空券が$125割引",
+          "es": "Descuento de $125 en vuelos de American Airlines al gastar $20,000 en un año de membresía y renovar la tarjeta"
         },
         {
           "en": "Up to $30 back per eligible Turo car rental trip paid with the card, up to $180 a year",
-          "ko": "카드로 결제한 대상 Turo 렌터카 1건당 최대 $30, 연 최대 $180 환급"
+          "ko": "카드로 결제한 대상 Turo 렌터카 1건당 최대 $30, 연 최대 $180 환급",
+          "ja": "カードで支払った対象のTuroレンタカー1件につき最大$30、年間最大$180を還元",
+          "es": "Hasta $30 de reembolso por cada alquiler de auto elegible en Turo pagado con la tarjeta, hasta $180 al año"
         },
         {
           "en": "Purchases also earn Loyalty Points toward AAdvantage status (1 per eligible mile)",
-          "ko": "구매로 얻은 대상 마일 1마일당 AAdvantage 등급용 Loyalty Point 1점"
+          "ko": "구매로 얻은 대상 마일 1마일당 AAdvantage 등급용 Loyalty Point 1점",
+          "ja": "購入でAAdvantageステータス用のLoyalty Pointsも貯まる（対象マイル1マイルにつき1）",
+          "es": "Las compras también suman Loyalty Points para el estatus AAdvantage (1 por cada milla elegible)"
         }
       ],
       "history": []
@@ -2033,24 +2455,32 @@
         {
           "category_en": "Hotels and rental cars booked via Capital One Travel",
           "category_ko": "Capital One Travel로 예약한 호텔·렌터카",
+          "category_ja": "Capital One Travelで予約したホテル・レンタカー",
+          "category_es": "Hoteles y alquiler de autos reservados en Capital One Travel",
           "rate": 10,
           "unit": "miles"
         },
         {
           "category_en": "Flights and vacation rentals booked via Capital One Travel",
           "category_ko": "Capital One Travel로 예약한 항공권·휴가용 숙소",
+          "category_ja": "Capital One Travelで予約した航空券・バケーションレンタル",
+          "category_es": "Vuelos y alquileres vacacionales reservados en Capital One Travel",
           "rate": 5,
           "unit": "miles"
         },
         {
           "category_en": "Capital One Entertainment ticket purchases",
           "category_ko": "Capital One Entertainment 티켓 구매",
+          "category_ja": "Capital One Entertainmentでのチケット購入",
+          "category_es": "Compra de boletos en Capital One Entertainment",
           "rate": 5,
           "unit": "miles"
         },
         {
           "category_en": "Everything else",
           "category_ko": "그 외 전부",
+          "category_ja": "その他すべて",
+          "category_es": "Todo lo demás",
           "rate": 2,
           "unit": "miles"
         }
@@ -2058,27 +2488,39 @@
       "benefits": [
         {
           "en": "$300 credit each year for bookings made through Capital One Travel",
-          "ko": "매년 Capital One Travel 예약에 쓰는 $300 크레딧"
+          "ko": "매년 Capital One Travel 예약에 쓰는 $300 크레딧",
+          "ja": "Capital One Travelでの予約に使える毎年$300のクレジット",
+          "es": "Crédito de $300 cada año para reservas en Capital One Travel"
         },
         {
           "en": "10,000 bonus miles every account anniversary, starting at the first",
-          "ko": "첫 카드 기념일부터 매년 10,000마일 추가"
+          "ko": "첫 카드 기념일부터 매년 10,000마일 추가",
+          "ja": "口座開設の記念日ごとに10,000ボーナスマイル（初回から）",
+          "es": "10,000 millas de bono en cada aniversario de la cuenta, desde el primero"
         },
         {
           "en": "Capital One Lounge and Priority Pass lounge access for the primary cardholder (Priority Pass needs enrollment)",
-          "ko": "본인 카드 소지자 Capital One 라운지·Priority Pass 라운지 이용(Priority Pass는 등록 필요)"
+          "ko": "본인 카드 소지자 Capital One 라운지·Priority Pass 라운지 이용(Priority Pass는 등록 필요)",
+          "ja": "本会員はCapital One Lounge・Priority Passのラウンジを利用可能（Priority Passは要登録）",
+          "es": "Acceso a Capital One Lounge y salas VIP de Priority Pass para el titular principal (Priority Pass requiere inscripción)"
         },
         {
           "en": "Global Entry or TSA PreCheck fee credit up to $120, once every 4 years",
-          "ko": "Global Entry 또는 TSA PreCheck 수수료 최대 $120 환급(4년에 1번)"
+          "ko": "Global Entry 또는 TSA PreCheck 수수료 최대 $120 환급(4년에 1번)",
+          "ja": "Global EntryまたはTSA PreCheckの申請料を最大$120還付（4年に1回）",
+          "es": "Crédito de hasta $120 para la tarifa de Global Entry o TSA PreCheck, una vez cada 4 años"
         },
         {
           "en": "Move miles to 15+ airline and hotel loyalty programs",
-          "ko": "15개 이상 항공·호텔 회원 프로그램으로 마일 이전"
+          "ko": "15개 이상 항공·호텔 회원 프로그램으로 마일 이전",
+          "ja": "15以上の航空会社・ホテルのロイヤルティプログラムへマイルを移行",
+          "es": "Transferencia de millas a más de 15 programas de lealtad de aerolíneas y hoteles"
         },
         {
           "en": "Cell phone protection up to $800 when you pay your phone bill with the card",
-          "ko": "휴대폰 요금을 카드로 내면 휴대폰 도난·파손 최대 $800 보상"
+          "ko": "휴대폰 요금을 카드로 내면 휴대폰 도난·파손 최대 $800 보상",
+          "ja": "携帯電話料金をカードで支払うと携帯電話の補償（最大$800）",
+          "es": "Protección de teléfono celular de hasta $800 al pagar la factura del teléfono con la tarjeta"
         }
       ],
       "history": []
@@ -2110,7 +2552,9 @@
           "min_spend": 4000,
           "spend_months": 3,
           "note_en": "Labeled a limited-time offer on the page. The $300 is a one-time Capital One Travel credit for hotel and vacation rental bookings, usable for one year after the account opens.",
-          "note_ko": "페이지에 기간 한정 오퍼로 표시됨. $300은 Capital One Travel 호텔·휴가용 숙소 예약에 쓰는 1회 크레딧이며 계좌 개설 후 1년 안에 써야 함."
+          "note_ko": "페이지에 기간 한정 오퍼로 표시됨. $300은 Capital One Travel 호텔·휴가용 숙소 예약에 쓰는 1회 크레딧이며 계좌 개설 후 1년 안에 써야 함.",
+          "note_ja": "ページでは期間限定オファーと表示されています。$300はCapital One Travelでのホテル・バケーションレンタル予約に使える1回限りのクレジットで、口座開設から1年以内に使う必要があります。",
+          "note_es": "La página la presenta como oferta por tiempo limitado. Los $300 son un crédito único de Capital One Travel para reservas de hoteles y alquileres vacacionales, válido durante un año desde la apertura de la cuenta."
         },
         "usual": {
           "parts": [
@@ -2132,18 +2576,24 @@
         {
           "category_en": "Hotels, vacation rentals and rental cars booked via Capital One Travel",
           "category_ko": "Capital One Travel로 예약한 호텔·휴가용 숙소·렌터카",
+          "category_ja": "Capital One Travelで予約したホテル・バケーションレンタル・レンタカー",
+          "category_es": "Hoteles, alquileres vacacionales y alquiler de autos reservados en Capital One Travel",
           "rate": 5,
           "unit": "miles"
         },
         {
           "category_en": "Capital One Entertainment ticket purchases",
           "category_ko": "Capital One Entertainment 티켓 구매",
+          "category_ja": "Capital One Entertainmentでのチケット購入",
+          "category_es": "Compra de boletos en Capital One Entertainment",
           "rate": 5,
           "unit": "miles"
         },
         {
           "category_en": "Everything else",
           "category_ko": "그 외 전부",
+          "category_ja": "その他すべて",
+          "category_es": "Todo lo demás",
           "rate": 2,
           "unit": "miles"
         }
@@ -2151,23 +2601,33 @@
       "benefits": [
         {
           "en": "Global Entry or TSA PreCheck fee credit up to $120",
-          "ko": "Global Entry 또는 TSA PreCheck 수수료 최대 $120 환급"
+          "ko": "Global Entry 또는 TSA PreCheck 수수료 최대 $120 환급",
+          "ja": "Global EntryまたはTSA PreCheckの申請料を最大$120還付",
+          "es": "Crédito de hasta $120 para la tarifa de Global Entry o TSA PreCheck"
         },
         {
           "en": "$50 experience credit on each Lifestyle Collection stay booked via Capital One Travel",
-          "ko": "Capital One Travel로 예약한 Lifestyle Collection 숙박마다 $50 체험 크레딧"
+          "ko": "Capital One Travel로 예약한 Lifestyle Collection 숙박마다 $50 체험 크레딧",
+          "ja": "Capital One Travelで予約したLifestyle Collectionの宿泊ごとに$50の体験クレジット",
+          "es": "Crédito de experiencia de $50 en cada estadía de Lifestyle Collection reservada en Capital One Travel"
         },
         {
           "en": "Hertz Five Star status at no cost",
-          "ko": "Hertz Five Star 등급 무료"
+          "ko": "Hertz Five Star 등급 무료",
+          "ja": "Hertz Five Starステータスが無料",
+          "es": "Estatus Hertz Five Star sin costo"
         },
         {
           "en": "Travel credit for the difference if you find a lower price within 24 hours of an eligible Capital One Travel booking",
-          "ko": "Capital One Travel 대상 예약 후 24시간 안에 더 싼 가격을 찾으면 차액을 여행 크레딧으로"
+          "ko": "Capital One Travel 대상 예약 후 24시간 안에 더 싼 가격을 찾으면 차액을 여행 크레딧으로",
+          "ja": "Capital One Travelの対象予約から24時間以内により安い価格が見つかれば、差額を旅行クレジットで受け取り",
+          "es": "Crédito de viaje por la diferencia si se encuentra un precio más bajo dentro de las 24 horas siguientes a una reserva elegible en Capital One Travel"
         },
         {
           "en": "Miles never expire while the account is open and can move to select travel loyalty programs",
-          "ko": "계좌가 열려 있는 동안 마일 소멸 없음, 일부 여행 회원 프로그램으로 이전 가능"
+          "ko": "계좌가 열려 있는 동안 마일 소멸 없음, 일부 여행 회원 프로그램으로 이전 가능",
+          "ja": "口座がある間はマイルの有効期限なし、一部の旅行ロイヤルティプログラムへ移行可能",
+          "es": "Las millas no vencen mientras la cuenta esté abierta y se pueden transferir a algunos programas de lealtad de viajes"
         }
       ],
       "history": [
@@ -2224,36 +2684,48 @@
         {
           "category_en": "Capital One Entertainment ticket purchases",
           "category_ko": "Capital One Entertainment 티켓 구매",
+          "category_ja": "Capital One Entertainmentでのチケット購入",
+          "category_es": "Compra de boletos en Capital One Entertainment",
           "rate": 8,
           "unit": "cash"
         },
         {
           "category_en": "Hotels, vacation rentals and rental cars booked via Capital One Travel",
           "category_ko": "Capital One Travel로 예약한 호텔·휴가용 숙소·렌터카",
+          "category_ja": "Capital One Travelで予約したホテル・バケーションレンタル・レンタカー",
+          "category_es": "Hoteles, alquileres vacacionales y alquiler de autos reservados en Capital One Travel",
           "rate": 5,
           "unit": "cash"
         },
         {
           "category_en": "Dining",
           "category_ko": "식당",
+          "category_ja": "飲食店",
+          "category_es": "Restaurantes",
           "rate": 3,
           "unit": "cash"
         },
         {
           "category_en": "Grocery stores (not superstores such as Walmart and Target)",
           "category_ko": "식료품점(Walmart·Target 같은 대형 할인점 제외)",
+          "category_ja": "食料品店（WalmartやTargetなどの大型店は除く）",
+          "category_es": "Tiendas de comestibles (excepto grandes tiendas como Walmart y Target)",
           "rate": 3,
           "unit": "cash"
         },
         {
           "category_en": "Entertainment and popular streaming services",
           "category_ko": "엔터테인먼트·주요 스트리밍 서비스",
+          "category_ja": "エンターテインメント・人気のストリーミングサービス",
+          "category_es": "Entretenimiento y servicios de streaming populares",
           "rate": 3,
           "unit": "cash"
         },
         {
           "category_en": "Everything else",
           "category_ko": "그 외 전부",
+          "category_ja": "その他すべて",
+          "category_es": "Todo lo demás",
           "rate": 1,
           "unit": "cash"
         }
@@ -2261,19 +2733,27 @@
       "benefits": [
         {
           "en": "Travel credit for the difference if you find a lower price within 24 hours of an eligible Capital One Travel booking",
-          "ko": "Capital One Travel 대상 예약 후 24시간 안에 더 싼 가격을 찾으면 차액을 여행 크레딧으로"
+          "ko": "Capital One Travel 대상 예약 후 24시간 안에 더 싼 가격을 찾으면 차액을 여행 크레딧으로",
+          "ja": "Capital One Travelの対象予約から24時間以内により安い価格が見つかれば、差額を旅行クレジットで受け取り",
+          "es": "Crédito de viaje por la diferencia si se encuentra un precio más bajo dentro de las 24 horas siguientes a una reserva elegible en Capital One Travel"
         },
         {
           "en": "Hertz Five Star status at no cost",
-          "ko": "Hertz Five Star 등급 무료"
+          "ko": "Hertz Five Star 등급 무료",
+          "ja": "Hertz Five Starステータスが無料",
+          "es": "Estatus Hertz Five Star sin costo"
         },
         {
           "en": "Use cash back at checkout with PayPal or on Amazon.com",
-          "ko": "PayPal 결제나 Amazon.com에서 캐시백으로 결제 가능"
+          "ko": "PayPal 결제나 Amazon.com에서 캐시백으로 결제 가능",
+          "ja": "PayPalでの支払い時やAmazon.comでキャッシュバックを利用可能",
+          "es": "Reembolso en efectivo utilizable al pagar con PayPal o en Amazon.com"
         },
         {
           "en": "Cardholder-only presales and VIP packages through Capital One Entertainment",
-          "ko": "Capital One Entertainment 카드 회원 전용 선예매·VIP 패키지"
+          "ko": "Capital One Entertainment 카드 회원 전용 선예매·VIP 패키지",
+          "ja": "Capital One Entertainmentのカード会員限定の先行販売・VIPパッケージ",
+          "es": "Preventas y paquetes VIP exclusivos para tarjetahabientes en Capital One Entertainment"
         }
       ],
       "history": []
@@ -2305,7 +2785,9 @@
           "min_spend": 500,
           "spend_months": 3,
           "note_en": "Two parts. First-year match (Discover calls it Cashback Match): all cash back earned in your first 365 days is matched dollar for dollar, with no cap and no spending requirement. Separately, a $200 statement credit after $500 in purchases in the first 3 months; that $200 itself is not matched.",
-          "note_ko": "두 부분. ① 첫해 매칭: 첫 365일 동안 쌓은 캐시백 전부를 같은 금액만큼 한 번 더 줌(한도·지출 조건 없음). ② 첫 3개월 $500 사용 시 $200 청구서 크레딧(이 $200은 매칭 대상 아님)."
+          "note_ko": "두 부분. ① 첫해 매칭: 첫 365일 동안 쌓은 캐시백 전부를 같은 금액만큼 한 번 더 줌(한도·지출 조건 없음). ② 첫 3개월 $500 사용 시 $200 청구서 크레딧(이 $200은 매칭 대상 아님).",
+          "note_ja": "2つの部分があります。①初年度マッチ（DiscoverではCashback Matchと呼びます）：最初の365日間に貯めたキャッシュバックの全額と同じ額が、上限・利用条件なしでもう一度もらえます。②別途、最初の3か月で$500利用すると請求額から$200が差し引かれます（この$200はマッチの対象外です）。",
+          "note_es": "Dos partes. Igualación del primer año (Discover la llama Cashback Match): todo el reembolso en efectivo acumulado en los primeros 365 días se iguala dólar por dólar, sin límite y sin gasto mínimo. Aparte, un crédito de $200 en el estado de cuenta tras $500 en compras en los primeros 3 meses; esos $200 no se igualan."
         },
         "usual": {
           "parts": [
@@ -2327,24 +2809,32 @@
         {
           "category_en": "Rotating quarterly categories, up to the quarterly maximum (activation required)",
           "category_ko": "분기마다 바뀌는 카테고리(분기 한도까지, 활성화 필요)",
+          "category_ja": "四半期ごとに替わるカテゴリー（四半期の上限まで、要有効化）",
+          "category_es": "Categorías trimestrales rotativas, hasta el máximo trimestral (requiere activación)",
           "rate": 5,
           "unit": "cash"
         },
         {
           "category_en": "Capital One Travel bookings (hotels, vacation rentals, rental cars, activities)",
           "category_ko": "Capital One Travel 예약(호텔·휴가용 숙소·렌터카·액티비티)",
+          "category_ja": "Capital One Travelでの予約（ホテル・バケーションレンタル・レンタカー・アクティビティ）",
+          "category_es": "Reservas en Capital One Travel (hoteles, alquileres vacacionales, alquiler de autos y actividades)",
           "rate": 5,
           "unit": "cash"
         },
         {
           "category_en": "Capital One Entertainment ticket purchases",
           "category_ko": "Capital One Entertainment 티켓 구매",
+          "category_ja": "Capital One Entertainmentでのチケット購入",
+          "category_es": "Compra de boletos en Capital One Entertainment",
           "rate": 5,
           "unit": "cash"
         },
         {
           "category_en": "Everything else",
           "category_ko": "그 외 전부",
+          "category_ja": "その他すべて",
+          "category_es": "Todo lo demás",
           "rate": 1,
           "unit": "cash"
         }
@@ -2352,19 +2842,27 @@
       "benefits": [
         {
           "en": "No late fee the first time you pay late",
-          "ko": "첫 연체 1회는 연체료 없음"
+          "ko": "첫 연체 1회는 연체료 없음",
+          "ja": "初回の支払い遅延は延滞料なし",
+          "es": "Sin cargo por pago tardío la primera vez"
         },
         {
           "en": "Lock the card in the mobile app if it goes missing",
-          "ko": "분실 시 모바일 앱에서 카드 잠금"
+          "ko": "분실 시 모바일 앱에서 카드 잠금",
+          "ja": "紛失時はモバイルアプリでカードをロック可能",
+          "es": "Bloqueo de la tarjeta en la app móvil en caso de pérdida"
         },
         {
           "en": "Alerts if your Social Security number is found on the dark web (CreditWise sign-up)",
-          "ko": "다크웹에서 내 사회보장번호가 발견되면 알림(CreditWise 가입)"
+          "ko": "다크웹에서 내 사회보장번호가 발견되면 알림(CreditWise 가입)",
+          "ja": "ダークウェブで社会保障番号が見つかると通知（CreditWiseに要登録）",
+          "es": "Alertas si el número de Seguro Social aparece en la dark web (requiere inscripción en CreditWise)"
         },
         {
           "en": "Cash back does not expire while the account is open",
-          "ko": "계좌가 열려 있는 동안 캐시백 소멸 없음"
+          "ko": "계좌가 열려 있는 동안 캐시백 소멸 없음",
+          "ja": "口座がある間はキャッシュバックの有効期限なし",
+          "es": "El reembolso en efectivo no vence mientras la cuenta esté abierta"
         }
       ],
       "history": [
@@ -2407,7 +2905,9 @@
           "min_spend": 500,
           "spend_months": 3,
           "note_en": "Paid as cash rewards.",
-          "note_ko": "캐시 리워드로 지급."
+          "note_ko": "캐시 리워드로 지급.",
+          "note_ja": "キャッシュリワードとして付与されます。",
+          "note_es": "Se paga como recompensas en efectivo."
         },
         "usual": {
           "parts": [
@@ -2423,6 +2923,8 @@
         {
           "category_en": "All purchases",
           "category_ko": "모든 구매",
+          "category_ja": "すべての購入",
+          "category_es": "Todas las compras",
           "rate": 2,
           "unit": "cash"
         }
@@ -2430,23 +2932,33 @@
       "benefits": [
         {
           "en": "Cell phone protection up to $600 per claim ($25 deductible, 2 claims a year) when you pay your phone bill with the card",
-          "ko": "휴대폰 요금을 카드로 내면 건당 최대 $600 휴대폰 보상(자기부담 $25, 연 2건)"
+          "ko": "휴대폰 요금을 카드로 내면 건당 최대 $600 휴대폰 보상(자기부담 $25, 연 2건)",
+          "ja": "携帯電話料金をカードで支払うと1件あたり最大$600の携帯電話補償（自己負担$25、年2件まで）",
+          "es": "Protección de teléfono celular de hasta $600 por reclamo (deducible de $25, 2 reclamos al año) al pagar la factura del teléfono con la tarjeta"
         },
         {
           "en": "Secondary auto rental collision damage coverage",
-          "ko": "렌터카 충돌·파손 2차 보장"
+          "ko": "렌터카 충돌·파손 2차 보장",
+          "ja": "レンタカーの衝突・損害の二次補償",
+          "es": "Cobertura secundaria por colisión y daños en alquiler de autos"
         },
         {
           "en": "Roadside Dispatch and travel and emergency assistance",
-          "ko": "긴급 출동 연결·여행 중 긴급 지원 서비스"
+          "ko": "긴급 출동 연결·여행 중 긴급 지원 서비스",
+          "ja": "Roadside Dispatch（ロードサービスの手配）と旅行・緊急時のサポート",
+          "es": "Roadside Dispatch y asistencia de viaje y emergencias"
         },
         {
           "en": "Visa Signature Concierge and Luxury Hotel Collection",
-          "ko": "Visa Signature 컨시어지·Luxury Hotel Collection"
+          "ko": "Visa Signature 컨시어지·Luxury Hotel Collection",
+          "ja": "Visa Signature Concierge・Luxury Hotel Collection",
+          "es": "Visa Signature Concierge y Luxury Hotel Collection"
         },
         {
           "en": "No categories to track and rewards do not expire while the account is open",
-          "ko": "카테고리 신경 쓸 필요 없음, 계좌가 열려 있는 동안 리워드 소멸 없음"
+          "ko": "카테고리 신경 쓸 필요 없음, 계좌가 열려 있는 동안 리워드 소멸 없음",
+          "ja": "カテゴリーを気にする必要なし、口座がある間はリワードの有効期限なし",
+          "es": "Sin categorías que seguir y las recompensas no vencen mientras la cuenta esté abierta"
         }
       ],
       "history": []
@@ -2488,36 +3000,48 @@
         {
           "category_en": "Restaurants",
           "category_ko": "식당",
+          "category_ja": "レストラン",
+          "category_es": "Restaurantes",
           "rate": 3,
           "unit": "points"
         },
         {
           "category_en": "Travel",
           "category_ko": "여행",
+          "category_ja": "旅行",
+          "category_es": "Viajes",
           "rate": 3,
           "unit": "points"
         },
         {
           "category_en": "Gas stations and transit",
           "category_ko": "주유소·교통",
+          "category_ja": "ガソリンスタンド・交通機関",
+          "category_es": "Gasolineras y transporte",
           "rate": 3,
           "unit": "points"
         },
         {
           "category_en": "Popular streaming services",
           "category_ko": "주요 스트리밍 서비스",
+          "category_ja": "人気のストリーミングサービス",
+          "category_es": "Servicios de streaming populares",
           "rate": 3,
           "unit": "points"
         },
         {
           "category_en": "Phone plans",
           "category_ko": "휴대폰 요금제",
+          "category_ja": "携帯電話プラン",
+          "category_es": "Planes de telefonía",
           "rate": 3,
           "unit": "points"
         },
         {
           "category_en": "Everything else",
           "category_ko": "그 외 전부",
+          "category_ja": "その他すべて",
+          "category_es": "Todo lo demás",
           "rate": 1,
           "unit": "points"
         }
@@ -2525,23 +3049,33 @@
       "benefits": [
         {
           "en": "Move points to select travel loyalty programs, in any amount",
-          "ko": "일부 여행 회원 프로그램으로 원하는 만큼 포인트 이전"
+          "ko": "일부 여행 회원 프로그램으로 원하는 만큼 포인트 이전",
+          "ja": "一部の旅行ロイヤルティプログラムへ好きな量のポイントを移行",
+          "es": "Transferencia de cualquier cantidad de puntos a algunos programas de lealtad de viajes"
         },
         {
           "en": "Cell phone protection up to $600 per claim ($25 deductible, 2 claims a year) when you pay your phone bill with the card",
-          "ko": "휴대폰 요금을 카드로 내면 건당 최대 $600 휴대폰 보상(자기부담 $25, 연 2건)"
+          "ko": "휴대폰 요금을 카드로 내면 건당 최대 $600 휴대폰 보상(자기부담 $25, 연 2건)",
+          "ja": "携帯電話料金をカードで支払うと1件あたり最大$600の携帯電話補償（自己負担$25、年2件まで）",
+          "es": "Protección de teléfono celular de hasta $600 por reclamo (deducible de $25, 2 reclamos al año) al pagar la factura del teléfono con la tarjeta"
         },
         {
           "en": "Secondary auto rental collision damage coverage",
-          "ko": "렌터카 충돌·파손 2차 보장"
+          "ko": "렌터카 충돌·파손 2차 보장",
+          "ja": "レンタカーの衝突・損害の二次補償",
+          "es": "Cobertura secundaria por colisión y daños en alquiler de autos"
         },
         {
           "en": "Travel and emergency assistance services",
-          "ko": "여행 중 긴급 지원 서비스"
+          "ko": "여행 중 긴급 지원 서비스",
+          "ja": "旅行・緊急時のサポートサービス",
+          "es": "Servicios de asistencia de viaje y emergencias"
         },
         {
           "en": "Visa Signature Concierge and Luxury Hotel Collection",
-          "ko": "Visa Signature 컨시어지·Luxury Hotel Collection"
+          "ko": "Visa Signature 컨시어지·Luxury Hotel Collection",
+          "ja": "Visa Signature Concierge・Luxury Hotel Collection",
+          "es": "Visa Signature Concierge y Luxury Hotel Collection"
         }
       ],
       "history": []
@@ -2569,7 +3103,9 @@
           "min_spend": 4000,
           "spend_months": 3,
           "note_en": "Spend window is 90 days from account opening. The page values the points at $600.",
-          "note_ko": "지출 기간은 계좌 개설 후 90일. 페이지는 포인트 가치를 $600으로 안내."
+          "note_ko": "지출 기간은 계좌 개설 후 90일. 페이지는 포인트 가치를 $600으로 안내.",
+          "note_ja": "利用期間は口座開設から90日間です。ページではポイントの価値を$600と案内しています。",
+          "note_es": "El plazo para el gasto es de 90 días desde la apertura de la cuenta. La página valora los puntos en $600."
         },
         "usual": {
           "parts": [
@@ -2585,18 +3121,24 @@
         {
           "category_en": "Travel",
           "category_ko": "여행",
+          "category_ja": "旅行",
+          "category_es": "Viajes",
           "rate": 2,
           "unit": "points"
         },
         {
           "category_en": "Dining",
           "category_ko": "식당",
+          "category_ja": "飲食店",
+          "category_es": "Restaurantes",
           "rate": 2,
           "unit": "points"
         },
         {
           "category_en": "Everything else",
           "category_ko": "그 외 전부",
+          "category_ja": "その他すべて",
+          "category_es": "Todo lo demás",
           "rate": 1.5,
           "unit": "points"
         }
@@ -2604,23 +3146,33 @@
       "benefits": [
         {
           "en": "Up to $100 a year in airline incidental credits (seat upgrades, bag fees, in-flight services, lounge fees)",
-          "ko": "연 최대 $100 항공 부대비용 크레딧(좌석 업그레이드·수하물·기내 서비스·라운지 요금)"
+          "ko": "연 최대 $100 항공 부대비용 크레딧(좌석 업그레이드·수하물·기내 서비스·라운지 요금)",
+          "ja": "航空会社の付帯料金クレジット年間最大$100（座席のアップグレード・手荷物料金・機内サービス・ラウンジ料金）",
+          "es": "Hasta $100 al año en créditos para cargos incidentales de aerolíneas (mejoras de asiento, cargos por equipaje, servicios a bordo y salas VIP)"
         },
         {
           "en": "TSA PreCheck or Global Entry fee credit up to $100, once every 4 years",
-          "ko": "TSA PreCheck 또는 Global Entry 수수료 최대 $100 환급(4년에 1번)"
+          "ko": "TSA PreCheck 또는 Global Entry 수수료 최대 $100 환급(4년에 1번)",
+          "ja": "TSA PreCheckまたはGlobal Entryの申請料を最大$100還付（4年に1回）",
+          "es": "Crédito de hasta $100 para la tarifa de TSA PreCheck o Global Entry, una vez cada 4 años"
         },
         {
           "en": "Trip delay, cancellation and interruption, baggage delay, lost luggage and emergency evacuation coverage",
-          "ko": "여행 지연·취소/중단·수하물 지연·분실·긴급 후송 보장"
+          "ko": "여행 지연·취소/중단·수하물 지연·분실·긴급 후송 보장",
+          "ja": "旅行の遅延・キャンセル/中断、手荷物の遅延・紛失、緊急搬送の補償",
+          "es": "Cobertura por retraso, cancelación e interrupción de viaje, retraso y pérdida de equipaje, y evacuación de emergencia"
         },
         {
           "en": "Purchase protections such as return protection and extended warranty help",
-          "ko": "반품 보호·보증 연장 지원 등 구매 보호"
+          "ko": "반품 보호·보증 연장 지원 등 구매 보호",
+          "ja": "返品保護や延長保証などの購入品保護",
+          "es": "Protecciones de compra como protección de devoluciones y ayuda con garantía extendida"
         },
         {
           "en": "Redeem points as cash into eligible Bank of America or Merrill accounts, or as a statement credit; points do not expire",
-          "ko": "포인트를 Bank of America·Merrill 계좌 입금이나 청구서 차감으로 사용, 소멸 없음"
+          "ko": "포인트를 Bank of America·Merrill 계좌 입금이나 청구서 차감으로 사용, 소멸 없음",
+          "ja": "ポイントは対象のBank of America・Merrill口座への現金入金や請求額からの差し引きに利用可能、有効期限なし",
+          "es": "Puntos canjeables como efectivo en cuentas elegibles de Bank of America o Merrill, o como crédito en el estado de cuenta; los puntos no vencen"
         }
       ],
       "history": []
