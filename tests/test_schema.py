@@ -252,6 +252,61 @@ class KoreanOptionalTest(unittest.TestCase):
         self.assertEqual(errors_of(check(card)), [])
 
 
+def card_issues(card):
+    """Issues of one card, without the whole-file 'not 30 cards' warning."""
+    return [issue for issue in check(card) if issue.path != "cards"]
+
+
+class JapaneseSpanishOptionalTest(unittest.TestCase):
+    """Plan A7: optional ja/es texts, same rules as the _ko texts."""
+
+    TEXTS = {
+        "bonus.current.note_ja": "サンプル説明", "bonus.current.note_es": "Nota de ejemplo",
+        "bonus.usual.note_ja": "通常の説明", "bonus.usual.note_es": "Nota habitual",
+        "earn[0].category_ja": "旅行", "earn[0].category_es": "Viajes",
+        "benefits[0].ja": "旅行遅延保険", "benefits[0].es": "Seguro por retraso de viaje",
+    }
+
+    def full_card(self):
+        card = make_card()
+        for path, text in self.TEXTS.items():
+            card = with_value(card, path, text)
+        return card
+
+    def test_sample_card_alone_has_no_card_issues(self):
+        self.assertEqual(card_issues(make_card()), [])
+
+    def test_ja_and_es_texts_pass_without_errors_or_warnings(self):
+        self.assertEqual(card_issues(self.full_card()), [])
+
+    def test_ja_and_es_missing_empty_blank_or_null_pass(self):
+        for path in self.TEXTS:
+            for value in ("", "   ", None):
+                with self.subTest(path=path, value=value):
+                    self.assertEqual(card_issues(with_value(self.full_card(), path, value)), [])
+            with self.subTest(path=path, value="missing"):
+                self.assertEqual(card_issues(without(self.full_card(), path)), [])
+
+    def test_non_text_ja_or_es_fails_with_quote_hint(self):
+        for path in self.TEXTS:
+            for value in (False, 2026, ["x"]):
+                with self.subTest(path=path, value=value):
+                    issues = errors_of(card_issues(with_value(self.full_card(), path, value)))
+                    self.assertEqual(paths_of(issues), {path})
+                    self.assertTrue(any("따옴표" in i.message for i in issues))
+
+    def test_unknown_language_keys_keep_the_old_rules(self):
+        for path in ("bonus.current.note_jp", "bonus.usual.note_sp"):
+            with self.subTest(path=path):
+                issues = card_issues(with_value(make_card(), path, "x"))
+                self.assertIn(path, paths_of(errors_of(issues)))
+        for path in ("earn[0].category_jp", "benefits[0].sp"):
+            with self.subTest(path=path):
+                issues = card_issues(with_value(make_card(), path, "x"))
+                self.assertEqual(errors_of(issues), [])
+                self.assertIn(path, paths_of(warnings_of(issues)))
+
+
 class DateTest(unittest.TestCase):
     def test_last_verified_accepts_date_object_and_iso_string(self):
         for value in (date(2026, 11, 1), "2026-11-01", TODAY):

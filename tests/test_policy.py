@@ -5,7 +5,7 @@ comments included), everything under docs/ (the public Pages output) and
 history/*.csv (the bonus observation log).
 Runs in CI before the build step, so it needs no network.
 
-- rule 9: credit-decision phrases (EN + KO) are caught and absent.
+- rule 9: credit-decision phrases (EN + KO + JA + ES) are caught and absent.
 - community sources: domains and names never in data or the public JSON.
 - official_url: https on the card issuer's own domain (fixed allowlist).
 - the public JSON never carries ``sources`` (review-only) or unknown keys.
@@ -86,6 +86,18 @@ class Rule9ForbiddenPhraseTest(unittest.TestCase):
         "무조건 승인": "무조건 승인",
         "신용조회 없음": "신용조회 없이 발급",
         "승인 가능성": "승인 가능성 높음",
+        "事前承認": "事前承認済みのお客様",
+        "承認保証": "承認保証カード",
+        "必ず審査に通る": "必ず審査に通ります",
+        "与信審査不要": "与信審査不要で発行",
+        "審査なし": "審査なしで発行",
+        "承認の可能性": "承認の可能性を確認",
+        "preaprobado": "Estás preaprobado",
+        "precalificado": "Ya estás precalificado",
+        "aprobación garantizada": "Aprobación garantizada para todos",
+        "sin verificación de crédito": "Sin verificación de crédito",
+        "sin revisión de crédito": "Sin revisión de crédito",
+        "probabilidad de aprobación": "Consulta tu probabilidad de aprobación",
     }
 
     def test_every_pattern_label_has_a_sample_that_it_catches(self):

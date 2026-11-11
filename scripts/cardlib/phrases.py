@@ -12,13 +12,19 @@ from urllib.parse import unquote
 _SEP = r"[\s\-_‐-―]*"
 # Optional separator inside Korean phrases.
 _KS = r"[\s\-]*"
+# Optional separator inside Japanese phrases (no \b: it never matches between CJK chars).
+_JS = r"[\s\-・]*"
+# Spanish letters that people often type without the accent.
+_O = "[oó]"
+_E = "[eé]"
 
 
 def _compile(table):
     return tuple((label, re.compile(pattern)) for label, pattern in table)
 
 
-# Phrases implying a credit decision (policy.md rule 9; Play deceptive behavior).
+# Phrases implying a credit decision (policy.md rule 9; Play deceptive behavior),
+# in every app language: English, Korean, Japanese, Spanish.
 FORBIDDEN_PATTERNS = _compile((
     ("pre-approved", rf"\bpre{_SEP}approv(?:ed|al)\b"),
     ("pre-qualified", rf"\bpre{_SEP}qualif(?:ied|y|ication)\b"),
@@ -34,6 +40,26 @@ FORBIDDEN_PATTERNS = _compile((
     ("무조건 승인", rf"무조건{_KS}승인"),
     ("신용조회 없음", rf"신용{_KS}조회{_KS}(?:없|불필요|필요{_KS}없|안{_KS}함)"),
     ("승인 가능성", rf"승인(?:{_KS}(?:될|이{_KS}될|받을))?{_KS}(?:가능성|확률)"),
+    # Japanese (plan A7). 与信審査不要 comes before 審査なし (the first match names the label).
+    ("事前承認", rf"事前{_JS}承認"),
+    ("承認保証", rf"承認(?:{_JS}[がをは])?{_JS}保証|保証{_JS}(?:(?:された|される|付きの){_JS})?承認"),
+    ("承認保証", rf"必ず{_JS}承認"),
+    ("必ず審査に通る", rf"必ず{_JS}審査{_JS}(?:に{_JS})?(?:通|合格)|審査{_JS}(?:に{_JS})?必ず{_JS}(?:通|合格)"),
+    ("与信審査不要", rf"(?:与信|信用){_JS}(?:審査|調査|チェック){_JS}(?:不要|なし|無し|なく|せず)"),
+    ("審査なし", rf"審査{_JS}(?:不要|なし|無し|なく|せず)"),
+    ("承認の可能性", rf"承認(?:{_JS}(?:の|される))?{_JS}(?:可能性|確率|見込み)|承認{_JS}率"),
+    # Spanish (plan A7). Accents optional, any gender/number.
+    ("preaprobado", rf"\bpre{_SEP}aprobad[oa]s?\b|\bpre{_SEP}aprobaci{_O}n(?:es)?\b"),
+    ("precalificado", rf"\bpre{_SEP}calificad[oa]s?\b|\bpre{_SEP}calificaci{_O}n(?:es)?\b"),
+    ("aprobación garantizada",
+     rf"\baprobaci{_O}n{_SEP}(?:est[aá]{_SEP})?garantizada\b"),
+    ("aprobación garantizada",
+     rf"\b(?:garantizamos|garantiza|garantizan|garant[ií]a){_SEP}(?:de{_SEP}|la{_SEP})?aprobaci{_O}n\b"),
+    ("sin verificación de crédito",
+     rf"\bsin{_SEP}(?:verificaci{_O}n|consulta|chequeo|comprobaci{_O}n){_SEP}del?{_SEP}cr{_E}dito\b"),
+    ("sin revisión de crédito", rf"\bsin{_SEP}revisi{_O}n{_SEP}del?{_SEP}cr{_E}dito\b"),
+    ("probabilidad de aprobación",
+     rf"\b(?:probabilidad|posibilidad)(?:es)?{_SEP}de{_SEP}(?:aprobaci{_O}n|ser{_SEP}aprobad[oa]s?)\b"),
 ))
 
 # Community sources must never appear in app data.
@@ -49,6 +75,12 @@ COMMUNITY_PATTERNS = _compile((
     ("r/게시판", r"(?:^|[\s(\[{<\"'“‘,;:])/?r/[a-z0-9_]{2,}"),
     ("thepointsguy", rf"the{_SEP}points{_SEP}guy"),
     ("더 포인츠 가이", rf"더{_KS}포인츠{_KS}가이"),
+    # Japanese katakana spellings (plan A7); Spanish uses the Latin names above.
+    ("マイルモア", rf"マイル{_JS}モア"),
+    ("ドクター・オブ・クレジット", rf"ドクター{_JS}オブ{_JS}クレジット"),
+    ("フリークエント・マイラー", rf"フリー?クエント{_JS}マイラー"),
+    ("レディット", r"(?<!ク)レディット"),  # not クレディット (credit)
+    ("ザ・ポインツ・ガイ", rf"ポインツ{_JS}ガイ|ザ{_JS}ポイント{_JS}ガイ(?!ド)"),
 ))
 
 SHORTENER_DOMAINS = ("bit.ly", "tinyurl.com", "t.co", "goo.gl", "ow.ly", "is.gd",

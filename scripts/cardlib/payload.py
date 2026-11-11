@@ -2,8 +2,8 @@
 
 Only listed keys are published, in a fixed order, so the same content always
 serializes to the same bytes (stable Pages ETag). ``sources`` and unknown keys
-are dropped; empty optional texts (``*_ko``, ``note_en``) are omitted so the
-app falls back to English. Whole floats (``75000.0``) are published as ints;
+are dropped; empty optional texts (``note_en`` and the ``ko``/``ja``/``es``
+translations, plan A7) are omitted so the app falls back to English. Whole floats (``75000.0``) are published as ints;
 decimals (``2.7``) stay decimals, so the app must read numbers as ``num``.
 """
 
@@ -20,6 +20,11 @@ PREVIOUS_NAME = "docs/cards_v1.json"
 PUBLIC_CARD_KEYS = (
     "id", "name", "issuer", "segment", "official_url", "last_verified", "annual_fee",
     "foreign_tx_fee_pct", "bonus", "offer", "earn", "benefits", "history")
+
+
+NOTE_KEYS = ("note_en", "note_ko", "note_ja", "note_es")
+CATEGORY_TRANSLATION_KEYS = ("category_ko", "category_ja", "category_es")
+BENEFIT_TRANSLATION_KEYS = ("ko", "ja", "es")
 
 
 class PreviousJsonError(Exception):
@@ -44,16 +49,15 @@ def _bonus(bonus):
             "parts": _parts(current["parts"]),
             "min_spend": json_number(current["min_spend"]),
             "spend_months": json_number(current["spend_months"]),
-        }, current, ("note_en", "note_ko")),
-        "usual": _with_optional_text(
-            {"parts": _parts(usual["parts"])}, usual, ("note_en", "note_ko")),
+        }, current, NOTE_KEYS),
+        "usual": _with_optional_text({"parts": _parts(usual["parts"])}, usual, NOTE_KEYS),
     }
 
 
 def _earn(item):
     base = {"category_en": item["category_en"]}
-    with_ko = _with_optional_text(base, item, ("category_ko",))
-    return {**with_ko, "rate": json_number(item["rate"]), "unit": item["unit"]}
+    with_text = _with_optional_text(base, item, CATEGORY_TRANSLATION_KEYS)
+    return {**with_text, "rate": json_number(item["rate"]), "unit": item["unit"]}
 
 
 def public_card(card, today):
@@ -72,7 +76,8 @@ def public_card(card, today):
         "bonus": _bonus(card["bonus"]),
         "offer": build_offer(card["id"], card.get("elevated"), today),
         "earn": [_earn(item) for item in card["earn"]],
-        "benefits": [_with_optional_text({"en": b["en"]}, b, ("ko",)) for b in card["benefits"]],
+        "benefits": [_with_optional_text({"en": b["en"]}, b, BENEFIT_TRANSLATION_KEYS)
+                     for b in card["benefits"]],
         "history": [],
     }
 

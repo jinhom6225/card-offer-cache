@@ -41,8 +41,8 @@
 | `bonus.current.spend_months` | 그 금액을 써야 하는 기간(개월) | `3` |
 | `bonus.usual` | **평소** 보너스(진호님 기준값) | `parts`만 필수 |
 | `elevated` | "평소보다 높음" 표시 | 아래 "높음 표시" |
-| `earn` | 카테고리별 적립률 | `category_en`, `category_ko`, `rate`, `unit` |
-| `benefits` | 주요 혜택(크레딧, 보험, 라운지 등) | `en`, `ko`. 비워 둬도 됨(`[]`) |
+| `earn` | 카테고리별 적립률 | `category_en`, `category_ko`, `category_ja`, `category_es`, `rate`, `unit` |
+| `benefits` | 주요 혜택(크레딧, 보험, 라운지 등) | `en`, `ko`, `ja`, `es`. 비워 둬도 됨(`[]`) |
 
 ### 발급사와 공식 도메인
 
@@ -68,6 +68,29 @@
 - 단축 주소(`bit.ly`, `tinyurl.com`, `t.co`, `goo.gl`, `ow.ly`, `is.gd`, `buff.ly`, `rebrand.ly`, `lnkd.in`)는 안 됩니다. 원래 주소를 적어 주세요.
 
 `_ko`로 끝나는 한국어 항목(`note_ko`, `category_ko`, `ko`)은 **비워도 됩니다**(`""`이나 아예 빼기). 앱이 영어로 보여 줍니다. `note_en`도 선택입니다.
+
+### 일본어·스페인어 설명 (선택, plan A7)
+
+한국어 항목과 똑같은 규칙으로 일본어(`ja`)·스페인어(`es`) 설명을 붙일 수 있습니다. 모두 **선택**이고, 비우거나 빼면 앱이 영어로 보여 줍니다(한국어로 대신 보여 주지 않음).
+
+| 자리 | 한국어 | 일본어 | 스페인어 |
+|---|---|---|---|
+| `bonus.current` / `bonus.usual` 설명 | `note_ko` | `note_ja` | `note_es` |
+| `earn` 카테고리 | `category_ko` | `category_ja` | `category_es` |
+| `benefits` 혜택 | `ko` | `ja` | `es` |
+
+```yaml
+      - category_en: Dining
+        category_ko: 식당
+        category_ja: 飲食店
+        category_es: Restaurantes
+        rate: 3
+        unit: points
+```
+
+- 카드명·발급사명·프로그램명(Ultimate Rewards, Membership Rewards 등)과 숫자는 영어 그대로 씁니다. 용어는 `Dr.Myung/tasks/2026-11-09-credit-card-offers-app/a7_glossary.md`의 용어집에 맞춰 주세요.
+- 금지 문구·커뮤니티 이름 검사는 일본어·스페인어 글에도 똑같이 적용됩니다(아래 "검증기가 막는 것").
+- 오타(`note_jp`, `category_sp` 등)는 다른 항목과 같은 규칙입니다: `bonus` 안이면 **오류**, `earn`·`benefits` 안이면 경고.
 
 ### 보너스 적는 법 (`parts`)
 
@@ -129,19 +152,22 @@
 
 ## 검증기가 막는 것 (오류 → 배포 안 됨)
 
-- 필수 항목이 없거나 비어 있음 (`_ko`·`note_en` 제외)
+- 필수 항목이 없거나 비어 있음 (`_ko`·`_ja`·`_es`·`ko`·`ja`·`es`·`note_en` 제외)
 - `id` 형식이 틀림(대문자, `_`, 빈칸, 한글 등) 또는 다른 카드와 중복
 - `segment`, `unit`이 허용 값이 아님
 - `issuer`가 위 표의 7개가 아님
 - 주소 규칙 위반(`https://` 아님, 빈칸·역슬래시·`아이디@`, 443 외 포트, 이상한 도메인 글자, 단축 주소)
 - `official_url`이 그 카드 `issuer`의 도메인이 아님. `chase.com.evil.io` 같은 흉내 주소도 거부
-- **어느 항목에든**(항목 이름 포함) 커뮤니티 이름·주소가 있음 — `sources`, 메모 포함. 막는 것: milemoa/마일모아, doctorofcredit/Doctor of Credit/닥터오브크레딧, frequentmiler/프리퀀트 마일러, reddit/레딧/`r/churning` 같은 게시판 표기, thepointsguy/The Points Guy/더 포인츠 가이. `%72eddit`처럼 % 인코딩하거나 전각 글자(`ｒｅｄｄｉｔ`)로 써도 잡습니다. (`크레딧`은 괜찮습니다.)
+- **어느 항목에든**(항목 이름 포함) 커뮤니티 이름·주소가 있음 — `sources`, 메모 포함. 막는 것: milemoa/마일모아, doctorofcredit/Doctor of Credit/닥터오브크레딧, frequentmiler/프리퀀트 마일러, reddit/레딧/`r/churning` 같은 게시판 표기, thepointsguy/The Points Guy/더 포인츠 가이, 일본어 표기(マイルモア, ドクターオブクレジット, フリークエントマイラー, レディット, ザ・ポイント・ガイ/ポインツガイ). `%72eddit`처럼 % 인코딩하거나 전각 글자(`ｒｅｄｄｉｔ`)로 써도 잡습니다. (`크레딧`·`クレジット`은 괜찮습니다.)
 - `last_verified` 또는 `elevated.start`가 미래 날짜
 - `elevated.end`가 `start`보다 앞섬
 - `bonus`·`elevated` 안의 알 수 없는 항목(오타)
 - 신용 판단을 암시하는 금지 문구(대소문자·띄어쓰기·하이픈·전각 글자 무시):
   - 영어: `pre-approved`/`preapproved`, `pre-qualified`, `guaranteed approval`/`approval guaranteed`/`guaranteed to be approved`/`guaranteed acceptance`, `instant approval`, `no credit check`/`without a credit check`, `approval odds`, `best card for you`/`best card for your ...`
   - 한국어: `사전 승인`/`사전승인`, `승인 보장`/`승인을 보장`, `무조건 승인`, `신용조회 없음`/`없이`/`불필요`, `승인 가능성`/`승인될 가능성`/`승인 확률`
+  - 일본어: `事前承認`, `承認保証`/`承認を保証`/`必ず承認`, `必ず審査に通る`, `与信審査不要`/`与信審査なし`/`信用調査不要`, `審査なし`/`審査不要`, `承認の可能性`/`承認される可能性`/`承認率`
+  - 스페인어(악센트 없이 써도 잡음): `preaprobado`/`pre-aprobada`/`preaprobación`, `precalificado`, `aprobación garantizada`/`garantizamos la aprobación`/`garantía de aprobación`, `sin verificación de crédito`/`sin consulta de crédito`, `sin revisión de crédito`, `probabilidad de aprobación`/`posibilidades de ser aprobado`
+  - `延長保証`(보증 연장), `Garantía extendida`, `La aprobación depende del emisor`처럼 승인 판단이 아닌 글은 괜찮습니다.
   - `guaranteed`는 **승인과 붙을 때만** 막습니다. "Guaranteed 4PM late checkout" 같은 혜택은 그대로 적어도 됩니다. "best card for young adults"처럼 다른 단어의 일부인 경우도 괜찮습니다.
 - 숫자 자리에 글자(`4,000`, `$95`, `3%`), `.nan`·`.inf`, 글자 자리에 yes/no·숫자·날짜, 존재하지 않는 날짜(`2026-02-30`)
 - 카드가 한 장도 없음
@@ -176,7 +202,7 @@ GitHub 예약 실행은 몇 분~몇십 분 늦게 시작할 수 있습니다. �
 ### 만드는 순서 (`scripts/build_cards.py`)
 
 1. `data/cards.yaml`을 검증합니다(위 "검증기가 막는 것"과 같은 규칙). **오류가 하나라도 있으면 기존 `docs/cards_v1.json`을 한 바이트도 바꾸지 않고** 실패합니다.
-2. 카드마다 앱에 필요한 항목만 골라 정해진 순서로 적습니다. `sources`와 알 수 없는 항목은 빠지고, 비어 있는 한국어 설명(`note_ko`, `category_ko`, `ko`)과 빈 `note_en`은 **키째 생략**합니다(앱이 영어로 보여 줌).
+2. 카드마다 앱에 필요한 항목만 골라 정해진 순서로 적습니다. `sources`와 알 수 없는 항목은 빠지고, 비어 있는 한국어·일본어·스페인어 설명(`note_ko`/`note_ja`/`note_es`, `category_ko`/`category_ja`/`category_es`, `ko`/`ja`/`es`)과 빈 `note_en`은 **키째 생략**합니다(앱이 영어로 보여 줌). 순서는 `en` → `ko` → `ja` → `es`(earn은 그 뒤에 `rate`, `unit`).
 3. `elevated`가 있으면 **오퍼**를 만듭니다. 오퍼 id = `카드id@start날짜`(예: `chase-sapphire-preferred@2026-11-09`). 앱은 처음 보는 오퍼 id가 "높음"이면 알림을 한 번 보냅니다.
    - "높음" = `elevated`가 있고 `end`가 비었거나 `end`가 오늘(미국 서부) 이후. `end`가 지나면 `status: "ended"`, `ended_auto: true`.
 4. 직전 `docs/cards_v1.json`과 비교해 카드별 **변동 기록**(`history`)을 붙입니다. 한 빌드에 카드당 최대 1건, 카드당 최근 20건만 남깁니다. 이전 기록은 `date`, `type`, `current_parts`(`value`, `unit`)만 옮깁니다. `parts`는 **순서와 상관없이** 비교합니다(순서만 바꾸면 변동 아님).
@@ -194,7 +220,7 @@ GitHub 예약 실행은 몇 분~몇십 분 늦게 시작할 수 있습니다. �
 
 | 항목 | 뜻 |
 |---|---|
-| `schema` | 형식 번호. 지금은 `1` |
+| `schema` | 형식 번호. 지금은 `1`(일본어·스페인어 키 추가 후에도 `1` — 새 키는 모두 선택이라 예전 앱은 무시합니다) |
 | `generated_at` | JSON 내용이 마지막으로 바뀐 빌드 시각(UTC, `...Z`) |
 | `data_updated_at` | **`data/cards.yaml`을 마지막으로 커밋한 시각**(UTC). 앱 홈의 "최근 업데이트"는 이 값을 씁니다 |
 | `cards` | 카드 목록(`cards.yaml` 순서 그대로). 카드마다 `offer`(없으면 `null`)와 `history` |

@@ -137,3 +137,105 @@ class ForbiddenPhrasePerformanceTest(unittest.TestCase):
                      "승인보장", "승인 받을 확률"):
             with self.subTest(text=text):
                 self.assertIsNotNone(phrases.find_forbidden_phrase(text))
+
+
+JA_ES_PATHS = ("bonus.current.note_ja", "bonus.usual.note_es", "earn[0].category_ja",
+               "earn[0].category_es", "benefits[0].ja", "benefits[0].es")
+
+
+class JapaneseSpanishForbiddenPhraseTest(unittest.TestCase):
+    """Plan A7: credit-decision phrases in Japanese and Spanish fail like EN/KO ones."""
+
+    LABELED = {
+        "事前承認": ("事前承認済みです", "事前 承認", "事前・承認"),
+        "承認保証": ("承認保証", "承認を保証します", "承認が保証されます", "保証された承認",
+                 "必ず承認されます"),
+        "必ず審査に通る": ("必ず審査に通る", "必ず審査に通ります", "審査に必ず通る"),
+        "与信審査不要": ("与信審査不要", "与信審査なし", "与信チェックなしで発行", "信用調査不要"),
+        "審査なし": ("審査なし", "審査無しで発行", "審査不要のカード"),
+        "承認の可能性": ("承認の可能性", "承認される可能性を確認", "承認率", "承認の確率"),
+        "preaprobado": ("Estás preaprobado", "Oferta pre-aprobada", "PRE APROBADOS",
+                        "preaprobación"),
+        "precalificado": ("Precalificado hoy", "pre-calificada", "precalificación"),
+        "aprobación garantizada": ("Aprobación garantizada", "aprobacion garantizada",
+                                   "La aprobación está garantizada", "garantizamos la aprobación",
+                                   "garantía de aprobación"),
+        "sin verificación de crédito": ("Sin verificación de crédito", "sin verificacion de credito",
+                                        "sin consulta de crédito", "sin chequeo de crédito"),
+        "sin revisión de crédito": ("Sin revisión de crédito", "sin revision del credito"),
+        "probabilidad de aprobación": ("Probabilidad de aprobación", "probabilidades de aprobacion",
+                                       "posibilidades de ser aprobado"),
+    }
+
+    def test_each_phrase_has_its_label(self):
+        for label, samples in self.LABELED.items():
+            for sample in samples:
+                with self.subTest(sample=sample):
+                    self.assertEqual(rules.find_forbidden_phrase(sample), label)
+
+    def test_fullwidth_and_invisible_variants_are_caught(self):
+        for sample, label in (("事前\u200b承認", "事前承認"), ("審査\u3000なし", "審査なし"),
+                              ("ＰＲＥＡＰＲＯＢＡＤＯ", "preaprobado"),
+                              ("pre\u200baprobado", "preaprobado"),
+                              ("APROBACIÓN GARANTIZADA", "aprobación garantizada")):
+            with self.subTest(sample=sample):
+                self.assertEqual(rules.find_forbidden_phrase(sample), label)
+
+    def test_phrase_in_any_ja_or_es_field_fails_validation(self):
+        for path in JA_ES_PATHS:
+            for sample in ("事前承認", "審査なし", "Aprobación garantizada",
+                           "Sin verificación de crédito"):
+                assert_flagged(self, path, sample, "금지 문구")
+
+    def test_ordinary_ja_and_es_text_passes(self):
+        texts = ["延長保証", "購入保護と延長保証", "年間$300の旅行クレジット", "承認はカード会社が判断します",
+                 "審査はカード会社が行います", "ポイントの有効期限なし", "年会費無料",
+                 "Garantía extendida", "La aprobación depende del emisor",
+                 "Salida tardía garantizada", "Crédito anual de $300 para viajes",
+                 "Sin cargos por transacciones en el extranjero", "Sin cuota anual",
+                 "Se requiere verificación de crédito", "Sin límite de reembolso en efectivo"]
+        for path in ("bonus.current.note_ja", "benefits[0].es"):
+            for text in texts:
+                with self.subTest(path=path, text=text):
+                    self.assertEqual(check(with_value(make_card(), path, text)), [])
+
+    def test_long_whitespace_runs_stay_fast(self):
+        import time
+
+        from cardlib import phrases
+
+        for head in ("承認", "事前", "与信審査", "審査", "審査に", "必ず", "必ず審査", "保証",
+                     "保証された", "aprobación", "sin", "sin verificación de", "probabilidad de",
+                     "garantizamos", "pre"):
+            text = head + " " * 64000 + "x"
+            with self.subTest(head=head):
+                started = time.perf_counter()
+                self.assertIsNone(phrases.find_forbidden_phrase(text))
+                self.assertLess(time.perf_counter() - started, 1.0)
+        for head in ("マイル", "ドクター", "ドクター オブ", "フリークエント", "ポインツ", "ザ", "ザ ポイント"):
+            text = head + " " * 64000 + "x"
+            with self.subTest(community_head=head):
+                started = time.perf_counter()
+                self.assertIsNone(phrases.find_community_marker(text))
+                self.assertLess(time.perf_counter() - started, 1.0)
+
+
+class JapaneseCommunityNameTest(unittest.TestCase):
+    """Community sources written in katakana fail too (Spanish uses the Latin names)."""
+
+    MARKERS = ("マイルモア", "マイル・モア", "ドクターオブクレジット", "ドクター・オブ・クレジット",
+               "フリークエントマイラー", "フリークエント・マイラー", "レディット", "ﾚﾃﾞｨｯﾄ",
+               "ザ・ポイント・ガイ", "ポインツガイ", "ザ・ポインツ・ガイ")
+
+    def test_katakana_names_are_caught(self):
+        for marker in self.MARKERS:
+            with self.subTest(marker=marker):
+                self.assertIsNotNone(rules.find_community_marker(marker))
+        for path in JA_ES_PATHS:
+            assert_flagged(self, path, "レディットで見た", "커뮤니티")
+
+    def test_ordinary_katakana_passes(self):
+        for text in ("年間$300の旅行クレジット", "クレディット", "ポイントガイド", "ポイント",
+                     "マイル", "ドクター"):
+            with self.subTest(text=text):
+                self.assertIsNone(rules.find_community_marker(text))

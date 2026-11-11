@@ -76,6 +76,38 @@ class PublicCardTest(unittest.TestCase):
         self.assertNotIn("note_en", public["bonus"]["usual"])
         self.assertNotIn("category_ko", public["earn"][0])
 
+    def test_ja_and_es_texts_are_published_after_ko(self):
+        card = make_card()
+        for path, text in (("bonus.current.note_es", "Nota"), ("bonus.current.note_ja", "説明"),
+                           ("bonus.usual.note_ja", "通常"), ("bonus.usual.note_es", "Habitual"),
+                           ("earn[0].category_es", "Viajes"), ("earn[0].category_ja", "旅行"),
+                           ("benefits[0].es", "Seguro"), ("benefits[0].ja", "保険")):
+            card = with_value(card, path, text)
+        public = public_card(card, TODAY)
+        self.assertEqual(public["bonus"]["current"], {
+            "parts": [{"value": 75000, "unit": "points"}], "min_spend": 4000,
+            "spend_months": 3, "note_en": "Sample note", "note_ko": "샘플 설명",
+            "note_ja": "説明", "note_es": "Nota"})
+        self.assertEqual(list(public["bonus"]["current"])[-4:],
+                         ["note_en", "note_ko", "note_ja", "note_es"])
+        self.assertEqual(list(public["bonus"]["usual"]),
+                         ["parts", "note_en", "note_ko", "note_ja", "note_es"])
+        self.assertEqual(list(public["earn"][0].items()), [
+            ("category_en", "Travel"), ("category_ko", "여행"), ("category_ja", "旅行"),
+            ("category_es", "Viajes"), ("rate", 2), ("unit", "points")])
+        self.assertEqual(list(public["benefits"][0].items()), [
+            ("en", "Trip delay insurance"), ("ko", "여행 지연 보험"), ("ja", "保険"),
+            ("es", "Seguro")])
+
+    def test_empty_blank_or_null_ja_and_es_are_omitted(self):
+        card = make_card()
+        for path, value in (("bonus.current.note_ja", ""), ("bonus.current.note_es", "  "),
+                            ("bonus.usual.note_ja", None), ("earn[0].category_ja", "\t"),
+                            ("earn[0].category_es", None), ("benefits[0].ja", ""),
+                            ("benefits[0].es", "   ")):
+            card = with_value(card, path, value)
+        self.assertEqual(public_card(card, TODAY), public_card(make_card(), TODAY))
+
     def test_no_elevated_means_null_offer(self):
         self.assertIsNone(public_card(without(make_card(), "elevated"), TODAY)["offer"])
         self.assertIsNone(public_card(with_value(make_card(), "elevated", None), TODAY)["offer"])

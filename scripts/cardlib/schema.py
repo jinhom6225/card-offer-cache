@@ -11,7 +11,7 @@ from .rules import check_text_content
 from .urls import ISSUER_DOMAINS, is_issuer_url
 
 __all__ = ["CardFileError", "CardLoader", "load_cards", "validate", "parse_date",
-           "today_pt", "CARD_SPEC"]
+           "today_pt", "CARD_SPEC", "TRANSLATION_LANGS"]
 
 PACIFIC = ZoneInfo("America/Los_Angeles")
 EXPECTED_CARD_COUNT = 30
@@ -23,8 +23,17 @@ ID_HINT = "소문자·숫자와 '-'만 쓰세요(예: chase-sapphire-preferred).
 WHOLE_FILE = "전체"
 
 
+# Optional translations (plan A7). Blank = the app shows the English text.
+TRANSLATION_LANGS = ("ko", "ja", "es")
+
+
 def _optional_text():
     return Text(required=False)
+
+
+def _translations(prefix):
+    """``{prefix}ko``, ``{prefix}ja``, ``{prefix}es`` as optional texts (e.g. ``note_ko``)."""
+    return {f"{prefix}{lang}": _optional_text() for lang in TRANSLATION_LANGS}
 
 
 def _strict(fields, required=True):
@@ -42,12 +51,12 @@ _BONUS = _strict({
         "min_spend": Number(),
         "spend_months": Number(minimum=1, integer=True),
         "note_en": _optional_text(),
-        "note_ko": _optional_text(),
+        **_translations("note_"),
     }),
     "usual": _strict({
         "parts": _parts(),
         "note_en": _optional_text(),
-        "note_ko": _optional_text(),
+        **_translations("note_"),
     }),
 })
 
@@ -65,11 +74,11 @@ CARD_SPEC = Mapping({
     "elevated": _strict({"start": Date(), "end": Date(required=False)}, required=False),
     "earn": ListOf(Mapping({
         "category_en": Text(),
-        "category_ko": _optional_text(),
+        **_translations("category_"),
         "rate": Number(above_minimum=True),
         "unit": Text(choices=EARN_UNITS),
     })),
-    "benefits": ListOf(Mapping({"en": Text(), "ko": _optional_text()}), min_items=0),
+    "benefits": ListOf(Mapping({"en": Text(), **_translations("")}), min_items=0),
 })
 
 
