@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "generated_at": "2026-11-11T05:56:41Z",
+  "generated_at": "2026-11-12T18:25:43Z",
   "data_updated_at": "2026-11-11T04:08:53Z",
   "cards": [
     {
@@ -715,10 +715,10 @@
       },
       "offer": {
         "id": "chase-marriott-bonvoy-boundless@2026-11-09",
-        "status": "active",
+        "status": "ended",
         "start": "2026-11-09",
         "end": "2026-11-11",
-        "ended_auto": false
+        "ended_auto": true
       },
       "earn": [
         {
@@ -776,6 +776,16 @@
         {
           "date": "2026-11-09",
           "type": "elevated",
+          "current_parts": [
+            {
+              "value": 200000,
+              "unit": "points"
+            }
+          ]
+        },
+        {
+          "date": "2026-11-12",
+          "type": "ended",
           "current_parts": [
             {
               "value": 200000,

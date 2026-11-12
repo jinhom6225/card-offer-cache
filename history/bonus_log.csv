@@ -33,3 +33,4 @@ date,card_id,issuer,current,min_spend,spend_months,usual,elevated,offer_id,offer
 2026-11-09,bank-of-america-premium-rewards,Bank of America,60000 points,4000,3,60000 points,no,,,2026-11-09,added
 2026-11-09,sample-travel-card,Chase,,,,,,,,,removed
 2026-11-09,sample-business-cash,American Express,,,,,,,,,removed
+2026-11-12,chase-marriott-bonvoy-boundless,Chase,200000 points,3000,3,3 free_night,no,chase-marriott-bonvoy-boundless@2026-11-09,2026-11-11,2026-11-09,
