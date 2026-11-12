@@ -466,7 +466,7 @@ cards:
     issuer: Chase
     segment: personal
     official_url: https://creditcards.chase.com/travel-credit-cards/marriott-bonvoy/boundless
-    last_verified: 2026-11-09
+    last_verified: 2026-11-12
     sources:
       - https://creditcards.chase.com/travel-credit-cards/marriott-bonvoy/boundless
     annual_fee:
@@ -480,10 +480,10 @@ cards:
             unit: points
         min_spend: 3000
         spend_months: 3
-        note_en: "Limited-time offer, ends November 11, 2026. The up-to-$100 airline credit is a separate cardmember offer, not part of the bonus."
-        note_ko: "기간 한정 오퍼, 2026-11-11 종료. 최대 $100 항공 크레딧은 보너스가 아닌 별도 회원 혜택."
-        note_ja: "期間限定オファーで、2026年11月11日に終了します。最大$100の航空クレジットはボーナスではなく、別のカード会員向け特典です。"
-        note_es: "Oferta por tiempo limitado; termina el 11 de noviembre de 2026. El crédito aéreo de hasta $100 es una oferta aparte para tarjetahabientes y no forma parte del bono."
+        note_en: "Limited-time offer with no end date stated. The up-to-$100 airline credit is a separate cardmember offer, not part of the bonus."
+        note_ko: "기간 한정 오퍼, 종료일 미정. 최대 $100 항공 크레딧은 보너스가 아닌 별도 회원 혜택."
+        note_ja: "期間限定オファーで、終了日は未定です。最大$100の航空クレジットはボーナスではなく、別のカード会員向け特典です。"
+        note_es: "Oferta por tiempo limitado, sin fecha de finalización indicada. El crédito aéreo de hasta $100 es una oferta aparte para tarjetahabientes y no forma parte del bono."
       usual:
         # 진호님 결정 2026-11-10 (오퍼 기록 2곳 이상 확인)
         parts:
@@ -494,8 +494,8 @@ cards:
         note_ja: "無料宿泊特典は1回につき、50,000ポイント以下の宿泊1泊に使えます。"
         note_es: "Cada certificado de noche gratis vale para una noche de hasta 50,000 puntos."
     elevated:
+      # 2026-11-12 Chase 페이지 재확인: "This week only", 종료일 없음 → end 삭제 (같은 오퍼 연장, start 유지)
       start: 2026-11-09
-      end: 2026-11-11
     earn:
       - category_en: Marriott Bonvoy hotels (more with member and status points)
         category_ko: Marriott Bonvoy 호텔(회원·등급 적립이 더해짐)
