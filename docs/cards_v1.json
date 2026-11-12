@@ -1,7 +1,7 @@
 {
   "schema": 1,
-  "generated_at": "2026-11-12T18:25:43Z",
-  "data_updated_at": "2026-11-11T04:08:53Z",
+  "generated_at": "2026-11-12T19:31:39Z",
+  "data_updated_at": "2026-11-12T19:27:35Z",
   "cards": [
     {
       "id": "chase-sapphire-preferred",
@@ -679,7 +679,7 @@
       "issuer": "Chase",
       "segment": "personal",
       "official_url": "https://creditcards.chase.com/travel-credit-cards/marriott-bonvoy/boundless",
-      "last_verified": "2026-11-09",
+      "last_verified": "2026-11-12",
       "annual_fee": {
         "amount": 95,
         "first_year_waived": false
@@ -695,10 +695,10 @@
           ],
           "min_spend": 3000,
           "spend_months": 3,
-          "note_en": "Limited-time offer, ends November 11, 2026. The up-to-$100 airline credit is a separate cardmember offer, not part of the bonus.",
-          "note_ko": "기간 한정 오퍼, 2026-11-11 종료. 최대 $100 항공 크레딧은 보너스가 아닌 별도 회원 혜택.",
-          "note_ja": "期間限定オファーで、2026年11月11日に終了します。最大$100の航空クレジットはボーナスではなく、別のカード会員向け特典です。",
-          "note_es": "Oferta por tiempo limitado; termina el 11 de noviembre de 2026. El crédito aéreo de hasta $100 es una oferta aparte para tarjetahabientes y no forma parte del bono."
+          "note_en": "Limited-time offer with no end date stated. The up-to-$100 airline credit is a separate cardmember offer, not part of the bonus.",
+          "note_ko": "기간 한정 오퍼, 종료일 미정. 최대 $100 항공 크레딧은 보너스가 아닌 별도 회원 혜택.",
+          "note_ja": "期間限定オファーで、終了日は未定です。最大$100の航空クレジットはボーナスではなく、別のカード会員向け特典です。",
+          "note_es": "Oferta por tiempo limitado, sin fecha de finalización indicada. El crédito aéreo de hasta $100 es una oferta aparte para tarjetahabientes y no forma parte del bono."
         },
         "usual": {
           "parts": [
@@ -715,10 +715,10 @@
       },
       "offer": {
         "id": "chase-marriott-bonvoy-boundless@2026-11-09",
-        "status": "ended",
+        "status": "active",
         "start": "2026-11-09",
-        "end": "2026-11-11",
-        "ended_auto": true
+        "end": null,
+        "ended_auto": false
       },
       "earn": [
         {
@@ -786,6 +786,16 @@
         {
           "date": "2026-11-12",
           "type": "ended",
+          "current_parts": [
+            {
+              "value": 200000,
+              "unit": "points"
+            }
+          ]
+        },
+        {
+          "date": "2026-11-12",
+          "type": "elevated",
           "current_parts": [
             {
               "value": 200000,
