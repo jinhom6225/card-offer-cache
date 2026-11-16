@@ -1,7 +1,7 @@
 {
   "schema": 1,
-  "generated_at": "2026-11-12T19:31:39Z",
-  "data_updated_at": "2026-11-12T19:27:35Z",
+  "generated_at": "2026-11-16T02:47:34Z",
+  "data_updated_at": "2026-11-16T02:46:06Z",
   "cards": [
     {
       "id": "chase-sapphire-preferred",
@@ -679,7 +679,7 @@
       "issuer": "Chase",
       "segment": "personal",
       "official_url": "https://creditcards.chase.com/travel-credit-cards/marriott-bonvoy/boundless",
-      "last_verified": "2026-11-12",
+      "last_verified": "2026-11-15",
       "annual_fee": {
         "amount": 95,
         "first_year_waived": false
@@ -689,16 +689,16 @@
         "current": {
           "parts": [
             {
-              "value": 200000,
-              "unit": "points"
+              "value": 3,
+              "unit": "free_night"
             }
           ],
           "min_spend": 3000,
           "spend_months": 3,
-          "note_en": "Limited-time offer with no end date stated. The up-to-$100 airline credit is a separate cardmember offer, not part of the bonus.",
-          "note_ko": "기간 한정 오퍼, 종료일 미정. 최대 $100 항공 크레딧은 보너스가 아닌 별도 회원 혜택.",
-          "note_ja": "期間限定オファーで、終了日は未定です。最大$100の航空クレジットはボーナスではなく、別のカード会員向け特典です。",
-          "note_es": "Oferta por tiempo limitado, sin fecha de finalización indicada. El crédito aéreo de hasta $100 es una oferta aparte para tarjetahabientes y no forma parte del bono."
+          "note_en": "Each free night award is good for a night costing up to 50,000 points.",
+          "note_ko": "무료 숙박권 1장당 50,000포인트 이하 숙박 1박.",
+          "note_ja": "無料宿泊特典は1回につき、50,000ポイント以下の宿泊1泊に使えます。",
+          "note_es": "Cada certificado de noche gratis vale para una noche de hasta 50,000 puntos."
         },
         "usual": {
           "parts": [
@@ -713,13 +713,7 @@
           "note_es": "Cada certificado de noche gratis vale para una noche de hasta 50,000 puntos."
         }
       },
-      "offer": {
-        "id": "chase-marriott-bonvoy-boundless@2026-11-09",
-        "status": "active",
-        "start": "2026-11-09",
-        "end": null,
-        "ended_auto": false
-      },
+      "offer": null,
       "earn": [
         {
           "category_en": "Marriott Bonvoy hotels (more with member and status points)",
@@ -800,6 +794,16 @@
             {
               "value": 200000,
               "unit": "points"
+            }
+          ]
+        },
+        {
+          "date": "2026-11-15",
+          "type": "ended",
+          "current_parts": [
+            {
+              "value": 3,
+              "unit": "free_night"
             }
           ]
         }
