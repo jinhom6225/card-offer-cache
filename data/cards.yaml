@@ -536,7 +536,7 @@ cards:
     issuer: Chase
     segment: personal
     official_url: https://creditcards.chase.com/travel-credit-cards/ihg-rewards-club/premier
-    last_verified: 2026-11-09
+    last_verified: 2026-11-17
     sources:
       - https://creditcards.chase.com/travel-credit-cards/ihg-rewards-club/premier
     annual_fee:
@@ -545,23 +545,21 @@ cards:
     foreign_tx_fee_pct: 0
     bonus:
       current:
+        # 2026-11-17 Chase 페이지 확인: 180,000포인트 한정 오퍼 종료 → 평소 보너스(140,000포인트)
         parts:
-          - value: 180000
+          - value: 140000
             unit: points
         min_spend: 3000
         spend_months: 3
-        note_en: "Plus 10,000 points for adding an authorized user in the first 3 months. Apply by November 18, 2026."
-        note_ko: "첫 3개월 안에 추가 카드 사용자를 넣으면 10,000포인트 더. 2026-11-18까지 신청."
-        note_ja: "最初の3か月以内に追加カード会員を加えると、さらに10,000ポイントが加算されます。申し込みは2026年11月18日までです。"
-        note_es: "Más 10,000 puntos por agregar un usuario autorizado en los primeros 3 meses. Solicitud hasta el 18 de noviembre de 2026."
+        note_en: "Plus 10,000 points for adding an authorized user in the first 3 months."
+        note_ko: "첫 3개월 안에 추가 카드 사용자를 넣으면 10,000포인트 더."
+        note_ja: "最初の3か月以内に追加カード会員を加えると、さらに10,000ポイントが加算されます。"
+        note_es: "Más 10,000 puntos por agregar un usuario autorizado en los primeros 3 meses."
       usual:
         # 진호님 결정 2026-11-10 (오퍼 기록 2곳 이상 확인)
         parts:
           - value: 140000
             unit: points
-    elevated:
-      start: 2026-11-09
-      end: 2026-11-18
     earn:
       - category_en: IHG hotels (more with member and status points)
         category_ko: IHG 호텔(회원·등급 적립이 더해짐)
@@ -1447,7 +1445,7 @@ cards:
     issuer: Citi
     segment: personal
     official_url: https://www.citi.com/credit-cards/citi-double-cash-credit-card
-    last_verified: 2026-11-09
+    last_verified: 2026-11-17
     sources:
       - https://www.citi.com/credit-cards/citi-double-cash-credit-card
     annual_fee:
@@ -1459,8 +1457,9 @@ cards:
         parts:
           - value: 200
             unit: cash
-        min_spend: 1500
-        spend_months: 6
+        # 2026-11-17 Citi 페이지 확인: 조건이 $1,500·6개월 → $500·3개월로 바뀜(금액 $200은 같음, 높음 표시 없음)
+        min_spend: 500
+        spend_months: 3
         note_en: "Paid as ThankYou points that you can redeem for $200 cash back."
         note_ko: "ThankYou 포인트로 지급되며 $200 캐시백으로 바꿀 수 있음."
         note_ja: "ThankYouポイントとして付与され、$200のキャッシュバックに交換できます。"
