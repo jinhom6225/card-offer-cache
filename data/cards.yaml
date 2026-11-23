@@ -12,7 +12,7 @@ cards:
     issuer: Chase
     segment: personal
     official_url: https://creditcards.chase.com/rewards-credit-cards/sapphire/preferred
-    last_verified: 2026-11-17
+    last_verified: 2026-11-23
     sources:
       - https://creditcards.chase.com/rewards-credit-cards/sapphire/preferred
     annual_fee:
@@ -94,7 +94,7 @@ cards:
     issuer: Chase
     segment: personal
     official_url: https://creditcards.chase.com/rewards-credit-cards/sapphire/reserve
-    last_verified: 2026-11-17
+    last_verified: 2026-11-23
     sources:
       - https://creditcards.chase.com/rewards-credit-cards/sapphire/reserve
     annual_fee:
@@ -174,7 +174,7 @@ cards:
     issuer: Chase
     segment: personal
     official_url: https://creditcards.chase.com/cash-back-credit-cards/freedom/unlimited
-    last_verified: 2026-11-17
+    last_verified: 2026-11-23
     sources:
       - https://creditcards.chase.com/cash-back-credit-cards/freedom/unlimited
     annual_fee:
@@ -240,7 +240,7 @@ cards:
     issuer: Chase
     segment: personal
     official_url: https://creditcards.chase.com/cash-back-credit-cards/freedom/flex
-    last_verified: 2026-11-17
+    last_verified: 2026-11-23
     sources:
       - https://creditcards.chase.com/cash-back-credit-cards/freedom/flex
     annual_fee:
@@ -312,7 +312,7 @@ cards:
     issuer: Chase
     segment: personal
     official_url: https://creditcards.chase.com/travel-credit-cards/united/united-explorer
-    last_verified: 2026-11-17
+    last_verified: 2026-11-23
     sources:
       - https://creditcards.chase.com/travel-credit-cards/united/united-explorer
     annual_fee:
@@ -394,7 +394,7 @@ cards:
     issuer: Chase
     segment: personal
     official_url: https://creditcards.chase.com/travel-credit-cards/southwest/plus
-    last_verified: 2026-11-17
+    last_verified: 2026-11-23
     sources:
       - https://creditcards.chase.com/travel-credit-cards/southwest/plus
     annual_fee:
@@ -466,7 +466,7 @@ cards:
     issuer: Chase
     segment: personal
     official_url: https://creditcards.chase.com/travel-credit-cards/marriott-bonvoy/boundless
-    last_verified: 2026-11-15
+    last_verified: 2026-11-23
     sources:
       - https://creditcards.chase.com/travel-credit-cards/marriott-bonvoy/boundless
     annual_fee:
@@ -536,7 +536,7 @@ cards:
     issuer: Chase
     segment: personal
     official_url: https://creditcards.chase.com/travel-credit-cards/ihg-rewards-club/premier
-    last_verified: 2026-11-17
+    last_verified: 2026-11-23
     sources:
       - https://creditcards.chase.com/travel-credit-cards/ihg-rewards-club/premier
     annual_fee:
@@ -606,7 +606,7 @@ cards:
     issuer: Chase
     segment: personal
     official_url: https://creditcards.chase.com/travel-credit-cards/world-of-hyatt-credit-card
-    last_verified: 2026-11-17
+    last_verified: 2026-11-23
     sources:
       - https://creditcards.chase.com/travel-credit-cards/world-of-hyatt-credit-card
     annual_fee:
@@ -679,7 +679,7 @@ cards:
     issuer: Chase
     segment: business
     official_url: https://creditcards.chase.com/business-credit-cards/ink/business-preferred
-    last_verified: 2026-11-17
+    last_verified: 2026-11-23
     sources:
       - https://creditcards.chase.com/business-credit-cards/ink/business-preferred
     annual_fee:
@@ -733,7 +733,7 @@ cards:
     issuer: Chase
     segment: business
     official_url: https://creditcards.chase.com/business-credit-cards/ink/cash
-    last_verified: 2026-11-17
+    last_verified: 2026-11-23
     sources:
       - https://creditcards.chase.com/business-credit-cards/ink/cash
     annual_fee:
@@ -789,7 +789,7 @@ cards:
     issuer: Chase
     segment: business
     official_url: https://creditcards.chase.com/business-credit-cards/ink/unlimited
-    last_verified: 2026-11-17
+    last_verified: 2026-11-23
     sources:
       - https://creditcards.chase.com/business-credit-cards/ink/unlimited
     annual_fee:
@@ -834,7 +834,7 @@ cards:
     issuer: American Express
     segment: personal
     official_url: https://www.americanexpress.com/us/credit-cards/card/platinum/
-    last_verified: 2026-11-17
+    last_verified: 2026-11-23
     sources:
       - https://www.americanexpress.com/us/credit-cards/card/platinum/
     annual_fee:
@@ -907,7 +907,7 @@ cards:
     issuer: American Express
     segment: personal
     official_url: https://www.americanexpress.com/us/credit-cards/card/gold-card/
-    last_verified: 2026-11-17
+    last_verified: 2026-11-23
     sources:
       - https://www.americanexpress.com/us/credit-cards/card/gold-card/
     annual_fee:
@@ -994,7 +994,7 @@ cards:
     issuer: American Express
     segment: personal
     official_url: https://www.americanexpress.com/us/credit-cards/card/blue-cash-preferred/
-    last_verified: 2026-11-17
+    last_verified: 2026-11-23
     sources:
       - https://www.americanexpress.com/us/credit-cards/card/blue-cash-preferred/
     annual_fee:
@@ -1067,7 +1067,7 @@ cards:
     issuer: American Express
     segment: personal
     official_url: https://www.americanexpress.com/us/credit-cards/card/delta-skymiles-gold-american-express-card/
-    last_verified: 2026-11-17
+    last_verified: 2026-11-23
     sources:
       - https://www.americanexpress.com/us/credit-cards/card/delta-skymiles-gold-american-express-card/
     annual_fee:
@@ -1142,7 +1142,7 @@ cards:
     issuer: American Express
     segment: personal
     official_url: https://www.americanexpress.com/us/credit-cards/card/hilton-honors-surpass/
-    last_verified: 2026-11-17
+    last_verified: 2026-11-23
     sources:
       - https://www.americanexpress.com/us/credit-cards/card/hilton-honors-surpass/
     annual_fee:
@@ -1227,7 +1227,7 @@ cards:
     issuer: American Express
     segment: business
     official_url: https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/american-express-business-platinum-credit-card-amex/65147/
-    last_verified: 2026-11-17
+    last_verified: 2026-11-23
     sources:
       - https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/american-express-business-platinum-credit-card-amex/65147/
     annual_fee:
@@ -1300,7 +1300,7 @@ cards:
     issuer: American Express
     segment: business
     official_url: https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/american-express-business-gold-card-amex/
-    last_verified: 2026-11-17
+    last_verified: 2026-11-23
     sources:
       - https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/american-express-business-gold-card-amex/
     annual_fee:
@@ -1366,7 +1366,7 @@ cards:
     issuer: Citi
     segment: personal
     official_url: https://www.citi.com/credit-cards/citi-strata-premier-credit-card
-    last_verified: 2026-11-17
+    last_verified: 2026-11-23
     sources:
       - https://www.citi.com/credit-cards/citi-strata-premier-credit-card
     annual_fee:
@@ -1445,7 +1445,7 @@ cards:
     issuer: Citi
     segment: personal
     official_url: https://www.citi.com/credit-cards/citi-double-cash-credit-card
-    last_verified: 2026-11-17
+    last_verified: 2026-11-23
     sources:
       - https://www.citi.com/credit-cards/citi-double-cash-credit-card
     annual_fee:
@@ -1509,7 +1509,7 @@ cards:
     issuer: Citi
     segment: personal
     official_url: https://www.citi.com/credit-cards/citi-strata-credit-card
-    last_verified: 2026-11-17
+    last_verified: 2026-11-23
     sources:
       - https://www.citi.com/credit-cards/citi-strata-credit-card
     annual_fee:
@@ -1592,7 +1592,7 @@ cards:
     issuer: Citi
     segment: personal
     official_url: https://www.citi.com/credit-cards/citi-aadvantage-platinum-select-world-elite-mastercard
-    last_verified: 2026-11-17
+    last_verified: 2026-11-23
     sources:
       - https://www.citi.com/credit-cards/citi-aadvantage-platinum-select-world-elite-mastercard
     annual_fee:
@@ -1668,7 +1668,7 @@ cards:
     issuer: Capital One
     segment: personal
     official_url: https://www.capitalone.com/credit-cards/venture-x/
-    last_verified: 2026-11-17
+    last_verified: 2026-11-23
     sources:
       - https://www.capitalone.com/credit-cards/venture-x/
     annual_fee:
@@ -1743,7 +1743,7 @@ cards:
     issuer: Capital One
     segment: personal
     official_url: https://www.capitalone.com/credit-cards/venture/
-    last_verified: 2026-11-17
+    last_verified: 2026-11-23
     sources:
       - https://www.capitalone.com/credit-cards/venture/
     annual_fee:
@@ -1818,7 +1818,7 @@ cards:
     issuer: Capital One
     segment: personal
     official_url: https://www.capitalone.com/credit-cards/savor/
-    last_verified: 2026-11-17
+    last_verified: 2026-11-23
     sources:
       - https://www.capitalone.com/credit-cards/savor/
     annual_fee:
@@ -1898,7 +1898,7 @@ cards:
     issuer: Discover
     segment: personal
     official_url: https://www.discover.com/credit-cards/cash-back/it-card/
-    last_verified: 2026-11-17
+    last_verified: 2026-11-23
     sources:
       - https://www.discover.com/credit-cards/cash-back/it-card/
     annual_fee:
@@ -1976,7 +1976,7 @@ cards:
     issuer: Wells Fargo
     segment: personal
     official_url: https://creditcards.wellsfargo.com/active-cash-credit-card/
-    last_verified: 2026-11-17
+    last_verified: 2026-11-23
     sources:
       - https://creditcards.wellsfargo.com/active-cash-credit-card/
       - https://www.wellsfargo.com/credit-cards/active-cash/terms/
@@ -2034,7 +2034,7 @@ cards:
     issuer: Wells Fargo
     segment: personal
     official_url: https://creditcards.wellsfargo.com/autograph-visa-credit-card/
-    last_verified: 2026-11-17
+    last_verified: 2026-11-23
     sources:
       - https://creditcards.wellsfargo.com/autograph-visa-credit-card/
       - https://www.wellsfargo.com/credit-cards/autograph-visa/terms/
@@ -2119,7 +2119,7 @@ cards:
     issuer: Bank of America
     segment: personal
     official_url: https://www.bankofamerica.com/credit-cards/products/premium-rewards-credit-card/
-    last_verified: 2026-11-17
+    last_verified: 2026-11-23
     sources:
       - https://www.bankofamerica.com/credit-cards/products/premium-rewards-credit-card/
       - https://www.bankofamerica.com/credit-cards/terms-and-conditions/?campaignid=4079485&productoffercode=UN&locale=en_US
