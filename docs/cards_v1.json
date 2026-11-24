@@ -1,7 +1,7 @@
 {
   "schema": 1,
-  "generated_at": "2026-11-17T20:13:27Z",
-  "data_updated_at": "2026-11-17T20:06:04Z",
+  "generated_at": "2026-11-24T08:01:45Z",
+  "data_updated_at": "2026-11-23T22:31:50Z",
   "cards": [
     {
       "id": "chase-sapphire-preferred",
@@ -9,7 +9,7 @@
       "issuer": "Chase",
       "segment": "personal",
       "official_url": "https://creditcards.chase.com/rewards-credit-cards/sapphire/preferred",
-      "last_verified": "2026-11-17",
+      "last_verified": "2026-11-23",
       "annual_fee": {
         "amount": 95,
         "first_year_waived": false
@@ -126,7 +126,7 @@
       "issuer": "Chase",
       "segment": "personal",
       "official_url": "https://creditcards.chase.com/rewards-credit-cards/sapphire/reserve",
-      "last_verified": "2026-11-17",
+      "last_verified": "2026-11-23",
       "annual_fee": {
         "amount": 795,
         "first_year_waived": false
@@ -241,7 +241,7 @@
       "issuer": "Chase",
       "segment": "personal",
       "official_url": "https://creditcards.chase.com/cash-back-credit-cards/freedom/unlimited",
-      "last_verified": "2026-11-17",
+      "last_verified": "2026-11-23",
       "annual_fee": {
         "amount": 0,
         "first_year_waived": false
@@ -336,7 +336,7 @@
       "issuer": "Chase",
       "segment": "personal",
       "official_url": "https://creditcards.chase.com/cash-back-credit-cards/freedom/flex",
-      "last_verified": "2026-11-17",
+      "last_verified": "2026-11-23",
       "annual_fee": {
         "amount": 0,
         "first_year_waived": false
@@ -439,7 +439,7 @@
       "issuer": "Chase",
       "segment": "personal",
       "official_url": "https://creditcards.chase.com/travel-credit-cards/united/united-explorer",
-      "last_verified": "2026-11-17",
+      "last_verified": "2026-11-23",
       "annual_fee": {
         "amount": 150,
         "first_year_waived": true
@@ -565,7 +565,7 @@
       "issuer": "Chase",
       "segment": "personal",
       "official_url": "https://creditcards.chase.com/travel-credit-cards/southwest/plus",
-      "last_verified": "2026-11-17",
+      "last_verified": "2026-11-23",
       "annual_fee": {
         "amount": 99,
         "first_year_waived": false
@@ -679,7 +679,7 @@
       "issuer": "Chase",
       "segment": "personal",
       "official_url": "https://creditcards.chase.com/travel-credit-cards/marriott-bonvoy/boundless",
-      "last_verified": "2026-11-15",
+      "last_verified": "2026-11-23",
       "annual_fee": {
         "amount": 95,
         "first_year_waived": false
@@ -815,7 +815,7 @@
       "issuer": "Chase",
       "segment": "personal",
       "official_url": "https://creditcards.chase.com/travel-credit-cards/ihg-rewards-club/premier",
-      "last_verified": "2026-11-17",
+      "last_verified": "2026-11-23",
       "annual_fee": {
         "amount": 150,
         "first_year_waived": false
@@ -933,7 +933,7 @@
       "issuer": "Chase",
       "segment": "personal",
       "official_url": "https://creditcards.chase.com/travel-credit-cards/world-of-hyatt-credit-card",
-      "last_verified": "2026-11-17",
+      "last_verified": "2026-11-23",
       "annual_fee": {
         "amount": 95,
         "first_year_waived": false
@@ -1045,7 +1045,7 @@
       "issuer": "Chase",
       "segment": "business",
       "official_url": "https://creditcards.chase.com/business-credit-cards/ink/business-preferred",
-      "last_verified": "2026-11-17",
+      "last_verified": "2026-11-23",
       "annual_fee": {
         "amount": 95,
         "first_year_waived": false
@@ -1124,7 +1124,7 @@
       "issuer": "Chase",
       "segment": "business",
       "official_url": "https://creditcards.chase.com/business-credit-cards/ink/cash",
-      "last_verified": "2026-11-17",
+      "last_verified": "2026-11-23",
       "annual_fee": {
         "amount": 0,
         "first_year_waived": false
@@ -1205,7 +1205,7 @@
       "issuer": "Chase",
       "segment": "business",
       "official_url": "https://creditcards.chase.com/business-credit-cards/ink/unlimited",
-      "last_verified": "2026-11-17",
+      "last_verified": "2026-11-23",
       "annual_fee": {
         "amount": 0,
         "first_year_waived": false
@@ -1270,7 +1270,7 @@
       "issuer": "American Express",
       "segment": "personal",
       "official_url": "https://www.americanexpress.com/us/credit-cards/card/platinum/",
-      "last_verified": "2026-11-17",
+      "last_verified": "2026-11-23",
       "annual_fee": {
         "amount": 895,
         "first_year_waived": false
@@ -1373,7 +1373,7 @@
       "issuer": "American Express",
       "segment": "personal",
       "official_url": "https://www.americanexpress.com/us/credit-cards/card/gold-card/",
-      "last_verified": "2026-11-17",
+      "last_verified": "2026-11-23",
       "annual_fee": {
         "amount": 325,
         "first_year_waived": false
@@ -1494,7 +1494,7 @@
       "issuer": "American Express",
       "segment": "personal",
       "official_url": "https://www.americanexpress.com/us/credit-cards/card/blue-cash-preferred/",
-      "last_verified": "2026-11-17",
+      "last_verified": "2026-11-23",
       "annual_fee": {
         "amount": 95,
         "first_year_waived": true
@@ -1595,7 +1595,7 @@
       "issuer": "American Express",
       "segment": "personal",
       "official_url": "https://www.americanexpress.com/us/credit-cards/card/delta-skymiles-gold-american-express-card/",
-      "last_verified": "2026-11-17",
+      "last_verified": "2026-11-23",
       "annual_fee": {
         "amount": 150,
         "first_year_waived": true
@@ -1700,7 +1700,7 @@
       "issuer": "American Express",
       "segment": "personal",
       "official_url": "https://www.americanexpress.com/us/credit-cards/card/hilton-honors-surpass/",
-      "last_verified": "2026-11-17",
+      "last_verified": "2026-11-23",
       "annual_fee": {
         "amount": 150,
         "first_year_waived": false
@@ -1834,7 +1834,7 @@
       "issuer": "American Express",
       "segment": "business",
       "official_url": "https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/american-express-business-platinum-credit-card-amex/65147/",
-      "last_verified": "2026-11-17",
+      "last_verified": "2026-11-23",
       "annual_fee": {
         "amount": 895,
         "first_year_waived": false
@@ -1937,7 +1937,7 @@
       "issuer": "American Express",
       "segment": "business",
       "official_url": "https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/american-express-business-gold-card-amex/",
-      "last_verified": "2026-11-17",
+      "last_verified": "2026-11-23",
       "annual_fee": {
         "amount": 375,
         "first_year_waived": false
@@ -2028,7 +2028,7 @@
       "issuer": "Citi",
       "segment": "personal",
       "official_url": "https://www.citi.com/credit-cards/citi-strata-premier-credit-card",
-      "last_verified": "2026-11-17",
+      "last_verified": "2026-11-23",
       "annual_fee": {
         "amount": 95,
         "first_year_waived": false
@@ -2139,7 +2139,7 @@
       "issuer": "Citi",
       "segment": "personal",
       "official_url": "https://www.citi.com/credit-cards/citi-double-cash-credit-card",
-      "last_verified": "2026-11-17",
+      "last_verified": "2026-11-23",
       "annual_fee": {
         "amount": 0,
         "first_year_waived": false
@@ -2228,7 +2228,7 @@
       "issuer": "Citi",
       "segment": "personal",
       "official_url": "https://www.citi.com/credit-cards/citi-strata-credit-card",
-      "last_verified": "2026-11-17",
+      "last_verified": "2026-11-23",
       "annual_fee": {
         "amount": 0,
         "first_year_waived": false
@@ -2345,7 +2345,7 @@
       "issuer": "Citi",
       "segment": "personal",
       "official_url": "https://www.citi.com/credit-cards/citi-aadvantage-platinum-select-world-elite-mastercard",
-      "last_verified": "2026-11-17",
+      "last_verified": "2026-11-23",
       "annual_fee": {
         "amount": 99,
         "first_year_waived": true
@@ -2452,7 +2452,7 @@
       "issuer": "Capital One",
       "segment": "personal",
       "official_url": "https://www.capitalone.com/credit-cards/venture-x/",
-      "last_verified": "2026-11-17",
+      "last_verified": "2026-11-23",
       "annual_fee": {
         "amount": 395,
         "first_year_waived": false
@@ -2559,7 +2559,7 @@
       "issuer": "Capital One",
       "segment": "personal",
       "official_url": "https://www.capitalone.com/credit-cards/venture/",
-      "last_verified": "2026-11-17",
+      "last_verified": "2026-11-23",
       "annual_fee": {
         "amount": 95,
         "first_year_waived": false
@@ -2681,7 +2681,7 @@
       "issuer": "Capital One",
       "segment": "personal",
       "official_url": "https://www.capitalone.com/credit-cards/savor/",
-      "last_verified": "2026-11-17",
+      "last_verified": "2026-11-23",
       "annual_fee": {
         "amount": 0,
         "first_year_waived": false
@@ -2792,7 +2792,7 @@
       "issuer": "Discover",
       "segment": "personal",
       "official_url": "https://www.discover.com/credit-cards/cash-back/it-card/",
-      "last_verified": "2026-11-17",
+      "last_verified": "2026-11-23",
       "annual_fee": {
         "amount": 0,
         "first_year_waived": false
@@ -2916,7 +2916,7 @@
       "issuer": "Wells Fargo",
       "segment": "personal",
       "official_url": "https://creditcards.wellsfargo.com/active-cash-credit-card/",
-      "last_verified": "2026-11-17",
+      "last_verified": "2026-11-23",
       "annual_fee": {
         "amount": 0,
         "first_year_waived": false
@@ -2997,7 +2997,7 @@
       "issuer": "Wells Fargo",
       "segment": "personal",
       "official_url": "https://creditcards.wellsfargo.com/autograph-visa-credit-card/",
-      "last_verified": "2026-11-17",
+      "last_verified": "2026-11-23",
       "annual_fee": {
         "amount": 0,
         "first_year_waived": false
@@ -3114,7 +3114,7 @@
       "issuer": "Bank of America",
       "segment": "personal",
       "official_url": "https://www.bankofamerica.com/credit-cards/products/premium-rewards-credit-card/",
-      "last_verified": "2026-11-17",
+      "last_verified": "2026-11-23",
       "annual_fee": {
         "amount": 95,
         "first_year_waived": false
